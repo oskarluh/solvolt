@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tooted — Solvolt</title>
+  <meta name="description" content="Kõik LiFePO4 akuelemendid, hübriidinverterid ja BMS süsteemid. Laos Eestis, kiire tarne." />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">Sol<span>volt</span></a>
+    <div class="nav-links" id="nav-links">
+      <a href="index.html">Avaleht</a>
+      <a href="tooted.html">Tooted</a>
+      <a href="meist.html">Meist</a>
+      <a href="kontakt.html">Kontakt</a>
+    </div>
+    <div style="display:flex;align-items:center;gap:12px">
+      <a href="ostukorv.html" class="nav-cart">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+        Ostukorv
+        <span class="nav-cart-count" id="cart-count" style="display:none">0</span>
+      </a>
+      <button class="nav-mobile-toggle" id="nav-toggle" aria-label="Menüü">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<main class="main-content">
+  <div class="container" style="padding-top:48px; padding-bottom:80px">
+
+    <div style="margin-bottom:36px">
+      <h1 style="font-size:clamp(1.8rem,4vw,2.8rem); margin-bottom:8px">Kõik tooted</h1>
+      <p>LiFePO4 elemendid, hübriidinverterid, akud ja BMS süsteemid — laos Eestis.</p>
+    </div>
+
+    <!-- Filter tabs -->
+    <div class="filter-tabs" id="filter-tabs">
+      <button class="filter-tab active" data-kat="koik">Kõik</button>
+      <button class="filter-tab" data-kat="lifepo4">LiFePO4 elemendid</button>
+      <button class="filter-tab" data-kat="inverterid">Hübriidinverterid</button>
+      <button class="filter-tab" data-kat="akud">Akud</button>
+      <button class="filter-tab" data-kat="bms">BMS</button>
+    </div>
+
+    <!-- Count -->
+    <div style="font-size:.85rem;color:var(--text-3);margin-bottom:24px;font-family:var(--ff-mono)" id="product-count"></div>
+
+    <!-- Grid -->
+    <div class="products-grid" id="products-grid"></div>
+
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">Sol<span>volt</span></div>
+        <p class="footer-desc">Kvaliteetsed LiFePO4 akuelemendid, BMS süsteemid ja päikeseenergia lahendused Eesti turule.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Tooted</h4>
+        <ul>
+          <li><a href="tooted.html?kat=lifepo4">LiFePO4 elemendid</a></li>
+          <li><a href="tooted.html?kat=inverterid">Hübriidinverterid</a></li>
+          <li><a href="tooted.html?kat=akud">Akud</a></li>
+          <li><a href="tooted.html?kat=bms">BMS</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Ettevõte</h4>
+        <ul>
+          <li><a href="meist.html">Meist</a></li>
+          <li><a href="kontakt.html">Kontakt</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Kontakt</h4>
+        <ul>
+          <li><a href="mailto:solvolt.info@gmail.com">solvolt.info@gmail.com</a></li>
+          <li><a href="tel:+37253928910">+372 5392 8910</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Solvolt OÜ. Kõik õigused kaitstud.</span>
+      <span>Maksed: Visa · Mastercard · Stripe</span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/products.js"></script>
+<script src="assets/js/main.js"></script>
+<script>
+  let activeKat = 'koik';
+
+  function renderProductCard(t) {
+    const saleTag = t.hind_vana ? `<span class="badge badge-sale">Soodustus</span>` : '';
+    const eelTag  = t.eelmyyk  ? `<span class="badge badge-eelmyyk">Eelmüük</span>` : '';
+    const oldPrice = t.hind_vana ? `<span class="price-old">${formatPrice(t.hind_vana)}</span>` : '';
+    const tJson = JSON.stringify(t).replace(/"/g,'&quot;');
+    return `
+      <a href="toode.html?id=${t.id}" class="product-card">
+        <div class="product-card-img">
+          <img src="${t.pilt}" alt="${t.nimi}" onerror="this.src='assets/pildid/placeholder.svg'" loading="lazy">
+          <div class="product-card-badges">${saleTag}${eelTag}</div>
+        </div>
+        <div class="product-card-body">
+          <div class="product-card-cat">${KATEGOORIAD[t.kategooria] || t.kategooria}</div>
+          <div class="product-card-title">${t.nimi}</div>
+          <div class="product-card-price">
+            <span class="price-current">${formatPrice(t.hind)}</span>
+            ${oldPrice}
+          </div>
+          <button class="btn btn-outline btn-sm btn-full" onclick="event.preventDefault(); Cart.add(${tJson})">
+            + Ostukorvi
+          </button>
+        </div>
+      </a>`;
+  }
+
+  function renderGrid() {
+    const filtered = activeKat === 'koik' ? TOOTED : TOOTED.filter(t => t.kategooria === activeKat);
+    document.getElementById('products-grid').innerHTML = filtered.map(renderProductCard).join('');
+    document.getElementById('product-count').textContent = filtered.length + ' toodet';
+  }
+
+  // Filter tabs
+  document.getElementById('filter-tabs').addEventListener('click', e => {
+    const tab = e.target.closest('.filter-tab');
+    if (!tab) return;
+    activeKat = tab.dataset.kat;
+    document.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active'));
+    tab.classList.add('active');
+    renderGrid();
+  });
+
+  // Read URL param
+  const urlKat = new URLSearchParams(location.search).get('kat');
+  if (urlKat && KATEGOORIAD[urlKat]) {
+    activeKat = urlKat;
+    document.querySelectorAll('.filter-tab').forEach(t => {
+      t.classList.toggle('active', t.dataset.kat === urlKat);
+    });
+  }
+
+  renderGrid();
+</script>
+</body>
+</html>

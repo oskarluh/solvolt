@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title id="page-title">Toode — Solvolt</title>
+  <meta name="description" id="page-desc" content="" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">Sol<span>volt</span></a>
+    <div class="nav-links" id="nav-links">
+      <a href="index.html">Avaleht</a>
+      <a href="tooted.html">Tooted</a>
+      <a href="meist.html">Meist</a>
+      <a href="kontakt.html">Kontakt</a>
+    </div>
+    <div style="display:flex;align-items:center;gap:12px">
+      <a href="ostukorv.html" class="nav-cart">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+        Ostukorv
+        <span class="nav-cart-count" id="cart-count" style="display:none">0</span>
+      </a>
+      <button class="nav-mobile-toggle" id="nav-toggle" aria-label="Menüü">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<main class="main-content">
+  <div class="container">
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb" style="padding-top:32px">
+      <a href="index.html">Avaleht</a>
+      <span class="breadcrumb-sep">›</span>
+      <a href="tooted.html">Tooted</a>
+      <span class="breadcrumb-sep">›</span>
+      <span id="bc-name" style="color:var(--text-2)">...</span>
+    </div>
+
+    <!-- Product detail -->
+    <div class="product-detail" id="product-detail">
+      <!-- Täidetakse JS-iga -->
+      <div style="grid-column:1/-1; text-align:center; padding:80px; color:var(--text-3)">Laeb...</div>
+    </div>
+
+    <!-- Related products -->
+    <div style="padding:60px 0 80px">
+      <div class="section-header">
+        <div class="eyebrow">Seotud tooted</div>
+        <h2>Võib huvi pakkuda</h2>
+      </div>
+      <div class="products-grid" id="related-grid"></div>
+    </div>
+
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">Sol<span>volt</span></div>
+        <p class="footer-desc">Kvaliteetsed LiFePO4 akuelemendid, BMS süsteemid ja päikeseenergia lahendused Eesti turule.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Tooted</h4>
+        <ul>
+          <li><a href="tooted.html?kat=lifepo4">LiFePO4 elemendid</a></li>
+          <li><a href="tooted.html?kat=inverterid">Hübriidinverterid</a></li>
+          <li><a href="tooted.html?kat=akud">Akud</a></li>
+          <li><a href="tooted.html?kat=bms">BMS</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Ettevõte</h4>
+        <ul>
+          <li><a href="meist.html">Meist</a></li>
+          <li><a href="kontakt.html">Kontakt</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Kontakt</h4>
+        <ul>
+          <li><a href="mailto:solvolt.info@gmail.com">solvolt.info@gmail.com</a></li>
+          <li><a href="tel:+37253928910">+372 5392 8910</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Solvolt OÜ. Kõik õigused kaitstud.</span>
+      <span>Maksed: Visa · Mastercard · Stripe</span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/products.js"></script>
+<script src="assets/js/main.js"></script>
+<script>
+  const id = new URLSearchParams(location.search).get('id');
+  const toode = TOOTED.find(t => t.id === id);
+
+  if (!toode) {
+    document.getElementById('product-detail').innerHTML = `
+      <div style="grid-column:1/-1; text-align:center; padding:80px">
+        <div style="font-size:3rem; margin-bottom:16px">🔍</div>
+        <h3>Toodet ei leitud</h3>
+        <p style="margin:12px 0 24px">See toode ei ole enam saadaval.</p>
+        <a href="tooted.html" class="btn btn-primary">Vaata kõiki tooteid</a>
+      </div>`;
+  } else {
+    // Update page meta
+    document.getElementById('page-title').textContent = toode.nimi + ' — Solvolt';
+    document.getElementById('page-desc').content = toode.lyhikirjeldus;
+    document.getElementById('bc-name').textContent = toode.nimi.substring(0, 40) + '…';
+
+    let qty = 1;
+
+    const saleTag = toode.hind_vana ? `<span class="badge badge-sale">Soodustus ${Math.round((1 - toode.hind/toode.hind_vana)*100)}%</span>` : '';
+    const eelTag  = toode.eelmyyk  ? `<span class="badge badge-eelmyyk">⏳ Eelmüük</span>` : '';
+    const oldPrice = toode.hind_vana ? `<span class="price-old">${formatPrice(toode.hind_vana)}</span>` : '';
+
+    const specsRows = Object.entries(toode.specs || {}).map(([k,v]) =>
+      `<tr><td>${k}</td><td>${v}</td></tr>`).join('');
+
+    document.getElementById('product-detail').innerHTML = `
+      <div class="product-detail-img">
+        <img src="${toode.pilt}" alt="${toode.nimi}" onerror="this.src='assets/pildid/placeholder.svg'">
+      </div>
+      <div>
+        <div class="product-detail-cat">${KATEGOORIAD[toode.kategooria] || toode.kategooria}</div>
+        <h1>${toode.nimi}</h1>
+        <div style="display:flex;gap:8px;margin-bottom:20px">${saleTag}${eelTag}</div>
+        <div class="product-detail-price">
+          <span class="price-current">${formatPrice(toode.hind)}</span>
+          ${oldPrice}
+          <span style="font-size:.8rem;color:var(--text-3);font-family:var(--ff-mono)">+ KM</span>
+        </div>
+        <p class="product-short">${toode.lyhikirjeldus}</p>
+        ${specsRows ? `
+        <div style="margin-bottom:28px">
+          <div style="font-family:var(--ff-mono);font-size:.75rem;font-weight:500;color:var(--text-3);letter-spacing:.08em;text-transform:uppercase;margin-bottom:12px">Spetsifikatsioonid</div>
+          <table class="specs-table">${specsRows}</table>
+        </div>` : ''}
+        <div class="qty-row">
+          <div class="qty-control">
+            <button class="qty-btn" id="qty-minus">−</button>
+            <span class="qty-num" id="qty-display">1</span>
+            <button class="qty-btn" id="qty-plus">+</button>
+          </div>
+          <button class="btn btn-primary" style="flex:1" id="add-btn">
+            + Lisa ostukorvi
+          </button>
+        </div>
+        <div style="margin-bottom:24px">
+          <a href="ostukorv.html" class="btn btn-outline btn-full" id="buy-btn" style="display:none">
+            → Osta kohe
+          </a>
+        </div>
+        <div style="background:var(--bg-2);border:1px solid var(--border);border-radius:var(--r);padding:16px;display:flex;flex-direction:column;gap:10px">
+          <div style="display:flex;align-items:center;gap:10px;font-size:.85rem;color:var(--text-2)">
+            <span style="color:var(--accent)">✓</span> Tasuta konsultatsioon valiku osas
+          </div>
+          <div style="display:flex;align-items:center;gap:10px;font-size:.85rem;color:var(--text-2)">
+            <span style="color:var(--accent)">✓</span> ${toode.specs?.Tarne || '3–7 tööpäeva'}
+          </div>
+          <div style="display:flex;align-items:center;gap:10px;font-size:.85rem;color:var(--text-2)">
+            <span style="color:var(--accent)">✓</span> Turvaline makse Stripe kaudu
+          </div>
+        </div>
+        ${toode.kirjeldus ? `
+        <div style="margin-top:32px;padding-top:28px;border-top:1px solid var(--border)">
+          <div style="font-family:var(--ff-mono);font-size:.75rem;font-weight:500;color:var(--text-3);letter-spacing:.08em;text-transform:uppercase;margin-bottom:16px">Kirjeldus</div>
+          <div class="product-desc">${toode.kirjeldus}</div>
+        </div>` : ''}
+      </div>`;
+
+    // Qty controls
+    const qtyDisplay = document.getElementById('qty-display');
+    document.getElementById('qty-minus').addEventListener('click', () => {
+      if (qty > 1) { qty--; qtyDisplay.textContent = qty; }
+    });
+    document.getElementById('qty-plus').addEventListener('click', () => {
+      if (qty < 10) { qty++; qtyDisplay.textContent = qty; }
+    });
+    document.getElementById('add-btn').addEventListener('click', () => {
+      Cart.add(toode, qty);
+      document.getElementById('buy-btn').style.display = 'flex';
+    });
+
+    // Related products (same category, different product)
+    const related = TOOTED.filter(t => t.kategooria === toode.kategooria && t.id !== toode.id).slice(0, 3);
+    if (related.length) {
+      document.getElementById('related-grid').innerHTML = related.map(t => {
+        const tJson = JSON.stringify(t).replace(/"/g,'&quot;');
+        const sTag = t.hind_vana ? `<span class="badge badge-sale">Soodustus</span>` : '';
+        const eTag = t.eelmyyk  ? `<span class="badge badge-eelmyyk">Eelmüük</span>` : '';
+        const op   = t.hind_vana ? `<span class="price-old">${formatPrice(t.hind_vana)}</span>` : '';
+        return `
+          <a href="toode.html?id=${t.id}" class="product-card">
+            <div class="product-card-img">
+              <img src="${t.pilt}" alt="${t.nimi}" onerror="this.src='assets/pildid/placeholder.svg'" loading="lazy">
+              <div class="product-card-badges">${sTag}${eTag}</div>
+            </div>
+            <div class="product-card-body">
+              <div class="product-card-cat">${KATEGOORIAD[t.kategooria]||t.kategooria}</div>
+              <div class="product-card-title">${t.nimi}</div>
+              <div class="product-card-price">
+                <span class="price-current">${formatPrice(t.hind)}</span>${op}
+              </div>
+              <button class="btn btn-outline btn-sm btn-full" onclick="event.preventDefault(); Cart.add(${tJson})">
+                + Ostukorvi
+              </button>
+            </div>
+          </a>`;
+      }).join('');
+    } else {
+      document.getElementById('related-grid').closest('div').style.display = 'none';
+    }
+  }
+</script>
+</body>
+</html>

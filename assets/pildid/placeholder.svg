@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
+  <rect width="200" height="200" fill="#161616"/>
+  <rect x="60" y="60" width="80" height="80" rx="8" stroke="#2e2e2e" stroke-width="2"/>
+  <path d="M80 100 L100 80 L120 100 L108 100 L108 120 L92 120 L92 100 Z" fill="#2e2e2e"/>
+  <text x="100" y="160" text-anchor="middle" font-family="monospace" font-size="10" fill="#4a4846">Pilt puudub</text>
+</svg>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kontakt — Solvolt</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <style>
+    .contact-form input, .contact-form textarea, .contact-form select {
+      width:100%; padding:12px 16px;
+      background:var(--bg-2); border:1px solid var(--border-2);
+      border-radius:var(--r); color:var(--text-1);
+      font-family:var(--ff-body); font-size:.95rem;
+      transition:border-color var(--trans);
+      outline:none;
+    }
+    .contact-form input:focus, .contact-form textarea:focus {
+      border-color:var(--accent);
+    }
+    .contact-form textarea { resize:vertical; min-height:130px; }
+    .form-group { margin-bottom:16px; }
+    .form-label { display:block; font-size:.82rem; font-family:var(--ff-mono); color:var(--text-3); margin-bottom:6px; letter-spacing:.04em; }
+  </style>
+</head>
+<body>
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">Sol<span>volt</span></a>
+    <div class="nav-links" id="nav-links">
+      <a href="index.html">Avaleht</a>
+      <a href="tooted.html">Tooted</a>
+      <a href="meist.html">Meist</a>
+      <a href="kontakt.html">Kontakt</a>
+    </div>
+    <div style="display:flex;align-items:center;gap:12px">
+      <a href="ostukorv.html" class="nav-cart">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+        Ostukorv
+        <span class="nav-cart-count" id="cart-count" style="display:none">0</span>
+      </a>
+      <button class="nav-mobile-toggle" id="nav-toggle" aria-label="Menüü">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+<main class="main-content">
+  <div class="container" style="padding:48px 24px 80px">
+    <div class="breadcrumb">
+      <a href="index.html">Avaleht</a>
+      <span class="breadcrumb-sep">›</span>
+      <span style="color:var(--text-2)">Kontakt</span>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start;max-width:900px">
+      <div>
+        <h1 style="font-size:clamp(1.8rem,4vw,2.4rem);margin-bottom:16px">Võta ühendust</h1>
+        <p style="margin-bottom:32px">Küsimusi toote valiku, tehniliste spetsifikatsioonide või tarne kohta? Kirjuta meile — vastame esimesel võimalusel.</p>
+        <div style="display:flex;flex-direction:column;gap:20px">
+          <a href="mailto:solvolt.info@gmail.com" style="display:flex;align-items:center;gap:14px;padding:16px;background:var(--bg-1);border:1px solid var(--border);border-radius:var(--r);transition:border-color var(--trans)" onmouseover="this.style.borderColor='var(--accent)'" onmouseout="this.style.borderColor='var(--border)'">
+            <span style="font-size:1.2rem">✉️</span>
+            <div><div style="font-size:.82rem;color:var(--text-3);font-family:var(--ff-mono)">E-POST</div><div style="color:var(--accent);font-weight:500">solvolt.info@gmail.com</div></div>
+          </a>
+          <a href="tel:+37253928910" style="display:flex;align-items:center;gap:14px;padding:16px;background:var(--bg-1);border:1px solid var(--border);border-radius:var(--r);transition:border-color var(--trans)" onmouseover="this.style.borderColor='var(--accent)'" onmouseout="this.style.borderColor='var(--border)'">
+            <span style="font-size:1.2rem">📞</span>
+            <div><div style="font-size:.82rem;color:var(--text-3);font-family:var(--ff-mono)">TELEFON</div><div style="color:var(--accent);font-weight:500">+372 5392 8910</div></div>
+          </a>
+          <div style="display:flex;align-items:center;gap:14px;padding:16px;background:var(--bg-1);border:1px solid var(--border);border-radius:var(--r)">
+            <span style="font-size:1.2rem">📍</span>
+            <div><div style="font-size:.82rem;color:var(--text-3);font-family:var(--ff-mono)">AADRESS</div><div style="color:var(--text-2);font-size:.9rem">Pärnu maakond, Pärnu linn<br>Silla küla, Pilviku tn 3, 86604</div></div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <!-- Netlify Form - töötab automaatselt! -->
+        <form name="kontakt" method="POST" data-netlify="true" class="contact-form" id="contact-form">
+          <input type="hidden" name="form-name" value="kontakt" />
+          <div class="form-group">
+            <label class="form-label">Nimi</label>
+            <input type="text" name="nimi" placeholder="Sinu nimi" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">E-post</label>
+            <input type="email" name="email" placeholder="sinu@email.ee" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Teema</label>
+            <select name="teema">
+              <option value="toode">Küsimus toote kohta</option>
+              <option value="tarne">Tarne info</option>
+              <option value="tehniline">Tehniline küsimus</option>
+              <option value="muu">Muu</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Sõnum</label>
+            <textarea name="sonum" placeholder="Kirjuta oma küsimus siia..." required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-full" id="submit-btn">Saada sõnum</button>
+          <div id="form-success" style="display:none;margin-top:16px;padding:14px;background:var(--accent-bg);border:1px solid rgba(61,255,160,.2);border-radius:var(--r);font-size:.9rem;color:var(--accent)">
+            ✓ Sõnum saadetud! Võtame sinuga ühendust esimesel võimalusel.
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</main>
+<script src="assets/js/main.js"></script>
+<script>
+  // Netlify Form submit handling
+  document.getElementById('contact-form').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const btn = document.getElementById('submit-btn');
+    btn.disabled = true;
+    btn.innerHTML = '<span class="spinner" style="border-top-color:#000"></span> Saadan...';
+    const data = new FormData(this);
+    try {
+      await fetch('/', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(data).toString() });
+      document.getElementById('form-success').style.display = 'block';
+      this.reset();
+      btn.textContent = 'Saadetud ✓';
+    } catch {
+      btn.disabled = false;
+      btn.textContent = 'Saada sõnum';
+      showToast('❌ Saatmine ebaõnnestus. Kirjuta otse e-mailile.');
+    }
+  });
+</script>
+</body>
+</html>

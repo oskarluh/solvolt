@@ -1,0 +1,8 @@
+{
+  "name": "solvolt",
+  "version": "1.0.0",
+  "description": "Solvolt e-pood",
+  "dependencies": {
+    "stripe": "^14.0.0"
+  }
+}
