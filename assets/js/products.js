@@ -311,7 +311,7 @@ const TOOTED = [
     kategooria: "inverterid",
     hind: 3250,
     hind_vana: 3380,
-    stripe_price_id: "LISA_SIIA",
+    stripe_price_id: "price_1TEvzFPcV5reENb68Q2o6uqi",
     pilt: "assets/pildid/deye-20k.jpg",
     ladu: true,
     eelmyyk: false,
