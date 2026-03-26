@@ -1,0 +1,1269 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EEL Battery V6 PRO – 17kWh LiFePO4 Energiasalvestus</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0a0c0e;
+    --bg2: #101316;
+    --bg3: #161b20;
+    --border: #1e2830;
+    --accent: #00e5a0;
+    --accent2: #00b3ff;
+    --warn: #ffb800;
+    --text: #e8edf2;
+    --text2: #7a8a96;
+    --text3: #4a5a66;
+    --red: #ff4444;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* NOISE OVERLAY */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 1000;
+    opacity: 0.4;
+  }
+
+  /* PRE-ORDER BANNER */
+  .banner {
+    background: linear-gradient(90deg, #1a1200, #2a1f00, #1a1200);
+    border-bottom: 1px solid var(--warn);
+    padding: 10px 24px;
+    text-align: center;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    color: var(--warn);
+    letter-spacing: 0.05em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    animation: pulse-banner 3s ease-in-out infinite;
+  }
+  @keyframes pulse-banner {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.8; }
+  }
+  .banner-dot {
+    width: 8px; height: 8px;
+    background: var(--warn);
+    border-radius: 50%;
+    box-shadow: 0 0 8px var(--warn);
+    animation: blink 1.2s ease-in-out infinite;
+    flex-shrink: 0;
+  }
+  @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.2} }
+
+  /* NAV */
+  nav {
+    padding: 18px 48px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--border);
+    background: rgba(10,12,14,0.9);
+    backdrop-filter: blur(12px);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .nav-brand {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 22px;
+    letter-spacing: 0.15em;
+    color: var(--accent);
+    text-decoration: none;
+  }
+  .nav-tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--text3);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  /* HERO */
+  .hero {
+    position: relative;
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    padding: 80px 48px;
+    gap: 60px;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -200px; right: -200px;
+    width: 700px; height: 700px;
+    background: radial-gradient(circle, rgba(0,229,160,0.06) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -100px; left: -100px;
+    width: 500px; height: 500px;
+    background: radial-gradient(circle, rgba(0,179,255,0.05) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .hero-left { position: relative; z-index: 2; }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(0,229,160,0.08);
+    border: 1px solid rgba(0,229,160,0.25);
+    border-radius: 4px;
+    padding: 6px 14px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--accent);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 28px;
+  }
+  .hero-badge-dot {
+    width: 6px; height: 6px;
+    background: var(--accent);
+    border-radius: 50%;
+    box-shadow: 0 0 6px var(--accent);
+    animation: blink 1.5s ease-in-out infinite;
+  }
+
+  h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(56px, 7vw, 96px);
+    line-height: 0.9;
+    letter-spacing: 0.02em;
+    color: var(--text);
+    margin-bottom: 8px;
+  }
+  h1 span { color: var(--accent); }
+
+  .hero-sub {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(22px, 3vw, 36px);
+    letter-spacing: 0.1em;
+    color: var(--text2);
+    margin-bottom: 32px;
+  }
+
+  .hero-desc {
+    font-size: 16px;
+    color: var(--text2);
+    line-height: 1.7;
+    max-width: 480px;
+    margin-bottom: 40px;
+  }
+  .hero-desc strong { color: var(--text); }
+
+  /* KWH STAT */
+  .kwh-display {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 6px;
+    margin-bottom: 40px;
+    padding: 20px 28px;
+    background: var(--bg3);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--accent);
+  }
+  .kwh-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 72px;
+    line-height: 1;
+    color: var(--accent);
+    text-shadow: 0 0 40px rgba(0,229,160,0.4);
+  }
+  .kwh-unit {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 32px;
+    color: var(--text2);
+    letter-spacing: 0.1em;
+  }
+  .kwh-desc {
+    font-size: 12px;
+    color: var(--text3);
+    font-family: 'JetBrains Mono', monospace;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    align-self: center;
+    margin-left: 8px;
+    line-height: 1.4;
+  }
+
+  /* CTA BUTTONS */
+  .cta-group {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .btn-primary {
+    background: var(--accent);
+    color: #000;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 600;
+    font-size: 15px;
+    padding: 16px 36px;
+    border: none;
+    cursor: pointer;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.2s;
+    clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 12px 100%, 0 calc(100% - 12px));
+  }
+  .btn-primary:hover {
+    background: #00ffb3;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(0,229,160,0.3);
+  }
+  .btn-secondary {
+    background: transparent;
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 500;
+    font-size: 15px;
+    padding: 16px 36px;
+    border: 1px solid var(--border);
+    cursor: pointer;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.2s;
+  }
+  .btn-secondary:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+    transform: translateY(-2px);
+  }
+
+  /* HERO RIGHT - VISUAL */
+  .hero-right {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .battery-visual {
+    position: relative;
+    width: 340px;
+    height: 420px;
+  }
+
+  .battery-box {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(145deg, #1a2028, #0e1318);
+    border: 1px solid #2a3540;
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden;
+    box-shadow:
+      0 0 0 1px rgba(0,229,160,0.1),
+      0 40px 80px rgba(0,0,0,0.6),
+      inset 0 1px 0 rgba(255,255,255,0.05);
+  }
+
+  .battery-screen {
+    position: absolute;
+    top: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    height: 90px;
+    background: #000;
+    border: 1px solid #2a3540;
+    border-radius: 6px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+  }
+  .screen-glow {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(0,229,160,0.03), transparent);
+  }
+  .screen-soc {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 32px;
+    font-weight: 600;
+    color: var(--accent);
+    text-shadow: 0 0 20px rgba(0,229,160,0.6);
+    animation: soc-count 4s ease-in-out infinite alternate;
+  }
+  @keyframes soc-count {
+    from { opacity: 0.8; }
+    to { opacity: 1; }
+  }
+  .screen-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    color: var(--text3);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+  .screen-bar {
+    width: 160px;
+    height: 4px;
+    background: #1a2028;
+    border-radius: 2px;
+    overflow: hidden;
+    margin-top: 4px;
+  }
+  .screen-bar-fill {
+    height: 100%;
+    width: 87%;
+    background: linear-gradient(90deg, var(--accent), #00ffb3);
+    border-radius: 2px;
+    animation: bar-anim 4s ease-in-out infinite alternate;
+  }
+  @keyframes bar-anim {
+    from { width: 82%; }
+    to { width: 92%; }
+  }
+
+  .cells-grid {
+    position: absolute;
+    bottom: 28px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 4px;
+    width: 280px;
+  }
+  .cell {
+    height: 36px;
+    background: linear-gradient(180deg, #1e2c3a, #131c24);
+    border: 1px solid #253040;
+    border-radius: 3px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s;
+  }
+  .cell::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: var(--fill, 85%);
+    background: linear-gradient(180deg, rgba(0,229,160,0.3), rgba(0,229,160,0.1));
+    transition: height 0.5s;
+  }
+  .cell:nth-child(odd) { --fill: 87%; }
+  .cell:nth-child(3n) { --fill: 83%; }
+  .cell:nth-child(5n) { --fill: 90%; }
+
+  .battery-stripe {
+    position: absolute;
+    left: 0; right: 0;
+    top: 140px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, rgba(0,229,160,0.3), transparent);
+  }
+
+  .battery-label {
+    position: absolute;
+    bottom: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--text3);
+    letter-spacing: 0.15em;
+    white-space: nowrap;
+  }
+
+  .battery-handle {
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 16px;
+    background: #1a2028;
+    border: 1px solid #2a3540;
+    border-radius: 3px 3px 0 0;
+  }
+
+  /* SCAN ANIM */
+  .scan-line {
+    position: absolute;
+    left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, rgba(0,229,160,0.4), transparent);
+    animation: scan 3s linear infinite;
+    pointer-events: none;
+  }
+  @keyframes scan {
+    0% { top: 0; opacity: 0; }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    100% { top: 100%; opacity: 0; }
+  }
+
+  .side-stats {
+    position: absolute;
+    right: -100px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .side-stat {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+  }
+  .side-stat-val {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 24px;
+    color: var(--accent2);
+    line-height: 1;
+  }
+  .side-stat-lbl {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    color: var(--text3);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  /* SECTION STYLES */
+  section {
+    padding: 100px 48px;
+    border-top: 1px solid var(--border);
+    position: relative;
+  }
+  .section-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--accent);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .section-label::after {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 1px;
+    background: var(--accent);
+    opacity: 0.4;
+  }
+  h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(40px, 5vw, 64px);
+    letter-spacing: 0.03em;
+    line-height: 1;
+    margin-bottom: 24px;
+  }
+
+  /* SPECS GRID */
+  .specs-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    margin-top: 60px;
+  }
+  .spec-group-title {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--text3);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--border);
+  }
+  .spec-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 0;
+    border-bottom: 1px solid rgba(30,40,48,0.6);
+    gap: 20px;
+  }
+  .spec-key {
+    font-size: 14px;
+    color: var(--text2);
+    flex-shrink: 0;
+  }
+  .spec-val {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 14px;
+    color: var(--text);
+    text-align: right;
+  }
+  .spec-val.highlight { color: var(--accent); }
+
+  /* FEATURES */
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    margin-top: 60px;
+    background: var(--border);
+  }
+  .feature-card {
+    background: var(--bg2);
+    padding: 40px 36px;
+    position: relative;
+    overflow: hidden;
+    transition: background 0.3s;
+  }
+  .feature-card:hover { background: var(--bg3); }
+  .feature-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 3px; height: 0;
+    background: var(--accent);
+    transition: height 0.4s ease;
+  }
+  .feature-card:hover::before { height: 100%; }
+  .feature-icon {
+    font-size: 32px;
+    margin-bottom: 20px;
+    display: block;
+  }
+  .feature-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 22px;
+    letter-spacing: 0.05em;
+    color: var(--text);
+    margin-bottom: 12px;
+  }
+  .feature-desc {
+    font-size: 14px;
+    color: var(--text2);
+    line-height: 1.7;
+  }
+  .feature-stat {
+    margin-top: 20px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 24px;
+    color: var(--accent);
+  }
+  .feature-stat small {
+    font-size: 12px;
+    color: var(--text3);
+  }
+
+  /* PRICING */
+  .pricing-section { background: var(--bg); }
+  .pricing-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-top: 60px;
+    max-width: 900px;
+  }
+  .price-card {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    padding: 48px 40px;
+    position: relative;
+    transition: border-color 0.3s, transform 0.3s;
+  }
+  .price-card:hover {
+    border-color: rgba(0,229,160,0.4);
+    transform: translateY(-4px);
+  }
+  .price-card.featured {
+    border-color: var(--accent);
+    background: linear-gradient(145deg, #0d1a14, var(--bg2));
+  }
+  .price-card.featured::before {
+    content: 'POPULAARNE';
+    position: absolute;
+    top: -12px; left: 24px;
+    background: var(--accent);
+    color: #000;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    padding: 4px 14px;
+  }
+  .price-variant {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--text3);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .price-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 32px;
+    letter-spacing: 0.05em;
+    margin-bottom: 24px;
+  }
+  .price-amount {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    margin-bottom: 8px;
+  }
+  .price-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 56px;
+    line-height: 1;
+    color: var(--accent);
+  }
+  .price-currency {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 28px;
+    color: var(--text2);
+  }
+  .price-km {
+    font-size: 12px;
+    color: var(--text3);
+    font-family: 'JetBrains Mono', monospace;
+    margin-bottom: 32px;
+  }
+  .price-features {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 36px;
+  }
+  .price-features li {
+    display: flex;
+    gap: 12px;
+    font-size: 14px;
+    color: var(--text2);
+    align-items: flex-start;
+  }
+  .price-features li::before {
+    content: '✓';
+    color: var(--accent);
+    font-weight: 700;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  /* PREORDER BOX */
+  .preorder-box {
+    background: linear-gradient(135deg, #130e00, #1a1300);
+    border: 1px solid rgba(255,184,0,0.3);
+    padding: 48px;
+    margin-top: 60px;
+    position: relative;
+    overflow: hidden;
+    max-width: 900px;
+  }
+  .preorder-box::before {
+    content: '⚡';
+    position: absolute;
+    right: 40px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 80px;
+    opacity: 0.08;
+  }
+  .preorder-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 28px;
+    color: var(--warn);
+    letter-spacing: 0.05em;
+    margin-bottom: 12px;
+  }
+  .preorder-text {
+    font-size: 15px;
+    color: var(--text2);
+    line-height: 1.7;
+    max-width: 600px;
+  }
+  .preorder-timeline {
+    display: flex;
+    gap: 0;
+    margin-top: 32px;
+  }
+  .timeline-step {
+    flex: 1;
+    padding: 16px 20px;
+    border-left: 2px solid var(--border);
+    position: relative;
+  }
+  .timeline-step:first-child { border-left-color: var(--accent); }
+  .timeline-step:nth-child(2) { border-left-color: var(--warn); }
+  .timeline-step:nth-child(3) { border-left-color: var(--accent2); }
+  .timeline-step::before {
+    content: '';
+    position: absolute;
+    left: -6px; top: 20px;
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    background: var(--border);
+  }
+  .timeline-step:first-child::before { background: var(--accent); box-shadow: 0 0 8px var(--accent); }
+  .timeline-step:nth-child(2)::before { background: var(--warn); box-shadow: 0 0 8px var(--warn); }
+  .timeline-step:nth-child(3)::before { background: var(--accent2); box-shadow: 0 0 8px var(--accent2); }
+  .timeline-date {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--text3);
+    letter-spacing: 0.1em;
+    margin-bottom: 6px;
+  }
+  .timeline-desc {
+    font-size: 14px;
+    color: var(--text);
+  }
+
+  /* COMPATIBILITY */
+  .compat-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 40px;
+  }
+  .compat-tag {
+    background: var(--bg3);
+    border: 1px solid var(--border);
+    padding: 10px 20px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    color: var(--text2);
+    letter-spacing: 0.05em;
+    transition: all 0.2s;
+  }
+  .compat-tag:hover {
+    border-color: var(--accent2);
+    color: var(--accent2);
+  }
+
+  /* WHAT'S IN THE BOX */
+  .inbox-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2px;
+    margin-top: 60px;
+    background: var(--border);
+  }
+  .inbox-item {
+    background: var(--bg2);
+    padding: 32px 28px;
+    transition: background 0.3s;
+  }
+  .inbox-item:hover { background: var(--bg3); }
+  .inbox-icon {
+    font-size: 28px;
+    margin-bottom: 16px;
+    display: block;
+  }
+  .inbox-name {
+    font-size: 14px;
+    color: var(--text);
+    font-weight: 500;
+    margin-bottom: 6px;
+    line-height: 1.4;
+  }
+  .inbox-detail {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--text3);
+    letter-spacing: 0.05em;
+  }
+
+  /* EVE SECTION */
+  .eve-section {
+    background: linear-gradient(135deg, var(--bg), #0a1018);
+  }
+  .eve-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+    margin-top: 60px;
+  }
+  .eve-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+    background: var(--border);
+  }
+  .eve-stat-box {
+    background: var(--bg2);
+    padding: 32px;
+  }
+  .eve-stat-val {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 48px;
+    color: var(--accent2);
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+  .eve-stat-lbl {
+    font-size: 13px;
+    color: var(--text2);
+  }
+  .eve-points {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+  .eve-point {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+  }
+  .eve-point-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 28px;
+    color: var(--border);
+    line-height: 1;
+    flex-shrink: 0;
+    width: 40px;
+    transition: color 0.3s;
+  }
+  .eve-point:hover .eve-point-num { color: var(--accent); }
+  .eve-point-content h4 {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 6px;
+  }
+  .eve-point-content p {
+    font-size: 14px;
+    color: var(--text2);
+    line-height: 1.6;
+  }
+
+  /* FOOTER */
+  footer {
+    padding: 60px 48px;
+    border-top: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  .footer-brand {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 32px;
+    color: var(--text3);
+    letter-spacing: 0.1em;
+  }
+  .footer-note {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--text3);
+    letter-spacing: 0.08em;
+  }
+
+  /* DIVIDER LINE */
+  .divider {
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--border), transparent);
+    margin: 0;
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 900px) {
+    .hero { grid-template-columns: 1fr; padding: 60px 24px; }
+    .hero-right { display: none; }
+    section { padding: 60px 24px; }
+    .specs-layout { grid-template-columns: 1fr; gap: 40px; }
+    .features-grid { grid-template-columns: 1fr; }
+    .pricing-grid { grid-template-columns: 1fr; }
+    .inbox-grid { grid-template-columns: repeat(2, 1fr); }
+    .eve-layout { grid-template-columns: 1fr; }
+    nav { padding: 16px 24px; }
+    footer { flex-direction: column; align-items: flex-start; }
+    .side-stats { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- PRE-ORDER BANNER -->
+<div class="banner">
+  <div class="banner-dot"></div>
+  EEL-MÜÜK AVATUD &nbsp;·&nbsp; EVE MB31 ELEMENDID SAABUVAD MAIS 2025 &nbsp;·&nbsp; BRONEERI NÜÜD, KINDLUSTA OMA KOHT
+  <div class="banner-dot"></div>
+</div>
+
+<!-- NAV -->
+<nav>
+  <span class="nav-brand">⚡ EEL ENERGY</span>
+  <span class="nav-tag">EEL Battery V6 PRO · Eestimaine müüja</span>
+</nav>
+
+<!-- HERO -->
+<section class="hero" style="border-top:none; padding-top: 80px;">
+  <div class="hero-left">
+    <div class="hero-badge">
+      <div class="hero-badge-dot"></div>
+      EEL-MÜÜK · Tarnimine mais 2025
+    </div>
+    <h1>EEL BATTERY<br><span>V6 PRO</span></h1>
+    <div class="hero-sub">48V LiFePO4 Energiasalvestus</div>
+    <div class="kwh-display">
+      <div class="kwh-num">17</div>
+      <div class="kwh-unit">kWh</div>
+      <div class="kwh-desc">16 × EVE MB31<br>330+ Ah elementi</div>
+    </div>
+    <p class="hero-desc">
+      Turutipu DIY aku süsteem puutetundliku ekraaniga, sisseehitatud tulekustutuse ja aktiivse balansseerimisega. <strong>EVE MB31 elemendid otse tootjalt</strong> — 100% Grade A, täismahtuvus garanteeritud.
+    </p>
+    <div class="cta-group">
+      <a href="#pricing" class="btn-primary">→ Broneeri eel-müügi hinnaga</a>
+      <a href="#specs" class="btn-secondary">Tehnilised andmed</a>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <div class="battery-visual">
+      <div class="battery-handle"></div>
+      <div class="battery-box">
+        <div class="scan-line"></div>
+        <div class="battery-screen">
+          <div class="screen-glow"></div>
+          <div class="screen-soc">87%</div>
+          <div class="screen-label">State of Charge</div>
+          <div class="screen-bar"><div class="screen-bar-fill"></div></div>
+        </div>
+        <div class="battery-stripe"></div>
+        <div class="battery-label">16S · 51.2V · 330+Ah · LiFePO₄</div>
+        <div class="cells-grid">
+          <div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
+          <div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
+          <div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
+          <div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
+        </div>
+      </div>
+      <div class="side-stats">
+        <div class="side-stat">
+          <div class="side-stat-val">200A</div>
+          <div class="side-stat-lbl">Max BMS</div>
+        </div>
+        <div class="side-stat">
+          <div class="side-stat-val">16S</div>
+          <div class="side-stat-lbl">Konfig</div>
+        </div>
+        <div class="side-stat">
+          <div class="side-stat-val">×4</div>
+          <div class="side-stat-lbl">Stackable</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section>
+  <div class="section-label">Põhifunktsioonid</div>
+  <h2>Top-of-the-line<br>DIY Akusüsteem</h2>
+  <div class="features-grid">
+    <div class="feature-card">
+      <span class="feature-icon">📺</span>
+      <div class="feature-title">Puutetundlik Ekraan</div>
+      <p class="feature-desc">Sisseehitatud värviline puutetundlik displei kuvab reaalajas laetuse, pinge, voolu ja rakkude balansi ilma välise monitori vajaduseta.</p>
+    </div>
+    <div class="feature-card">
+      <span class="feature-icon">🔥</span>
+      <div class="feature-title">Automaatne Tulekustutus</div>
+      <p class="feature-desc">Sisseehitatud aerosool-kustutussüsteem aktiveerub automaatselt ületemperatuuri või lühise korral. Turvalisus ilma kompromissideta.</p>
+    </div>
+    <div class="feature-card">
+      <span class="feature-icon">⚖️</span>
+      <div class="feature-title">Aktiivne Balansseerimine</div>
+      <p class="feature-desc">JK BMS V19 4-kanaliline 2A aktiivne balansser hoiab kõik 16 rakku ühtlaselt. Pikem eluiga, parem mahtuvuse kasutus.</p>
+      <div class="feature-stat">2A <small>/ kanal</small></div>
+    </div>
+    <div class="feature-card">
+      <span class="feature-icon">📡</span>
+      <div class="feature-title">CAN + RS485 Ühendus</div>
+      <p class="feature-desc">Täis ühilduvus kõigi populaarsete invertoritega — Victron, Growatt, Deye, SolaX, Sungrow. Plug-and-play protokollid.</p>
+    </div>
+    <div class="feature-card">
+      <span class="feature-icon">📱</span>
+      <div class="feature-title">JK Mobiilirakendus</div>
+      <p class="feature-desc">Jälgi oma akut eemalt iOS ja Android rakendusega. Reaalajas andmed, hoiatused ja konfigureerimise võimalus otse telefonis.</p>
+    </div>
+    <div class="feature-card">
+      <span class="feature-icon">🏗️</span>
+      <div class="feature-title">Virnastatav Disain</div>
+      <p class="feature-desc">Rack-formaat lubab kuni 4 ühikut üksteise peale paigaldada — kasvatad kapatsiteeti kuni 68 kWh-ni kompaktses riiulis.</p>
+      <div class="feature-stat">×4 <small>stack / 68kWh</small></div>
+    </div>
+  </div>
+</section>
+
+<!-- EVE MB31 -->
+<section class="eve-section">
+  <div class="section-label">EVE MB31 Elemendid</div>
+  <h2>Otse Tootjalt.<br>Grade A. Garanteeritud.</h2>
+  <div class="eve-layout">
+    <div class="eve-stats">
+      <div class="eve-stat-box">
+        <div class="eve-stat-val">330+</div>
+        <div class="eve-stat-lbl">Ah nominaalmahtuvus</div>
+      </div>
+      <div class="eve-stat-box">
+        <div class="eve-stat-val">17</div>
+        <div class="eve-stat-lbl">kWh koguvõimsus 16S</div>
+      </div>
+      <div class="eve-stat-box">
+        <div class="eve-stat-val">3.2V</div>
+        <div class="eve-stat-lbl">LiFePO₄ nominaalpinge</div>
+      </div>
+      <div class="eve-stat-box">
+        <div class="eve-stat-val">A</div>
+        <div class="eve-stat-lbl">Grade · 100% uus</div>
+      </div>
+    </div>
+    <div class="eve-points">
+      <div class="eve-point">
+        <div class="eve-point-num">01</div>
+        <div class="eve-point-content">
+          <h4>Tootjalt otse, mitte edasimüüjalt</h4>
+          <p>EVE on üks maailma suurimaid LiFePO₄ rakutootjaid. Meie elemendid tulevad tootja enda laost — ei mingeid vahendajaid, ei valepäritolu elemente.</p>
+        </div>
+      </div>
+      <div class="eve-point">
+        <div class="eve-point-num">02</div>
+        <div class="eve-point-content">
+          <h4>QR-koodiga jälgitavus</h4>
+          <p>Iga element omab unikaalset seerianumbrit ja QR-koodi — saad kontrollida päritolu ja tootmisandmeid otse EVE andmebaasist.</p>
+        </div>
+      </div>
+      <div class="eve-point">
+        <div class="eve-point-num">03</div>
+        <div class="eve-point-content">
+          <h4>3000–6000 laadimistsüklit</h4>
+          <p>LiFePO₄ keemia tagab erakordselt pika eluea. 80% mahtuvus alles pärast tuhandeid tsükleid — investeering aastateks.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SPECS -->
+<section id="specs">
+  <div class="section-label">Spetsifikatsioonid</div>
+  <h2>Tehnilised Andmed</h2>
+  <div class="specs-layout">
+    <div>
+      <div class="spec-group-title">// ENERGIA</div>
+      <div class="spec-row"><span class="spec-key">Nominaalpinge</span><span class="spec-val highlight">51.2V (48V)</span></div>
+      <div class="spec-row"><span class="spec-key">Konfiguratsioon</span><span class="spec-val">16S LiFePO₄</span></div>
+      <div class="spec-row"><span class="spec-key">Element</span><span class="spec-val highlight">EVE MB31 330+Ah</span></div>
+      <div class="spec-row"><span class="spec-key">Kogumahtuvus</span><span class="spec-val highlight">~17 kWh</span></div>
+      <div class="spec-row"><span class="spec-key">Kasutatav mahtuvus</span><span class="spec-val">~15–16 kWh</span></div>
+      <div class="spec-row"><span class="spec-key">Max pidev vool (BMS)</span><span class="spec-val">200A</span></div>
+      <div class="spec-row"><span class="spec-key">Max tipuvool</span><span class="spec-val">400A (lühiajaliselt)</span></div>
+      <div class="spec-group-title" style="margin-top:32px">// MÕÕTMED</div>
+      <div class="spec-row"><span class="spec-key">Kasti mõõtmed</span><span class="spec-val">698 × 410 × 250 mm</span></div>
+      <div class="spec-row"><span class="spec-key">Paigutus</span><span class="spec-val">Horisontaalne</span></div>
+      <div class="spec-row"><span class="spec-key">Virnastatavus</span><span class="spec-val">Kuni 4 ühikut</span></div>
+      <div class="spec-row"><span class="spec-key">Max paralleelühendus</span><span class="spec-val highlight">16 ühikut (~230 kWh)</span></div>
+    </div>
+    <div>
+      <div class="spec-group-title">// BMS (JK V19)</div>
+      <div class="spec-row"><span class="spec-key">BMS mudel</span><span class="spec-val">JK BMS V19 200A</span></div>
+      <div class="spec-row"><span class="spec-key">Balansseerimine</span><span class="spec-val highlight">Aktiivne 4ch × 2A</span></div>
+      <div class="spec-row"><span class="spec-key">Suhtlusprotokolid</span><span class="spec-val">CAN · RS485</span></div>
+      <div class="spec-row"><span class="spec-key">Ekraan</span><span class="spec-val highlight">Puutetundlik värvidisplei</span></div>
+      <div class="spec-row"><span class="spec-key">Mobiilirakendus</span><span class="spec-val">iOS + Android (JK)</span></div>
+      <div class="spec-group-title" style="margin-top:32px">// OHUTUS</div>
+      <div class="spec-row"><span class="spec-key">Tulekustutus</span><span class="spec-val highlight">Aerosool, automaatne</span></div>
+      <div class="spec-row"><span class="spec-key">Kaitselüliti</span><span class="spec-val">Class-T 250A kaitse</span></div>
+      <div class="spec-row"><span class="spec-key">DC katkesti</span><span class="spec-val">250A</span></div>
+      <div class="spec-row"><span class="spec-key">Klemmid</span><span class="spec-val">400A tugevdatud</span></div>
+      <div class="spec-row"><span class="spec-key">Busbarid</span><span class="spec-val">Paindlikud vaskbusbarid</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT'S IN THE BOX -->
+<section>
+  <div class="section-label">Komplekti Sisu</div>
+  <h2>Kõik Vajalik<br>Ühes Kastis</h2>
+  <div class="inbox-grid">
+    <div class="inbox-item"><span class="inbox-icon">📦</span><div class="inbox-name">EEL V6 PRO Aku Kast</div><div class="inbox-detail">Roostevaba teras · Rack</div></div>
+    <div class="inbox-item"><span class="inbox-icon">⚡</span><div class="inbox-name">16 × EVE MB31 Element</div><div class="inbox-detail">330+Ah · Grade A · LiFePO₄</div></div>
+    <div class="inbox-item"><span class="inbox-icon">🧠</span><div class="inbox-name">JK BMS V19 200A</div><div class="inbox-detail">CAN/RS485 · 2A aktiivne bal.</div></div>
+    <div class="inbox-item"><span class="inbox-icon">🔥</span><div class="inbox-name">Aerosool Kustutussüsteem</div><div class="inbox-detail">Automaatne aktiveerimine</div></div>
+    <div class="inbox-item"><span class="inbox-icon">🔌</span><div class="inbox-name">Class-T 250A Kaitse</div><div class="inbox-detail">+ 250A DC katkesti</div></div>
+    <div class="inbox-item"><span class="inbox-icon">🔩</span><div class="inbox-name">400A Tugevdatud Klemmid</div><div class="inbox-detail">P+ ja P− klemmipaari</div></div>
+    <div class="inbox-item"><span class="inbox-icon">🌡️</span><div class="inbox-name">Paindlikud Busbarid</div><div class="inbox-detail">Vaskbusbarid + PCB plaadid</div></div>
+    <div class="inbox-item"><span class="inbox-icon">🏷️</span><div class="inbox-name">EVA Vahtplast + Lukud</div><div class="inbox-detail">Käepidemed + montaaž</div></div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section id="pricing" class="pricing-section">
+  <div class="section-label">Hinnad</div>
+  <h2>Vali Oma Variant</h2>
+  <div class="pricing-grid">
+    <div class="price-card featured">
+      <div class="price-variant">// VARIANT 1</div>
+      <div class="price-title">Valmis Komplekt</div>
+      <div class="price-amount">
+        <span class="price-num">1 849</span>
+        <span class="price-currency">€</span>
+      </div>
+      <div class="price-km">+ 22% KM = <strong>2 256 €</strong></div>
+      <ul class="price-features">
+        <li>16 × EVE MB31 element (330+Ah, Grade A)</li>
+        <li>EEL V6 PRO kast JK BMS V19-ga</li>
+        <li>Kokkupandud, testitud ja kasutusvalmis</li>
+        <li>Plug-and-play ühendus inverteriga</li>
+        <li>Kohalik garantii ja tugi</li>
+        <li>Tarnimine kohe peale elementide saabumist</li>
+      </ul>
+      <a href="#kontakt" class="btn-primary" style="width:100%; justify-content:center;">→ Broneeri valmis komplekt</a>
+    </div>
+    <div class="price-card">
+      <div class="price-variant">// VARIANT 2</div>
+      <div class="price-title">DIY Kit</div>
+      <div class="price-amount">
+        <span class="price-num">1 649</span>
+        <span class="price-currency">€</span>
+      </div>
+      <div class="price-km">+ 22% KM = <strong>2 012 €</strong></div>
+      <ul class="price-features">
+        <li>16 × EVE MB31 element (330+Ah, Grade A)</li>
+        <li>EEL V6 PRO kast JK BMS V19-ga</li>
+        <li>Kast ja elemendid tarnida eraldi</li>
+        <li>Paned ise kokku oma tempos</li>
+        <li>Kast saadaval kohe · Elemendid mais</li>
+        <li>Säästud 244€ vs. valmis komplekt</li>
+      </ul>
+      <a href="#kontakt" class="btn-secondary" style="width:100%; justify-content:center;">→ Broneeri DIY kit</a>
+    </div>
+  </div>
+
+  <!-- PREORDER -->
+  <div class="preorder-box">
+    <div class="preorder-title">⚡ EEL-MÜÜGI INFO</div>
+    <p class="preorder-text">EVE MB31 elemendid saabuvad <strong>mais 2025</strong>. Broneering kindlustab sulle eelmüügihinna ja eelisjärjekorra tarnimiseks. DIY kit'i puhul saame kasti tarnida juba varem — elemendid lisanduvad mais.</p>
+    <div class="preorder-timeline">
+      <div class="timeline-step">
+        <div class="timeline-date">KOHE</div>
+        <div class="timeline-desc">Broneeri eel-müügi hinnaga</div>
+      </div>
+      <div class="timeline-step">
+        <div class="timeline-date">APRILL</div>
+        <div class="timeline-desc">DIY — kast tarnitakse</div>
+      </div>
+      <div class="timeline-step">
+        <div class="timeline-date">MAI 2025</div>
+        <div class="timeline-desc">EVE elemendid saabuvad · Komplektid tarnitakse</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPATIBILITY -->
+<section>
+  <div class="section-label">Ühilduvus</div>
+  <h2>Töötab Kõigi<br>Populaarsete Invertoritega</h2>
+  <p style="color: var(--text2); max-width: 600px; margin-top: 16px;">CAN ja RS485 protokollide kaudu ühildub EEL V6 PRO kõigi levinud 48V inverteritega täisautomaatse suhtluse ja BMS andmete edastusega.</p>
+  <div class="compat-grid">
+    <span class="compat-tag">Victron Energy</span>
+    <span class="compat-tag">Growatt</span>
+    <span class="compat-tag">Deye</span>
+    <span class="compat-tag">SolaX</span>
+    <span class="compat-tag">Sungrow</span>
+    <span class="compat-tag">Goodwe</span>
+    <span class="compat-tag">Luxpower</span>
+    <span class="compat-tag">PylonTech ühilduv</span>
+    <span class="compat-tag">SRNE</span>
+    <span class="compat-tag">EasySolar</span>
+    <span class="compat-tag">Fronius</span>
+    <span class="compat-tag">+ palju muud</span>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<div class="divider"></div>
+<footer id="kontakt">
+  <div>
+    <div class="footer-brand">⚡ EEL ENERGY</div>
+    <div style="margin-top: 12px; font-size: 14px; color: var(--text2);">Eestimaised päikeseenergia lahendused</div>
+  </div>
+  <div class="footer-note">
+    * Kõik hinnad on näidatud ilma käibemaksuta.<br>
+    Lisandub 22% KM. Eel-müügi hinnad kehtivad kuni laovaru lõppemiseni.
+  </div>
+</footer>
+
+<script>
+  // Smooth scroll
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      e.preventDefault();
+      const el = document.querySelector(a.getAttribute('href'));
+      if (el) el.scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+
+  // Cell animation
+  const cells = document.querySelectorAll('.cell');
+  setInterval(() => {
+    const randomCell = cells[Math.floor(Math.random() * cells.length)];
+    randomCell.style.transition = 'all 0.8s';
+    randomCell.style.borderColor = 'rgba(0,229,160,0.5)';
+    setTimeout(() => { randomCell.style.borderColor = ''; }, 1200);
+  }, 600);
+
+  // SOC counter animation
+  const socEl = document.querySelector('.screen-soc');
+  let soc = 87;
+  setInterval(() => {
+    soc = 82 + Math.floor(Math.random() * 12);
+    socEl.textContent = soc + '%';
+  }, 4000);
+</script>
+</body>
+</html>
