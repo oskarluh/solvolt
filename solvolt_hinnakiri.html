@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>SolVolt — Hinnakiri 2026</title>
+<style>
+  :root {
+    --bg:     #0d0f14;
+    --bg1:    #12151c;
+    --bg2:    #1a1e28;
+    --border: #1f2535;
+    --accent: #2b7fff;
+    --accent2:#1d6fe0;
+    --text1:  #e8ecf3;
+    --text2:  #a8b3c8;
+    --text3:  #5a6478;
+    --brand-row: #151922;
+    --ff: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  }
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--text1);font-family:var(--ff);font-size:14px;line-height:1.5}
+
+  /* NAV */
+  .nav{position:sticky;top:0;z-index:100;background:rgba(13,15,20,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:0 24px}
+  .nav-inner{max-width:1280px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:60px;gap:24px}
+  .logo{font-size:1.45rem;font-weight:800;color:var(--text1);text-decoration:none;letter-spacing:-.02em}
+  .logo span{color:var(--accent)}
+  .nav-meta{font-size:.78rem;color:var(--text3);text-align:right}
+
+  /* HERO */
+  .hero{background:var(--bg1);border-bottom:1px solid var(--border);padding:48px 24px 40px}
+  .hero-inner{max-width:1280px;margin:0 auto}
+  .hero h1{font-size:clamp(1.6rem,3vw,2.4rem);font-weight:800;letter-spacing:-.03em;margin-bottom:10px}
+  .hero h1 em{color:var(--accent);font-style:normal}
+  .hero p{color:var(--text2);max-width:560px;font-size:.92rem;margin-bottom:20px}
+  .hero-chips{display:flex;flex-wrap:wrap;gap:10px}
+  .chip{display:inline-flex;align-items:center;gap:6px;background:var(--bg2);border:1px solid var(--border);border-radius:50px;padding:5px 14px;font-size:.78rem;color:var(--text2)}
+  .chip b{color:var(--text1)}
+
+  /* LAYOUT */
+  .layout{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:220px 1fr;gap:0;min-height:calc(100vh - 100px)}
+
+  /* SIDEBAR */
+  .sidebar{border-right:1px solid var(--border);padding:28px 0;position:sticky;top:60px;height:calc(100vh - 60px);overflow-y:auto}
+  .sidebar h3{font-size:.7rem;font-weight:700;color:var(--text3);letter-spacing:.1em;text-transform:uppercase;padding:0 20px 10px}
+  .sidebar ul{list-style:none}
+  .sidebar ul li a{display:block;padding:7px 20px;font-size:.82rem;color:var(--text2);text-decoration:none;border-left:2px solid transparent;transition:.15s ease}
+  .sidebar ul li a:hover{color:var(--text1);border-left-color:var(--accent);background:var(--bg2)}
+
+  /* MAIN */
+  .main{padding:32px 28px 80px}
+
+  /* SECTION */
+  .cat-section{margin-bottom:48px}
+  .cat-header{margin-bottom:16px;padding-bottom:12px;border-bottom:1px solid var(--border)}
+  .cat-header h2{font-size:1.15rem;font-weight:700;color:var(--text1)}
+
+  /* TABLE */
+  .price-table{width:100%;border-collapse:collapse;font-size:.82rem}
+  .price-table thead tr{background:var(--bg2)}
+  .price-table thead th{padding:9px 14px;text-align:left;font-size:.72rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--text3);border-bottom:1px solid var(--border)}
+  .price-table thead th:last-child{text-align:right}
+  .price-table tbody tr{border-bottom:1px solid rgba(31,37,53,.6);transition:background .1s}
+  .price-table tbody tr:hover{background:var(--bg2)}
+  .price-table tbody td{padding:7px 14px;color:var(--text2)}
+  .brand-row{background:var(--brand-row)!important}
+  .brand-row td{color:var(--accent)!important;font-weight:700!important;font-size:.75rem;letter-spacing:.05em;text-transform:uppercase;padding:8px 14px!important}
+  .price-cell{text-align:right!important;font-weight:600;color:var(--text1)!important;white-space:nowrap;font-variant-numeric:tabular-nums}
+
+  /* FOOTER */
+  .footer{background:var(--bg1);border-top:1px solid var(--border);padding:28px 24px;font-size:.78rem;color:var(--text3);text-align:center}
+  .footer a{color:var(--text3)}
+
+  /* PRINT */
+  @media print{
+    .sidebar,.nav{display:none}
+    .layout{grid-template-columns:1fr}
+    .main{padding:0}
+    .cat-section{page-break-inside:avoid}
+  }
+  @media(max-width:768px){
+    .layout{grid-template-columns:1fr}
+    .sidebar{display:none}
+    .main{padding:20px 16px}
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="logo" href="#">Sol<span>volt</span></a>
+    <div class="nav-meta">
+      Hinnakiri kehtib alates 20.03.2026<br>
+      Hinnad sisaldavad käibemaksuta. Tel: <a href="tel:+37253928910" style="color:var(--text3)">+372 5392 8910</a>
+    </div>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="hero-inner">
+    <h1>Solvolt <em>Hinnakiri</em> 2026</h1>
+    <p>Päikesepaneelid, inverterid, akud, kinnitussüsteemid ja lisaseadmed. Kõik hinnad on käibemaksuta (km-ta).</p>
+    <div class="hero-chips">
+      <span class="chip">📅 <b>20.03.2026</b></span>
+      <span class="chip">💶 Hinnad <b>km-ta</b></span>
+      <span class="chip">📦 Tarneaeg <b>3–7 tööpäeva</b></span>
+      <span class="chip">📞 <b>+372 5392 8910</b></span>
+      <span class="chip">✉️ <b>solvolt.info@gmail.com</b></span>
+    </div>
+  </div>
+</div>
+
+<div class="layout">
+  <aside class="sidebar">
+    <h3>Kategooriad</h3>
+    <ul>
+      <li><a href="#paikesepaneelid">Päikesepaneelid</a></li>
+<li><a href="#inverterid-ja-mikroinverterid">Inverterid ja Mikroinverterid</a></li>
+<li><a href="#akud-ja-energiasalvestus">Akud ja Energiasalvestus</a></li>
+<li><a href="#optimaatorid">Optimaatorid</a></li>
+<li><a href="#kinnitussusteemid">Kinnitussüsteemid</a></li>
+<li><a href="#ev-laadijad">EV Laadijad</a></li>
+<li><a href="#soojuspumbad">Soojuspumbad</a></li>
+<li><a href="#kliimaseadmed">Kliimaseadmed</a></li>
+<li><a href="#inverteri-+-aku-komplektid">Inverteri + Aku komplektid</a></li>
+
+    </ul>
+  </aside>
+  <main class="main">
+    
+<section class="cat-section" id="paikesepaneelid">
+  <div class="cat-header">
+    <h2>Päikesepaneelid</h2>
+  </div>
+  <table class="price-table">
+    <thead><tr><th>Toote nimetus</th><th>Hind (km-ta)</th></tr></thead>
+    <tbody>
+      <tr class="brand-row"><td colspan="2">Ja Solar</td></tr>
+<tr><td>JA SOLAR JAM54D41 BIFACIAL 450W LB Full black MC4 (N-Type)</td><td class="price-cell">68 €</td></tr>
+<tr><td>JA SOLAR JAM54D40 BIFACIAL 455W LB Black Frame MC4 (N-Type)</td><td class="price-cell">72 €</td></tr>
+<tr><td>JA SOLAR JAM60D41 BIFACIAL 500W LB Full black MC4 (N-Type)</td><td class="price-cell">73 €</td></tr>
+<tr><td>JA SOLAR JAM60D40 BIFACIAL 500W LB Black Frame MC4 (N-Type)</td><td class="price-cell">72 €</td></tr>
+<tr><td>JA SOLAR JAM60D42 BIFACIAL 530W LB Black Frame (N-Type) MC4</td><td class="price-cell">74 €</td></tr>
+<tr><td>JA SOLAR JAM72D42-630W LB BIFACIAL (N-Type) MC4-EVO2</td><td class="price-cell">95 €</td></tr>
+<tr><td>JA SOLAR JAM72D42-635W LB BIFACIAL (N-Type) MC4-EVO2</td><td class="price-cell">96 €</td></tr>
+<tr><td>JA SOLAR JAM72D42-645W LB BIFACIAL (N-Type) MC4-EVO2</td><td class="price-cell">98 €</td></tr>
+<tr><td>JA SOLAR JAM66D46-710/LB Double Glass Bifacial Modules (N-Type)</td><td class="price-cell">104 €</td></tr>
+<tr class="brand-row"><td colspan="2">Hyundai</td></tr>
+<tr><td>HYUNDAI HiT-H455LE-FB(ZB) Premium N-Type HJT module (fullblack)</td><td class="price-cell">66 €</td></tr>
+<tr><td>HYUNDAI HiT-H455CE-BF (ZB) Bifacial module, Premium N-Type HJT (black frame)</td><td class="price-cell">65 €</td></tr>
+<tr><td>HYUNDAI HiT-H500CF-BF(ZB) Bifacial module, Premium N-Type HJT (black frame)</td><td class="price-cell">70 €</td></tr>
+<tr><td>HYUNDAI HiT-H500LF-FB(ZB) Premium N-Type HJT module (fullblack)</td><td class="price-cell">72 €</td></tr>
+<tr class="brand-row"><td colspan="2">Jinko</td></tr>
+<tr><td>JINKO JKM460N-48HL4M-DV 460W Black Frame (Tiger neo N-Type)</td><td class="price-cell">69 €</td></tr>
+<tr><td>JINKO JKM590N-72HL4-BDV BIFACIAL 590W (Tiger neo N-Type)</td><td class="price-cell">90 €</td></tr>
+<tr><td>JINKO JKM630N-78HL4-BDV BIFACIAL 630W (Tiger neo N-Type)</td><td class="price-cell">96 €</td></tr>
+<tr class="brand-row"><td colspan="2">Jolywood</td></tr>
+<tr><td>JOLYWOOD JW-HD-108N-460W R2 BIFACIAL Full black (N-type)</td><td class="price-cell">74 €</td></tr>
+<tr><td>JOLYWOOD JW-HD-108N-500W R2 BIFACIAL Black Frame (N-type)</td><td class="price-cell">64 €</td></tr>
+<tr><td>JOLYWOOD JW-HD-108N-500W R2 BIFACIAL Full black (N-type)</td><td class="price-cell">73 €</td></tr>
+<tr><td>JOLYWOOD JW-HD-132N-R2-630W BIFACIAL (N-type)</td><td class="price-cell">92 €</td></tr>
+<tr><td>JOLYWOOD JW-HD-156N-R0-640W BIFACIAL (N-type)</td><td class="price-cell">93 €</td></tr>
+<tr><td>JOLYWOOD JW-HD-132N 705W BIFACIAL (N-type)</td><td class="price-cell">103 €</td></tr>
+<tr><td>JOLYWOOD JW-HD-132N 710W BIFACIAL (N-type)</td><td class="price-cell">103 €</td></tr>
+<tr class="brand-row"><td colspan="2">Longi</td></tr>
+<tr><td>LONGI SOLAR LR8-66HGD 615W Bifacial (HIMO7)</td><td class="price-cell">87 €</td></tr>
+
+    </tbody>
+  </table>
+</section>
+
+<section class="cat-section" id="inverterid-ja-mikroinverterid">
+  <div class="cat-header">
+    <h2>Inverterid ja Mikroinverterid</h2>
+  </div>
+  <table class="price-table">
+    <thead><tr><th>Toote nimetus</th><th>Hind (km-ta)</th></tr></thead>
+    <tbody>
+      <tr class="brand-row"><td colspan="2">Deye</td></tr>
+<tr><td>DEYE Hybrid inverter SUN-3.6K-SG05LP1-EU-AM2-P 1-phase</td><td class="price-cell">669 €</td></tr>
+<tr><td>DEYE Hybrid inverter SUN-5K-SG05LP1-EU-AM2-P 1-phase</td><td class="price-cell">718 €</td></tr>
+<tr><td>DEYE Hybrid inverter SUN-6K-SG05LP1-EU 1-phase</td><td class="price-cell">733 €</td></tr>
+<tr><td>DEYE Hybrid inverter SUN-8K-SG05LP1-EU 1-phase</td><td class="price-cell">1007 €</td></tr>
+<tr><td>DEYE Hybrid inverter SUN-10K-SG02LP1-U 1-phase</td><td class="price-cell">1414 €</td></tr>
+<tr><td>DEYE Hybrid inverter SUN-12K-SG02LP1-EU</td><td class="price-cell">1475 €</td></tr>
+<tr><td>DEYE 3-phase hybrid inverter SUN-5kW-SG05LP3-EU-SM2 (low voltage)</td><td class="price-cell">1375 €</td></tr>
+<tr><td>DEYE 3-phase hybrid inverter SUN-6K-SG05LP3-EU-SM2 (low voltage)</td><td class="price-cell">1396 €</td></tr>
+<tr><td>DEYE 3-phase hybrid inverter SUN-8K-SG05LP3-EU-SM2 (low voltage)</td><td class="price-cell">1446 €</td></tr>
+<tr><td>DEYE 3-phase hybrid inverter SUN-10K-SG05LP3-EU-SM2 (low voltage)</td><td class="price-cell">1500 €</td></tr>
+<tr><td>DEYE 3-phase hybrid inverter SUN-12K-SG05LP3-EU (low voltage)</td><td class="price-cell">1540 €</td></tr>
+<tr><td>DEYE Hybrid Inverter SUN-14K-SG05LP3-EU-SM2 3-phase (low voltage)</td><td class="price-cell">1717 €</td></tr>
+<tr><td>DEYE Hybrid Inverter SUN-15K-SG05LP3-EU 3-phase (low voltage)</td><td class="price-cell">1762 €</td></tr>
+<tr><td>DEYE Hybrid Inverter SUN-16K-SG05LP3-EU-SM2 3-phase (low voltage)</td><td class="price-cell">1846 €</td></tr>
+<tr><td>DEYE Hybrid Inverter SUN-18K-SG05LP3-EU-SM2 3-phase (low voltage)</td><td class="price-cell">2158 €</td></tr>
+<tr><td>DEYE Hybrid Inverter SUN-20K-SG05LP3-EU 3-phase (low voltage)</td><td class="price-cell">2353 €</td></tr>
+<tr><td>DEYE SUN-5K-SG01HP3-EU-AM2 3-phase hybrid inverter (high voltage)</td><td class="price-cell">963 €</td></tr>
+<tr><td>DEYE SUN-6K-SG01HP3-EU-AM2 3-phase hybrid inverter (high voltage)</td><td class="price-cell">1000 €</td></tr>
+<tr><td>DEYE SUN-8K-SG01HP3-EU-AM2 3-phase hybrid inverter (high voltage)</td><td class="price-cell">1037 €</td></tr>
+<tr><td>DEYE SUN-10K-SG01HP3-EU-AM2 3-phase hybrid inverter (high voltage)</td><td class="price-cell">1099 €</td></tr>
+<tr><td>DEYE SUN-10K-SG01HP3-EU-DM2 3-phase hybrid inverter (high voltage)</td><td class="price-cell">1116 €</td></tr>
+<tr><td>DEYE SUN-12K-SG01HP3-EU-AM2 3-phase hybrid inverter (high voltage)</td><td class="price-cell">1182 €</td></tr>
+<tr><td>DEYE Hybrid inverter SUN-12K-SG01HP3-EU-DM2 3-phase (high voltage)</td><td class="price-cell">1182 €</td></tr>
+<tr><td>DEYE SUN-15K-SG01HP3-EU-AM2 3-phase hybrid inverter (high voltage)</td><td class="price-cell">1344 €</td></tr>
+<tr><td>DEYE SUN-20K-SG01HP3-EU-AM2 3-phase hybrid inverter (high voltage)</td><td class="price-cell">1607 €</td></tr>
+<tr><td>DEYE Hybrid inverter SUN-25K-SG01HP3-EU-AM2 3-phase (high voltage)</td><td class="price-cell">1708 €</td></tr>
+<tr><td>DEYE Hybrid inverter SUN-30K-SG02HP3-EU-AM3 3-phase (high voltage)</td><td class="price-cell">2607 €</td></tr>
+<tr><td>DEYE Hybrid inverter SUN-35K-SG01HP3-EU 3-phase (high-voltage)</td><td class="price-cell">3495 €</td></tr>
+<tr><td>DEYE Hybrid inverter SUN-40K-SG01HP3-EU-BM4 3-phase (high voltage)</td><td class="price-cell">3617 €</td></tr>
+<tr><td>DEYE Hybrid inverter SUN-50K-SG01HP3-EU-BM4 3-phase (high voltage)</td><td class="price-cell">3967 €</td></tr>
+<tr><td>DEYE Hybrid Inverter SUN-80K-SG02HP3-EU-EM6 3-phase (high voltage)</td><td class="price-cell">5674 €</td></tr>
+<tr><td>DEYE Hybrid inverter SUN-125K-SG02HP3-EU-GM10 3-phase (high voltage)</td><td class="price-cell">7785 €</td></tr>
+<tr class="brand-row"><td colspan="2">Hoymiles</td></tr>
+<tr><td>HOYMILES Microinverter HMS 500-1T 1F (1×670W)</td><td class="price-cell">92 €</td></tr>
+<tr><td>HOYMILES Microinverter HMS 800-2T 1F (2×540W)</td><td class="price-cell">131 €</td></tr>
+<tr><td>HOYMILES Microinverter HMS-1000-2T 1F (2×670W)</td><td class="price-cell">148 €</td></tr>
+<tr><td>HOYMILES Microinverter HMS 1600-4T 1P (4×540W)</td><td class="price-cell">195 €</td></tr>
+<tr><td>HOYMILES Microinverter HMS 1800-4T 1P (4×600W)</td><td class="price-cell">221 €</td></tr>
+<tr><td>HOYMILES Microinverter HMS-2000-4T 1F (4×670W)</td><td class="price-cell">234 €</td></tr>
+<tr><td>HOYMILES Microinverter HMT-1600-4T 3F (4×540W)</td><td class="price-cell">263 €</td></tr>
+<tr><td>HOYMILES Microinverter HMT-1800-4T 3F (4×600W)</td><td class="price-cell">269 €</td></tr>
+<tr><td>HOYMILES Microinverter HMT-2000-4T 3F (4×670W)</td><td class="price-cell">276 €</td></tr>
+<tr><td>HOYMILES Microinverter HMT-2250-6T 3F (6×470W)</td><td class="price-cell">256 €</td></tr>
+<tr><td>HOYMILES Microinverter MIT-5000-8T 3F (8×750W)</td><td class="price-cell">385 €</td></tr>
+<tr><td>HOYMILES Hybrid Inverter HIS-3L-G3 (1-phase)</td><td class="price-cell">630 €</td></tr>
+<tr><td>HOYMILES Hybrid Inverter HIS-3.6L-G3 (1-phase)</td><td class="price-cell">657 €</td></tr>
+<tr><td>HOYMILES Hybrid Inverter HIS-4.6L-G3 (1-phase)</td><td class="price-cell">679 €</td></tr>
+<tr><td>HOYMILES Hybrid Inverter HIS-5L-G3 (1-phase)</td><td class="price-cell">693 €</td></tr>
+<tr><td>HOYMILES Hybrid Inverter HIS-6L-G3 (1-phase)</td><td class="price-cell">706 €</td></tr>
+<tr><td>HOYMILES HIT-5L-G3 (3-phase) Hybrid Inverter (Low Voltage)</td><td class="price-cell">1229 €</td></tr>
+<tr><td>HOYMILES Hybrid Inverter HIT-6L-G3 (3-phase) (Low Voltage)</td><td class="price-cell">1251 €</td></tr>
+<tr><td>HOYMILES Hybrid Inverter HIT-8L-G3 (3-phase) (Low Voltage)</td><td class="price-cell">1314 €</td></tr>
+<tr><td>HOYMILES HIT-10L-G3 (3-phase) Hybrid Inverter (Low Voltage)</td><td class="price-cell">1334 €</td></tr>
+<tr><td>HOYMILES Hybrid Inverter HIT-15L-G3 (3-phase) (Low Voltage)</td><td class="price-cell">1674 €</td></tr>
+<tr><td>HOYMILES Hybrid Inverter HIT-20L-G3 (3-phase) (Low Voltage)</td><td class="price-cell">1867 €</td></tr>
+<tr><td>HOYMILES Hybrid Inverter HYS-4.6LV-EUG1 (1-phase)</td><td class="price-cell">579 €</td></tr>
+<tr><td>HOYMILES Hybrid Inverter HYS-5.0LV-EUG1 (1-phase)</td><td class="price-cell">626 €</td></tr>
+<tr><td>HOYMILES Hybrid Inverter HYS-6.0LV-EUG1 (1-phase)</td><td class="price-cell">644 €</td></tr>
+<tr><td>HOYMILES Hybrid Inverter HYT-5.0HV-EUG1 (3-phase)</td><td class="price-cell">1080 €</td></tr>
+<tr><td>HOYMILES Hybrid Inverter HYT-6.0HV-EUG1 (3-phase)</td><td class="price-cell">1096 €</td></tr>
+<tr><td>HOYMILES Hybrid Inverter HYT-8.0HV-EUG1 (3-phase)</td><td class="price-cell">1123 €</td></tr>
+<tr><td>HOYMILES Hybrid Inverter HYT-10.0HV-EUG1 (3-phase)</td><td class="price-cell">1150 €</td></tr>
+<tr><td>HOYMILES Hybrid Inverter HYT-12.0HV-EUG1 (3-phase)</td><td class="price-cell">1231 €</td></tr>
+<tr><td>HOYMILES AC coupled inverter HAS-3.0LV-EUG1 (1-phase)</td><td class="price-cell">537 €</td></tr>
+<tr><td>HOYMILES AC coupled inverter HAS-3.6LV-EUG1 (1-phase)</td><td class="price-cell">549 €</td></tr>
+<tr><td>HOYMILES AC coupled inverter HAS-4.6LV-EUG1 (1-phase)</td><td class="price-cell">562 €</td></tr>
+<tr><td>HOYMILES AC coupled inverter HAS-5.0LV-EUG1 (1-phase)</td><td class="price-cell">599 €</td></tr>
+<tr><td>HOYMILES AC coupled inverter HAT-5.0HV-EUG1 (3-phase)</td><td class="price-cell">908 €</td></tr>
+<tr><td>HOYMILES AC coupled inverter HAT-6.0HV-EUG1 (3-phase)</td><td class="price-cell">935 €</td></tr>
+<tr><td>HOYMILES AC coupled inverter HAT-8.0HV-EUG1 (3-phase)</td><td class="price-cell">975 €</td></tr>
+<tr><td>HOYMILES AC coupled inverter HAT-10.0HV-EUG1 (3-phase)</td><td class="price-cell">1080 €</td></tr>
+<tr><td>Hoymiles All in one HiOne-8T-G3</td><td class="price-cell">1493 €</td></tr>
+<tr><td>Hoymiles All in one HiOne-10T-G3</td><td class="price-cell">1559 €</td></tr>
+<tr><td>Hoymiles All in one HiOne-12T-G3</td><td class="price-cell">1774 €</td></tr>
+<tr><td>Hoymiles All in one HiOne-16T-G3</td><td class="price-cell">2058 €</td></tr>
+<tr><td>Hoymiles All in one HiOne-20T-G3</td><td class="price-cell">2273 €</td></tr>
+<tr class="brand-row"><td colspan="2">Felicity Solar</td></tr>
+<tr><td>Felicity Off-grid hybrid inverter IVEM5048, 5KW, 48V (1-phase)</td><td class="price-cell">310 €</td></tr>
+<tr><td>Felicity IVEM6048 Off-grid Hybrid Inverter, 6KW, 48V (single-phase)</td><td class="price-cell">326 €</td></tr>
+<tr><td>Felicity Off-grid hybrid inverter IVEM8048, 8KW, 48V (1-phase)</td><td class="price-cell">565 €</td></tr>
+<tr><td>Felicity T-REX-5KLP1G01 Hybrid Inverter 1-phase</td><td class="price-cell">562 €</td></tr>
+<tr><td>Felicity T-REX-6KLP1G01 Hybrid Inverter 1-phase</td><td class="price-cell">632 €</td></tr>
+<tr><td>Felicity T-REX-10KLP3G01 Hybrid Inverter 3-phase (Low Voltage)</td><td class="price-cell">1197 €</td></tr>
+<tr><td>Felicity Hybrid Inverter IVGM 15KLP3G1 3-phase (low voltage)</td><td class="price-cell">1594 €</td></tr>
+<tr><td>Felicity Hybrid Inverter IVGM 20KLP3G1 3-phase (low voltage)</td><td class="price-cell">1816 €</td></tr>
+<tr><td>Felicity Hybrid inverter T-REX-10KHP3G01 3-phase (high voltage)</td><td class="price-cell">696 €</td></tr>
+<tr><td>Felicity Hybrid inverter IVGM 30KHP3G2 3-phase (high voltage)</td><td class="price-cell">2523 €</td></tr>
+<tr><td>Felicity Hybrid inverter IVGM40KHP3G2 3-phase (high voltage)</td><td class="price-cell">2823 €</td></tr>
+<tr><td>Felicity Hybrid inverter T-REX-50KHP3G01 3-phase (high voltage)</td><td class="price-cell">3241 €</td></tr>
+<tr class="brand-row"><td colspan="2">Sofar Solar</td></tr>
+<tr><td>SOFAR PowerAll Hybrid Inverter ESI 3.68K-S1 1-Phase 2xMPPT</td><td class="price-cell">856 €</td></tr>
+<tr><td>SOFAR PowerAll Hybrid Inverter ESI 4K-S1 1-Phase 2xMPPT</td><td class="price-cell">866 €</td></tr>
+<tr><td>SOFAR PowerAll Hybrid Inverter ESI 4.6K-S1 1-Phase 2xMPPT</td><td class="price-cell">887 €</td></tr>
+<tr><td>SOFAR PowerAll Hybrid Inverter ESI 5K-T1 3-Phase 3xMPPT</td><td class="price-cell">1110 €</td></tr>
+<tr><td>SOFAR PowerAll Hybrid Inverter ESI 6.5K-T1 3-Phase 3xMPPT</td><td class="price-cell">1202 €</td></tr>
+<tr><td>SOFAR PowerAll Hybrid Inverter ESI 8K-T1 3-Phase 3xMPPT</td><td class="price-cell">1373 €</td></tr>
+<tr><td>SOFAR PowerAll ESI 10K-T1 3-Phase 3xMPPT</td><td class="price-cell">1405 €</td></tr>
+<tr><td>SOFAR PowerAll Hybrid Inverter ESI 12K-T1 3-Phase 3xMPPT</td><td class="price-cell">1539 €</td></tr>
+<tr><td>SOFAR Hybrid inverter HYD5KTL-3PH 3-phase 2xMPPT</td><td class="price-cell">1006 €</td></tr>
+<tr><td>SOFAR Hybrid inverter HYD6KTL-3PH 3-phase 2xMPPT</td><td class="price-cell">1103 €</td></tr>
+<tr><td>SOFAR Hybrid inverter HYD8KTL-3PH 3-phase 2xMPPT</td><td class="price-cell">1198 €</td></tr>
+<tr><td>SOFAR Hybrid inverter HYD10KTL-3PH 3-phase 2xMPPT</td><td class="price-cell">1224 €</td></tr>
+<tr><td>SOFAR Hybrid inverter HYD15KTL-3PH 3-phase 2xMPPT</td><td class="price-cell">1590 €</td></tr>
+<tr><td>SOFAR Hybrid inverter HYD20KTL-3PH 3-phase 2xMPPT</td><td class="price-cell">1681 €</td></tr>
+<tr><td>SOFAR Hybrid Inverter 40K-T1 3-phase 4xMPPT</td><td class="price-cell">4182 €</td></tr>
+<tr><td>SOFAR Hybrid Inverter HYD-50K-T1 3-phase 4xMPPT</td><td class="price-cell">4343 €</td></tr>
+<tr><td>SOFAR HYD-60K-T1 hybrid three-phase inverter</td><td class="price-cell">4491 €</td></tr>
+<tr><td>SOFAR Hybrid Inverter 80KTLX-G4-ESS 9xMPPT</td><td class="price-cell">3824 €</td></tr>
+<tr><td>SOFAR Hybrid Inverter 100KTLX-G4-ESS 9xMPPT</td><td class="price-cell">4430 €</td></tr>
+<tr><td>SOFAR Hybrid Inverter 110KTLX-G4-ESS 9xMPPT</td><td class="price-cell">4485 €</td></tr>
+<tr class="brand-row"><td colspan="2">Growatt</td></tr>
+<tr><td>GROWATT Off-grid inverter SPF 6000ES PLUS, 48VDC MPPT 100A, WiFi</td><td class="price-cell">400 €</td></tr>
+<tr><td>GROWATT MIN-3600TL-XH 1-phase hybrid inverter (AFCI)</td><td class="price-cell">470 €</td></tr>
+<tr><td>GROWATT MIN-5000TL-XH 1-phase hybrid inverter (AFCI)</td><td class="price-cell">558 €</td></tr>
+<tr><td>GROWATT WIT-6K-HU hybrid inverter, low voltage, 3-phase</td><td class="price-cell">1167 €</td></tr>
+<tr><td>GROWATT WIT-8K-HU hybrid inverter, low voltage, 3-phase</td><td class="price-cell">1305 €</td></tr>
+<tr><td>GROWATT WIT-10K-HU hybrid inverter, low voltage, 3-phase</td><td class="price-cell">1373 €</td></tr>
+<tr><td>GROWATT WIT-12K-HU hybrid inverter, low voltage, 3-phase</td><td class="price-cell">1466 €</td></tr>
+<tr><td>GROWATT WIT-15K-HU hybrid inverter, low voltage, 3-phase</td><td class="price-cell">1540 €</td></tr>
+<tr><td>GROWATT WIT-18K-HU hybrid inverter, 3-phase</td><td class="price-cell">1739 €</td></tr>
+<tr><td>GROWATT WIT-20K-HU hybrid inverter, 3-phase</td><td class="price-cell">2051 €</td></tr>
+<tr><td>GROWATT WIT-25K-HU hybrid inverter, 3-phase</td><td class="price-cell">2558 €</td></tr>
+<tr><td>GROWATT MOD-4000TL3-XH(BP) 3-phase hybrid inverter (AFCI)</td><td class="price-cell">783 €</td></tr>
+<tr><td>GROWATT MOD-5000TL3-XH(BP) 3-phase hybrid inverter (AFCI)</td><td class="price-cell">800 €</td></tr>
+<tr><td>GROWATT MOD-6000TL3-XH(BP) 3-phase hybrid inverter (AFCI)</td><td class="price-cell">864 €</td></tr>
+<tr><td>GROWATT MOD-8000TL3-XH(BP) 3-phase hybrid inverter (AFCI)</td><td class="price-cell">1029 €</td></tr>
+<tr><td>GROWATT MOD-10KTL3-HU 3-phase hybrid inverter (AFCI)</td><td class="price-cell">1182 €</td></tr>
+<tr><td>GROWATT MOD-12KTL3-HU 3-phase hybrid inverter (AFCI)</td><td class="price-cell">1196 €</td></tr>
+<tr><td>GROWATT MOD-15KTL3-HU 3-phase hybrid inverter (AFCI)</td><td class="price-cell">1250 €</td></tr>
+<tr><td>GROWATT MID-20KTL3-XH 3-phase (AFCI)</td><td class="price-cell">1500 €</td></tr>
+<tr><td>GROWATT MID-25KTL3-XH 3-phase (AFCI)</td><td class="price-cell">1735 €</td></tr>
+<tr><td>GROWATT MID-30KTL3-XH 3-phase (AFCI)</td><td class="price-cell">1908 €</td></tr>
+<tr><td>GROWATT Hybrid Inverter WIT-30K-XHU 3-phase</td><td class="price-cell">3113 €</td></tr>
+<tr><td>GROWATT Hybrid Inverter WIT-36K-XHU 3-phase</td><td class="price-cell">3214 €</td></tr>
+<tr><td>GROWATT Hybrid Inverter WIT-40K-XHU 3-phase</td><td class="price-cell">3523 €</td></tr>
+<tr><td>GROWATT Hybrid Inverter WIT-50K-XHU 3-phase</td><td class="price-cell">3671 €</td></tr>
+<tr><td>GROWATT WIT-100K-HU 3-phase hybrid inverter</td><td class="price-cell">8578 €</td></tr>
+<tr class="brand-row"><td colspan="2">Huawei</td></tr>
+<tr><td>HUAWEI SUN2000 3.68KTL-L1 / 1-phase</td><td class="price-cell">591 €</td></tr>
+<tr><td>HUAWEI SUN2000-5KTL-M1 HIGH CURRENT</td><td class="price-cell">713 €</td></tr>
+<tr><td>HUAWEI SUN2000-6KTL-M1 HIGH CURRENT</td><td class="price-cell">857 €</td></tr>
+<tr><td>HUAWEI SUN2000-8KTL-M1 HIGH CURRENT</td><td class="price-cell">895 €</td></tr>
+<tr><td>HUAWEI SUN2000-10KTL-M1 HIGH CURRENT</td><td class="price-cell">1006 €</td></tr>
+<tr><td>HUAWEI SUN2000-15KTL-M5 HIGH CURRENT</td><td class="price-cell">1217 €</td></tr>
+<tr><td>HUAWEI SUN2000-17KTL-M5 HIGH CURRENT</td><td class="price-cell">1150 €</td></tr>
+<tr><td>HUAWEI Hybrid inverter SUN2000-5K-MAP0 3-phase</td><td class="price-cell">1042 €</td></tr>
+<tr><td>HUAWEI Hybrid inverter SUN2000-6K-MAP0 3-phase</td><td class="price-cell">1016 €</td></tr>
+<tr><td>HUAWEI Hybrid inverter SUN2000-8K-MAP0 3-phase</td><td class="price-cell">1260 €</td></tr>
+<tr><td>HUAWEI Hybrid inverter SUN2000-10K-MAP0 3-phase</td><td class="price-cell">1553 €</td></tr>
+<tr><td>HUAWEI Hybrid inverter SUN2000-12K-MAP0 3-phase</td><td class="price-cell">1664 €</td></tr>
+<tr><td>HUAWEI Hybrid Inverter SUN2000-12K-MB0</td><td class="price-cell">1879 €</td></tr>
+<tr><td>HUAWEI Hybrid Inverter SUN2000-15K-MB0</td><td class="price-cell">2138 €</td></tr>
+<tr><td>HUAWEI Hybrid Inverter SUN2000-20K-MB0</td><td class="price-cell">2380 €</td></tr>
+<tr><td>HUAWEI Hybrid Inverter SUN2000-25K-MB0</td><td class="price-cell">2414 €</td></tr>
+<tr><td>HUAWEI SUN2000-40KTL-M3</td><td class="price-cell">2581 €</td></tr>
+<tr><td>HUAWEI SUN2000-50KTL-M3</td><td class="price-cell">2586 €</td></tr>
+<tr><td>HUAWEI SUN2000-100KTL-M2 (AFCI)</td><td class="price-cell">4236 €</td></tr>
+<tr><td>HUAWEI SUN2000-115KTL-M2</td><td class="price-cell">4383 €</td></tr>
+<tr><td>HUAWEI SUN2000-150KTL-MG0 AFCI</td><td class="price-cell">5885 €</td></tr>
+<tr><td>HUAWEI SUN2000-185KTL-H1</td><td class="price-cell">4975 €</td></tr>
+<tr><td>HUAWEI SUN2000-215KTL-H3</td><td class="price-cell">6040 €</td></tr>
+<tr><td>HUAWEI SUN2000-330KTL-H1</td><td class="price-cell">8592 €</td></tr>
+<tr class="brand-row"><td colspan="2">SolarEdge</td></tr>
+<tr><td>SolarEdge SE5K HOME HUB, HYBRID 3-phase</td><td class="price-cell">1466 €</td></tr>
+<tr><td>SolarEdge SE8K HOME HUB, HYBRID 3-phase</td><td class="price-cell">1681 €</td></tr>
+<tr><td>SolarEdge SE10K HOME HUB, HYBRID 3-phase</td><td class="price-cell">1773 €</td></tr>
+<tr><td>SolarEdge SE9K 3 Phase-RW0</td><td class="price-cell">4531 €</td></tr>
+<tr><td>SolarEdge SE100K 3-phase kit</td><td class="price-cell">3899 €</td></tr>
+<tr><td>SolarEdge SE33.3K 3-phase</td><td class="price-cell">1629 €</td></tr>
+<tr><td>SolarEdge SE50K 3-phase kit</td><td class="price-cell">2683 €</td></tr>
+
+    </tbody>
+  </table>
+</section>
+
+<section class="cat-section" id="akud-ja-energiasalvestus">
+  <div class="cat-header">
+    <h2>Akud ja Energiasalvestus</h2>
+  </div>
+  <table class="price-table">
+    <thead><tr><th>Toote nimetus</th><th>Hind (km-ta)</th></tr></thead>
+    <tbody>
+      <tr class="brand-row"><td colspan="2">Deye</td></tr>
+<tr><td>Deye battery AE-F2.0 51.1V 2kWh (low voltage)</td><td class="price-cell">443 €</td></tr>
+<tr><td>DEYE All In One AE-FS2.0-2H2 (1000W + 2kWh battery) low voltage</td><td class="price-cell">713 €</td></tr>
+<tr><td>DEYE Battery SE-G5.1-Pro-B 51.2V 100Ah 5.12kWh (low voltage)</td><td class="price-cell">740 €</td></tr>
+<tr><td>DEYE Battery SE-F5 PRO 51.2V 100Ah 5.12kWh ver. C (low voltage)</td><td class="price-cell">735 €</td></tr>
+<tr><td>Deye Battery RW-M6.1-B 51.2V 120Ah 6.14kWh IP65 (low voltage)</td><td class="price-cell">1021 €</td></tr>
+<tr><td>Deye Battery RW-F10.2 51.2V 200Ah 10.2kWh IP65 (low voltage)</td><td class="price-cell">1974 €</td></tr>
+<tr><td>DEYE Battery SE-F12-C 51.2V 230Ah 11.8kWh (low voltage)</td><td class="price-cell">1490 €</td></tr>
+<tr><td>DEYE Battery SE-F16-C 51.2V 314Ah 16kWh (low voltage)</td><td class="price-cell">1742 €</td></tr>
+<tr><td>Deye RW-F16 51.2V 314Ah 16kWh Battery (low voltage)</td><td class="price-cell">2001 €</td></tr>
+<tr><td>DEYE Battery AI-W5.1-B 5.12kWh IP65 (low voltage)</td><td class="price-cell">982 €</td></tr>
+<tr><td>DEYE Energy storage HV battery GB-L 4.09kWh (high voltage)</td><td class="price-cell">803 €</td></tr>
+<tr><td>DEYE Energy storage HV battery GB-L-PRO 4kWh (high voltage)</td><td class="price-cell">814 €</td></tr>
+<tr><td>DEYE energy storage battery HV BOS-G PRO 5.12kWh (high voltage)</td><td class="price-cell">740 €</td></tr>
+<tr><td>DEYE Energy storage HV battery BOS-A 7.68kWh (high voltage)</td><td class="price-cell">1110 €</td></tr>
+<tr><td>DEYE Energy Storage HV battery BOS-B-Pack16-A3 16kWh (high voltage)</td><td class="price-cell">1937 €</td></tr>
+<tr><td>DEYE Energy Storage HV battery GE-F60 614.4V 100Ah 61.44kWh (high voltage)</td><td class="price-cell">15368 €</td></tr>
+<tr><td>DEYE GB-L8 PRO 8kWh battery set (high voltage)</td><td class="price-cell">2222 €</td></tr>
+<tr><td>DEYE GB-L12 PRO battery set 12kWh (high voltage)</td><td class="price-cell">3035 €</td></tr>
+<tr><td>DEYE GB-L16 PRO battery set 16kWh (high voltage)</td><td class="price-cell">3848 €</td></tr>
+<tr><td>DEYE GB-L20 PRO 20kWh battery set (high voltage)</td><td class="price-cell">4662 €</td></tr>
+<tr><td>DEYE GB-L24 PRO 24kWh battery set (high voltage)</td><td class="price-cell">5475 €</td></tr>
+<tr><td>DEYE BOS-G25 Pro 25.6kWh battery set (high voltage)</td><td class="price-cell">4693 €</td></tr>
+<tr><td>DEYE Battery Set BOS-G40 Pro 40.96kWh (high voltage)</td><td class="price-cell">6911 €</td></tr>
+<tr><td>DEYE Battery Set BOS-G60 Pro 61.44kWh (high voltage)</td><td class="price-cell">9896 €</td></tr>
+<tr><td>DEYE BOS-G80 Pro 81.92kWh battery set (high voltage)</td><td class="price-cell">13109 €</td></tr>
+<tr class="brand-row"><td colspan="2">Dyness</td></tr>
+<tr><td>DYNESS LV Battery DL5.0C 5.12kWh (low voltage)</td><td class="price-cell">698 €</td></tr>
+<tr><td>DYNESS PowerHaus Battery 5.12kWh IP66 (low voltage)</td><td class="price-cell">806 €</td></tr>
+<tr><td>DYNESS Tower-PRO HV9640 Battery 3.84kWh (High Voltage)</td><td class="price-cell">689 €</td></tr>
+<tr><td>DYNESS: Tower-PRO-TP7 HV9640 battery set 7.68kWh (high voltage)</td><td class="price-cell">1756 €</td></tr>
+<tr><td>DYNESS: Tower-PRO-TP11 HV9640 11.52kWh battery set (high voltage)</td><td class="price-cell">2445 €</td></tr>
+<tr><td>DYNESS: Tower-PRO-TP15 HV9640 15.36kWh battery set (high voltage)</td><td class="price-cell">3133 €</td></tr>
+<tr><td>DYNESS: HV9640 PRO 19.2kWh battery set (high voltage)</td><td class="price-cell">3821 €</td></tr>
+<tr><td>DYNESS: Tower-PRO-TP23 HV9640 23.04kWh battery set (high voltage)</td><td class="price-cell">4510 €</td></tr>
+<tr class="brand-row"><td colspan="2">Hoymiles</td></tr>
+<tr><td>HOYMILES Battery HB-1920-AC-SV 1.92kWh 230V</td><td class="price-cell">591 €</td></tr>
+<tr><td>HOYMILES Battery LB-5D-G2 51.2V 100Ah 5.12kWh (low voltage)</td><td class="price-cell">774 €</td></tr>
+<tr><td>HOYMILES LB-5S-G2 5.12kWh battery with self-heating (low voltage)</td><td class="price-cell">813 €</td></tr>
+<tr><td>HOYMILES Battery LB-16D-G2 16.08kWh IP20 (low voltage)</td><td class="price-cell">1735 €</td></tr>
+<tr><td>Hoymiles HiOne-8B-G3 Battery 8kWh IP66 (High Voltage)</td><td class="price-cell">1842 €</td></tr>
+<tr><td>HOYMILES HB-3S-G2-Pack-B 3.84kWh battery + base (high voltage)</td><td class="price-cell">767 €</td></tr>
+<tr><td>HOYMILES: LB-5S-G2 Battery Set 51.2V 100Ah 5.12kWh (low voltage)</td><td class="price-cell">1250 €</td></tr>
+<tr><td>HOYMILES: LB-10S-G2 Battery Set 51.2V 200Ah 10.24kWh (low voltage)</td><td class="price-cell">2062 €</td></tr>
+<tr><td>HOYMILES: LB-15S-G2 Battery Set 51.2V 300Ah 15.36kWh (low voltage)</td><td class="price-cell">2874 €</td></tr>
+<tr><td>HOYMILES: LB-20S-G2 Battery Set 51.2V 400Ah 20.48kWh (low voltage)</td><td class="price-cell">3686 €</td></tr>
+<tr><td>HOYMILES: Set Battery HB-10S-G2 230.4V 11.52kWh (high voltage)</td><td class="price-cell">2878 €</td></tr>
+<tr><td>HOYMILES: Set Battery HB-15S-G2 307.2V 15.36kWh (high voltage)</td><td class="price-cell">3631 €</td></tr>
+<tr><td>HOYMILES: Set Battery HB-19S-G2 384V 19.2kWh (high voltage)</td><td class="price-cell">4383 €</td></tr>
+<tr><td>HOYMILES Battery HB-23S-G2 460.8V 23.04kWh (high voltage)</td><td class="price-cell">5136 €</td></tr>
+<tr class="brand-row"><td colspan="2">Felicity Solar</td></tr>
+<tr><td>Felicity Battery LPBA48100-OL 5.12kWh 51.2V IP65 (low voltage)</td><td class="price-cell">713 €</td></tr>
+<tr><td>Felicity Battery FLA48100-EU 5.12kWh 51.2V IP21 (low voltage)</td><td class="price-cell">653 €</td></tr>
+<tr><td>Felicity Battery FLA48171-EU 8.7kWh 51.2V IP21 (low voltage)</td><td class="price-cell">1056 €</td></tr>
+<tr><td>Felicity Battery FLA48230-EU 11.8kWh 51.2V IP21 (low voltage)</td><td class="price-cell">1325 €</td></tr>
+<tr><td>Felicity FLB48230WG1-H 11.8kWh 51.2V with heating IP65 (low voltage)</td><td class="price-cell">1412 €</td></tr>
+<tr><td>Felicity Battery FLA48280-EU 14.3kWh 51.2V IP21 (low voltage)</td><td class="price-cell">1473 €</td></tr>
+<tr><td>Felicity Battery FLA48314-EU 16kWh 51.2V IP21 (low voltage)</td><td class="price-cell">1586 €</td></tr>
+<tr><td>Felicity FLB48314TG1 16kWh 51.2V IP65 (low voltage)</td><td class="price-cell">1637 €</td></tr>
+<tr><td>Felicity FLB48314TG1-H 16kWh 51.2V with heating IP65 (low voltage)</td><td class="price-cell">1656 €</td></tr>
+<tr><td>Felicity Battery FLA48460-EU 23.5kWh 51.2V IP21 (low voltage)</td><td class="price-cell">2595 €</td></tr>
+<tr><td>Felicity Battery FLH48100UMG1 5.12kWh IP21 (high voltage)</td><td class="price-cell">708 €</td></tr>
+<tr><td>Felicity Battery FLH96050SMG1 5.12kWh 102.4V IP65 (high voltage)</td><td class="price-cell">721 €</td></tr>
+<tr><td>Felicity FLH96050SMG2-H Battery 5.12kWh 102.4V IP65 with heating (high voltage)</td><td class="price-cell">747 €</td></tr>
+<tr><td>Felicity: Battery pack LUX-X-48100LG01-1 5.12kWh 100Ah (low voltage)</td><td class="price-cell">713 €</td></tr>
+<tr><td>Felicity: Battery pack LUX-X-48100LG01-2 10.24kWh 100Ah (low voltage)</td><td class="price-cell">1399 €</td></tr>
+<tr><td>Felicity: Battery pack LUX-X-48100LG01-3 15.36kWh 100Ah (low voltage)</td><td class="price-cell">2084 €</td></tr>
+<tr><td>Felicity: Battery pack LUX-X-48100LG01-4 20.48kWh 100Ah (low voltage)</td><td class="price-cell">2770 €</td></tr>
+<tr><td>Felicity: Battery pack LUX-X-48100LG01-5 25.6kWh 100Ah (low voltage)</td><td class="price-cell">3456 €</td></tr>
+<tr><td>Felicity: Battery pack LUX-X-48100LG01-6 30.72kWh 100Ah (low voltage)</td><td class="price-cell">4141 €</td></tr>
+<tr><td>Felicity: Battery pack FLH48100UMG1 61.44kWh 100Ah (high voltage)</td><td class="price-cell">9444 €</td></tr>
+<tr class="brand-row"><td colspan="2">Sofar</td></tr>
+<tr><td>SOFAR BT5000A Battery 5.12kWh</td><td class="price-cell">1338 €</td></tr>
+<tr><td>SOFAR BTS-5K 5kWh Battery</td><td class="price-cell">1106 €</td></tr>
+<tr><td>SOFAR CBS5000-BMU 5.12kWh Battery (High Voltage)</td><td class="price-cell">975 €</td></tr>
+<tr><td>SOFAR CBS8000-BMU 16kWh Battery (High Voltage)</td><td class="price-cell">2299 €</td></tr>
+<tr><td>SOFAR 5kWh energy storage (1x BTS-5K + BTS 5K-BDU)</td><td class="price-cell">1330 €</td></tr>
+<tr><td>SOFAR 10kWh energy storage (2x BTS-5K + BTS 5K-BDU)</td><td class="price-cell">2435 €</td></tr>
+<tr><td>SOFAR Energy Storage 15kWh (3x BTS-5K + BTS 5K-BDU)</td><td class="price-cell">3540 €</td></tr>
+<tr><td>SOFAR 20kWh energy storage (4x BTS-5K + BTS 5K-BDU)</td><td class="price-cell">4646 €</td></tr>
+<tr><td>SOFAR CBS5000-H4 20.48kWh Kit + Control Module (High Voltage)</td><td class="price-cell">5014 €</td></tr>
+<tr><td>SOFAR CBS5000-H5 25.6kWh Kit + Control Module (High Voltage)</td><td class="price-cell">5989 €</td></tr>
+<tr><td>SOFAR CBS5000-H6 30.72kWh Kit + Control Module (High Voltage)</td><td class="price-cell">6963 €</td></tr>
+<tr><td>SOFAR CBS5000-H8 40.96kWh Kit + Control Module (High Voltage)</td><td class="price-cell">8913 €</td></tr>
+<tr><td>SOFAR CBS5000-H10 51.2kWh Kit + Control Module (High Voltage)</td><td class="price-cell">10862 €</td></tr>
+<tr><td>SOFAR CBS5000-H12 61.44kWh Kit + Control Module (High Voltage)</td><td class="price-cell">12812 €</td></tr>
+<tr><td>SOFAR CBS8000-H4 64kWh Kit + Control Module (High Voltage)</td><td class="price-cell">11570 €</td></tr>
+<tr><td>SOFAR CBS8000-H6 96kWh Kit + Control Module (High Voltage)</td><td class="price-cell">16167 €</td></tr>
+<tr><td>SOFAR CBS8000-H8 128kWh Kit + Control Module (High Voltage)</td><td class="price-cell">20763 €</td></tr>
+<tr><td>SOFAR CBS8000-H12 192kWh Kit + Control Module (High Voltage)</td><td class="price-cell">29956 €</td></tr>
+<tr class="brand-row"><td colspan="2">Growatt</td></tr>
+<tr><td>GROWATT AXE 5.0L-C1 Battery 5kWh (low voltage)</td><td class="price-cell">780 €</td></tr>
+<tr><td>GROWATT AX 5.0H-E1 EU battery (high voltage)</td><td class="price-cell">895 €</td></tr>
+<tr><td>GROWATT Set: AXE 5.0L-C1 5kWh battery (low voltage)</td><td class="price-cell">839 €</td></tr>
+<tr><td>GROWATT Set: AXE 10L-C1 10kWh battery (low voltage)</td><td class="price-cell">1618 €</td></tr>
+<tr><td>GROWATT Set: AXE 15L-C1 15kWh battery (low voltage)</td><td class="price-cell">2398 €</td></tr>
+<tr><td>GROWATT Set: AXE 20L-C1 20kWh battery (low voltage)</td><td class="price-cell">3178 €</td></tr>
+<tr><td>GROWATT Set: AXE 25L-C1 25kWh battery (low voltage)</td><td class="price-cell">3958 €</td></tr>
+<tr><td>GROWATT Set: AXE 30L-C1 30kWh battery (low voltage)</td><td class="price-cell">4738 €</td></tr>
+<tr><td>GROWATT Set: AXE 40L-C1 40kWh battery (low voltage)</td><td class="price-cell">6297 €</td></tr>
+<tr><td>GROWATT Set: AXE 50L-C1 50kWh battery (low voltage)</td><td class="price-cell">7857 €</td></tr>
+<tr><td>GROWATT: AXE 40H-1HC-E1 40kWh battery kit (high voltage)</td><td class="price-cell">8116 €</td></tr>
+<tr class="brand-row"><td colspan="2">Huawei</td></tr>
+<tr><td>HUAWEI Battery 5kWh LUNA2000-5-E0</td><td class="price-cell">1856 €</td></tr>
+<tr><td>HUAWEI Battery 7kWh LUNA2000-7-E1</td><td class="price-cell">2739 €</td></tr>
+<tr><td>HUAWEI Luna2000-5-S0 5kWh energy storage</td><td class="price-cell">2652 €</td></tr>
+<tr><td>HUAWEI Energy Storage Luna2000-10-S0 10kWh</td><td class="price-cell">4507 €</td></tr>
+<tr><td>HUAWEI Energy Storage Luna2000-15-S0 15kWh</td><td class="price-cell">6362 €</td></tr>
+<tr><td>HUAWEI energy storage LUNA2000-7-S1 7kWh</td><td class="price-cell">3733 €</td></tr>
+<tr><td>HUAWEI Energy storage LUNA2000-14-S1 14kWh</td><td class="price-cell">6471 €</td></tr>
+<tr><td>HUAWEI Energy storage LUNA2000-21-S1 21kWh</td><td class="price-cell">9210 €</td></tr>
+<tr class="brand-row"><td colspan="2">SolarEdge</td></tr>
+<tr><td>SolarEdge Home Battery 48V 4.6kWh (low voltage)</td><td class="price-cell">1693 €</td></tr>
+<tr><td>SolarEdge Home Battery 48V 4.6kWh (includes base)</td><td class="price-cell">1982 €</td></tr>
+<tr><td>SolarEdge Home Battery 48V 9.2kWh (includes cables and base)</td><td class="price-cell">3727 €</td></tr>
+<tr><td>SolarEdge Home Battery 48V 13.8kWh (includes cables and base)</td><td class="price-cell">5472 €</td></tr>
+<tr><td>SolarEdge Home Battery 48V 18.4kWh (includes cables and base)</td><td class="price-cell">7218 €</td></tr>
+<tr><td>SolarEdge Home Battery 48V 23kWh (incl. cables and base)</td><td class="price-cell">8963 €</td></tr>
+
+    </tbody>
+  </table>
+</section>
+
+<section class="cat-section" id="optimaatorid">
+  <div class="cat-header">
+    <h2>Optimaatorid</h2>
+  </div>
+  <table class="price-table">
+    <thead><tr><th>Toote nimetus</th><th>Hind (km-ta)</th></tr></thead>
+    <tbody>
+      <tr class="brand-row"><td colspan="2">Huawei</td></tr>
+<tr><td>HUAWEI SUN2000-450W-P2 Optimizer</td><td class="price-cell">40 €</td></tr>
+<tr><td>HUAWEI SUN2000-600W-P Optimizer</td><td class="price-cell">44 €</td></tr>
+<tr><td>HUAWEI MERC-1300W-P Optimizer - long cable</td><td class="price-cell">99 €</td></tr>
+<tr class="brand-row"><td colspan="2">SolarEdge</td></tr>
+<tr><td>SolarEdge Optimizer S440-1G M4M RM</td><td class="price-cell">46 €</td></tr>
+<tr><td>SolarEdge Optimizer S500-1G M4M RM</td><td class="price-cell">46 €</td></tr>
+<tr><td>SolarEdge Optimizer S500B-1G M4M RM</td><td class="price-cell">49 €</td></tr>
+<tr><td>SolarEdge Optimizer S650B-1G M4M BM</td><td class="price-cell">79 €</td></tr>
+<tr><td>SolarEdge Optimizer S1000-1G M4M BT</td><td class="price-cell">72 €</td></tr>
+<tr><td>SolarEdge Optimizer S1200-1G M4M BV</td><td class="price-cell">70 €</td></tr>
+<tr><td>SolarEdge Optimizer S1200-1G MYM BV</td><td class="price-cell">73 €</td></tr>
+<tr class="brand-row"><td colspan="2">Tigo</td></tr>
+<tr><td>TIGO Optimizer TS4-A-O 700W</td><td class="price-cell">34 €</td></tr>
+<tr><td>TIGO Cloud connect advanced, TAP (DIN RAIL)</td><td class="price-cell">169 €</td></tr>
+<tr class="brand-row"><td colspan="2">Projoy</td></tr>
+<tr><td>PROJOY Optimizer PEOP700 (1×700W)</td><td class="price-cell">29 €</td></tr>
+<tr><td>PROJOY Optimizer PEOP1000 (2×500W)</td><td class="price-cell">33 €</td></tr>
+<tr><td>PROJOY Optimizer PEOP1200 (2×600W)</td><td class="price-cell">44 €</td></tr>
+<tr><td>PROJOY Optimizer PEOP1400 (2×700W)</td><td class="price-cell">48 €</td></tr>
+
+    </tbody>
+  </table>
+</section>
+
+<section class="cat-section" id="kinnitussusteemid">
+  <div class="cat-header">
+    <h2>Kinnitussüsteemid</h2>
+  </div>
+  <table class="price-table">
+    <thead><tr><th>Toote nimetus</th><th>Hind (km-ta)</th></tr></thead>
+    <tbody>
+      <tr class="brand-row"><td colspan="2">Alumiiniumprofiilid ja -relsid</td></tr>
+<tr><td>Aluminum profile 40×40 hex bolt L:7200mm</td><td class="price-cell">31 €</td></tr>
+<tr><td>Aluminum profile 40×40 hex bolt L:4800mm</td><td class="price-cell">21 €</td></tr>
+<tr><td>Aluminum profile 40×40 hex bolt L:3600mm</td><td class="price-cell">16 €</td></tr>
+<tr><td>Aluminum profile 40×40 hex bolt L:2400mm</td><td class="price-cell">11 €</td></tr>
+<tr><td>Aluminum profile 40×40 hex bolt L:1200mm</td><td class="price-cell">7 €</td></tr>
+<tr><td>Aluminum profile 40×40 T-bolt L:7200mm</td><td class="price-cell">32 €</td></tr>
+<tr><td>Aluminum profile 40×40 T-bolt L:3600mm</td><td class="price-cell">17 €</td></tr>
+<tr><td>Aluminum profile 40×40 T-bolt L:2400mm</td><td class="price-cell">11 €</td></tr>
+<tr><td>Aluminum profile 80×40 hex bolt L:2200mm</td><td class="price-cell">25 €</td></tr>
+<tr><td>Trapezoid Rail H=40mm L:6050m</td><td class="price-cell">41 €</td></tr>
+<tr><td>Trapezoid Rail H=70mm L:6050mm</td><td class="price-cell">42 €</td></tr>
+<tr><td>Trapezoid Rail H=100mm L:6050mm</td><td class="price-cell">53 €</td></tr>
+<tr><td>Inclined Trapezoid Rail H=70mm L:6050mm</td><td class="price-cell">56 €</td></tr>
+<tr class="brand-row"><td colspan="2">Kinnitusklambrid</td></tr>
+<tr><td>End Clamp H=30mm L:50mm anodized silver</td><td class="price-cell">1 €</td></tr>
+<tr><td>End Clamp H=35mm L:50mm anodized silver</td><td class="price-cell">1 €</td></tr>
+<tr><td>End clamp H=30mm L:50mm system CLICK silver</td><td class="price-cell">1 €</td></tr>
+<tr><td>End clamp H=35mm L:50mm system CLICK silver</td><td class="price-cell">1 €</td></tr>
+<tr><td>End clamp H=30mm L:50mm anodized black</td><td class="price-cell">1 €</td></tr>
+<tr><td>End clamp H=35mm L:50mm anodized black</td><td class="price-cell">1 €</td></tr>
+<tr><td>Middle Clamp L:50mm anodized silver</td><td class="price-cell">1 €</td></tr>
+<tr><td>Middle clamp L:50mm with grounding pins</td><td class="price-cell">1 €</td></tr>
+<tr><td>Middle clamp L:50mm anodized black</td><td class="price-cell">1 €</td></tr>
+<tr><td>Middle clamp L:50mm system CLICK silver</td><td class="price-cell">1 €</td></tr>
+<tr><td>Middle clamp L:50mm system CLICK black</td><td class="price-cell">1 €</td></tr>
+<tr class="brand-row"><td colspan="2">Maapealsed konstruktsioonid</td></tr>
+<tr><td>T1V SINGLE-SUPPORT GROUND CONSTRUCTION (1800<L<2050)</td><td class="price-cell">78 €</td></tr>
+<tr><td>T2V SINGLE-SUPPORT GROUND CONSTRUCTION (L<1800)</td><td class="price-cell">58 €</td></tr>
+<tr><td>N2V DOUBLE SUPPORT GROUND CONSTRUCTION (L<1800)</td><td class="price-cell">54 €</td></tr>
+<tr><td>N3V DOUBLE GROUND CONSTRUCTION (L<1800)</td><td class="price-cell">68 €</td></tr>
+<tr><td>N3H DOUBLE GROUND CONSTRUCTION (L<1800)</td><td class="price-cell">61 €</td></tr>
+<tr><td>D2V DOUBLE-SUPPORT GROUND STRUCTURE for BIFACIAL (L<1800)</td><td class="price-cell">65 €</td></tr>
+<tr><td>DH3 DOUBLE-SUPPORT GROUND STRUCTURE for BIFACIAL (L<1800)</td><td class="price-cell">64 €</td></tr>
+<tr><td>N4H DOUBLE SUPPORT GROUND CONSTRUCTION (L<1800)</td><td class="price-cell">57 €</td></tr>
+<tr><td>N5H DOUBLE SUPPORT GROUND CONSTRUCTION (L<1800)</td><td class="price-cell">66 €</td></tr>
+<tr><td>Mounting under the inverter</td><td class="price-cell">108 €</td></tr>
+<tr><td>Inverter ground mounting with roof</td><td class="price-cell">148 €</td></tr>
+<tr class="brand-row"><td colspan="2">Katusekronsteinsid</td></tr>
+<tr><td>Hanger Bolt M10×180 with EPDM</td><td class="price-cell">1 €</td></tr>
+<tr><td>Hanger Bolt M10×200 with EPDM</td><td class="price-cell">1 €</td></tr>
+<tr><td>Hanger Bolt M10×250 with EPDM</td><td class="price-cell">1 €</td></tr>
+<tr><td>Hanger Bolt M10×300 with EPDM</td><td class="price-cell">2 €</td></tr>
+<tr><td>Adjustable Hook J 230×30×4mm type:1</td><td class="price-cell">2 €</td></tr>
+<tr><td>Adjustable Hook J 190×30×4mm type:2</td><td class="price-cell">2 €</td></tr>
+<tr><td>Hook bracket L adjustable 210×30×5mm (carp tile)</td><td class="price-cell">4 €</td></tr>
+<tr><td>Hook bracket L adjustable 380×30×4mm (carp tile)</td><td class="price-cell">4 €</td></tr>
+<tr><td>Adjustable Tile Roof Hook T-type L=140mm</td><td class="price-cell">3 €</td></tr>
+<tr><td>Seam Lock 110mm Type:1</td><td class="price-cell">3 €</td></tr>
+<tr><td>Seam Lock 100mm Type:2</td><td class="price-cell">3 €</td></tr>
+
+    </tbody>
+  </table>
+</section>
+
+<section class="cat-section" id="ev-laadijad">
+  <div class="cat-header">
+    <h2>EV Laadijad</h2>
+  </div>
+  <table class="price-table">
+    <thead><tr><th>Toote nimetus</th><th>Hind (km-ta)</th></tr></thead>
+    <tbody>
+      <tr class="brand-row"><td colspan="2">Seina laadijad</td></tr>
+<tr><td>GROWATT Car charger THOR-22AS-P-V1 (WiFi, LCD, RFID, 5m cable)</td><td class="price-cell">606 €</td></tr>
+<tr><td>HUAWEI Charger 22kW</td><td class="price-cell">421 €</td></tr>
+<tr><td>DEYE Charger SUN-EVSE11K01-EU-AC (WiFi, RFID, 4.2m cable)</td><td class="price-cell">310 €</td></tr>
+<tr><td>DEYE Charger SUN-EVSE22K01-EU-AC (WiFi, RFID, 4.2m cable)</td><td class="price-cell">343 €</td></tr>
+<tr><td>SOFAR EV11k-AC-02 car charger (WiFi, RFID, 7m cable)</td><td class="price-cell">592 €</td></tr>
+
+    </tbody>
+  </table>
+</section>
+
+<section class="cat-section" id="soojuspumbad">
+  <div class="cat-header">
+    <h2>Soojuspumbad</h2>
+  </div>
+  <table class="price-table">
+    <thead><tr><th>Toote nimetus</th><th>Hind (km-ta)</th></tr></thead>
+    <tbody>
+      <tr class="brand-row"><td colspan="2">Hyundai</td></tr>
+<tr><td>HYUNDAI Split heat pump 6kW HHPS-M6TH + HHPMD-M60THI</td><td class="price-cell">2595 €</td></tr>
+<tr><td>HYUNDAI Split heat pump 10kW HHPS-M10TH + HHPMD-M100THI</td><td class="price-cell">2905 €</td></tr>
+<tr><td>HYUNDAI Split heat pump 14kW HHPS-M14TH + HHPMD-M160THI</td><td class="price-cell">3550 €</td></tr>
+<tr><td>HYUNDAI Monobloc heat pump 8kW HHPM-M8TH1PH</td><td class="price-cell">1826 €</td></tr>
+<tr><td>HYUNDAI Monobloc heat pump 10kW HHPM-M10TH1PH</td><td class="price-cell">1937 €</td></tr>
+<tr><td>HYUNDAI Monobloc heat pump 12kW HHPM-M12TH3PH</td><td class="price-cell">2461 €</td></tr>
+<tr><td>HYUNDAI Monobloc heat pump 14kW HHPM-M14TH3PH</td><td class="price-cell">2595 €</td></tr>
+<tr><td>HYUNDAI Monobloc heat pump 16kW HHPM-M16TH3PH</td><td class="price-cell">2824 €</td></tr>
+<tr class="brand-row"><td colspan="2">LG</td></tr>
+<tr><td>LG Heat pump Therma V Monobloc S R32 12kW 3-phase HM123MR</td><td class="price-cell">3362 €</td></tr>
+<tr><td>LG Heat pump Therma V Hydrosplit IWT R32 16kW 3-phase</td><td class="price-cell">5782 €</td></tr>
+
+    </tbody>
+  </table>
+</section>
+
+<section class="cat-section" id="kliimaseadmed">
+  <div class="cat-header">
+    <h2>Kliimaseadmed</h2>
+  </div>
+  <table class="price-table">
+    <thead><tr><th>Toote nimetus</th><th>Hind (km-ta)</th></tr></thead>
+    <tbody>
+      <tr class="brand-row"><td colspan="2">Hyundai</td></tr>
+<tr><td>HYUNDAI 2.6kW Revolution HRP-M09RI + HRP-M09RO Wall AC</td><td class="price-cell">363 €</td></tr>
+<tr><td>HYUNDAI 2.6kW Smart Easy Pro HRP-M09SEPI/HRP-M09SEPO</td><td class="price-cell">548 €</td></tr>
+<tr><td>HYUNDAI 2.6kW Elite White HRP-M09ELWI + HRP-M09ELWO</td><td class="price-cell">483 €</td></tr>
+<tr><td>HYUNDAI 3.6kW Revolution HRP-M12RI + HRP-M12RO Wall AC</td><td class="price-cell">400 €</td></tr>
+<tr><td>HYUNDAI 3.6kW Smart Easy Pro HRP-M12SEPI/HRP-M12SEPO</td><td class="price-cell">577 €</td></tr>
+<tr><td>HYUNDAI 3.6kW Elite White HRP-M12ELWI + HRP-M12ELWO</td><td class="price-cell">511 €</td></tr>
+<tr><td>HYUNDAI 3.6kW ELITE SILVER HRP-M12ELSI + HRP-M12ELSO</td><td class="price-cell">540 €</td></tr>
+<tr><td>HYUNDAI 5.3kW Revolution HRP-M18RI + HRP-M18RO Wall AC</td><td class="price-cell">553 €</td></tr>
+<tr><td>HYUNDAI 5.3kW Smart Easy Pro HRP-M18SEPI/HRP-M18SEPO</td><td class="price-cell">858 €</td></tr>
+<tr><td>HYUNDAI 5.3kW Elite White HRP-M18ELWI + HRP-M18ELWO</td><td class="price-cell">770 €</td></tr>
+<tr><td>HYUNDAI 7.0kW Revolution HRP-M24RI + HRP-M24RO Wall AC</td><td class="price-cell">837 €</td></tr>
+<tr><td>HYUNDAI 7.0kW Smart Easy Pro HRP-M24SEPI/HRP-M24SEPO</td><td class="price-cell">1065 €</td></tr>
+<tr><td>HYUNDAI 7.0kW Elite White HRP-M24ELWI + HRP-M24ELWO</td><td class="price-cell">962 €</td></tr>
+<tr class="brand-row"><td colspan="2">Kobe</td></tr>
+<tr><td>KOBE 2.6kW White KMR-09SI + KMR-09SO</td><td class="price-cell">592 €</td></tr>
+<tr><td>KOBE 3.6kW White KMR-12SI + KMR-12SO</td><td class="price-cell">659 €</td></tr>
+<tr><td>KOBE 5.3kW White KMR-18SI + KMR-18SO</td><td class="price-cell">995 €</td></tr>
+<tr><td>KOBE 7.0kW White KMR-24SI + KMR-24SO</td><td class="price-cell">1345 €</td></tr>
+
+    </tbody>
+  </table>
+</section>
+
+<section class="cat-section" id="inverteri-+-aku-komplektid">
+  <div class="cat-header">
+    <h2>Inverteri + Aku komplektid</h2>
+  </div>
+  <table class="price-table">
+    <thead><tr><th>Toote nimetus</th><th>Hind (km-ta)</th></tr></thead>
+    <tbody>
+      <tr class="brand-row"><td colspan="2">Deye komplektid</td></tr>
+<tr><td>DEYE: SUN-5K-SG05LP3 Inverter + SE-F5 PRO-C 10.24kWh (low voltage)</td><td class="price-cell">2843 €</td></tr>
+<tr><td>DEYE: SUN-6K-SG05LP3 Inverter + SE-F5 PRO-C 10.24kWh (low voltage)</td><td class="price-cell">2864 €</td></tr>
+<tr><td>DEYE: SUN-8K-SG05LP3 Inverter + SE-F5 PRO-C 10.24kWh (low voltage)</td><td class="price-cell">2914 €</td></tr>
+<tr><td>DEYE: SUN-10K-SG05LP3 Inverter + SE-F5 PRO-C 10.24kWh (low voltage)</td><td class="price-cell">2968 €</td></tr>
+<tr><td>DEYE: SUN-12K-SG05LP3 Inverter + SE-F5 PRO-C 10.24kWh (low voltage)</td><td class="price-cell">3008 €</td></tr>
+<tr><td>DEYE: SUN-15K-SG05LP3 Inverter + SE-F5 PRO-C 20.48kWh (low voltage)</td><td class="price-cell">4698 €</td></tr>
+<tr><td>DEYE: SUN-16K-SG05LP3 Inverter + SE-F5 PRO-C 20.48kWh (low voltage)</td><td class="price-cell">4783 €</td></tr>
+<tr><td>DEYE: SUN-18K-SG05LP3 Inverter + SE-F5 PRO-C 20.48kWh (low voltage)</td><td class="price-cell">5095 €</td></tr>
+<tr><td>DEYE: SUN-20K-SG05LP3 Inverter + SE-F5 PRO-C 20.48kWh (low voltage)</td><td class="price-cell">5290 €</td></tr>
+<tr><td>DEYE: SUN-5K-SG05LP3 Inverter + RW-F10.2 20.4kWh (low voltage)</td><td class="price-cell">5322 €</td></tr>
+<tr><td>DEYE: SUN-8K-SG05LP3 Inverter + RW-F10.2 20.4kWh (low voltage)</td><td class="price-cell">5393 €</td></tr>
+<tr><td>DEYE: SUN-10K-SG05LP3 Inverter + RW-F10.2 20.4kWh (low voltage)</td><td class="price-cell">5447 €</td></tr>
+<tr><td>DEYE: SUN-12K-SG05LP3 Inverter + RW-F10.2 20.4kWh (low voltage)</td><td class="price-cell">5487 €</td></tr>
+<tr><td>DEYE: SUN-15K-SG05LP3 Inverter + RW-F10.2 40.8kWh (low voltage)</td><td class="price-cell">9656 €</td></tr>
+<tr><td>DEYE: SUN-18K-SG05LP3 Inverter + RW-F10.2 40.8kWh (low voltage)</td><td class="price-cell">10053 €</td></tr>
+<tr><td>DEYE: SUN-20K-SG05LP3 Inverter + RW-F10.2 40.8kWh (low voltage)</td><td class="price-cell">10248 €</td></tr>
+<tr><td>DEYE: SUN-8K-SG01HP3 Inverter + BOS-G PRO 20.48kWh (high voltage)</td><td class="price-cell">4701 €</td></tr>
+<tr><td>DEYE: SUN-10K-SG01HP3 Inverter + BOS-G PRO 20.48kWh (high voltage)</td><td class="price-cell">4780 €</td></tr>
+<tr><td>DEYE: SUN-12K-SG01HP3 Inverter + BOS-G PRO 20.48kWh (high voltage)</td><td class="price-cell">4846 €</td></tr>
+<tr><td>DEYE: SUN-15K-SG01HP3 Inverter + BOS-G PRO 20.48kWh (high voltage)</td><td class="price-cell">5007 €</td></tr>
+<tr><td>DEYE: SUN-20K-SG01HP3 Inverter + BOS-G PRO 20.48kWh (high voltage)</td><td class="price-cell">5271 €</td></tr>
+<tr><td>DEYE: SUN-25K-SG01HP3 Inverter + BOS-G PRO 40.96kWh (high voltage)</td><td class="price-cell">8619 €</td></tr>
+<tr><td>DEYE: SUN-30K-SG02HP3 Inverter + BOS-G PRO 40.96kWh (high voltage)</td><td class="price-cell">9518 €</td></tr>
+<tr><td>DEYE: SUN-50K-SG01HP3 Inverter + BOS-G PRO 40.96kWh (high voltage)</td><td class="price-cell">10877 €</td></tr>
+<tr class="brand-row"><td colspan="2">Sofar komplektid</td></tr>
+<tr><td>SOFAR ESI 3.68K-S1 + 10kWh BTS energy storage</td><td class="price-cell">3066 €</td></tr>
+<tr><td>SOFAR ESI 4K-S1 + 15kWh BTS energy storage</td><td class="price-cell">4181 €</td></tr>
+<tr><td>SOFAR ESI 4.6K-S1 + 20kWh BTS energy storage</td><td class="price-cell">5308 €</td></tr>
+<tr><td>SOFAR ESI 5K-T1 3F + 5.12kWh BTS energy storage</td><td class="price-cell">2215 €</td></tr>
+<tr><td>SOFAR ESI 6.5K-T1 3F + 10.24kWh BTS energy storage</td><td class="price-cell">3413 €</td></tr>
+<tr><td>SOFAR ESI 8K-T1 3F + 15.36kWh BTS energy storage</td><td class="price-cell">4689 €</td></tr>
+<tr><td>SOFAR ESI 10K-T1 3F + 25.6kWh BTS energy storage</td><td class="price-cell">6931 €</td></tr>
+<tr><td>SOFAR ESI 12K-T1 3F + 30.72kWh BTS energy storage</td><td class="price-cell">8169 €</td></tr>
+<tr><td>SOFAR HYD5KTL-3PH + 10kWh BTS energy storage</td><td class="price-cell">3441 €</td></tr>
+<tr><td>SOFAR HYD8KTL-3PH + 10kWh BTS energy storage</td><td class="price-cell">3633 €</td></tr>
+<tr><td>SOFAR HYD15KTL-3PH + 20kWh energy storage</td><td class="price-cell">6235 €</td></tr>
+<tr><td>SOFAR HYD20KTL-3PH + 30kWh energy storage</td><td class="price-cell">8761 €</td></tr>
+<tr class="brand-row"><td colspan="2">Growatt komplektid</td></tr>
+<tr><td>GROWATT MIN-3600TL-XH 1-phase + 5kWh battery</td><td class="price-cell">2105 €</td></tr>
+<tr><td>GROWATT MIN-5000TL-XH 1-phase + 10kWh battery</td><td class="price-cell">3336 €</td></tr>
+<tr><td>GROWATT WIT-8K-HU + 10kWh battery</td><td class="price-cell">2923 €</td></tr>
+<tr><td>GROWATT WIT-10K-HU + 10kWh battery</td><td class="price-cell">2991 €</td></tr>
+<tr><td>GROWATT WIT-12K-HU + 15kWh battery</td><td class="price-cell">3864 €</td></tr>
+<tr><td>GROWATT WIT-15K-HU + 20kWh battery</td><td class="price-cell">4717 €</td></tr>
+<tr><td>GROWATT WIT-30K-XHU + 40kWh battery</td><td class="price-cell">11299 €</td></tr>
+<tr><td>GROWATT WIT-40K-XHU + 60kWh battery</td><td class="price-cell">15314 €</td></tr>
+<tr><td>GROWATT WIT-50K-XHU + 60kWh battery</td><td class="price-cell">15462 €</td></tr>
+<tr><td>GROWATT MOD-4000TL3-XH + 5kWh battery</td><td class="price-cell">2806 €</td></tr>
+<tr><td>GROWATT MOD-5000TL3-XH + 10kWh battery</td><td class="price-cell">3967 €</td></tr>
+<tr class="brand-row"><td colspan="2">Hoymiles komplektid</td></tr>
+<tr><td>HOYMILES HIT-5L-G3 + LB-5D-G2 5.12kWh (low voltage)</td><td class="price-cell">2002 €</td></tr>
+<tr><td>HOYMILES HIT-6L-G3 + LB-5D-G2 10.24kWh (low voltage)</td><td class="price-cell">2797 €</td></tr>
+<tr><td>HOYMILES HIT-8L-G3 + LB-5D-G2 10.24kWh (low voltage)</td><td class="price-cell">2860 €</td></tr>
+<tr><td>HOYMILES HIT-10L-G3 + LB-5D-G2 10.24kWh (low voltage)</td><td class="price-cell">2880 €</td></tr>
+<tr><td>HOYMILES HIT-15L-G3 + LB-5D-G2 15.36kWh (low voltage)</td><td class="price-cell">3994 €</td></tr>
+<tr><td>HOYMILES HIT-20L-G3 + LB-5D-G2 20.48kWh (low voltage)</td><td class="price-cell">4959 €</td></tr>
+<tr><td>HOYMILES HYS-4.6LV-EUG1 + LB-5D-G2 5.12kWh</td><td class="price-cell">1352 €</td></tr>
+<tr><td>HOYMILES HYS-5.0LV-EUG1 + LB-5D-G2 10.24kWh</td><td class="price-cell">2172 €</td></tr>
+<tr><td>HOYMILES HYS-6.0LV-EUG1 + LB-5D-G2 10.24kWh</td><td class="price-cell">2191 €</td></tr>
+
+    </tbody>
+  </table>
+</section>
+
+  </main>
+</div>
+
+<div class="footer">
+  Solvolt OÜ · Reg: 17283350 · Pärnu maakond, Pärnu linn, Silla küla, Pilviku tn 3<br>
+  solvolt.info@gmail.com · +372 5392 8910 · Hinnad on informatiivsed ja võivad muutuda.
+</div>
+
+</body>
+</html>
