@@ -22,8 +22,8 @@ const TOOTED = [
     pilt: "assets/pildid/eve-mb31.png",
     pildid: [
       "assets/pildid/eve-mb31.png",
-      "assets/pildid/eve-mb31-2.png",
-      "assets/pildid/eve-mb31-3.png"
+      "assets/pildid/eve-mb31-2.jpg",
+      "assets/pildid/eve-mb31-3.jpg"
     ],
     ladu: true,
     eelmyyk: true,
