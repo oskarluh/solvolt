@@ -36,7 +36,6 @@
 <main class="main-content">
   <div class="container">
 
-    <!-- Breadcrumb -->
     <div class="breadcrumb" style="padding-top:32px">
       <a href="index.html">Avaleht</a>
       <span class="breadcrumb-sep">›</span>
@@ -45,13 +44,10 @@
       <span id="bc-name" style="color:var(--text-2)">...</span>
     </div>
 
-    <!-- Product detail -->
     <div class="product-detail" id="product-detail">
-      <!-- Täidetakse JS-iga -->
       <div style="grid-column:1/-1; text-align:center; padding:80px; color:var(--text-3)">Laeb...</div>
     </div>
 
-    <!-- Related products -->
     <div style="padding:60px 0 80px">
       <div class="section-header">
         <div class="eyebrow">Seotud tooted</div>
@@ -116,7 +112,6 @@
         <a href="tooted.html" class="btn btn-primary">Vaata kõiki tooteid</a>
       </div>`;
   } else {
-    // Update page meta
     document.getElementById('page-title').textContent = toode.nimi + ' — Solvolt';
     document.getElementById('page-desc').content = toode.lyhikirjeldus;
     document.getElementById('bc-name').textContent = toode.nimi.length > 40
@@ -139,7 +134,7 @@
 
     document.getElementById('product-detail').innerHTML = `
       <div class="product-detail-img-wrap">
-        <div class="product-detail-img">
+        <div class="product-detail-img clickable-main-image">
           <img id="main-product-image" src="${gallery[0]}" alt="${toode.nimi}" onerror="this.src='assets/pildid/placeholder.svg'">
         </div>
 
@@ -150,11 +145,7 @@
                 src="${src}"
                 alt="${toode.nimi} ${i + 1}"
                 class="product-thumb ${i === 0 ? 'active' : ''}"
-                onclick="
-                  document.getElementById('main-product-image').src='${src}';
-                  document.querySelectorAll('.product-thumb').forEach(el => el.classList.remove('active'));
-                  this.classList.add('active');
-                "
+                data-index="${i}"
                 onerror="this.src='assets/pildid/placeholder.svg'"
               >
             `).join('')}
@@ -213,9 +204,32 @@
           <div style="font-family:var(--ff-mono);font-size:.75rem;font-weight:500;color:var(--text-3);letter-spacing:.08em;text-transform:uppercase;margin-bottom:16px">Kirjeldus</div>
           <div class="product-desc">${toode.kirjeldus}</div>
         </div>` : ''}
-      </div>`;
+      </div>
 
-    // Qty controls
+      <div class="lightbox" id="product-lightbox">
+        <button class="lightbox-close" id="lightbox-close" aria-label="Sulge">×</button>
+
+        <button class="lightbox-nav lightbox-prev" id="lightbox-prev" aria-label="Eelmine">‹</button>
+        <button class="lightbox-nav lightbox-next" id="lightbox-next" aria-label="Järgmine">›</button>
+
+        <div class="lightbox-content">
+          <img id="lightbox-image" src="${gallery[0]}" alt="${toode.nimi}">
+        </div>
+
+        <div class="lightbox-thumbs">
+          ${gallery.map((src, i) => `
+            <img
+              src="${src}"
+              alt="${toode.nimi} ${i + 1}"
+              class="lightbox-thumb ${i === 0 ? 'active' : ''}"
+              data-index="${i}"
+              onerror="this.src='assets/pildid/placeholder.svg'"
+            >
+          `).join('')}
+        </div>
+      </div>
+    `;
+
     const qtyDisplay = document.getElementById('qty-display');
     document.getElementById('qty-minus').addEventListener('click', () => {
       if (qty > 1) {
@@ -234,7 +248,93 @@
       document.getElementById('buy-btn').style.display = 'flex';
     });
 
-    // Related products (same category, different product)
+    const mainImage = document.getElementById('main-product-image');
+    const lightbox = document.getElementById('product-lightbox');
+    const lightboxImage = document.getElementById('lightbox-image');
+    const lightboxClose = document.getElementById('lightbox-close');
+    const lightboxPrev = document.getElementById('lightbox-prev');
+    const lightboxNext = document.getElementById('lightbox-next');
+    const productThumbs = document.querySelectorAll('.product-thumb');
+    const lightboxThumbs = document.querySelectorAll('.lightbox-thumb');
+
+    let currentImageIndex = 0;
+
+    function updateMainImage(index) {
+      currentImageIndex = index;
+      mainImage.src = gallery[index];
+
+      productThumbs.forEach(el => el.classList.remove('active'));
+      if (productThumbs[index]) productThumbs[index].classList.add('active');
+    }
+
+    function updateLightboxImage(index) {
+      currentImageIndex = index;
+      lightboxImage.src = gallery[index];
+
+      lightboxThumbs.forEach(el => el.classList.remove('active'));
+      if (lightboxThumbs[index]) lightboxThumbs[index].classList.add('active');
+    }
+
+    function openLightbox(index = 0) {
+      updateLightboxImage(index);
+      lightbox.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+      lightbox.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    function showPrevImage() {
+      const newIndex = currentImageIndex === 0 ? gallery.length - 1 : currentImageIndex - 1;
+      updateLightboxImage(newIndex);
+      updateMainImage(newIndex);
+    }
+
+    function showNextImage() {
+      const newIndex = currentImageIndex === gallery.length - 1 ? 0 : currentImageIndex + 1;
+      updateLightboxImage(newIndex);
+      updateMainImage(newIndex);
+    }
+
+    mainImage.addEventListener('click', () => {
+      openLightbox(currentImageIndex);
+    });
+
+    productThumbs.forEach((thumb, index) => {
+      thumb.addEventListener('click', () => {
+        updateMainImage(index);
+      });
+
+      thumb.addEventListener('dblclick', () => {
+        openLightbox(index);
+      });
+    });
+
+    lightboxThumbs.forEach((thumb, index) => {
+      thumb.addEventListener('click', () => {
+        updateLightboxImage(index);
+        updateMainImage(index);
+      });
+    });
+
+    lightboxClose.addEventListener('click', closeLightbox);
+    lightboxPrev.addEventListener('click', showPrevImage);
+    lightboxNext.addEventListener('click', showNextImage);
+
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) closeLightbox();
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (!lightbox.classList.contains('open')) return;
+
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowLeft') showPrevImage();
+      if (e.key === 'ArrowRight') showNextImage();
+    });
+
     const related = TOOTED.filter(t => t.kategooria === toode.kategooria && t.id !== toode.id).slice(0, 3);
     if (related.length) {
       document.getElementById('related-grid').innerHTML = related.map(t => {
