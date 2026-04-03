@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Tooted — Solvolt</title>
-  <meta name="description" content="Solvolt tooted — hübriidinverterid, akulahendused, LiFePO4 elemendid ja BMS-id." />
+  <meta name="description" content="Kõik LiFePO4 akuelemendid, hübriidinverterid ja BMS süsteemid. Laos Eestis, kiire tarne." />
   <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 <body>
@@ -12,27 +12,20 @@
 <nav class="nav">
   <div class="nav-inner">
     <a href="index.html" class="nav-logo">Sol<span>volt</span></a>
-
     <div class="nav-links" id="nav-links">
       <a href="index.html">Avaleht</a>
-      <a href="tooted.html" class="active">Tooted</a>
+      <a href="tooted.html">Tooted</a>
       <a href="eel-v6-pro.html">EEL V6 Pro</a>
       <a href="hinnakiri.html">Hinnakiri</a>
       <a href="meist.html">Meist</a>
       <a href="kontakt.html">Kontakt</a>
     </div>
-
     <div style="display:flex;align-items:center;gap:12px">
       <a href="ostukorv.html" class="nav-cart">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/>
-          <line x1="3" y1="6" x2="21" y2="6"/>
-          <path d="M16 10a4 4 0 01-8 0"/>
-        </svg>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
         Ostukorv
         <span class="nav-cart-count" id="cart-count" style="display:none">0</span>
       </a>
-
       <button class="nav-mobile-toggle" id="nav-toggle" aria-label="Menüü">
         <span></span><span></span><span></span>
       </button>
@@ -41,44 +34,27 @@
 </nav>
 
 <main class="main-content">
-  <div class="container">
+  <div class="container" style="padding-top:48px; padding-bottom:80px">
 
-    <div class="breadcrumb" style="padding-top:32px">
-      <a href="index.html">Avaleht</a>
-      <span class="breadcrumb-sep">›</span>
-      <span style="color:var(--text-2)">Tooted</span>
+    <div style="margin-bottom:36px">
+      <h1 style="font-size:clamp(1.8rem,4vw,2.8rem); margin-bottom:8px">Kõik tooted</h1>
+      <p>LiFePO4 elemendid, hübriidinverterid, akud ja BMS süsteemid — laos Eestis.</p>
     </div>
 
-    <section style="padding:24px 0 18px">
-      <div class="eyebrow" style="font-family:var(--ff-mono);font-size:.78rem;font-weight:500;color:var(--accent);letter-spacing:.1em;text-transform:uppercase;margin-bottom:8px">
-        Solvolti tootevalik
-      </div>
-      <h1 style="margin-bottom:10px">Tooted</h1>
-      <p style="max-width:720px">
-        Hübriidinverterid, valmisaku lahendused, LiFePO4 elemendid ja BMS-id.
-        Vali sobiv kategooria või ava tooteleht, et näha rohkem detaile.
-      </p>
-    </section>
+    <!-- Filter tabs -->
+    <div class="filter-tabs" id="filter-tabs">
+      <button class="filter-tab active" data-kat="koik">Kõik</button>
+      <button class="filter-tab" data-kat="lifepo4">LiFePO4 elemendid</button>
+      <button class="filter-tab" data-kat="inverterid">Hübriidinverterid</button>
+      <button class="filter-tab" data-kat="akud">Akud</button>
+      <button class="filter-tab" data-kat="bms">BMS</button>
+    </div>
 
-    <section style="padding:8px 0 18px">
-      <div class="category-tabs" id="category-tabs" style="display:flex;gap:10px;flex-wrap:wrap">
-        <button class="category-tab active" data-kat="koik">Kõik</button>
-        <button class="category-tab" data-kat="inverterid">Hübriidinverterid</button>
-        <button class="category-tab" data-kat="akud">Valmisaku lahendused</button>
-        <button class="category-tab" data-kat="lifepo4">LiFePO4 elemendid</button>
-        <button class="category-tab" data-kat="bms">BMS</button>
-      </div>
-    </section>
+    <!-- Count -->
+    <div style="font-size:.85rem;color:var(--text-3);margin-bottom:24px;font-family:var(--ff-mono)" id="product-count"></div>
 
-    <section style="padding:8px 0 12px">
-      <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
-        <div id="product-count" style="font-size:.92rem;color:var(--text-2)">0 toodet</div>
-      </div>
-    </section>
-
-    <section style="padding:8px 0 70px">
-      <div class="products-grid" id="products-grid"></div>
-    </section>
+    <!-- Grid -->
+    <div class="products-grid" id="products-grid"></div>
 
   </div>
 </main>
@@ -88,22 +64,17 @@
     <div class="footer-grid">
       <div>
         <div class="footer-logo">Sol<span>volt</span></div>
-        <p class="footer-desc">Hübriidinverterid, LiFePO4 akud ja päikeseenergia salvestuslahendused Eesti turule.</p>
-        <div style="margin-top:16px; font-size:.82rem; color:var(--text-3)">
-          <div>Solvolt OÜ · Reg: 17283350</div>
-        </div>
+        <p class="footer-desc">Kvaliteetsed LiFePO4 akuelemendid, BMS süsteemid ja päikeseenergia lahendused Eesti turule.</p>
       </div>
-
       <div class="footer-col">
         <h4>Tooted</h4>
         <ul>
-          <li><a href="tooted.html?kat=inverterid">Hübriidinverterid</a></li>
-          <li><a href="tooted.html?kat=akud">Valmisaku lahendused</a></li>
           <li><a href="tooted.html?kat=lifepo4">LiFePO4 elemendid</a></li>
+          <li><a href="tooted.html?kat=inverterid">Hübriidinverterid</a></li>
+          <li><a href="tooted.html?kat=akud">Akud</a></li>
           <li><a href="tooted.html?kat=bms">BMS</a></li>
         </ul>
       </div>
-
       <div class="footer-col">
         <h4>Ettevõte</h4>
         <ul>
@@ -111,7 +82,6 @@
           <li><a href="kontakt.html">Kontakt</a></li>
         </ul>
       </div>
-
       <div class="footer-col">
         <h4>Kontakt</h4>
         <ul>
@@ -120,7 +90,6 @@
         </ul>
       </div>
     </div>
-
     <div class="footer-bottom">
       <span>© 2026 Solvolt OÜ. Kõik õigused kaitstud.</span>
       <span>Maksed: Visa · Mastercard · Stripe</span>
@@ -130,151 +99,60 @@
 
 <script src="assets/js/products.js"></script>
 <script src="assets/js/main.js"></script>
-
 <script>
-  const KATEGOORIAD = {
-    inverterid: 'Hübriidinverterid',
-    akud: 'Valmisaku lahendused',
-    lifepo4: 'LiFePO4 elemendid',
-    bms: 'BMS'
-  };
-
-  const INVERTER_GROUPS = [
-    {
-      id: 'deye-group-6-12',
-      nimi: 'Deye SUN-SG05LP3-EU-SM2 — 6 / 8 / 10 / 12 kW',
-      kategooria: 'inverterid',
-      hind: 0,
-      hind_vana: null,
-      pilt: 'assets/pildid/deye-12k.png',
-      link: 'deye-6-12kw.html',
-      lyhikirjeldus: 'Kolmefaasiline 48V hübriidinverterite seeria väiksematele ja keskmistele süsteemidele. Ava leht ja vali sobiv mudel.',
-      badge: '4 varianti',
-      eelmyyk: false
-    },
-    {
-      id: 'deye-group-15-20',
-      nimi: 'Deye SUN-SG05LP3-EU-SM2 — 15 / 20 kW',
-      kategooria: 'inverterid',
-      hind: 0,
-      hind_vana: null,
-      pilt: 'assets/pildid/deye-20k.png',
-      link: 'deye-15-20kw.html',
-      lyhikirjeldus: 'Suurema võimsusega 48V kolmefaasilised hübriidinverterid suurematele majapidamistele ja äriklientidele.',
-      badge: '2 varianti',
-      eelmyyk: false
-    }
-  ];
-
   let activeKat = 'koik';
 
-  const tabs = document.querySelectorAll('.category-tab');
-  const params = new URLSearchParams(location.search);
-  const katFromUrl = params.get('kat');
-
-  if (katFromUrl && ['koik', 'inverterid', 'akud', 'lifepo4', 'bms'].includes(katFromUrl)) {
-    activeKat = katFromUrl;
-  }
-
-  tabs.forEach(btn => {
-    if (btn.dataset.kat === activeKat) btn.classList.add('active');
-    else btn.classList.remove('active');
-
-    btn.addEventListener('click', () => {
-      activeKat = btn.dataset.kat;
-
-      tabs.forEach(x => x.classList.remove('active'));
-      btn.classList.add('active');
-
-      const url = new URL(location.href);
-      if (activeKat === 'koik') url.searchParams.delete('kat');
-      else url.searchParams.set('kat', activeKat);
-      history.replaceState({}, '', url);
-
-      renderGrid();
-    });
-  });
-
   function renderProductCard(t) {
-    const oldPrice = t.hind_vana
-      ? `<span class="price-old">${formatPrice(t.hind_vana)}</span>`
-      : '';
-
-    const saleTag = t.hind_vana
-      ? `<span class="badge badge-sale">Soodustus ${Math.round((1 - t.hind / t.hind_vana) * 100)}%</span>`
-      : '';
-
-    const eelTag = t.eelmyyk
-      ? `<span class="badge badge-eelmyyk">⏳ Eelmüük</span>`
-      : '';
-
-    const extraBadge = t.badge
-      ? `<span class="badge" style="background:var(--bg-2);color:var(--text-2);border:1px solid var(--border)">${t.badge}</span>`
-      : '';
-
-    const isGroup = !!t.link;
-    const href = isGroup ? t.link : `toode.html?id=${t.id}`;
-
-    const priceHtml = isGroup
-      ? `<span class="price-current">Vaata mudeleid</span>`
-      : `<span class="price-current">${formatPrice(t.hind)}</span>${oldPrice}`;
-
-    const buttonHtml = isGroup
-      ? `<span class="btn btn-outline btn-sm btn-full">Vaata mudeleid</span>`
-      : `<button class="btn btn-outline btn-sm btn-full" onclick='event.preventDefault(); Cart.add(${JSON.stringify(t)});'>+ Lisa ostukorvi</button>`;
-
+    const saleTag = t.hind_vana ? `<span class="badge badge-sale">Soodustus</span>` : '';
+    const eelTag  = t.eelmyyk  ? `<span class="badge badge-eelmyyk">Eelmüük</span>` : '';
+    const oldPrice = t.hind_vana ? `<span class="price-old">${formatPrice(t.hind_vana)}</span>` : '';
+    const tJson = JSON.stringify(t).replace(/"/g,'&quot;');
     return `
-      <a href="${href}" class="product-card">
+      <a href="toode.html?id=${t.id}" class="product-card">
         <div class="product-card-img">
-          <img
-            src="${t.pilt}"
-            alt="${t.nimi}"
-            loading="lazy"
-            onerror="this.src='assets/pildid/placeholder.svg'"
-          >
-          <div class="product-card-badges">
-            ${saleTag}
-            ${eelTag}
-            ${extraBadge}
-          </div>
+          <img src="${t.pilt}" alt="${t.nimi}" onerror="this.src='assets/pildid/placeholder.svg'" loading="lazy">
+          <div class="product-card-badges">${saleTag}${eelTag}</div>
         </div>
-
         <div class="product-card-body">
           <div class="product-card-cat">${KATEGOORIAD[t.kategooria] || t.kategooria}</div>
           <div class="product-card-title">${t.nimi}</div>
-
-          <div style="font-size:.9rem;color:var(--text-2);margin:6px 0 12px;line-height:1.55">
-            ${t.lyhikirjeldus || ''}
-          </div>
-
           <div class="product-card-price">
-            ${priceHtml}
+            <span class="price-current">${formatPrice(t.hind)}</span>
+            ${oldPrice}
           </div>
-
-          ${buttonHtml}
+          <button class="btn btn-outline btn-sm btn-full" onclick="event.preventDefault(); Cart.add(${tJson})">
+            + Ostukorvi
+          </button>
         </div>
-      </a>
-    `;
+      </a>`;
   }
 
   function renderGrid() {
-    let filtered = [];
-
-    if (activeKat === 'koik') {
-      const nonInverters = TOOTED.filter(t => t.kategooria !== 'inverterid');
-      filtered = [...INVERTER_GROUPS, ...nonInverters];
-    } else if (activeKat === 'inverterid') {
-      filtered = INVERTER_GROUPS;
-    } else {
-      filtered = TOOTED.filter(t => t.kategooria === activeKat);
-    }
-
+    const filtered = activeKat === 'koik' ? TOOTED : TOOTED.filter(t => t.kategooria === activeKat);
     document.getElementById('products-grid').innerHTML = filtered.map(renderProductCard).join('');
-    document.getElementById('product-count').textContent = `${filtered.length} toodet`;
+    document.getElementById('product-count').textContent = filtered.length + ' toodet';
+  }
+
+  // Filter tabs
+  document.getElementById('filter-tabs').addEventListener('click', e => {
+    const tab = e.target.closest('.filter-tab');
+    if (!tab) return;
+    activeKat = tab.dataset.kat;
+    document.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active'));
+    tab.classList.add('active');
+    renderGrid();
+  });
+
+  // Read URL param
+  const urlKat = new URLSearchParams(location.search).get('kat');
+  if (urlKat && KATEGOORIAD[urlKat]) {
+    activeKat = urlKat;
+    document.querySelectorAll('.filter-tab').forEach(t => {
+      t.classList.toggle('active', t.dataset.kat === urlKat);
+    });
   }
 
   renderGrid();
 </script>
-
 </body>
 </html>
