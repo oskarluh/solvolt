@@ -237,6 +237,7 @@ const TOOTED = [
     "assets/pildid/deye-rw-f16-2.png",
     "assets/pildid/deye-rw-f16-3.png"
   ],
+  tooteleht_pdf: "assets/failid/deye-rw-f16-tooteleht.pdf",
   ladu: true,
   eelmyyk: false,
   specs: {
