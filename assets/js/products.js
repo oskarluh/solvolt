@@ -225,8 +225,8 @@ const TOOTED = [
 {
   id: "deye-rw-f16",
   slug: "deye-rw-f16",
-  nimi: "Deye RW-F16 14.4kWh LiFePO4 aku",
-  lyhikirjeldus: "Deye RW-F16 LiFePO4 aku 51.2V / 314Ah. 14.4kWh usable energy, kuni 160A pidev charge/discharge, sobib seina- või põrandapaigalduseks.",
+  nimi: "Deye RW-F16 16kWh LiFePO4 aku",
+  lyhikirjeldus: "Deye RW-F16 LiFePO4 aku 51.2V / 314Ah. 16kWh nominaalmahtuvus, kasutatav energia 14.4kWh (DoD 90%), kuni 160A pidev charge/discharge.",
   kategooria: "akud",
   hind: 2655,
   hind_vana: null,
@@ -245,7 +245,8 @@ const TOOTED = [
     "Keemia": "LiFePO4",
     "Mahtuvus Ah": "314 Ah",
     "Nominaalpinge": "51.2 V",
-    "Kasutatav energia": "14.4 kWh",
+    "Nominaalenergia": "16 kWh",
+    "Kasutatav energia": "14.4 kWh (DoD 90%)",
     "Maks. pidev laadimis-/tühjendusvool": "160 A",
     "Tippvool": "300 A (10 s)",
     "Kaitseklass": "IP20",
@@ -258,7 +259,7 @@ const TOOTED = [
     "Tarne": "3–7 tööpäeva"
   },
   kirjeldus: `
-    <p>Deye RW-F16 on suure mahutavusega LiFePO4 aku kodustele ja väiksematele ärilistele energiasalvestuslahendustele. Aku on mõeldud sisetingimustesse ning sobib hästi koostööks hübriidinverteritega.</p>
+    <p>Deye RW-F16 on suure mahutavusega LiFePO4 aku kodustele ja väiksematele ärilistele energiasalvestuslahendustele. Aku nominaalmahtuvus on <strong>16 kWh</strong> ning kasutatav energia on <strong>14.4 kWh (DoD 90%)</strong>.</p>
 
     <ul>
       <li>314 Ah ja 51.2V LiFePO4 aku</li>
