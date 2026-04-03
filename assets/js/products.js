@@ -181,7 +181,7 @@ const TOOTED = [
   pilt: "assets/pildid/deye-se-f16-c.png",
   pildid: [
     "assets/pildid/deye-se-f16-c.png",
-    "assets/pildid/deye-se-f16-c-2.png",
+    "assets/pildid/deye-se-f16-c-2.pdf",
     "assets/pildid/deye-se-f16-c-3.png"
   ],
   tooteleht_pdf: "assets/failid/deye-se-f16-tooteleht.pdf",
