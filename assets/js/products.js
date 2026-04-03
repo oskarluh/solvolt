@@ -19,7 +19,7 @@ const TOOTED = [
     hind: 1450,
     hind_vana: 1550,
     stripe_price_id: "LISA_SIIA",
-    pilt: "assets/pildid/eve-mb31.jpg",
+    pilt: "assets/pildid/eve-mb31.png",
     ladu: true,
     eelmyyk: true,
     specs: {
