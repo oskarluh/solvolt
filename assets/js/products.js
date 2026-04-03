@@ -14,7 +14,7 @@ const TOOTED = [
     id: "eve-mb31-314ah",
     slug: "eve-mb31-314ah",
     nimi: "EVE MB31 314Ah LiFePO4 elemendid (16tk)",
-    lyhikirjeldus: "A-klassi EVE MB31 elemendid — 3.2V / 314Ah. Ideaalne koduseks energiasalvestuseks.",
+    lyhikirjeldus: "A-klassi EVE MB31 elemendid — 3.2V / 314Ah (mõõdetud keskmine 332.8Ah). 16tk komplekt, kaasas EVE ametlik testiraport.",
     kategooria: "lifepo4",
     hind: 1450,
     hind_vana: 1550,
@@ -23,23 +23,41 @@ const TOOTED = [
     ladu: true,
     eelmyyk: true,
     specs: {
-      "Keemia": "LiFePO4",
-      "Mahtuvus": "314 Ah",
+      "Keemia": "LiFePO4 prismaatiline",
+      "Nimimahtuvus": "314 Ah",
+      "Mõõdetud keskmine": "332.8 Ah",
       "Nominaalpinge": "3.2 V",
+      "Sisetakistus": "0.18 mΩ ± 0.05 mΩ",
+      "Eluiga": "8000 tsüklit (70% SOH @ 25°C)",
       "Komplektis": "16 tk",
       "Tootja": "EVE",
       "Klass": "A-klass",
-      "Tarne": "2–4 nädalat (eelmüük)"
+      "Sertifikaadid": "CE, UL, RoHS, UN38.3",
+      "Tarne": "Eelmüük — täpsustamisel"
     },
     kirjeldus: `
-      <p>Uued EVE MB31 (314Ah) LiFePO4 prismaatilised elemendid — tellitud otse ametlikult edasimüüjalt. A-klassi tooted, testitud ja sertifitseeritud.</p>
-      <p>16 elemendiga komplekt sobib ideaalselt 48V / ~15kWh koduse energiasalvestuse ehitamiseks koos hübriidinverteriga.</p>
+      <p>Uued EVE MB31 LiFePO4 prismaatilised elemendid, tellitud otse EVE ametlikult edasimüüjalt. Iga partii on testitud — <strong>konkreetse partii mõõdetud keskmine mahutavus on 332.8 Ah</strong> (tehase nimiväärtus 314 Ah), kaasas on EVE ametlik testraport.</p>
+
+      <p><strong>16 elemendiga 48V süsteemi energiamahutavus:</strong></p>
       <ul>
-        <li>Otse EVE ametlikult edasimüüjalt — ei mingeid B-klass tooteid</li>
-        <li>Komplektiga kaasas tehase testiraport</li>
-        <li>Sobib: Deye, Huawei, Growatt jt inverteritega</li>
+        <li>Nimiväärtuse järgi: ~16.1 kWh</li>
+        <li>Mõõdetud keskmise järgi: ~17.0 kWh</li>
       </ul>
-      <p><strong>NB:</strong> Tegemist on eelmüügiga. Tarne 2–4 nädalat.</p>
+
+      <p><strong>Komplekti kuulub:</strong></p>
+      <ul>
+        <li>16× EVE MB31 element</li>
+        <li>Ühendusplaadid (busbar), M6 poldid ja mutrid</li>
+        <li>EVE ametlik partii testiraport</li>
+      </ul>
+
+      <ul>
+        <li>Sobib: energiasalvestus, päikesepargid, UPS, elektrisõidukid</li>
+        <li>Ühildub Deye, Huawei, Growatt jt hübriidinverteritega</li>
+        <li>Suuremate koguste puhul küsi personaalset pakkumist</li>
+      </ul>
+
+      <p><strong>NB:</strong> Tegemist on eelmüügiga. Tarneaja täpsustamiseks võta meiega ühendust.</p>
     `
   },
   {
