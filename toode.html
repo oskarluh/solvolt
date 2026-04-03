@@ -22,7 +22,11 @@
     </div>
     <div style="display:flex;align-items:center;gap:12px">
       <a href="ostukorv.html" class="nav-cart">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/>
+          <line x1="3" y1="6" x2="21" y2="6"/>
+          <path d="M16 10a4 4 0 01-8 0"/>
+        </svg>
         Ostukorv
         <span class="nav-cart-count" id="cart-count" style="display:none">0</span>
       </a>
@@ -120,9 +124,17 @@
 
     let qty = 1;
 
-    const saleTag = toode.hind_vana ? `<span class="badge badge-sale">Soodustus ${Math.round((1 - toode.hind / toode.hind_vana) * 100)}%</span>` : '';
-    const eelTag  = toode.eelmyyk ? `<span class="badge badge-eelmyyk">⏳ Eelmüük</span>` : '';
-    const oldPrice = toode.hind_vana ? `<span class="price-old">${formatPrice(toode.hind_vana)}</span>` : '';
+    const saleTag = toode.hind_vana
+      ? `<span class="badge badge-sale">Soodustus ${Math.round((1 - toode.hind / toode.hind_vana) * 100)}%</span>`
+      : '';
+
+    const eelTag = toode.eelmyyk
+      ? `<span class="badge badge-eelmyyk">⏳ Eelmüük</span>`
+      : '';
+
+    const oldPrice = toode.hind_vana
+      ? `<span class="price-old">${formatPrice(toode.hind_vana)}</span>`
+      : '';
 
     const specsRows = Object.entries(toode.specs || {}).map(([k, v]) =>
       `<tr><td>${k}</td><td>${v}</td></tr>`
@@ -131,6 +143,19 @@
     const gallery = (toode.pildid && toode.pildid.length)
       ? toode.pildid
       : [toode.pilt];
+
+    const pdfBlock = toode.tooteleht_pdf ? `
+      <div style="margin-top:20px">
+        <div style="font-family:var(--ff-mono);font-size:.75rem;font-weight:500;color:var(--text-3);letter-spacing:.08em;text-transform:uppercase;margin-bottom:10px">
+          Failid
+        </div>
+        <div style="display:flex;gap:10px;flex-wrap:wrap">
+          <a href="${toode.tooteleht_pdf}" class="btn btn-outline" target="_blank" rel="noopener">
+            📄 Ava tooteleht (PDF)
+          </a>
+        </div>
+      </div>
+    ` : '';
 
     document.getElementById('product-detail').innerHTML = `
       <div class="product-detail-img-wrap">
@@ -157,18 +182,23 @@
         <div class="product-detail-cat">${KATEGOORIAD[toode.kategooria] || toode.kategooria}</div>
         <h1>${toode.nimi}</h1>
         <div style="display:flex;gap:8px;margin-bottom:20px">${saleTag}${eelTag}</div>
+
         <div class="product-detail-price">
           <span class="price-current">${formatPrice(toode.hind)}</span>
           ${oldPrice}
           <span style="font-size:.8rem;color:var(--text-3);font-family:var(--ff-mono)">+ KM</span>
         </div>
+
         <p class="product-short">${toode.lyhikirjeldus}</p>
 
         ${specsRows ? `
-        <div style="margin-bottom:28px">
-          <div style="font-family:var(--ff-mono);font-size:.75rem;font-weight:500;color:var(--text-3);letter-spacing:.08em;text-transform:uppercase;margin-bottom:12px">Spetsifikatsioonid</div>
-          <table class="specs-table">${specsRows}</table>
-        </div>` : ''}
+          <div style="margin-bottom:28px">
+            <div style="font-family:var(--ff-mono);font-size:.75rem;font-weight:500;color:var(--text-3);letter-spacing:.08em;text-transform:uppercase;margin-bottom:12px">
+              Spetsifikatsioonid
+            </div>
+            <table class="specs-table">${specsRows}</table>
+          </div>
+        ` : ''}
 
         <div class="qty-row">
           <div class="qty-control">
@@ -176,6 +206,7 @@
             <span class="qty-num" id="qty-display">1</span>
             <button class="qty-btn" id="qty-plus">+</button>
           </div>
+
           <button class="btn btn-primary" style="flex:1" id="add-btn">
             + Lisa ostukorvi
           </button>
@@ -199,11 +230,16 @@
           </div>
         </div>
 
+        ${pdfBlock}
+
         ${toode.kirjeldus ? `
-        <div style="margin-top:32px;padding-top:28px;border-top:1px solid var(--border)">
-          <div style="font-family:var(--ff-mono);font-size:.75rem;font-weight:500;color:var(--text-3);letter-spacing:.08em;text-transform:uppercase;margin-bottom:16px">Kirjeldus</div>
-          <div class="product-desc">${toode.kirjeldus}</div>
-        </div>` : ''}
+          <div style="margin-top:32px;padding-top:28px;border-top:1px solid var(--border)">
+            <div style="font-family:var(--ff-mono);font-size:.75rem;font-weight:500;color:var(--text-3);letter-spacing:.08em;text-transform:uppercase;margin-bottom:16px">
+              Kirjeldus
+            </div>
+            <div class="product-desc">${toode.kirjeldus}</div>
+          </div>
+        ` : ''}
       </div>
 
       <div class="lightbox" id="product-lightbox">
@@ -231,18 +267,21 @@
     `;
 
     const qtyDisplay = document.getElementById('qty-display');
+
     document.getElementById('qty-minus').addEventListener('click', () => {
       if (qty > 1) {
         qty--;
         qtyDisplay.textContent = qty;
       }
     });
+
     document.getElementById('qty-plus').addEventListener('click', () => {
       if (qty < 10) {
         qty++;
         qtyDisplay.textContent = qty;
       }
     });
+
     document.getElementById('add-btn').addEventListener('click', () => {
       Cart.add(toode, qty);
       document.getElementById('buy-btn').style.display = 'flex';
@@ -335,13 +374,17 @@
       if (e.key === 'ArrowRight') showNextImage();
     });
 
-    const related = TOOTED.filter(t => t.kategooria === toode.kategooria && t.id !== toode.id).slice(0, 3);
+    const related = TOOTED
+      .filter(t => t.kategooria === toode.kategooria && t.id !== toode.id)
+      .slice(0, 3);
+
     if (related.length) {
       document.getElementById('related-grid').innerHTML = related.map(t => {
         const tJson = JSON.stringify(t).replace(/"/g, '&quot;');
         const sTag = t.hind_vana ? `<span class="badge badge-sale">Soodustus</span>` : '';
         const eTag = t.eelmyyk ? `<span class="badge badge-eelmyyk">Eelmüük</span>` : '';
         const op = t.hind_vana ? `<span class="price-old">${formatPrice(t.hind_vana)}</span>` : '';
+
         return `
           <a href="toode.html?id=${t.id}" class="product-card">
             <div class="product-card-img">
@@ -358,7 +401,8 @@
                 + Ostukorvi
               </button>
             </div>
-          </a>`;
+          </a>
+        `;
       }).join('');
     } else {
       document.getElementById('related-grid').closest('div').style.display = 'none';
