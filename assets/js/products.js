@@ -139,7 +139,10 @@ const TOOTED = [
     hind: 860,
     hind_vana: null,
     stripe_price_id: "LISA_SIIA",
-    pilt: "assets/pildid/huawei-sun2000.jpg",
+    pilt: "assets/pildid/huawei.png",
+    pildid: [
+      "assets/pildid/huawei.png",
+    ],
     ladu: true,
     eelmyyk: false,
     specs: {
@@ -175,7 +178,12 @@ const TOOTED = [
     hind: 2540,
     hind_vana: 2700,
     stripe_price_id: "LISA_SIIA",
-    pilt: "assets/pildid/dyness-powerbrick-pro.jpg",
+    pilt: "assets/pildid/dynesspro.png",
+    pildid: [
+      "assets/pildid/dynesspro.png",
+      "assets/pildid/dynesspro2.png",
+      "assets/pildid/dynesspro3.png",
+    ],
     ladu: true,
     eelmyyk: false,
     specs: {
@@ -212,7 +220,12 @@ const TOOTED = [
     hind: 2435,
     hind_vana: 2500,
     stripe_price_id: "LISA_SIIA",
-    pilt: "assets/pildid/dyness-powerbrick.jpg",
+    pilt: "assets/pildid/dyness.png",
+    pildid: [
+      "assets/pildid/dyness.png",
+      "assets/pildid/dyness2.png",
+      "assets/pildid/dyness3.png",
+    ],
     ladu: true,
     eelmyyk: false,
     specs: {
