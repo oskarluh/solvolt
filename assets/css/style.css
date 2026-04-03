@@ -396,19 +396,57 @@ p  { color: var(--text-2); line-height: 1.7; }
   align-items: start;
   padding-top: 48px;
 }
+
+.product-detail-img-wrap {
+  position: sticky;
+  top: 80px;
+}
+
 .product-detail-img {
   background: var(--bg-2);
   border: 1px solid var(--border);
   border-radius: var(--r-lg);
   aspect-ratio: 1;
-  display: flex; align-items: center; justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   overflow: hidden;
-  position: sticky; top: 80px;
 }
+
 .product-detail-img img {
-  width: 80%; height: 80%;
+  width: 80%;
+  height: 80%;
   object-fit: contain;
 }
+
+.product-thumbs {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 16px;
+}
+
+.product-thumb {
+  width: 72px;
+  height: 72px;
+  object-fit: cover;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--bg-2);
+  cursor: pointer;
+  padding: 4px;
+  transition: .2s ease;
+}
+
+.product-thumb:hover {
+  border-color: var(--accent);
+}
+
+.product-thumb.active {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 1px var(--accent) inset;
+}
+
 .product-detail-cat {
   font-family: var(--ff-mono);
   font-size: .75rem; font-weight: 500;
@@ -683,11 +721,12 @@ p  { color: var(--text-2); line-height: 1.7; }
 /* ── Responsive ──────────────────────────────────────────────── */
 @media (max-width: 900px) {
   .product-detail { grid-template-columns: 1fr; gap: 32px; }
-  .product-detail-img { position: static; }
+  .product-detail-img-wrap { position: static; }
   .cart-layout { grid-template-columns: 1fr; }
   .footer-grid { grid-template-columns: 1fr 1fr; }
   .hero-stats { gap: 24px; flex-wrap: wrap; }
 }
+
 @media (max-width: 640px) {
   .nav-links { display: none; }
   .nav-mobile-toggle { display: flex; }
@@ -705,4 +744,6 @@ p  { color: var(--text-2); line-height: 1.7; }
   .trust-grid { grid-template-columns: 1fr; }
   .cart-item { grid-template-columns: 64px 1fr auto; gap: 14px; }
   .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 32px; }
+  .product-thumbs { gap: 10px; }
+  .product-thumb { width: 64px; height: 64px; }
 }
