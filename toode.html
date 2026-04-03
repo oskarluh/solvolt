@@ -119,21 +119,49 @@
     // Update page meta
     document.getElementById('page-title').textContent = toode.nimi + ' — Solvolt';
     document.getElementById('page-desc').content = toode.lyhikirjeldus;
-    document.getElementById('bc-name').textContent = toode.nimi.substring(0, 40) + '…';
+    document.getElementById('bc-name').textContent = toode.nimi.length > 40
+      ? toode.nimi.substring(0, 40) + '…'
+      : toode.nimi;
 
     let qty = 1;
 
-    const saleTag = toode.hind_vana ? `<span class="badge badge-sale">Soodustus ${Math.round((1 - toode.hind/toode.hind_vana)*100)}%</span>` : '';
-    const eelTag  = toode.eelmyyk  ? `<span class="badge badge-eelmyyk">⏳ Eelmüük</span>` : '';
+    const saleTag = toode.hind_vana ? `<span class="badge badge-sale">Soodustus ${Math.round((1 - toode.hind / toode.hind_vana) * 100)}%</span>` : '';
+    const eelTag  = toode.eelmyyk ? `<span class="badge badge-eelmyyk">⏳ Eelmüük</span>` : '';
     const oldPrice = toode.hind_vana ? `<span class="price-old">${formatPrice(toode.hind_vana)}</span>` : '';
 
-    const specsRows = Object.entries(toode.specs || {}).map(([k,v]) =>
-      `<tr><td>${k}</td><td>${v}</td></tr>`).join('');
+    const specsRows = Object.entries(toode.specs || {}).map(([k, v]) =>
+      `<tr><td>${k}</td><td>${v}</td></tr>`
+    ).join('');
+
+    const gallery = (toode.pildid && toode.pildid.length)
+      ? toode.pildid
+      : [toode.pilt];
 
     document.getElementById('product-detail').innerHTML = `
-      <div class="product-detail-img">
-        <img src="${toode.pilt}" alt="${toode.nimi}" onerror="this.src='assets/pildid/placeholder.svg'">
+      <div class="product-detail-img-wrap">
+        <div class="product-detail-img">
+          <img id="main-product-image" src="${gallery[0]}" alt="${toode.nimi}" onerror="this.src='assets/pildid/placeholder.svg'">
+        </div>
+
+        ${gallery.length > 1 ? `
+          <div class="product-thumbs">
+            ${gallery.map((src, i) => `
+              <img
+                src="${src}"
+                alt="${toode.nimi} ${i + 1}"
+                class="product-thumb ${i === 0 ? 'active' : ''}"
+                onclick="
+                  document.getElementById('main-product-image').src='${src}';
+                  document.querySelectorAll('.product-thumb').forEach(el => el.classList.remove('active'));
+                  this.classList.add('active');
+                "
+                onerror="this.src='assets/pildid/placeholder.svg'"
+              >
+            `).join('')}
+          </div>
+        ` : ''}
       </div>
+
       <div>
         <div class="product-detail-cat">${KATEGOORIAD[toode.kategooria] || toode.kategooria}</div>
         <h1>${toode.nimi}</h1>
@@ -144,11 +172,13 @@
           <span style="font-size:.8rem;color:var(--text-3);font-family:var(--ff-mono)">+ KM</span>
         </div>
         <p class="product-short">${toode.lyhikirjeldus}</p>
+
         ${specsRows ? `
         <div style="margin-bottom:28px">
           <div style="font-family:var(--ff-mono);font-size:.75rem;font-weight:500;color:var(--text-3);letter-spacing:.08em;text-transform:uppercase;margin-bottom:12px">Spetsifikatsioonid</div>
           <table class="specs-table">${specsRows}</table>
         </div>` : ''}
+
         <div class="qty-row">
           <div class="qty-control">
             <button class="qty-btn" id="qty-minus">−</button>
@@ -159,11 +189,13 @@
             + Lisa ostukorvi
           </button>
         </div>
+
         <div style="margin-bottom:24px">
           <a href="ostukorv.html" class="btn btn-outline btn-full" id="buy-btn" style="display:none">
             → Osta kohe
           </a>
         </div>
+
         <div style="background:var(--bg-2);border:1px solid var(--border);border-radius:var(--r);padding:16px;display:flex;flex-direction:column;gap:10px">
           <div style="display:flex;align-items:center;gap:10px;font-size:.85rem;color:var(--text-2)">
             <span style="color:var(--accent)">✓</span> Tasuta konsultatsioon valiku osas
@@ -175,6 +207,7 @@
             <span style="color:var(--accent)">✓</span> Turvaline makse Stripe kaudu
           </div>
         </div>
+
         ${toode.kirjeldus ? `
         <div style="margin-top:32px;padding-top:28px;border-top:1px solid var(--border)">
           <div style="font-family:var(--ff-mono);font-size:.75rem;font-weight:500;color:var(--text-3);letter-spacing:.08em;text-transform:uppercase;margin-bottom:16px">Kirjeldus</div>
@@ -185,10 +218,16 @@
     // Qty controls
     const qtyDisplay = document.getElementById('qty-display');
     document.getElementById('qty-minus').addEventListener('click', () => {
-      if (qty > 1) { qty--; qtyDisplay.textContent = qty; }
+      if (qty > 1) {
+        qty--;
+        qtyDisplay.textContent = qty;
+      }
     });
     document.getElementById('qty-plus').addEventListener('click', () => {
-      if (qty < 10) { qty++; qtyDisplay.textContent = qty; }
+      if (qty < 10) {
+        qty++;
+        qtyDisplay.textContent = qty;
+      }
     });
     document.getElementById('add-btn').addEventListener('click', () => {
       Cart.add(toode, qty);
@@ -199,10 +238,10 @@
     const related = TOOTED.filter(t => t.kategooria === toode.kategooria && t.id !== toode.id).slice(0, 3);
     if (related.length) {
       document.getElementById('related-grid').innerHTML = related.map(t => {
-        const tJson = JSON.stringify(t).replace(/"/g,'&quot;');
+        const tJson = JSON.stringify(t).replace(/"/g, '&quot;');
         const sTag = t.hind_vana ? `<span class="badge badge-sale">Soodustus</span>` : '';
-        const eTag = t.eelmyyk  ? `<span class="badge badge-eelmyyk">Eelmüük</span>` : '';
-        const op   = t.hind_vana ? `<span class="price-old">${formatPrice(t.hind_vana)}</span>` : '';
+        const eTag = t.eelmyyk ? `<span class="badge badge-eelmyyk">Eelmüük</span>` : '';
+        const op = t.hind_vana ? `<span class="price-old">${formatPrice(t.hind_vana)}</span>` : '';
         return `
           <a href="toode.html?id=${t.id}" class="product-card">
             <div class="product-card-img">
@@ -210,7 +249,7 @@
               <div class="product-card-badges">${sTag}${eTag}</div>
             </div>
             <div class="product-card-body">
-              <div class="product-card-cat">${KATEGOORIAD[t.kategooria]||t.kategooria}</div>
+              <div class="product-card-cat">${KATEGOORIAD[t.kategooria] || t.kategooria}</div>
               <div class="product-card-title">${t.nimi}</div>
               <div class="product-card-price">
                 <span class="price-current">${formatPrice(t.hind)}</span>${op}
