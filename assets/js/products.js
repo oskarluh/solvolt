@@ -170,6 +170,109 @@ const TOOTED = [
     `
   },
   {
+  id: "deye-se-f16-c-version",
+  slug: "deye-se-f16-c-version",
+  nimi: "Deye SE-F16 C version 16kWh LiFePO4 aku",
+  lyhikirjeldus: "Deye seinale või põrandale paigaldatav 16kWh LiFePO4 aku. 314Ah, 51.2V, CAN/RS485/Bluetooth, kuni 32 tk paralleelis.",
+  kategooria: "akud",
+  hind: 0,
+  hind_vana: null,
+  stripe_price_id: "LISA_SIIA",
+  pilt: "assets/pildid/deye-se-f16-c.png",
+  pildid: [
+    "assets/pildid/deye-se-f16-c.png",
+    "assets/pildid/deye-se-f16-c-2.png",
+    "assets/pildid/deye-se-f16-c-3.png"
+  ],
+  ladu: true,
+  eelmyyk: false,
+  specs: {
+    "Tootja": "Deye",
+    "Mudel": "SE-F16 C version",
+    "Keemia": "LiFePO4",
+    "Mahtuvus Ah": "314 Ah",
+    "Nominaalpinge": "51.2 V",
+    "Tööpinge": "44.8–57.6 V",
+    "Nominaalenergia": "16 kWh",
+    "Maks. pidev laadimisvool": "160 A",
+    "Maks. pidev tühjendusvool": "230 A",
+    "Tippvool": "280 A (10 s)",
+    "Soovituslik DoD": "90%",
+    "Eluiga": "6000+ tsüklit",
+    "Suhtlusprotokoll": "CAN2.0 / RS485 / Bluetooth + APP",
+    "Kaitseklass": "IP21",
+    "Paralleelühendus": "kuni 32 tk",
+    "Mõõdud": "400 × 708 × 233 mm",
+    "Kaal": "u 109 kg",
+    "Garantii": "5 aastat",
+    "Tarne": "3–7 tööpäeva"
+  },
+  kirjeldus: `
+    <p>Deye SE-F16 C version on 16kWh LiFePO4 akusüsteem koduse päikeseenergia salvestamiseks. Tegemist on kompaktse madalpinge akuga, mis sobib hästi Deye ja teiste ühilduvate inverteritega.</p>
+
+    <ul>
+      <li>16 kWh nominaalenergia ja 314 Ah mahtuvus</li>
+      <li>51.2V süsteem — sobib madalpinge hübriidinverteritele</li>
+      <li>CAN / RS485 / Bluetooth — lihtne monitooring ja inverteriga side</li>
+      <li>Kuni 160A pidev laadimine ja kuni 230A pidev tühjendus</li>
+      <li>Kuni 32 akut paralleelis suurema süsteemi ehitamiseks</li>
+      <li>Seinale või põrandale paigaldatav lahendus</li>
+    </ul>
+
+    <p>Hea valik nii uue energiasalvestuse ehitamiseks kui olemasoleva süsteemi laiendamiseks.</p>
+  `
+},
+{
+  id: "deye-rw-f16",
+  slug: "deye-rw-f16",
+  nimi: "Deye RW-F16 14.4kWh LiFePO4 aku",
+  lyhikirjeldus: "Deye RW-F16 LiFePO4 aku 51.2V / 314Ah. 14.4kWh usable energy, kuni 160A pidev charge/discharge, sobib seina- või põrandapaigalduseks.",
+  kategooria: "akud",
+  hind: 0,
+  hind_vana: null,
+  stripe_price_id: "LISA_SIIA",
+  pilt: "assets/pildid/deye-rw-f16.png",
+  pildid: [
+    "assets/pildid/deye-rw-f16.png",
+    "assets/pildid/deye-rw-f16-2.png",
+    "assets/pildid/deye-rw-f16-3.png"
+  ],
+  ladu: true,
+  eelmyyk: false,
+  specs: {
+    "Tootja": "Deye",
+    "Mudel": "RW-F16",
+    "Keemia": "LiFePO4",
+    "Mahtuvus Ah": "314 Ah",
+    "Nominaalpinge": "51.2 V",
+    "Kasutatav energia": "14.4 kWh",
+    "Maks. pidev laadimis-/tühjendusvool": "160 A",
+    "Tippvool": "300 A (10 s)",
+    "Kaitseklass": "IP20",
+    "Paigaldus": "Seinale või põrandale",
+    "Töötemperatuur": "Laadimine 0°C kuni 55°C / tühjendamine -20°C kuni 55°C",
+    "Mõõdud": "480 × 830 × 235 mm",
+    "Kaal": "u 122 kg",
+    "Garantii": "5 aastat",
+    "Sertifikaadid": "UN38.3, MSDS",
+    "Tarne": "3–7 tööpäeva"
+  },
+  kirjeldus: `
+    <p>Deye RW-F16 on suure mahutavusega LiFePO4 aku kodustele ja väiksematele ärilistele energiasalvestuslahendustele. Aku on mõeldud sisetingimustesse ning sobib hästi koostööks hübriidinverteritega.</p>
+
+    <ul>
+      <li>314 Ah ja 51.2V LiFePO4 aku</li>
+      <li>14.4 kWh kasutatav energia (90% DoD)</li>
+      <li>Kuni 160A pidev laadimis- ja tühjendusvool</li>
+      <li>300A tippvool 10 sekundi jooksul</li>
+      <li>Seina- või põrandapaigaldus</li>
+      <li>Sobib hästi koduse päikeseenergia salvestuseks</li>
+    </ul>
+
+    <p>Kui soovid Deye inverteriga sobivat akulahendust, on RW-F16 üks väga tugev ja lihtsasti integreeritav variant.</p>
+  `
+},
+  {
     id: "dyness-powerbrick-pro-14kwh",
     slug: "dyness-powerbrick-pro-14kwh",
     nimi: "Dyness PowerBrick Pro 14.336kWh LiFePO4 aku (IP65)",
