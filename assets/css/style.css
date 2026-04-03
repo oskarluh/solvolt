@@ -665,6 +665,21 @@ p  { color: var(--text-2); line-height: 1.7; }
 }
 @keyframes spin { to { transform: rotate(360deg); } }
 
+/* ── Two-column section grids ────────────────────────────────── */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
+}
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: start;
+  max-width: 900px;
+}
+
 /* ── Responsive ──────────────────────────────────────────────── */
 @media (max-width: 900px) {
   .product-detail { grid-template-columns: 1fr; gap: 32px; }
@@ -689,4 +704,5 @@ p  { color: var(--text-2); line-height: 1.7; }
   .footer-bottom { flex-direction: column; gap: 8px; text-align: center; }
   .trust-grid { grid-template-columns: 1fr; }
   .cart-item { grid-template-columns: 64px 1fr auto; gap: 14px; }
+  .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 32px; }
 }
