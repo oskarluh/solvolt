@@ -58,7 +58,6 @@ const TOOTED = [
 
       <ul>
         <li>Sobib: energiasalvestus, päikesepargid, UPS, elektrisõidukid</li>
-        <li>Ühildub Deye, Huawei, Growatt jt hübriidinverteritega</li>
         <li>Suuremate koguste puhul küsi personaalset pakkumist</li>
       </ul>
 
