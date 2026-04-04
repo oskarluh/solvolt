@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Block cart and success pages from indexing
+Disallow: /ostukorv.html
+Disallow: /edasi.html
+
+Sitemap: https://solvolt.ee/sitemap.xml
