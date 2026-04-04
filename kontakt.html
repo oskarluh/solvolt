@@ -73,9 +73,10 @@
         </div>
       </div>
       <div>
-        <!-- Netlify Form - töötab automaatselt! -->
-        <form name="kontakt" method="POST" data-netlify="true" class="contact-form" id="contact-form">
-          <input type="hidden" name="form-name" value="kontakt" />
+        <form action="https://api.web3forms.com/submit" method="POST" class="contact-form" id="contact-form">
+          <input type="hidden" name="access_key" value="c2101b48-5107-4131-9020-4f6ebf573b5c">
+          <input type="hidden" name="subject" value="Uus sõnum — Solvolt kontaktvorm">
+          <input type="hidden" name="from_name" value="Solvolt veebileht">
           <div class="form-group">
             <label class="form-label">Nimi</label>
             <input type="text" name="nimi" placeholder="Sinu nimi" required>
@@ -108,7 +109,6 @@
 </main>
 <script src="assets/js/main.js"></script>
 <script>
-  // Netlify Form submit handling
   document.getElementById('contact-form').addEventListener('submit', async function(e) {
     e.preventDefault();
     const btn = document.getElementById('submit-btn');
@@ -116,11 +116,18 @@
     btn.innerHTML = '<span class="spinner" style="border-top-color:#000"></span> Saadan...';
     const data = new FormData(this);
     try {
-      await fetch('/', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: new URLSearchParams(data).toString() });
-      document.getElementById('form-success').style.display = 'block';
-      this.reset();
-      btn.textContent = 'Saadetud ✓';
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: data
+      });
+      const json = await res.json();
+      if (json.success) {
+        document.getElementById('form-success').style.display = 'block';
+        this.reset();
+        btn.textContent = 'Saadetud ✓';
+      } else {
+        throw new Error(json.message);
+      }
     } catch {
       btn.disabled = false;
       btn.textContent = 'Saada sõnum';
