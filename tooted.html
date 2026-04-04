@@ -106,9 +106,11 @@
     const saleTag = t.hind_vana ? `<span class="badge badge-sale">Soodustus</span>` : '';
     const eelTag  = t.eelmyyk  ? `<span class="badge badge-eelmyyk">Eelmüük</span>` : '';
     const oldPrice = t.hind_vana ? `<span class="price-old">${formatPrice(t.hind_vana)}</span>` : '';
+    const pricePrefix = t.hind_prefix ? `<span style="font-size:.8em;font-weight:400;opacity:.7">${t.hind_prefix} </span>` : '';
     const tJson = JSON.stringify(t).replace(/"/g,'&quot;');
+    const cardHref = t.href || `toode.html?id=${t.id}`;
     return `
-      <a href="toode.html?id=${t.id}" class="product-card">
+      <a href="${cardHref}" class="product-card">
         <div class="product-card-img">
           <img src="${t.pilt}" alt="${t.nimi}" onerror="this.src='assets/pildid/placeholder.svg'" loading="lazy">
           <div class="product-card-badges">${saleTag}${eelTag}</div>
@@ -117,18 +119,17 @@
           <div class="product-card-cat">${KATEGOORIAD[t.kategooria] || t.kategooria}</div>
           <div class="product-card-title">${t.nimi}</div>
           <div class="product-card-price">
-            <span class="price-current">${formatPrice(t.hind)}</span>
+            <span class="price-current">${pricePrefix}${formatPrice(t.hind)}</span>
             ${oldPrice}
           </div>
-          <button class="btn btn-outline btn-sm btn-full" onclick="event.preventDefault(); Cart.add(${tJson})">
-            + Ostukorvi
-          </button>
+          ${!t.href ? `<button class="btn btn-outline btn-sm btn-full" onclick="event.preventDefault(); Cart.add(${tJson})">+ Ostukorvi</button>` : `<span class="btn btn-outline btn-sm btn-full" style="text-align:center">Vaata mudeleid →</span>`}
         </div>
       </a>`;
   }
 
   function renderGrid() {
-    const filtered = activeKat === 'koik' ? TOOTED : TOOTED.filter(t => t.kategooria === activeKat);
+    const visible = TOOTED.filter(t => !t.catalog_hidden);
+    const filtered = activeKat === 'koik' ? visible : visible.filter(t => t.kategooria === activeKat);
     document.getElementById('products-grid').innerHTML = filtered.map(renderProductCard).join('');
     document.getElementById('product-count').textContent = filtered.length + ' toodet';
   }

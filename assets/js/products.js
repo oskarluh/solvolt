@@ -358,8 +358,59 @@ const TOOTED = [
     `
   },
   {
+    id: "deye-6-12kw",
+    slug: "deye-6-12kw",
+    nimi: "Deye SG05LP3 6–12kW 3-faasiline hübriidinverter",
+    lyhikirjeldus: "Deye kolmefaasiline hübriidinverter 48V akusüsteemiga — 4 võimsust: 6kW, 8kW, 10kW, 12kW. Zero export, AC-coupling, IP65, Wi-Fi.",
+    kategooria: "inverterid",
+    hind: 2090,
+    hind_vana: null,
+    hind_prefix: "alates",
+    href: "deye-6-12kw.html",
+    stripe_price_id: null,
+    pilt: "assets/pildid/deye-6k.jpg",
+    ladu: true,
+    eelmyyk: false,
+    specs: {
+      "Tootja": "Deye",
+      "Mudelid": "6kW, 8kW, 10kW, 12kW",
+      "Faasid": "3-faasiline",
+      "Akupinge": "48V madalpinge (40–60V)",
+      "Kaitseklass": "IP65",
+      "Garantii": "5 aastat",
+      "Tarne": "3–7 tööpäeva"
+    },
+    kirjeldus: ``
+  },
+  {
+    id: "deye-15-20kw",
+    slug: "deye-15-20kw",
+    nimi: "Deye SG05LP3 15–20kW 3-faasiline hübriidinverter",
+    lyhikirjeldus: "Deye kolmefaasiline hübriidinverter 48V akusüsteemiga — 2 võimsust: 15kW ja 20kW. Kuni 350A aku vool, zero export, IP65, Wi-Fi.",
+    kategooria: "inverterid",
+    hind: 2450,
+    hind_vana: null,
+    hind_prefix: "alates",
+    href: "deye-15-20kw.html",
+    stripe_price_id: null,
+    pilt: "assets/pildid/deye-15k.jpg",
+    ladu: true,
+    eelmyyk: false,
+    specs: {
+      "Tootja": "Deye",
+      "Mudelid": "15kW, 20kW",
+      "Faasid": "3-faasiline",
+      "Akupinge": "48V madalpinge (40–60V)",
+      "Kaitseklass": "IP65",
+      "Garantii": "5 aastat",
+      "Tarne": "3–7 tööpäeva"
+    },
+    kirjeldus: ``
+  },
+  {
     id: "deye-sun-6k",
     slug: "deye-sun-6k",
+    catalog_hidden: true,
     nimi: "Deye SUN-6K-SG05LP3-EU-SM2 — 6kW 3-faasiline hübriidinverter",
     lyhikirjeldus: "Deye 6kW kolmefaasiline hübriidinverter 48V akusüsteemiga. Zero export, AC-coupling, smart load, IP65, Wi-Fi.",
     kategooria: "inverterid",
@@ -403,6 +454,7 @@ const TOOTED = [
   {
     id: "deye-sun-8k",
     slug: "deye-sun-8k",
+    catalog_hidden: true,
     nimi: "Deye SUN-8K-SG05LP3-EU-SM2 — 8kW 3-faasiline hübriidinverter",
     lyhikirjeldus: "Deye 8kW kolmefaasiline hübriidinverter 48V akusüsteemiga. Zero export, AC-coupling, smart load, IP65, Wi-Fi.",
     kategooria: "inverterid",
@@ -446,6 +498,7 @@ const TOOTED = [
   {
     id: "deye-sun-10k",
     slug: "deye-sun-10k",
+    catalog_hidden: true,
     nimi: "Deye SUN-10K-SG05LP3-EU-SM2 — 10kW 3-faasiline hübriidinverter",
     lyhikirjeldus: "Deye 10kW kolmefaasiline hübriidinverter 48V akusüsteemiga. Kuni 210A aku vool, zero export, AC-coupling, IP65, Wi-Fi.",
     kategooria: "inverterid",
@@ -489,6 +542,7 @@ const TOOTED = [
   {
     id: "deye-sun-12k",
     slug: "deye-sun-12k",
+    catalog_hidden: true,
     nimi: "Deye SUN-12K-SG05LP3-EU-SM2 — 12kW 3-faasiline hübriidinverter",
     lyhikirjeldus: "Deye 12kW kolmefaasiline hübriidinverter 48V akusüsteemiga. Kuni 250A aku vool, zero export, AC-coupling, IP65, Wi-Fi.",
     kategooria: "inverterid",
@@ -532,6 +586,7 @@ const TOOTED = [
   {
     id: "deye-sun-15k",
     slug: "deye-sun-15k",
+    catalog_hidden: true,
     nimi: "Deye SUN-15K-SG05LP3-EU-SM2 — 15kW 3-faasiline hübriidinverter",
     lyhikirjeldus: "Deye 15kW kolmefaasiline hübriidinverter. Kuni 310A aku vool, kuni 22.5kW PV, zero export, AC-coupling, IP65, Wi-Fi.",
     kategooria: "inverterid",
@@ -575,6 +630,7 @@ const TOOTED = [
   {
     id: "deye-sun-20k",
     slug: "deye-sun-20k",
+    catalog_hidden: true,
     nimi: "Deye SUN-20K-SG05LP3-EU-SM2 — 20kW 3-faasiline hübriidinverter",
     lyhikirjeldus: "Deye 20kW kolmefaasiline hübriidinverter. Kuni 350A aku vool, kuni 30kW PV, zero export, AC-coupling, IP65, Wi-Fi.",
     kategooria: "inverterid",
