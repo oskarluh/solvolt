@@ -90,29 +90,6 @@
     .qw-features li::before { content: '✓'; color: var(--accent); font-weight: 700; flex-shrink: 0; }
     .qw-features-title { font-family: var(--ff-mono); font-size: .7rem; color: var(--accent); letter-spacing: .1em; text-transform: uppercase; margin-bottom: 12px; }
 
-    /* Product image strip */
-    .product-strip {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 16px;
-      margin-bottom: 52px;
-    }
-    @media (max-width: 640px) { .product-strip { grid-template-columns: 1fr; } }
-    .product-strip-card {
-      background: var(--bg-1);
-      border: 1px solid var(--border);
-      border-radius: var(--r-lg);
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 28px 24px;
-      gap: 12px;
-    }
-    .product-strip-card img { max-height: 180px; width: auto; object-fit: contain; }
-    .product-strip-label { font-family: var(--ff-mono); font-size: .72rem; color: var(--text-3); letter-spacing: .08em; text-align: center; }
-    .product-strip-name { font-family: var(--ff-display); font-size: .95rem; font-weight: 700; color: var(--text-1); text-align: center; }
   </style>
 </head>
 <body>
@@ -169,18 +146,11 @@
       </p>
     </div>
 
-    <!-- Product image strip -->
-    <div class="product-strip">
-      <div class="product-strip-card">
-        <img src="assets/pildid/deye.png" alt="Deye hübriidinverter" onerror="this.style.display='none'">
-        <div class="product-strip-label">SAMM 1 · INVERTER</div>
-        <div class="product-strip-name">Deye SUN-SG05LP3 6–20 kW</div>
-      </div>
-      <div class="product-strip-card">
-        <img src="eel-battery-v6-pro.png" alt="EEL Battery V6 PRO" onerror="this.style.display='none'">
-        <div class="product-strip-label">SAMM 2 · AKU</div>
-        <div class="product-strip-name">EEL V6 PRO ~16–64 kWh</div>
-      </div>
+    <!-- Product image -->
+    <div style="margin-bottom:52px;border-radius:var(--r-lg);overflow:hidden;border:1px solid var(--border);background:var(--bg-1)">
+      <img src="assets/pildid/komplekt.png" alt="Täielik energiasalvestuse komplekt — Deye inverter, EEL V6 PRO aku, Qilowatt"
+           style="width:100%;height:auto;display:block;max-height:480px;object-fit:contain;padding:24px"
+           onerror="this.parentElement.style.display='none'">
     </div>
 
     <!-- Configurator + Sidebar -->
@@ -262,12 +232,12 @@
             <div class="step-num">3</div>
             <div class="step-title">Qilowatt juhtimismoodul</div>
           </div>
-          <p class="step-sub">WiFi-põhine Modbus R2 moodul — ühendub inverteriga RS485 kaudu · +434 € KM-ga</p>
+          <p class="step-sub">WiFi-põhine Modbus R2 moodul — ühendub inverteriga RS485 kaudu · +350 €</p>
           <div class="option-grid two-col" id="qilowatt-opts">
-            <div class="opt-card" data-type="qilowatt" data-id="yes" data-price="434">
+            <div class="opt-card" data-type="qilowatt" data-id="yes" data-price="350">
               <div class="opt-card-power" style="font-size:1rem">Jah, lisa</div>
               <div class="opt-card-model">Qilowatt Modbus R2</div>
-              <div class="opt-card-price">+ 434 €</div>
+              <div class="opt-card-price">+ 350 €</div>
             </div>
             <div class="opt-card selected" data-type="qilowatt" data-id="no" data-price="0">
               <div class="opt-card-power" style="font-size:1rem">Ei, praegu mitte</div>
