@@ -20,17 +20,52 @@ export async function onRequestPost(context) {
     }
 
     if (!env.PUBLIC_SITE_URL) {
-      return json({ error: 'PUBLIC_SITE_URL puudub Cloudflare variables/secrets alt' }, 500);
+      return json({ error: 'PUBLIC_SITE_URL puudub Cloudflare variables alt' }, 500);
     }
 
     const form = new URLSearchParams();
 
+    // Põhiseaded
     form.set('mode', 'payment');
     form.set('locale', 'et');
     form.set('success_url', `${env.PUBLIC_SITE_URL}/edasi.html?session_id={CHECKOUT_SESSION_ID}`);
     form.set('cancel_url', `${env.PUBLIC_SITE_URL}/ostukorv.html`);
     form.set('payment_intent_data[description]', 'Solvolt OÜ tellimus');
 
+    // Küsi kliendi e-maili checkoutis
+    form.set('billing_address_collection', 'auto');
+
+    // Näita tarne / arve märkust
+    form.set(
+      'custom_text[submit][message]',
+      'Tarne lepitakse pärast makset eraldi kokku. Kui ostad ettevõttele, lisa allpool firma nimi ja KMKR number, et saaksime väljastada ametliku arve.'
+    );
+
+    // Firma nimi
+    form.set('custom_fields[0][key]', 'company_name');
+    form.set('custom_fields[0][label][type]', 'custom');
+    form.set('custom_fields[0][label][custom]', 'Firma nimi');
+    form.set('custom_fields[0][type]', 'text');
+    form.set('custom_fields[0][text][maximum_length]', '100');
+    form.set('custom_fields[0][optional]', 'true');
+
+    // KMKR number
+    form.set('custom_fields[1][key]', 'vat_number');
+    form.set('custom_fields[1][label][type]', 'custom');
+    form.set('custom_fields[1][label][custom]', 'KMKR number');
+    form.set('custom_fields[1][type]', 'text');
+    form.set('custom_fields[1][text][maximum_length]', '40');
+    form.set('custom_fields[1][optional]', 'true');
+
+    // Soovi korral võid lisada ka märkuste välja
+    form.set('custom_fields[2][key]', 'extra_info');
+    form.set('custom_fields[2][label][type]', 'custom');
+    form.set('custom_fields[2][label][custom]', 'Lisainfo tellimuse kohta');
+    form.set('custom_fields[2][type]', 'text');
+    form.set('custom_fields[2][text][maximum_length]', '200');
+    form.set('custom_fields[2][optional]', 'true');
+
+    // Tooted
     items.forEach((item, index) => {
       form.set(`line_items[${index}][price]`, item.price);
       form.set(`line_items[${index}][quantity]`, String(item.quantity || 1));
@@ -51,9 +86,7 @@ export async function onRequestPost(context) {
       console.error('Stripe error:', stripeData);
       return json(
         {
-          error:
-            stripeData?.error?.message ||
-            'Makse alustamine ebaõnnestus'
+          error: stripeData?.error?.message || 'Makse alustamine ebaõnnestus'
         },
         500
       );
