@@ -211,7 +211,7 @@
 <script src="assets/js/products.js"></script>
 <script src="assets/js/main.js"></script>
 <script>
-  const featured = ['eve-mb31-314ah', 'dyness-powerbrick-14kwh', 'deye-sun-6k', 'basen-green-16kwh'];
+  const featured = ['eve-mb31-314ah', 'dyness-powerbrick-14kwh', 'deye-6-12kw', 'deye-rw-f16'];
   const grid = document.getElementById('featured-grid');
   featured.forEach(id => {
     const t = TOOTED.find(p => p.id === id);
@@ -222,8 +222,11 @@
     const saleTag = t.hind_vana ? `<span class="badge badge-sale">Soodustus</span>` : '';
     const eelTag  = t.eelmyyk  ? `<span class="badge badge-eelmyyk">Eelmüük</span>` : '';
     const oldPrice = t.hind_vana ? `<span class="price-old">${formatPrice(t.hind_vana)}</span>` : '';
+    const pricePrefix = t.hind_prefix ? `<span style="font-size:.8em;font-weight:400;opacity:.7">${t.hind_prefix} </span>` : '';
+    const cardHref = t.href || `toode.html?id=${t.id}`;
+    const tJson = JSON.stringify(t).replace(/"/g, '&quot;');
     return `
-      <a href="toode.html?id=${t.id}" class="product-card">
+      <a href="${cardHref}" class="product-card">
         <div class="product-card-img">
           <img src="${t.pilt}" alt="${t.nimi}" onerror="this.src='assets/pildid/placeholder.svg'">
           <div class="product-card-badges">${saleTag}${eelTag}</div>
@@ -232,12 +235,10 @@
           <div class="product-card-cat">${KATEGOORIAD[t.kategooria] || t.kategooria}</div>
           <div class="product-card-title">${t.nimi}</div>
           <div class="product-card-price">
-            <span class="price-current">${formatPrice(t.hind)}</span>
+            <span class="price-current">${pricePrefix}${formatPrice(t.hind)}</span>
             ${oldPrice}
           </div>
-          <button class="btn btn-outline btn-sm btn-full" onclick="event.preventDefault(); Cart.add(${JSON.stringify(t).replace(/"/g, '&quot;')})">
-            + Ostukorvi
-          </button>
+          ${!t.href ? `<button class="btn btn-outline btn-sm btn-full" onclick="event.preventDefault(); Cart.add(${tJson})">+ Ostukorvi</button>` : `<span class="btn btn-outline btn-sm btn-full" style="text-align:center">Vaata mudeleid →</span>`}
         </div>
       </a>`;
   }

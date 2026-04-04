@@ -66,7 +66,34 @@ const TOOTED = [
     `
   },
 
-  // ── 2. Deye 6–12kW inverterid ────────────────────────────
+  // ── 2. EEL Battery V6 PRO ────────────────────────────────
+  {
+    id: "eel-battery-v6-pro",
+    slug: "eel-battery-v6-pro",
+    nimi: "EEL Battery V6 PRO — 17kWh LiFePO4 akusüsteem",
+    lyhikirjeldus: "Täielik 17kWh LiFePO4 akusüsteem EVE MB31 elementide, EEL V6 PRO kasti ja JK BMS V19-ga. Saadaval valmis komplektina või DIY kitina.",
+    kategooria: "akud",
+    hind: 1699,
+    hind_vana: null,
+    hind_prefix: "alates",
+    href: "eel-v6-pro.html",
+    stripe_price_id: null,
+    pilt: "eel-battery-v6-pro.png",
+    ladu: true,
+    eelmyyk: true,
+    specs: {
+      "Mahtuvus": "17 kWh (330+ Ah)",
+      "Elemendid": "16× EVE MB31 Grade A",
+      "BMS": "JK BMS V19",
+      "Pinge": "48V (51.2V nominaal)",
+      "Variandid": "Valmis komplekt 1 899€ · DIY kit 1 699€",
+      "Garantii": "5 aastat",
+      "Tarne": "Eelmüük — kohe peale elementide saabumist"
+    },
+    kirjeldus: ``
+  },
+
+  // ── 3. Deye 6–12kW inverterid ────────────────────────────
   {
     id: "deye-6-12kw",
     slug: "deye-6-12kw",
