@@ -542,7 +542,12 @@ const TOOTED = [
     hind: 2090,
     hind_vana: 2320,
     stripe_price_id: "LISA_SIIA",
-    pilt: "assets/pildid/deye-6k.jpg",
+    pilt: "assets/pildid/deye.png",
+    pildid: [
+      "assets/pildid/deye.png",
+      "assets/pildid/deye2.jpg",
+    ],
+    tooteleht_pdf: "assets/failid/deye-tooteleht1.pdf",
     ladu: true,
     eelmyyk: false,
     specs: {
@@ -586,7 +591,12 @@ const TOOTED = [
     hind: 2130,
     hind_vana: 2230,
     stripe_price_id: "LISA_SIIA",
-    pilt: "assets/pildid/deye-8k.jpg",
+    pilt: "assets/pildid/deye.png",
+    pildid: [
+      "assets/pildid/deye.png",
+      "assets/pildid/deye2.jpg",
+    ],
+    tooteleht_pdf: "assets/failid/deye-tooteleht1.pdf",
     ladu: true,
     eelmyyk: false,
     specs: {
@@ -630,7 +640,12 @@ const TOOTED = [
     hind: 2150,
     hind_vana: 2500,
     stripe_price_id: "LISA_SIIA",
-    pilt: "assets/pildid/deye-10k.jpg",
+    pilt: "assets/pildid/deye.png",
+    pildid: [
+      "assets/pildid/deye.png",
+      "assets/pildid/deye2.jpg",
+    ],
+    tooteleht_pdf: "assets/failid/deye-tooteleht1.pdf",
     ladu: true,
     eelmyyk: false,
     specs: {
@@ -674,7 +689,12 @@ const TOOTED = [
     hind: 2180,
     hind_vana: 2255,
     stripe_price_id: "LISA_SIIA",
-    pilt: "assets/pildid/deye-12k.jpg",
+    pilt: "assets/pildid/deye.png",
+    pildid: [
+      "assets/pildid/deye.png",
+      "assets/pildid/deye2.jpg",
+    ],
+    tooteleht_pdf: "assets/failid/deye-tooteleht1.pdf",
     ladu: true,
     eelmyyk: false,
     specs: {
@@ -718,7 +738,12 @@ const TOOTED = [
     hind: 2450,
     hind_vana: 2540,
     stripe_price_id: "LISA_SIIA",
-    pilt: "assets/pildid/deye-15k.jpg",
+    pilt: "assets/pildid/deye3.webp",
+    pildid: [
+      "assets/pildid/deye3.webp",
+      "assets/pildid/deye32.jpg",
+    ],
+    tooteleht_pdf: "assets/failid/deye-tooteleht2.pdf",
     ladu: true,
     eelmyyk: false,
     specs: {
@@ -762,7 +787,12 @@ const TOOTED = [
     hind: 3250,
     hind_vana: 3380,
     stripe_price_id: "price_1TEvzFPcV5reENb68Q2o6uqi",
-    pilt: "assets/pildid/deye-20k.jpg",
+    pilt: "assets/pildid/deye3.webp",
+    pildid: [
+      "assets/pildid/deye3.webp",
+      "assets/pildid/deye32.jpg",
+    ],
+    tooteleht_pdf: "assets/failid/deye-tooteleht2.pdf",
     ladu: true,
     eelmyyk: false,
     specs: {
