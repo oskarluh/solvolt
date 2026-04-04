@@ -93,7 +93,33 @@ const TOOTED = [
     kirjeldus: ``
   },
 
-  // ── 3. Deye 6–12kW inverterid ────────────────────────────
+  // ── 3. Täielik Energiasalvestuse Komplekt ────────────────
+  {
+    id: "energiasalvestuse-komplekt",
+    slug: "energiasalvestuse-komplekt",
+    nimi: "Täielik Energiasalvestuse Komplekt",
+    lyhikirjeldus: "Vali Deye inverter (6–20kW) + EEL V6 PRO aku (16–64kWh) + Qilowatt juhtimine. Komplekti soodustus −5%. Konfigureeritav.",
+    kategooria: "komplekt",
+    hind: 3790,
+    hind_vana: 3989,
+    hind_prefix: "alates",
+    href: "komplekt.html",
+    stripe_price_id: null,
+    pilt: "assets/pildid/deye.png",
+    ladu: true,
+    eelmyyk: false,
+    specs: {
+      "Inverter": "Deye SG05LP3 — 6, 10, 12, 15 või 20 kW",
+      "Aku": "EEL V6 PRO — 16, 32, 48 või 64 kWh",
+      "Lisavalik": "Qilowatt juhtimismoodul +350 €",
+      "Soodustus": "5% komplekti hinnalt",
+      "Garantii": "5 aastat",
+      "Tarne": "3–14 tööpäeva"
+    },
+    kirjeldus: ``
+  },
+
+  // ── 4. Deye 6–12kW inverterid ────────────────────────────
   {
     id: "deye-6-12kw",
     slug: "deye-6-12kw",
@@ -774,6 +800,7 @@ const TOOTED = [
 
 // Kategooriate pealkirjad
 const KATEGOORIAD = {
+  "komplekt": "Komplektid",
   "lifepo4": "LiFePO4 elemendid",
   "inverterid": "Hübriidinverterid",
   "akud": "Akud",
