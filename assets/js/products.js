@@ -19,7 +19,7 @@ const TOOTED = [
     kategooria: "lifepo4",
     hind: 1450,
     hind_vana: 1550,
-    stripe_price_id: "LISA_SIIA",
+    stripe_price_id: "price_1TIXrMPcV5reENb6WOJFaOhT",
     pilt: "assets/pildid/eve-mb31.png",
     pildid: [
       "assets/pildid/eve-mb31.png",
@@ -191,8 +191,8 @@ const TOOTED = [
     lyhikirjeldus: "Deye seinale või põrandale paigaldatav 16kWh LiFePO4 aku. 314Ah, 51.2V, CAN/RS485/Bluetooth, kuni 32 tk paralleelis.",
     kategooria: "akud",
     hind: 2770,
-    hind_vana: null,
-    stripe_price_id: "LISA_SIIA",
+    hind_vana: 2890,
+    stripe_price_id: "price_1TIXufPcV5reENb6r6OZXfMg",
     pilt: "assets/pildid/deye-se-f16-c.png",
     pildid: [
       "assets/pildid/deye-se-f16-c.png",
@@ -243,8 +243,8 @@ const TOOTED = [
     lyhikirjeldus: "Deye RW-F16 LiFePO4 aku 51.2V / 314Ah. 16kWh nominaalmahtuvus, kasutatav energia 14.4kWh (DoD 90%), kuni 160A pidev charge/discharge.",
     kategooria: "akud",
     hind: 2655,
-    hind_vana: null,
-    stripe_price_id: "LISA_SIIA",
+    hind_vana: 2760,
+    stripe_price_id: "price_1TIXuwPcV5reENb62hoDL762",
     pilt: "assets/pildid/deye-rw-f16.png",
     pildid: [
       "assets/pildid/deye-rw-f16.png",
@@ -296,7 +296,7 @@ const TOOTED = [
     kategooria: "akud",
     hind: 2540,
     hind_vana: 2700,
-    stripe_price_id: "LISA_SIIA",
+    stripe_price_id: "price_1TIXvbPcV5reENb6OzramLQn",
     pilt: "assets/pildid/dynesspro.png",
     pildid: [
       "assets/pildid/dynesspro.png",
@@ -339,7 +339,7 @@ const TOOTED = [
     kategooria: "akud",
     hind: 2435,
     hind_vana: 2500,
-    stripe_price_id: "LISA_SIIA",
+    stripe_price_id: "price_1TIXvtPcV5reENb6LsDVjxRK",
     pilt: "assets/pildid/dyness.png",
     pildid: [
       "assets/pildid/dyness.png",
@@ -382,7 +382,7 @@ const TOOTED = [
     kategooria: "akud",
     hind: 2049,
     hind_vana: 2399,
-    stripe_price_id: "LISA_SIIA",
+    stripe_price_id: "price_1TIXwEPcV5reENb6XMnSJZ7I",
     pilt: "assets/pildid/basen.jpg",
     pildid: [
       "assets/pildid/basen.jpg",
@@ -423,7 +423,7 @@ const TOOTED = [
     kategooria: "inverterid",
     hind: 860,
     hind_vana: null,
-    stripe_price_id: "LISA_SIIA",
+    stripe_price_id: "price_1TIXwTPcV5reENb6bp1cdEWL",
     pilt: "assets/pildid/huawei.png",
     pildid: [
       "assets/pildid/huawei.png",
@@ -464,7 +464,7 @@ const TOOTED = [
     kategooria: "bms",
     hind: 130,
     hind_vana: null,
-    stripe_price_id: "LISA_SIIA",
+    stripe_price_id: "price_1TIXwfPcV5reENb6OvY9mLcc",
     pilt: "assets/pildid/jk.png",
     pildid: [
       "assets/pildid/jk.png",
@@ -501,7 +501,7 @@ const TOOTED = [
     kategooria: "bms",
     hind: 155,
     hind_vana: null,
-    stripe_price_id: "LISA_SIIA",
+    stripe_price_id: "price_1TIXwsPcV5reENb6GbpF1p9a",
     pilt: "assets/pildid/jk.png",
     pildid: [
       "assets/pildid/jk.png",
@@ -541,7 +541,7 @@ const TOOTED = [
     kategooria: "inverterid",
     hind: 2090,
     hind_vana: 2320,
-    stripe_price_id: "LISA_SIIA",
+    stripe_price_id: "price_1TIXryPcV5reENb6vBBAI5Pa",
     pilt: "assets/pildid/deye.png",
     pildid: [
       "assets/pildid/deye.png",
@@ -590,7 +590,7 @@ const TOOTED = [
     kategooria: "inverterid",
     hind: 2130,
     hind_vana: 2230,
-    stripe_price_id: "LISA_SIIA",
+    stripe_price_id: "price_1TIXsePcV5reENb6THSDRcEj",
     pilt: "assets/pildid/deye.png",
     pildid: [
       "assets/pildid/deye.png",
@@ -639,7 +639,7 @@ const TOOTED = [
     kategooria: "inverterid",
     hind: 2150,
     hind_vana: 2500,
-    stripe_price_id: "LISA_SIIA",
+    stripe_price_id: "price_1TIXszPcV5reENb6XJKXSFXs",
     pilt: "assets/pildid/deye.png",
     pildid: [
       "assets/pildid/deye.png",
@@ -688,7 +688,7 @@ const TOOTED = [
     kategooria: "inverterid",
     hind: 2180,
     hind_vana: 2255,
-    stripe_price_id: "LISA_SIIA",
+    stripe_price_id: "price_1TIXtEPcV5reENb6xcCUC4kE",
     pilt: "assets/pildid/deye.png",
     pildid: [
       "assets/pildid/deye.png",
@@ -737,7 +737,7 @@ const TOOTED = [
     kategooria: "inverterid",
     hind: 2450,
     hind_vana: 2540,
-    stripe_price_id: "LISA_SIIA",
+    stripe_price_id: "price_1TIXtZPcV5reENb6O3TN4s0A",
     pilt: "assets/pildid/deye3.webp",
     pildid: [
       "assets/pildid/deye3.webp",
@@ -786,7 +786,7 @@ const TOOTED = [
     kategooria: "inverterid",
     hind: 3250,
     hind_vana: 3380,
-    stripe_price_id: "price_1TEvzFPcV5reENb68Q2o6uqi",
+    stripe_price_id: "price_1TIXtpPcV5reENb60TdOGWUm",
     pilt: "assets/pildid/deye3.webp",
     pildid: [
       "assets/pildid/deye3.webp",
