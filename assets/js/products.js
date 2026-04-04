@@ -105,7 +105,7 @@ const TOOTED = [
     hind_prefix: "alates",
     href: "komplekt.html",
     stripe_price_id: null,
-    pilt: "assets/pildid/deye.png",
+    pilt: "assets/pildid/komplekt.png",
     ladu: true,
     eelmyyk: false,
     specs: {
