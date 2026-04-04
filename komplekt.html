@@ -4,251 +4,115 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Täielik Energiasalvestuse Komplekt — Solvolt</title>
-  <meta name="description" content="Vali sobiv Deye hübriidinverter + EEL V6 PRO aku mahtuvus + Qilowatt juhtimine. Komplekti soodustus 5%. Laos Eestis." />
+  <meta name="description" content="Vali sobiv Deye hübriidinverter + EEL V6 PRO aku + Qilowatt juhtimine. Komplekti soodustus 5%. Hinnad KM-ga. Laos Eestis." />
   <link rel="stylesheet" href="assets/css/style.css" />
   <style>
-    /* ── Configurator layout ───────────────────────────── */
     .config-wrap {
       display: grid;
       grid-template-columns: 1fr 340px;
       gap: 32px;
       align-items: start;
     }
-    @media (max-width: 900px) {
-      .config-wrap { grid-template-columns: 1fr; }
-    }
+    @media (max-width: 900px) { .config-wrap { grid-template-columns: 1fr; } }
 
-    /* ── Step block ─────────────────────────────────────── */
-    .step-block {
-      margin-bottom: 40px;
-    }
-    .step-label {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin-bottom: 18px;
-    }
+    .step-block { margin-bottom: 40px; }
+    .step-label { display: flex; align-items: center; gap: 12px; margin-bottom: 18px; }
     .step-num {
-      width: 28px;
-      height: 28px;
-      border-radius: 50%;
-      background: var(--accent);
-      color: #000;
-      font-family: var(--ff-mono);
-      font-size: .75rem;
-      font-weight: 600;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
+      width: 28px; height: 28px; border-radius: 50%;
+      background: var(--accent); color: #000;
+      font-family: var(--ff-mono); font-size: .75rem; font-weight: 600;
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
     }
-    .step-title {
-      font-family: var(--ff-display);
-      font-size: 1rem;
-      font-weight: 700;
-      color: var(--text-1);
-    }
+    .step-title { font-family: var(--ff-display); font-size: 1rem; font-weight: 700; color: var(--text-1); }
     .step-sub {
-      font-family: var(--ff-mono);
-      font-size: .72rem;
-      color: var(--text-3);
-      letter-spacing: .06em;
-      margin-left: 40px;
-      margin-top: -12px;
-      margin-bottom: 14px;
+      font-family: var(--ff-mono); font-size: .72rem; color: var(--text-3);
+      letter-spacing: .06em; margin-left: 40px; margin-top: -12px; margin-bottom: 14px;
     }
 
-    /* ── Option cards ───────────────────────────────────── */
-    .option-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
-      gap: 10px;
-    }
-    .option-grid.two-col {
-      grid-template-columns: 1fr 1fr;
-    }
+    .option-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap: 10px; }
+    .option-grid.two-col { grid-template-columns: 1fr 1fr; }
     .opt-card {
-      padding: 16px 14px;
-      border: 1px solid var(--border-2);
-      border-radius: var(--r);
-      background: var(--bg-1);
-      cursor: pointer;
-      transition: all var(--trans);
-      text-align: center;
-      user-select: none;
+      padding: 16px 14px; border: 1px solid var(--border-2); border-radius: var(--r);
+      background: var(--bg-1); cursor: pointer; transition: all var(--trans);
+      text-align: center; user-select: none;
     }
-    .opt-card:hover {
-      border-color: var(--accent);
-      background: var(--accent-bg);
-    }
-    .opt-card.selected {
-      border-color: var(--accent);
-      background: var(--accent-bg);
-      box-shadow: 0 0 0 1px var(--accent);
-    }
-    .opt-card-power {
-      font-family: var(--ff-display);
-      font-size: 1.35rem;
-      font-weight: 800;
-      color: var(--text-1);
-      line-height: 1.1;
-      margin-bottom: 3px;
-    }
+    .opt-card:hover { border-color: var(--accent); background: var(--accent-bg); }
+    .opt-card.selected { border-color: var(--accent); background: var(--accent-bg); box-shadow: 0 0 0 1px var(--accent); }
+    .opt-card-power { font-family: var(--ff-display); font-size: 1.35rem; font-weight: 800; color: var(--text-1); line-height: 1.1; margin-bottom: 3px; }
     .opt-card.selected .opt-card-power { color: var(--accent); }
-    .opt-card-model {
-      font-family: var(--ff-mono);
-      font-size: .65rem;
-      color: var(--text-3);
-      letter-spacing: .04em;
-      margin-bottom: 8px;
-    }
-    .opt-card-price {
-      font-size: .82rem;
-      color: var(--text-2);
-      font-family: var(--ff-mono);
-    }
+    .opt-card-model { font-family: var(--ff-mono); font-size: .65rem; color: var(--text-3); letter-spacing: .04em; margin-bottom: 8px; }
+    .opt-card-price { font-size: .82rem; color: var(--text-2); font-family: var(--ff-mono); }
     .opt-card.selected .opt-card-price { color: var(--accent); }
 
-    /* ── Price summary sidebar ──────────────────────────── */
-    .price-sidebar {
-      position: sticky;
-      top: 84px;
-    }
-    .price-box {
-      background: var(--bg-2);
-      border: 1px solid var(--border-2);
-      border-radius: var(--r-lg);
-      padding: 28px 24px;
-    }
-    .price-box-title {
-      font-family: var(--ff-mono);
-      font-size: .72rem;
-      color: var(--text-3);
-      letter-spacing: .1em;
-      text-transform: uppercase;
-      margin-bottom: 20px;
-    }
-    .price-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 9px 0;
-      border-bottom: 1px solid var(--border);
-      font-size: .88rem;
-      color: var(--text-2);
-    }
+    .price-sidebar { position: sticky; top: 84px; }
+    .price-box { background: var(--bg-2); border: 1px solid var(--border-2); border-radius: var(--r-lg); padding: 28px 24px; }
+    .price-box-title { font-family: var(--ff-mono); font-size: .72rem; color: var(--text-3); letter-spacing: .1em; text-transform: uppercase; margin-bottom: 20px; }
+    .price-row { display: flex; justify-content: space-between; align-items: center; padding: 9px 0; border-bottom: 1px solid var(--border); font-size: .88rem; color: var(--text-2); }
     .price-row:last-of-type { border-bottom: none; }
-    .price-row .label { color: var(--text-2); }
     .price-row .val { font-family: var(--ff-mono); color: var(--text-1); }
-    .price-row .val.accent { color: var(--accent); }
-    .price-row .val.strike {
-      text-decoration: line-through;
-      color: var(--text-3);
-      font-size: .8rem;
-    }
-    .price-total-block {
-      margin-top: 16px;
-      padding: 16px;
-      background: var(--bg-3);
-      border-radius: var(--r);
-      border: 1px solid var(--accent);
-    }
-    .price-total-label {
-      font-family: var(--ff-mono);
-      font-size: .68rem;
-      color: var(--text-3);
-      text-transform: uppercase;
-      letter-spacing: .1em;
-      margin-bottom: 4px;
-    }
-    .price-total-num {
-      font-family: var(--ff-display);
-      font-size: 2.2rem;
-      font-weight: 800;
-      color: var(--accent);
-      line-height: 1;
-    }
-    .price-total-orig {
-      font-family: var(--ff-mono);
-      font-size: .75rem;
-      color: var(--text-3);
-      text-decoration: line-through;
-      margin-top: 4px;
-    }
-    .price-total-vat {
-      font-family: var(--ff-mono);
-      font-size: .7rem;
-      color: var(--text-3);
-      margin-top: 6px;
-    }
+    .price-row .val.strike { text-decoration: line-through; color: var(--text-3); font-size: .8rem; }
+    .price-total-block { margin-top: 16px; padding: 16px; background: var(--bg-3); border-radius: var(--r); border: 1px solid var(--accent); }
+    .price-total-label { font-family: var(--ff-mono); font-size: .68rem; color: var(--text-3); text-transform: uppercase; letter-spacing: .1em; margin-bottom: 4px; }
+    .price-total-num { font-family: var(--ff-display); font-size: 2.2rem; font-weight: 800; color: var(--accent); line-height: 1; }
+    .price-total-orig { font-family: var(--ff-mono); font-size: .75rem; color: var(--text-3); text-decoration: line-through; margin-top: 4px; }
+    .price-total-vat { font-family: var(--ff-mono); font-size: .7rem; color: var(--text-3); margin-top: 6px; }
     .price-savings-badge {
-      display: inline-block;
-      background: rgba(255,107,74,.12);
-      color: #ff6b4a;
-      border: 1px solid rgba(255,107,74,.3);
-      border-radius: 4px;
-      font-family: var(--ff-mono);
-      font-size: .68rem;
-      font-weight: 600;
-      letter-spacing: .06em;
-      padding: 3px 10px;
-      margin-top: 10px;
+      display: inline-block; background: rgba(255,107,74,.12); color: #ff6b4a;
+      border: 1px solid rgba(255,107,74,.3); border-radius: 4px;
+      font-family: var(--ff-mono); font-size: .68rem; font-weight: 600;
+      letter-spacing: .06em; padding: 3px 10px; margin-top: 10px;
     }
 
-    /* ── Included list ──────────────────────────────────── */
-    .included-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
-      margin-top: 24px;
-    }
+    .included-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 24px; }
     @media (max-width: 640px) { .included-grid { grid-template-columns: 1fr; } }
-    .included-item {
-      display: flex;
-      gap: 12px;
-      align-items: flex-start;
-      padding: 14px;
-      background: var(--bg-1);
-      border: 1px solid var(--border);
-      border-radius: var(--r);
-    }
-    .included-icon {
-      width: 32px;
-      height: 32px;
-      border-radius: 6px;
-      background: var(--accent-bg);
-      border: 1px solid rgba(61,255,160,.2);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-      font-size: .95rem;
-    }
-    .included-text strong {
-      display: block;
-      font-size: .88rem;
-      font-weight: 600;
-      color: var(--text-1);
-      margin-bottom: 2px;
-    }
-    .included-text span {
-      font-size: .78rem;
-      color: var(--text-3);
-    }
+    .included-item { display: flex; gap: 12px; align-items: flex-start; padding: 14px; background: var(--bg-1); border: 1px solid var(--border); border-radius: var(--r); }
+    .included-icon { width: 32px; height: 32px; border-radius: 6px; background: var(--accent-bg); border: 1px solid rgba(61,255,160,.2); display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: .95rem; }
+    .included-text strong { display: block; font-size: .88rem; font-weight: 600; color: var(--text-1); margin-bottom: 2px; }
+    .included-text span { font-size: .78rem; color: var(--text-3); }
 
-    /* ── NB box ─────────────────────────────────────────── */
-    .nb-box {
-      background: rgba(255,184,0,.04);
-      border: 1px solid rgba(255,184,0,.2);
-      border-radius: var(--r);
-      padding: 18px 20px;
-      display: flex;
-      gap: 14px;
-      align-items: flex-start;
-    }
+    .nb-box { background: rgba(255,184,0,.04); border: 1px solid rgba(255,184,0,.2); border-radius: var(--r); padding: 18px 20px; display: flex; gap: 14px; align-items: flex-start; }
     .nb-icon { font-size: 1.1rem; flex-shrink: 0; margin-top: 2px; }
     .nb-text { font-size: .88rem; color: var(--text-2); line-height: 1.65; }
     .nb-text strong { color: #ffb800; }
+
+    /* Qilowatt feature list */
+    .qw-features {
+      margin-top: 16px;
+      padding: 18px 20px;
+      background: var(--bg-2);
+      border: 1px solid rgba(61,255,160,.15);
+      border-radius: var(--r);
+      display: none;
+    }
+    .qw-features.show { display: block; }
+    .qw-features ul { display: flex; flex-direction: column; gap: 8px; }
+    .qw-features li { display: flex; gap: 10px; font-size: .85rem; color: var(--text-2); line-height: 1.5; }
+    .qw-features li::before { content: '✓'; color: var(--accent); font-weight: 700; flex-shrink: 0; }
+    .qw-features-title { font-family: var(--ff-mono); font-size: .7rem; color: var(--accent); letter-spacing: .1em; text-transform: uppercase; margin-bottom: 12px; }
+
+    /* Product image strip */
+    .product-strip {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 52px;
+    }
+    @media (max-width: 640px) { .product-strip { grid-template-columns: 1fr; } }
+    .product-strip-card {
+      background: var(--bg-1);
+      border: 1px solid var(--border);
+      border-radius: var(--r-lg);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 28px 24px;
+      gap: 12px;
+    }
+    .product-strip-card img { max-height: 180px; width: auto; object-fit: contain; }
+    .product-strip-label { font-family: var(--ff-mono); font-size: .72rem; color: var(--text-3); letter-spacing: .08em; text-align: center; }
+    .product-strip-name { font-family: var(--ff-display); font-size: .95rem; font-weight: 700; color: var(--text-1); text-align: center; }
   </style>
 </head>
 <body>
@@ -290,10 +154,10 @@
     </div>
 
     <!-- Hero -->
-    <div style="max-width:720px;margin-bottom:56px">
+    <div style="max-width:720px;margin-bottom:36px">
       <div style="display:flex;gap:10px;align-items:center;margin-bottom:16px;flex-wrap:wrap">
         <span class="badge badge-sale">Komplekti soodustus −5%</span>
-        <span style="font-family:var(--ff-mono);font-size:.72rem;color:var(--text-3);letter-spacing:.08em">KONFIGUREERITAV KOMPLEKT</span>
+        <span style="font-family:var(--ff-mono);font-size:.72rem;color:var(--text-3);letter-spacing:.08em">KONFIGUREERITAV KOMPLEKT · HINNAD KM-GA</span>
       </div>
       <h1 style="font-size:clamp(1.8rem,4vw,2.8rem);margin-bottom:12px">Täielik Energiasalvestuse Komplekt</h1>
       <p style="font-size:1rem;color:var(--text-2);line-height:1.75;max-width:640px">
@@ -301,8 +165,22 @@
         <strong style="color:var(--text-1)">EEL V6 PRO aku mahtuvus</strong> ja
         otsusta, kas soovid lisada <strong style="color:var(--text-1)">Qilowatt juhtimismooduli</strong>.
         Komplekt on mõeldud lihtsaks ühendamiseks — inverter ↔ aku ↔ juhtimine —
-        ilma et peaksid elemente ise kokku ehitama.
+        ilma et peaksid aku kasti ise komplekteerima.
       </p>
+    </div>
+
+    <!-- Product image strip -->
+    <div class="product-strip">
+      <div class="product-strip-card">
+        <img src="assets/pildid/deye.png" alt="Deye hübriidinverter" onerror="this.style.display='none'">
+        <div class="product-strip-label">SAMM 1 · INVERTER</div>
+        <div class="product-strip-name">Deye SUN-SG05LP3 6–20 kW</div>
+      </div>
+      <div class="product-strip-card">
+        <img src="eel-battery-v6-pro.png" alt="EEL Battery V6 PRO" onerror="this.style.display='none'">
+        <div class="product-strip-label">SAMM 2 · AKU</div>
+        <div class="product-strip-name">EEL V6 PRO ~16–64 kWh</div>
+      </div>
     </div>
 
     <!-- Configurator + Sidebar -->
@@ -317,32 +195,32 @@
             <div class="step-num">1</div>
             <div class="step-title">Vali inverter</div>
           </div>
-          <p class="step-sub">Deye SUN-SG05LP3-EU-SM2 — 3-faasiline hübriidinverter, 48V, IP65</p>
+          <p class="step-sub">Deye SUN-SG05LP3-EU-SM2 — 3-faasiline hübriidinverter, 48V, IP65 · Hinnad KM-ga (24%)</p>
           <div class="option-grid" id="inverter-opts">
-            <div class="opt-card selected" data-type="inverter" data-id="6kw" data-price="2090">
+            <div class="opt-card selected" data-type="inverter" data-id="6kw" data-price="2592">
               <div class="opt-card-power">6 kW</div>
               <div class="opt-card-model">SUN-6K</div>
-              <div class="opt-card-price">2 090 €</div>
+              <div class="opt-card-price">2 592 €</div>
             </div>
-            <div class="opt-card" data-type="inverter" data-id="10kw" data-price="2150">
+            <div class="opt-card" data-type="inverter" data-id="10kw" data-price="2666">
               <div class="opt-card-power">10 kW</div>
               <div class="opt-card-model">SUN-10K</div>
-              <div class="opt-card-price">2 150 €</div>
+              <div class="opt-card-price">2 666 €</div>
             </div>
-            <div class="opt-card" data-type="inverter" data-id="12kw" data-price="2180">
+            <div class="opt-card" data-type="inverter" data-id="12kw" data-price="2703">
               <div class="opt-card-power">12 kW</div>
               <div class="opt-card-model">SUN-12K</div>
-              <div class="opt-card-price">2 180 €</div>
+              <div class="opt-card-price">2 703 €</div>
             </div>
-            <div class="opt-card" data-type="inverter" data-id="15kw" data-price="2450">
+            <div class="opt-card" data-type="inverter" data-id="15kw" data-price="3038">
               <div class="opt-card-power">15 kW</div>
               <div class="opt-card-model">SUN-15K</div>
-              <div class="opt-card-price">2 450 €</div>
+              <div class="opt-card-price">3 038 €</div>
             </div>
-            <div class="opt-card" data-type="inverter" data-id="20kw" data-price="3250">
+            <div class="opt-card" data-type="inverter" data-id="20kw" data-price="4030">
               <div class="opt-card-power">20 kW</div>
               <div class="opt-card-model">SUN-20K</div>
-              <div class="opt-card-price">3 250 €</div>
+              <div class="opt-card-price">4 030 €</div>
             </div>
           </div>
         </div>
@@ -353,27 +231,27 @@
             <div class="step-num">2</div>
             <div class="step-title">Vali aku mahtuvus</div>
           </div>
-          <p class="step-sub">EEL V6 PRO — EVE MB31 LiFePO4, valmis korpuses, plug-and-play</p>
+          <p class="step-sub">EEL V6 PRO — EVE MB31 LiFePO4, valmis korpuses, plug-and-play · Hinnad KM-ga (24%)</p>
           <div class="option-grid" id="battery-opts">
-            <div class="opt-card selected" data-type="battery" data-id="1x" data-price="1899" data-units="1">
+            <div class="opt-card selected" data-type="battery" data-id="1x" data-price="2355" data-units="1">
               <div class="opt-card-power">~16 kWh</div>
               <div class="opt-card-model">1× EEL V6 PRO</div>
-              <div class="opt-card-price">1 899 €</div>
+              <div class="opt-card-price">2 355 €</div>
             </div>
-            <div class="opt-card" data-type="battery" data-id="2x" data-price="3798" data-units="2">
+            <div class="opt-card" data-type="battery" data-id="2x" data-price="4710" data-units="2">
               <div class="opt-card-power">~32 kWh</div>
               <div class="opt-card-model">2× EEL V6 PRO</div>
-              <div class="opt-card-price">3 798 €</div>
+              <div class="opt-card-price">4 710 €</div>
             </div>
-            <div class="opt-card" data-type="battery" data-id="3x" data-price="5697" data-units="3">
+            <div class="opt-card" data-type="battery" data-id="3x" data-price="7065" data-units="3">
               <div class="opt-card-power">~48 kWh</div>
               <div class="opt-card-model">3× EEL V6 PRO</div>
-              <div class="opt-card-price">5 697 €</div>
+              <div class="opt-card-price">7 065 €</div>
             </div>
-            <div class="opt-card" data-type="battery" data-id="4x" data-price="7596" data-units="4">
+            <div class="opt-card" data-type="battery" data-id="4x" data-price="9419" data-units="4">
               <div class="opt-card-power">~64 kWh</div>
               <div class="opt-card-model">4× EEL V6 PRO</div>
-              <div class="opt-card-price">7 596 €</div>
+              <div class="opt-card-price">9 419 €</div>
             </div>
           </div>
         </div>
@@ -384,18 +262,44 @@
             <div class="step-num">3</div>
             <div class="step-title">Qilowatt juhtimismoodul</div>
           </div>
-          <p class="step-sub">Börsihindade järgi laadimine/tarbimine, automaatika, režiimid ja piirangud</p>
+          <p class="step-sub">WiFi-põhine Modbus R2 moodul — ühendub inverteriga RS485 kaudu · +434 € KM-ga</p>
           <div class="option-grid two-col" id="qilowatt-opts">
-            <div class="opt-card" data-type="qilowatt" data-id="yes" data-price="350">
+            <div class="opt-card" data-type="qilowatt" data-id="yes" data-price="434">
               <div class="opt-card-power" style="font-size:1rem">Jah, lisa</div>
-              <div class="opt-card-model">Qilowatt moodul</div>
-              <div class="opt-card-price">+ 350 €</div>
+              <div class="opt-card-model">Qilowatt Modbus R2</div>
+              <div class="opt-card-price">+ 434 €</div>
             </div>
             <div class="opt-card selected" data-type="qilowatt" data-id="no" data-price="0">
               <div class="opt-card-power" style="font-size:1rem">Ei, praegu mitte</div>
               <div class="opt-card-model">Ilma Qilowatt'ita</div>
               <div class="opt-card-price">+ 0 €</div>
             </div>
+          </div>
+
+          <!-- Qilowatt feature box (shown when selected) -->
+          <div class="qw-features" id="qw-features">
+            <div class="qw-features-title">Qilowatt Modbus R2 — võimalused</div>
+            <ul>
+              <li>Automaatne aku laadimine madalate elektribörsihindade ajal</li>
+              <li>Energia müügi ajastamine kõrgete hindade perioodidele</li>
+              <li>Võrgusüstimise piiramine ebasoodsate hindade korral</li>
+              <li>2× sisseehitatud relee — soojuspump, boiler (SG Ready), bassein, kliimaseade, elektriboiler ja muu suurte koormuste automaatjuhtimine</li>
+              <li>Osalemine <strong>mFRR reguleerimisturul</strong> ja võimsusturul — lisa tulu oma akult</li>
+              <li>Qilowatt Optimizer AI — arvestab tarbimismustreid, tootlust ja börsihinda reaalajas</li>
+              <li>Toetab 20+ inverteri tootjat: Deye, Huawei, SolaX, GoodWe, SunGrow, Fronius, Growatt jt</li>
+              <li>Ühendub inverteriga Modbus RTU (RS485) kaudu, WiFi kaudu pilvesse</li>
+            </ul>
+            <div style="margin-top:14px;padding-top:14px;border-top:1px solid var(--border)">
+              <a href="https://qilowatt.eu/inverterite-juhtimine/" target="_blank" rel="noopener"
+                 style="font-size:.82rem;color:var(--accent);font-family:var(--ff-mono);display:inline-flex;align-items:center;gap:6px">
+                Loe lähemalt Qilowatt'i kohta →
+              </a>
+            </div>
+          </div>
+
+          <div style="margin-top:12px;font-size:.8rem;color:var(--text-3)">
+            Soovid rohkem teada Qilowatt'i kohta?
+            <a href="https://qilowatt.eu/inverterite-juhtimine/" target="_blank" rel="noopener" style="color:var(--accent)">Vaata qilowatt.eu →</a>
           </div>
         </div>
 
@@ -418,11 +322,11 @@
 
           <div class="price-row">
             <span class="label">Inverter</span>
-            <span class="val" id="sum-inverter">2 090 €</span>
+            <span class="val" id="sum-inverter">2 592 €</span>
           </div>
           <div class="price-row">
             <span class="label" id="sum-bat-label">Aku (1×)</span>
-            <span class="val" id="sum-battery">1 899 €</span>
+            <span class="val" id="sum-battery">2 355 €</span>
           </div>
           <div class="price-row">
             <span class="label">Qilowatt</span>
@@ -430,15 +334,15 @@
           </div>
           <div class="price-row" style="padding-top:12px">
             <span class="label" style="font-size:.8rem;color:var(--text-3)">Hind ilma soodustuseta</span>
-            <span class="val strike" id="sum-orig">3 989 €</span>
+            <span class="val strike" id="sum-orig">4 947 €</span>
           </div>
 
           <div class="price-total-block">
             <div class="price-total-label">Komplekti hind</div>
-            <div class="price-total-num" id="sum-total">3 790 €</div>
-            <div class="price-total-orig" id="sum-orig-2">3 989 €</div>
-            <div class="price-total-vat">+ KM 24%</div>
-            <div class="price-savings-badge" id="sum-savings">Säästud 199 € (−5%)</div>
+            <div class="price-total-num" id="sum-total">4 700 €</div>
+            <div class="price-total-orig" id="sum-orig-2">4 947 €</div>
+            <div class="price-total-vat">KM (24%) hinna sees</div>
+            <div class="price-savings-badge" id="sum-savings">Säästud 247 € (−5%)</div>
           </div>
 
           <div style="margin-top:20px;display:flex;flex-direction:column;gap:10px">
@@ -452,6 +356,7 @@
 
           <div style="margin-top:16px;font-size:.75rem;color:var(--text-3);font-family:var(--ff-mono);line-height:1.6">
             Komplekti soodustus −5% on automaatselt arvestatud.<br>
+            Kõik hinnad sisaldavad KM (24%).<br>
             Tarneaeg: 3–14 tööpäeva (sõltub konfiguratsioonist).
           </div>
         </div>
@@ -481,17 +386,10 @@
           </div>
         </div>
         <div class="included-item">
-          <div class="included-icon">🔗</div>
-          <div class="included-text">
-            <strong>Ühenduskaablid aku ↔ inverter</strong>
-            <span>DC-ühendus aku ja inverteri vahel</span>
-          </div>
-        </div>
-        <div class="included-item">
           <div class="included-icon">📱</div>
           <div class="included-text">
             <strong>Wi-Fi monitooring</strong>
-            <span>Deye SolarMAN äpp — tootluse, tarbimise ja akuseisu jälgimine</span>
+            <span>Deye Cloud äpp — tootluse, tarbimise ja akuseisu jälgimine</span>
           </div>
         </div>
         <div class="included-item">
@@ -504,8 +402,15 @@
         <div class="included-item">
           <div class="included-icon">🎛️</div>
           <div class="included-text">
-            <strong>Qilowatt moodul (lisavalik)</strong>
-            <span>Börsihindade järgi automaatjuhtimine, režiimid ja piirangud</span>
+            <strong>Qilowatt Modbus R2 (lisavalik)</strong>
+            <span>Börsihindade automaatjuhtimine, relee-väljundid, mFRR turul osalemine</span>
+          </div>
+        </div>
+        <div class="included-item">
+          <div class="included-icon">🛡️</div>
+          <div class="included-text">
+            <strong>Tehniline tugi</strong>
+            <span>Solvolt aitab seadistamisel ja annab nõu konfigureerimise osas</span>
           </div>
         </div>
       </div>
@@ -513,13 +418,18 @@
       <!-- Not included -->
       <div style="margin-top:24px;padding:18px 20px;background:var(--bg-1);border:1px solid var(--border);border-radius:var(--r)">
         <div style="font-family:var(--ff-mono);font-size:.72rem;color:var(--text-3);letter-spacing:.08em;text-transform:uppercase;margin-bottom:12px">Ei kuulu komplekti</div>
-        <div style="display:flex;flex-wrap:wrap;gap:10px">
+        <div style="display:flex;flex-wrap:wrap;gap:10px;margin-bottom:14px">
           <span style="font-size:.83rem;color:var(--text-2);padding:5px 12px;border:1px solid var(--border-2);border-radius:20px">AC-toitekaablid</span>
           <span style="font-size:.83rem;color:var(--text-2);padding:5px 12px;border:1px solid var(--border-2);border-radius:20px">Päikesepaneelid ja DC-stringkaablid</span>
+          <span style="font-size:.83rem;color:var(--text-2);padding:5px 12px;border:1px solid var(--border-2);border-radius:20px">Aku ↔ inverter DC-ühenduskaablid</span>
           <span style="font-size:.83rem;color:var(--text-2);padding:5px 12px;border:1px solid var(--border-2);border-radius:20px">Elektritööd ja paigaldus</span>
           <span style="font-size:.83rem;color:var(--text-2);padding:5px 12px;border:1px solid var(--border-2);border-radius:20px">Kaitsmed ja kaitselülitid</span>
           <span style="font-size:.83rem;color:var(--text-2);padding:5px 12px;border:1px solid var(--border-2);border-radius:20px">Kinnituskonstruktsioonid</span>
         </div>
+        <p style="font-size:.82rem;color:var(--text-3);line-height:1.6;margin:0">
+          <strong style="color:var(--text-2)">Aku ↔ inverter kaablid:</strong> pikkus sõltub paigalduslahendusest, seetõttu ei ole neid komplektis.
+          Kaablid on võimalik juurde tellida — <a href="kontakt.html" style="color:var(--accent)">anna pärast tellimust teada</a> ja leppime sobiva lahenduse kokku.
+        </p>
       </div>
     </div>
 
@@ -535,20 +445,21 @@
           Selle komplekti mõte on lihtne: valid sobiva võimsusega inverteri, sobiva mahtuvusega aku ning
           soovi korral lisad täisautomaatse juhtimise — ja sul on käes kõik põhikomponendid päikeseenergia
           salvestussüsteemi ülesehitamiseks. <strong>EEL V6 PRO aku on valmis korpuses</strong>, mis tähendab,
-          et elemente ei ole vaja ise kokku panna — see on mõeldud lihtsaks ühendamiseks inverteriga.
+          et elemente ei ole vaja ise kokku panna, ilma et peaksid aku kasti ise komplekteerima — see on mõeldud lihtsaks ühendamiseks inverteriga.
         </p>
         <p>
           <strong>Inverter</strong> juhib kodu tarbimist, PV tootmist ja akulaadimist.
           <strong>Aku</strong> salvestab ülejäägi ja aitab tarbimist katta, kui tootlus on madal või elekter kallis.
-          <strong>Qilowatt juhtimisega</strong> saab kasutada täpsemat automaatikat — börsihindade järgi
-          laadimine ja tarbimine, kohandatavad režiimid ja piirangud.
+          <strong>Qilowatt juhtimisega</strong> saad kasutada täpsemat automaatikat — laadimine toimub siis, kui börsihind on madal,
+          ning saad osaleda <strong>mFRR reguleerimisturul</strong>, mis võimaldab akult lisatulu teenida.
         </p>
         <p>Komplekt sobib, kui:</p>
         <ul style="list-style:none;display:flex;flex-direction:column;gap:8px;padding-left:4px">
           <li style="display:flex;gap:10px;color:var(--text-2)"><span style="color:var(--accent);font-weight:700">✓</span> soovid tõsta omatarvet ja vähendada võrguostu</li>
           <li style="display:flex;gap:10px;color:var(--text-2)"><span style="color:var(--accent);font-weight:700">✓</span> tahad varutoidet ja off-grid võimekust (sõltub seadistusest)</li>
-          <li style="display:flex;gap:10px;color:var(--text-2)"><span style="color:var(--accent);font-weight:700">✓</span> tahad "vali ja ühenda" lahendust ilma elemente ise komplekteerimata</li>
+          <li style="display:flex;gap:10px;color:var(--text-2)"><span style="color:var(--accent);font-weight:700">✓</span> tahad "vali ja ühenda" lahendust ilma aku kasti ise komplekteerimata</li>
           <li style="display:flex;gap:10px;color:var(--text-2)"><span style="color:var(--accent);font-weight:700">✓</span> otsid tõestatud komponentide kombinatsiooni — Deye + EVE MB31 on laialdaselt kasutusel</li>
+          <li style="display:flex;gap:10px;color:var(--text-2)"><span style="color:var(--accent);font-weight:700">✓</span> soovid nutika juhtimisega akult lisatulu börsimänga ja reguleerimisturu kaudu</li>
         </ul>
         <p>
           Siin näidatud konfiguratsioonid on lähtepunktid.
@@ -583,6 +494,7 @@
       <div class="footer-col">
         <h4>Tooted</h4>
         <ul>
+          <li><a href="tooted.html?kat=komplekt">Komplektid</a></li>
           <li><a href="tooted.html?kat=lifepo4">LiFePO4 elemendid</a></li>
           <li><a href="tooted.html?kat=inverterid">Hübriidinverterid</a></li>
           <li><a href="tooted.html?kat=akud">Akud</a></li>
@@ -617,9 +529,9 @@
   const DISCOUNT = 0.05;
 
   let sel = {
-    inverter: { id: '6kw', price: 2090, label: '6 kW' },
-    battery:  { id: '1x',  price: 1899, label: '1× EEL V6 PRO', units: 1 },
-    qilowatt: { id: 'no',  price: 0,    label: '—' }
+    inverter: { id: '6kw',  price: 2592, label: '6 kW' },
+    battery:  { id: '1x',   price: 2355, label: '1× EEL V6 PRO', units: 1 },
+    qilowatt: { id: 'no',   price: 0,    label: '—' }
   };
 
   function fmt(n) {
@@ -652,13 +564,16 @@
     const units = parseInt(card.dataset.units || '1', 10);
     const label = card.querySelector('.opt-card-power').textContent.trim();
 
-    // Deselect siblings
     card.closest('.option-grid').querySelectorAll('.opt-card').forEach(c => c.classList.remove('selected'));
     card.classList.add('selected');
 
     if (type === 'inverter') sel.inverter = { id, price, label };
     if (type === 'battery')  sel.battery  = { id, price, label, units };
-    if (type === 'qilowatt') sel.qilowatt = { id, price, label };
+    if (type === 'qilowatt') {
+      sel.qilowatt = { id, price, label };
+      // Show/hide Qilowatt features block
+      document.getElementById('qw-features').classList.toggle('show', id === 'yes');
+    }
 
     updatePrice();
   }
