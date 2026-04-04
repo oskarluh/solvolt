@@ -65,119 +65,6 @@ const TOOTED = [
     `
   },
   {
-    id: "jk-bms-150a-1a",
-    slug: "jk-bms-150a-1a",
-    nimi: "JK (Jikong) BMS 8S–24S 150A — 1A aktiivne balanss",
-    lyhikirjeldus: "Professionaalne BMS 1A aktiivse induktsioonbalanseerimisega. Bluetooth 5.0 + RS485. Sobib 8S–24S LiFePO4 akupankadele.",
-    kategooria: "bms",
-    hind: 130,
-    hind_vana: null,
-    stripe_price_id: "LISA_SIIA",
-    pilt: "assets/pildid/jk.png",
-    pildid: [
-      "assets/pildid/jk.png",
-      "assets/pildid/jk3.png",
-    ],
-    ladu: true,
-    eelmyyk: false,
-    specs: {
-      "Tootja": "JK / Jikong",
-      "Voolutugevus": "150 A pidev",
-      "Rakuvahemik": "8S – 24S (24–77V)",
-      "Balanss": "Aktiivne 1A (induktsioon)",
-      "Kaitse": "Üle-/alalaeng, ülevool, lühis, temperatuur",
-      "Liides": "Bluetooth 5.0 + RS485",
-      "App": "iOS / Android (tasuta)",
-      "Tarne": "3–7 tööpäeva"
-    },
-    kirjeldus: `
-      <p>JK (Jikong) BMS on üks enimkasutatud ja usaldusväärsemaid BMS-e DIY energiasalvestusprojektides — tuntud täpse mõõtmise ja rikkaliku funktsionaalsuse poolest.</p>
-      <ul>
-        <li>Aktiivne induktsioonbalanseerimine 1A — pikendab rakkude eluiga</li>
-        <li>Täielik kaitse: üle-/alalaeng, ülevool, lühis, üle-/alatemperatuur</li>
-        <li>Bluetooth 5.0 + RS485 — monitooring äpist või CAN/RS485 kaudu inverteriga</li>
-        <li>Toetab 8S–24S konfiguratsioone (24V kuni 77V)</li>
-        <li>Sobib: EVE, CATL, Basen jt LiFePO4 elementidega</li>
-      </ul>
-    `
-  },
-  {
-    id: "jk-bms-150a-2a",
-    slug: "jk-bms-150a-2a",
-    nimi: "JK (Jikong) BMS 8S–24S 150A — 2A aktiivne balanss",
-    lyhikirjeldus: "Võimsam JK BMS 2A aktiivse balanseerimisega — kiirem tasakaalustamine suurematele akupankadele. Bluetooth 5.0 + RS485.",
-    kategooria: "bms",
-    hind: 155,
-    hind_vana: null,
-    stripe_price_id: "LISA_SIIA",
-    pilt: "assets/pildid/jk.png",
-    pildid: [
-      "assets/pildid/jk.png",
-      "assets/pildid/jk2.png",
-    ],
-    ladu: true,
-    eelmyyk: false,
-    specs: {
-      "Tootja": "JK / Jikong",
-      "Voolutugevus": "150 A pidev",
-      "Rakuvahemik": "8S – 24S (24–77V)",
-      "Balanss": "Aktiivne 2A (induktsioon)",
-      "Kaitse": "Üle-/alalaeng, ülevool, lühis, temperatuur",
-      "Liides": "Bluetooth 5.0 + RS485",
-      "App": "iOS / Android (tasuta)",
-      "Tarne": "3–7 tööpäeva"
-    },
-    kirjeldus: `
-      <p>JK BMS 2A versioon — ideaalne suurematele akupankadele (≥200Ah), kus kiirem balanseerimine tagab parema rakkudevahelise tasakaalu ja pikema eluea.</p>
-      <ul>
-        <li>Aktiivne induktsioonbalanseerimine 2A — 2× kiirem kui 1A versioon</li>
-        <li>Täielik kaitse: üle-/alalaeng, ülevool, lühis, temperatuur</li>
-        <li>Bluetooth 5.0 + RS485 — monitooring äpist või inverteriga liidestus</li>
-        <li>Toetab 8S–24S konfiguratsioone</li>
-        <li>Sobib: EVE MB31, Basen jt suure mahutavusega elementidega</li>
-      </ul>
-    `
-  },
-  {
-    id: "huawei-sun2000-4-6ktl",
-    slug: "huawei-sun2000-4-6ktl",
-    nimi: "Huawei SUN2000-4.6KTL-L1 hübriidinverter",
-    lyhikirjeldus: "Huawei 4.6kW 1-faasiline hübriidinverter. Ühilduv Luna2000 akusüsteemiga. FusionSolar monitooring, IP65.",
-    kategooria: "inverterid",
-    hind: 860,
-    hind_vana: null,
-    stripe_price_id: "LISA_SIIA",
-    pilt: "assets/pildid/huawei.png",
-    pildid: [
-      "assets/pildid/huawei.png",
-    ],
-    ladu: true,
-    eelmyyk: false,
-    specs: {
-      "Tootja": "Huawei",
-      "Mudel": "SUN2000-4.6KTL-L1",
-      "Võimsus": "4.6 kW",
-      "Faasid": "1-faasiline",
-      "MPPT": "2× MPPT",
-      "Maks. PV pinge": "600 V",
-      "Aku liides": "Huawei Luna2000 (CAN)",
-      "Efektiivsus": "kuni 97.5%",
-      "Kaitseklass": "IP65",
-      "Garantii": "5 aastat",
-      "Tarne": "3–7 tööpäeva"
-    },
-    kirjeldus: `
-      <p>Huawei SUN2000-4.6KTL-L1 on usaldusväärne 1-faasiline hübriidinverter, mis integreerub sujuvalt Huawei Luna2000 akusüsteemiga ja on optimeeritud Huawei energiahalduse ökosüsteemile.</p>
-      <ul>
-        <li>2× MPPT — saab ühendada erineva suunaga paneeliridu</li>
-        <li>Madal käivituspinge — töötab ka pilvistel päevadel</li>
-        <li>Huawei Luna2000 akud: lihtne laiendamine moodulite lisamisega</li>
-        <li>FusionSolar äpp — monitooring ja juhtimine nutitelefonist</li>
-        <li>IP65 kaitseklass · 5 aasta garantii</li>
-      </ul>
-    `
-  },
-  {
   id: "deye-se-f16-c-version",
   slug: "deye-se-f16-c-version",
   nimi: "Deye SE-F16 C version 16kWh LiFePO4 aku",
@@ -726,6 +613,119 @@ const TOOTED = [
       </ul>
     `
   }
+  {
+    id: "jk-bms-150a-1a",
+    slug: "jk-bms-150a-1a",
+    nimi: "JK (Jikong) BMS 8S–24S 150A — 1A aktiivne balanss",
+    lyhikirjeldus: "Professionaalne BMS 1A aktiivse induktsioonbalanseerimisega. Bluetooth 5.0 + RS485. Sobib 8S–24S LiFePO4 akupankadele.",
+    kategooria: "bms",
+    hind: 130,
+    hind_vana: null,
+    stripe_price_id: "LISA_SIIA",
+    pilt: "assets/pildid/jk.png",
+    pildid: [
+      "assets/pildid/jk.png",
+      "assets/pildid/jk3.png",
+    ],
+    ladu: true,
+    eelmyyk: false,
+    specs: {
+      "Tootja": "JK / Jikong",
+      "Voolutugevus": "150 A pidev",
+      "Rakuvahemik": "8S – 24S (24–77V)",
+      "Balanss": "Aktiivne 1A (induktsioon)",
+      "Kaitse": "Üle-/alalaeng, ülevool, lühis, temperatuur",
+      "Liides": "Bluetooth 5.0 + RS485",
+      "App": "iOS / Android (tasuta)",
+      "Tarne": "3–7 tööpäeva"
+    },
+    kirjeldus: `
+      <p>JK (Jikong) BMS on üks enimkasutatud ja usaldusväärsemaid BMS-e DIY energiasalvestusprojektides — tuntud täpse mõõtmise ja rikkaliku funktsionaalsuse poolest.</p>
+      <ul>
+        <li>Aktiivne induktsioonbalanseerimine 1A — pikendab rakkude eluiga</li>
+        <li>Täielik kaitse: üle-/alalaeng, ülevool, lühis, üle-/alatemperatuur</li>
+        <li>Bluetooth 5.0 + RS485 — monitooring äpist või CAN/RS485 kaudu inverteriga</li>
+        <li>Toetab 8S–24S konfiguratsioone (24V kuni 77V)</li>
+        <li>Sobib: EVE, CATL, Basen jt LiFePO4 elementidega</li>
+      </ul>
+    `
+  },
+  {
+    id: "jk-bms-150a-2a",
+    slug: "jk-bms-150a-2a",
+    nimi: "JK (Jikong) BMS 8S–24S 150A — 2A aktiivne balanss",
+    lyhikirjeldus: "Võimsam JK BMS 2A aktiivse balanseerimisega — kiirem tasakaalustamine suurematele akupankadele. Bluetooth 5.0 + RS485.",
+    kategooria: "bms",
+    hind: 155,
+    hind_vana: null,
+    stripe_price_id: "LISA_SIIA",
+    pilt: "assets/pildid/jk.png",
+    pildid: [
+      "assets/pildid/jk.png",
+      "assets/pildid/jk2.png",
+    ],
+    ladu: true,
+    eelmyyk: false,
+    specs: {
+      "Tootja": "JK / Jikong",
+      "Voolutugevus": "150 A pidev",
+      "Rakuvahemik": "8S – 24S (24–77V)",
+      "Balanss": "Aktiivne 2A (induktsioon)",
+      "Kaitse": "Üle-/alalaeng, ülevool, lühis, temperatuur",
+      "Liides": "Bluetooth 5.0 + RS485",
+      "App": "iOS / Android (tasuta)",
+      "Tarne": "3–7 tööpäeva"
+    },
+    kirjeldus: `
+      <p>JK BMS 2A versioon — ideaalne suurematele akupankadele (≥200Ah), kus kiirem balanseerimine tagab parema rakkudevahelise tasakaalu ja pikema eluea.</p>
+      <ul>
+        <li>Aktiivne induktsioonbalanseerimine 2A — 2× kiirem kui 1A versioon</li>
+        <li>Täielik kaitse: üle-/alalaeng, ülevool, lühis, temperatuur</li>
+        <li>Bluetooth 5.0 + RS485 — monitooring äpist või inverteriga liidestus</li>
+        <li>Toetab 8S–24S konfiguratsioone</li>
+        <li>Sobib: EVE MB31, Basen jt suure mahutavusega elementidega</li>
+      </ul>
+    `
+  },
+  {
+    id: "huawei-sun2000-4-6ktl",
+    slug: "huawei-sun2000-4-6ktl",
+    nimi: "Huawei SUN2000-4.6KTL-L1 hübriidinverter",
+    lyhikirjeldus: "Huawei 4.6kW 1-faasiline hübriidinverter. Ühilduv Luna2000 akusüsteemiga. FusionSolar monitooring, IP65.",
+    kategooria: "inverterid",
+    hind: 860,
+    hind_vana: null,
+    stripe_price_id: "LISA_SIIA",
+    pilt: "assets/pildid/huawei.png",
+    pildid: [
+      "assets/pildid/huawei.png",
+    ],
+    ladu: true,
+    eelmyyk: false,
+    specs: {
+      "Tootja": "Huawei",
+      "Mudel": "SUN2000-4.6KTL-L1",
+      "Võimsus": "4.6 kW",
+      "Faasid": "1-faasiline",
+      "MPPT": "2× MPPT",
+      "Maks. PV pinge": "600 V",
+      "Aku liides": "Huawei Luna2000 (CAN)",
+      "Efektiivsus": "kuni 97.5%",
+      "Kaitseklass": "IP65",
+      "Garantii": "5 aastat",
+      "Tarne": "3–7 tööpäeva"
+    },
+    kirjeldus: `
+      <p>Huawei SUN2000-4.6KTL-L1 on usaldusväärne 1-faasiline hübriidinverter, mis integreerub sujuvalt Huawei Luna2000 akusüsteemiga ja on optimeeritud Huawei energiahalduse ökosüsteemile.</p>
+      <ul>
+        <li>2× MPPT — saab ühendada erineva suunaga paneeliridu</li>
+        <li>Madal käivituspinge — töötab ka pilvistel päevadel</li>
+        <li>Huawei Luna2000 akud: lihtne laiendamine moodulite lisamisega</li>
+        <li>FusionSolar äpp — monitooring ja juhtimine nutitelefonist</li>
+        <li>IP65 kaitseklass · 5 aasta garantii</li>
+      </ul>
+    `
+  },
 ];
 
 // Kategooriate pealkirjad
