@@ -41,7 +41,15 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
 .nav-back{display:inline-flex;align-items:center;gap:6px;padding:7px 16px;border:1px solid var(--border-2);border-radius:var(--r);font-size:.82rem;font-weight:500;color:var(--text-2);transition:all var(--trans)}
 .nav-back:hover{border-color:var(--accent);color:var(--accent);background:var(--accent-bg)}
 .nav-back svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2}
-.nav-tag{font-family:var(--ff-mono);font-size:.72rem;color:var(--text-3);letter-spacing:.08em}
+.nav-links{display:flex;align-items:center;gap:2px}
+.nav-links a{padding:6px 12px;border-radius:6px;font-size:.88rem;color:var(--text-2);transition:color var(--trans),background var(--trans)}
+.nav-links a:hover,.nav-links a.active{color:var(--text-1);background:var(--bg-2)}
+.nav-cart{display:inline-flex;align-items:center;gap:7px;padding:7px 14px;border:1px solid var(--border-2);border-radius:var(--r);font-size:.85rem;color:var(--text-2);transition:all var(--trans)}
+.nav-cart:hover{border-color:var(--accent);color:var(--accent)}
+.nav-cart-count{background:var(--accent);color:#000;border-radius:50%;width:18px;height:18px;display:inline-flex;align-items:center;justify-content:center;font-size:.65rem;font-weight:700}
+.nav-mobile-toggle{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px}
+.nav-mobile-toggle span{display:block;width:22px;height:2px;background:var(--text-2);border-radius:2px}
+@media(max-width:768px){.nav-links{display:none;position:absolute;top:60px;left:0;right:0;flex-direction:column;background:var(--bg-1);border-bottom:1px solid var(--border);padding:12px 0;gap:0}.nav-links.open{display:flex}.nav-links a{padding:12px 24px;border-radius:0}.nav-mobile-toggle{display:flex}}
 
 /* HERO */
 .hero{position:relative;min-height:100vh;display:grid;grid-template-columns:1fr 1fr;align-items:center;padding:80px 48px;gap:60px;overflow:hidden;border-top:none}
@@ -226,12 +234,23 @@ footer{padding:52px 48px;border-top:1px solid var(--border);display:flex;justify
 <!-- NAV — Solvolt -->
 <nav class="nav">
   <div class="nav-inner">
-    <a class="logo" href="/">Sol<span>volt</span></a>
-    <a class="nav-back" href="/" id="backBtn">
-      <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
-      Tagasi
-    </a>
-    <span class="nav-tag">EEL Battery V6 PRO · Eelmüük</span>
+    <a class="logo" href="index.html">Sol<span>volt</span></a>
+    <div class="nav-links" id="nav-links">
+      <a href="index.html">Avaleht</a>
+      <a href="tooted.html">Tooted</a>
+      <a href="eel-v6-pro.html">EEL V6 Pro</a>
+      <a href="hinnakiri.html">Hinnakiri</a>
+      <a href="meist.html">Meist</a>
+      <a href="kontakt.html">Kontakt</a>
+    </div>
+    <div style="display:flex;align-items:center;gap:12px">
+      <a href="ostukorv.html" class="nav-cart">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+        Ostukorv
+        <span class="nav-cart-count" id="cart-count" style="display:none">0</span>
+      </a>
+      <button class="nav-mobile-toggle" id="nav-toggle" aria-label="Menüü"><span></span><span></span><span></span></button>
+    </div>
   </div>
 </nav>
 
@@ -602,12 +621,13 @@ function closeModal() {
   document.body.style.overflow = '';
 }
 
-function submitBooking() {
+async function submitBooking() {
   const name = document.getElementById('fieldName').value.trim();
   const phone = document.getElementById('fieldPhone').value.trim();
   const email = document.getElementById('fieldEmail').value.trim();
   const qty = document.getElementById('fieldQty').value;
   const note = document.getElementById('fieldNote').value.trim();
+  const btn = document.querySelector('#modalOverlay .modal button:last-of-type');
 
   if (!name || !phone || !email) {
     alert('Palun täida kõik kohustuslikud väljad (nimi, telefon, e-mail).');
@@ -618,24 +638,31 @@ function submitBooking() {
     ? 'Valmis komplekt — 1 899 € (km-ta)'
     : 'DIY Kit — 1 699 € (km-ta)';
 
-  const subject = encodeURIComponent(`EEL Battery V6 PRO broneering — ${variantText}`);
-  const body = encodeURIComponent(
-`EEL Battery V6 PRO broneering
+  btn.disabled = true;
+  btn.textContent = 'Saadan...';
 
-Variant: ${variantText}
-Kogus: ${qty}
+  const data = new FormData();
+  data.append('access_key', 'c2101b48-5107-4131-9020-4f6ebf573b5c');
+  data.append('subject', 'EEL Battery V6 PRO broneering — ' + variantText);
+  data.append('from_name', 'Solvolt veebileht');
+  data.append('Variant', variantText);
+  data.append('Kogus', qty);
+  data.append('Nimi', name);
+  data.append('Telefon', phone);
+  data.append('Email', email);
+  if (note) data.append('Lisainfo', note);
 
-Nimi: ${name}
-Telefon: ${phone}
-E-mail: ${email}
-${note ? '\nLisainfo:\n' + note : ''}
-
----
-Saadetud solvolt.ee lehelt`
-  );
-
-  window.location.href = `mailto:solvolt.info@gmail.com?subject=${subject}&body=${body}`;
-  closeModal();
+  try {
+    const res = await fetch('https://api.web3forms.com/submit', { method: 'POST', body: data });
+    const json = await res.json();
+    if (json.success) {
+      document.querySelector('#modalOverlay .modal').innerHTML = '<div style="text-align:center;padding:20px 0"><div style="font-size:2.5rem;margin-bottom:16px">✓</div><h3 style="margin-bottom:8px;color:var(--accent)">Broneering saadetud!</h3><p style="color:var(--text-2);font-size:.9rem">Võtame sinuga ühendust 24 tunni jooksul.</p><button onclick="closeModal()" style="margin-top:24px;padding:10px 28px;background:var(--accent);color:#000;border:none;border-radius:var(--r);font-weight:600;cursor:pointer;font-size:.95rem">Sulge</button></div>';
+    } else throw new Error(json.message);
+  } catch {
+    btn.disabled = false;
+    btn.textContent = '→ Saada broneering';
+    alert('Saatmine ebaõnnestus. Kirjuta otse: solvolt.info@gmail.com');
+  }
 }
 
 // Smooth scroll
@@ -647,18 +674,10 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
   });
 });
 
-// Back button
-document.getElementById('backBtn').addEventListener('click', function(e) {
-  e.preventDefault();
-  if (document.referrer && document.referrer !== window.location.href) {
-    history.back();
-  } else {
-    window.location.href = '/';
-  }
-});
-
 // ESC closes modal
 document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
 </script>
+<script src="assets/js/products.js"></script>
+<script src="assets/js/main.js"></script>
 </body>
 </html>

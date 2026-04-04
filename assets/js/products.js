@@ -6,7 +6,7 @@
 //   2. Muuda id, slug, nimi, hind, kirjeldus jne
 //   3. Lisa pilt kausta assets/pildid/
 //   4. Loo Stripe'is toode + hind → kopeeri Price ID siia
-//   5. Salvesta fail → GitHub → Netlify uuendab automaatselt
+//   5. Salvesta fail → GitHub → Cloudflare uuendab automaatselt
 // ============================================================
 
 const TOOTED = [

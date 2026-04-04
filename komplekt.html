@@ -315,13 +315,20 @@
             <div class="price-savings-badge" id="sum-savings">Säästud 247 € (−5%)</div>
           </div>
 
-          <div style="margin-top:20px;display:flex;flex-direction:column;gap:10px">
-            <button class="btn btn-primary btn-full" id="add-to-cart-btn">
-              + Lisa ostukorvi
-            </button>
-            <a href="kontakt.html" class="btn btn-outline btn-full" style="text-align:center">
-              Küsi personaalset pakkumist
-            </a>
+          <div style="margin-top:20px">
+            <div style="font-family:var(--ff-mono);font-size:.72rem;color:var(--text-3);letter-spacing:.06em;text-transform:uppercase;margin-bottom:10px">Telli see konfiguratsioon</div>
+            <form id="order-form" style="display:flex;flex-direction:column;gap:8px">
+              <input type="text" id="f-name" name="Nimi" placeholder="Nimi *" required style="padding:10px 12px;background:var(--bg-3);border:1px solid var(--border-2);border-radius:var(--r);color:var(--text-1);font-family:var(--ff-body);font-size:.88rem;outline:none;width:100%">
+              <input type="email" id="f-email" name="Email" placeholder="E-post *" required style="padding:10px 12px;background:var(--bg-3);border:1px solid var(--border-2);border-radius:var(--r);color:var(--text-1);font-family:var(--ff-body);font-size:.88rem;outline:none;width:100%">
+              <input type="tel" id="f-phone" name="Telefon" placeholder="Telefon" style="padding:10px 12px;background:var(--bg-3);border:1px solid var(--border-2);border-radius:var(--r);color:var(--text-1);font-family:var(--ff-body);font-size:.88rem;outline:none;width:100%">
+              <button type="submit" class="btn btn-primary btn-full" id="order-btn">Saada tellimuspäring →</button>
+            </form>
+            <div id="order-success" style="display:none;margin-top:10px;padding:12px;background:var(--accent-bg);border:1px solid rgba(61,255,160,.2);border-radius:var(--r);font-size:.85rem;color:var(--accent);text-align:center">
+              ✓ Päring saadetud! Võtame sinuga ühendust.
+            </div>
+            <div style="margin-top:8px;font-size:.75rem;color:var(--text-3);text-align:center">
+              või <a href="kontakt.html" style="color:var(--accent)">küsi personaalset pakkumist</a>
+            </div>
           </div>
 
           <div style="margin-top:16px;font-size:.75rem;color:var(--text-3);font-family:var(--ff-mono);line-height:1.6">
@@ -557,22 +564,40 @@
   document.getElementById('battery-opts').addEventListener('click', handleOptionClick);
   document.getElementById('qilowatt-opts').addEventListener('click', handleOptionClick);
 
-  document.getElementById('add-to-cart-btn').addEventListener('click', () => {
+  document.getElementById('order-form').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const btn  = document.getElementById('order-btn');
+    btn.disabled = true;
+    btn.textContent = 'Saadan...';
+
     const orig   = sel.inverter.price + sel.battery.price + sel.qilowatt.price;
     const disc   = Math.round(orig * (1 - DISCOUNT));
-    const qLabel = sel.qilowatt.price > 0 ? ' + Qilowatt' : '';
-    const item = {
-      id:   'komplekt-' + sel.inverter.id + '-' + sel.battery.id,
-      nimi: 'Energiasalvestuse komplekt — ' + sel.inverter.label + ' / ' + sel.battery.label + qLabel,
-      hind: disc,
-      hind_vana: orig,
-      pilt: 'assets/pildid/deye.png',
-      kategooria: 'komplekt',
-      stripe_price_id: null
-    };
-    Cart.add(item, 1);
-    document.getElementById('add-to-cart-btn').textContent = '✓ Lisatud ostukorvi';
-    setTimeout(() => { document.getElementById('add-to-cart-btn').textContent = '+ Lisa ostukorvi'; }, 2500);
+    const qLabel = sel.qilowatt.price > 0 ? ' + Qilowatt 350€' : '';
+    const config = sel.inverter.label + ' / ' + sel.battery.label + qLabel;
+
+    const data = new FormData();
+    data.append('access_key', 'c2101b48-5107-4131-9020-4f6ebf573b5c');
+    data.append('subject', 'Komplekti tellimuspäring — ' + config);
+    data.append('from_name', 'Solvolt veebileht');
+    data.append('Nimi', document.getElementById('f-name').value.trim());
+    data.append('Email', document.getElementById('f-email').value.trim());
+    const phone = document.getElementById('f-phone').value.trim();
+    if (phone) data.append('Telefon', phone);
+    data.append('Konfiguratsioon', config);
+    data.append('Hind (KM-ga)', disc + ' €');
+
+    try {
+      const res  = await fetch('https://api.web3forms.com/submit', { method: 'POST', body: data });
+      const json = await res.json();
+      if (json.success) {
+        document.getElementById('order-success').style.display = 'block';
+        btn.textContent = 'Saadetud ✓';
+      } else throw new Error();
+    } catch {
+      btn.disabled = false;
+      btn.textContent = 'Saada tellimuspäring →';
+      alert('Saatmine ebaõnnestus. Kirjuta: solvolt.info@gmail.com');
+    }
   });
 
   updatePrice();
