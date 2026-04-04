@@ -294,6 +294,7 @@ const TOOTED = [
       "assets/pildid/dynesspro2.png",
       "assets/pildid/dynesspro3.png",
     ],
+    tooteleht_pdf: "dynesstootelehtpro.pdf",
     ladu: true,
     eelmyyk: false,
     specs: {
@@ -336,6 +337,7 @@ const TOOTED = [
       "assets/pildid/dyness2.png",
       "assets/pildid/dyness3.png",
     ],
+    tooteleht_pdf: "dynesstooteleht1.pdf",
     ladu: true,
     eelmyyk: false,
     specs: {
