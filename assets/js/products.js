@@ -73,7 +73,11 @@ const TOOTED = [
     hind: 130,
     hind_vana: null,
     stripe_price_id: "LISA_SIIA",
-    pilt: "assets/pildid/jk-bms.jpg",
+    pilt: "assets/pildid/jk",
+    pildid: [
+      "assets/pildid/jk",
+      "assets/pildid/jk3.png",
+    ],
     ladu: true,
     eelmyyk: false,
     specs: {
@@ -106,7 +110,11 @@ const TOOTED = [
     hind: 155,
     hind_vana: null,
     stripe_price_id: "LISA_SIIA",
-    pilt: "assets/pildid/jk-bms.jpg",
+    pilt: "assets/pildid/jk.png",
+    pildid: [
+      "assets/pildid/jk.png",
+      "assets/pildid/jk2.png",
+    ],
     ladu: true,
     eelmyyk: false,
     specs: {
