@@ -181,8 +181,6 @@ const TOOTED = [
   pilt: "assets/pildid/deye-se-f16-c.png",
   pildid: [
     "assets/pildid/deye-se-f16-c.png",
-    "assets/pildid/deye-se-f16-c-2.pdf",
-    "assets/pildid/deye-se-f16-c-3.png"
   ],
   tooteleht_pdf: "assets/failid/deye-se-f16-tooteleht.pdf",
   ladu: true,
@@ -235,8 +233,6 @@ const TOOTED = [
   pilt: "assets/pildid/deye-rw-f16.png",
   pildid: [
     "assets/pildid/deye-rw-f16.png",
-    "assets/pildid/deye-rw-f16-2.png",
-    "assets/pildid/deye-rw-f16-3.png"
   ],
   tooteleht_pdf: "assets/failid/deye-rw-f16-tooteleht.pdf",
   ladu: true,
