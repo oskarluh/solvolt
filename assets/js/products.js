@@ -372,7 +372,12 @@ const TOOTED = [
     hind_prefix: "alates",
     href: "deye-6-12kw.html",
     stripe_price_id: null,
-    pilt: "assets/pildid/deye-6k.jpg",
+    pilt: "assets/pildid/deye.png",
+    pildid: [
+      "assets/pildid/deye.png",
+      "assets/pildid/deye2.png",
+    ],
+    tooteleht_pdf: "assets/failid/deye-tooteleht1.pdf",
     ladu: true,
     eelmyyk: false,
     specs: {
@@ -397,7 +402,12 @@ const TOOTED = [
     hind_prefix: "alates",
     href: "deye-15-20kw.html",
     stripe_price_id: null,
-    pilt: "assets/pildid/deye-15k.jpg",
+    pilt: "assets/pildid/deye3.png",
+    pildid: [
+      "assets/pildid/deye3.png",
+      "assets/pildid/deye32.png",
+    ],
+    tooteleht_pdf: "assets/failid/deye-tooteleht2.pdf",
     ladu: true,
     eelmyyk: false,
     specs: {
