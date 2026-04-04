@@ -10,6 +10,7 @@
 // ============================================================
 
 const TOOTED = [
+  // ── 1. EVE LiFePO4 elemendid ─────────────────────────────
   {
     id: "eve-mb31-314ah",
     slug: "eve-mb31-314ah",
@@ -64,6 +65,344 @@ const TOOTED = [
       <p><strong>NB:</strong> Tegemist on eelmüügiga. Tarneaja täpsustamiseks võta meiega ühendust.</p>
     `
   },
+
+  // ── 2. Deye 6–12kW inverterid ────────────────────────────
+  {
+    id: "deye-6-12kw",
+    slug: "deye-6-12kw",
+    nimi: "Deye SG05LP3 6–12kW 3-faasiline hübriidinverter",
+    lyhikirjeldus: "Deye kolmefaasiline hübriidinverter 48V akusüsteemiga — 4 võimsust: 6kW, 8kW, 10kW, 12kW. Zero export, AC-coupling, IP65, Wi-Fi.",
+    kategooria: "inverterid",
+    hind: 2090,
+    hind_vana: null,
+    hind_prefix: "alates",
+    href: "deye-6-12kw.html",
+    stripe_price_id: null,
+    pilt: "assets/pildid/deye.png",
+    pildid: [
+      "assets/pildid/deye.png",
+      "assets/pildid/deye2.jpg",
+    ],
+    tooteleht_pdf: "assets/failid/deye-tooteleht1.pdf",
+    ladu: true,
+    eelmyyk: false,
+    specs: {
+      "Tootja": "Deye",
+      "Mudelid": "6kW, 8kW, 10kW, 12kW",
+      "Faasid": "3-faasiline",
+      "Akupinge": "48V madalpinge (40–60V)",
+      "Kaitseklass": "IP65",
+      "Garantii": "5 aastat",
+      "Tarne": "3–7 tööpäeva"
+    },
+    kirjeldus: ``
+  },
+
+  // ── 3. Deye 15–20kW inverterid ───────────────────────────
+  {
+    id: "deye-15-20kw",
+    slug: "deye-15-20kw",
+    nimi: "Deye SG05LP3 15–20kW 3-faasiline hübriidinverter",
+    lyhikirjeldus: "Deye kolmefaasiline hübriidinverter 48V akusüsteemiga — 2 võimsust: 15kW ja 20kW. Kuni 350A aku vool, zero export, IP65, Wi-Fi.",
+    kategooria: "inverterid",
+    hind: 2450,
+    hind_vana: null,
+    hind_prefix: "alates",
+    href: "deye-15-20kw.html",
+    stripe_price_id: null,
+    pilt: "assets/pildid/deye3.webp",
+    pildid: [
+      "assets/pildid/deye3.webp",
+      "assets/pildid/deye32.jpg",
+    ],
+    tooteleht_pdf: "assets/failid/deye-tooteleht2.pdf",
+    ladu: true,
+    eelmyyk: false,
+    specs: {
+      "Tootja": "Deye",
+      "Mudelid": "15kW, 20kW",
+      "Faasid": "3-faasiline",
+      "Akupinge": "48V madalpinge (40–60V)",
+      "Kaitseklass": "IP65",
+      "Garantii": "5 aastat",
+      "Tarne": "3–7 tööpäeva"
+    },
+    kirjeldus: ``
+  },
+
+  // ── 4. Deye akud ─────────────────────────────────────────
+  {
+    id: "deye-se-f16-c-version",
+    slug: "deye-se-f16-c-version",
+    nimi: "Deye SE-F16 C version 16kWh LiFePO4 aku",
+    lyhikirjeldus: "Deye seinale või põrandale paigaldatav 16kWh LiFePO4 aku. 314Ah, 51.2V, CAN/RS485/Bluetooth, kuni 32 tk paralleelis.",
+    kategooria: "akud",
+    hind: 2770,
+    hind_vana: null,
+    stripe_price_id: "LISA_SIIA",
+    pilt: "assets/pildid/deye-se-f16-c.png",
+    pildid: [
+      "assets/pildid/deye-se-f16-c.png",
+    ],
+    tooteleht_pdf: "assets/failid/deye-se-f16-tooteleht.pdf",
+    ladu: true,
+    eelmyyk: false,
+    specs: {
+      "Tootja": "Deye",
+      "Mudel": "SE-F16 C version",
+      "Keemia": "LiFePO4",
+      "Mahtuvus Ah": "314 Ah",
+      "Nominaalpinge": "51.2 V",
+      "Tööpinge": "44.8–57.6 V",
+      "Nominaalenergia": "16 kWh",
+      "Maks. pidev laadimisvool": "160 A",
+      "Maks. pidev tühjendusvool": "230 A",
+      "Tippvool": "280 A (10 s)",
+      "Soovituslik DoD": "90%",
+      "Eluiga": "6000+ tsüklit",
+      "Suhtlusprotokoll": "CAN2.0 / RS485 / Bluetooth + APP",
+      "Kaitseklass": "IP21",
+      "Paralleelühendus": "kuni 32 tk",
+      "Mõõdud": "400 × 708 × 233 mm",
+      "Kaal": "u 109 kg",
+      "Garantii": "5 aastat",
+      "Tarne": "3–7 tööpäeva"
+    },
+    kirjeldus: `
+    <p>Deye SE-F16 C version on 16kWh LiFePO4 akusüsteem koduse päikeseenergia salvestamiseks. Tegemist on kompaktse madalpinge akuga, mis sobib hästi Deye ja teiste ühilduvate inverteritega.</p>
+
+    <ul>
+      <li>16 kWh nominaalenergia ja 314 Ah mahtuvus</li>
+      <li>51.2V süsteem — sobib madalpinge hübriidinverteritele</li>
+      <li>CAN / RS485 / Bluetooth — lihtne monitooring ja inverteriga side</li>
+      <li>Kuni 160A pidev laadimine ja kuni 230A pidev tühjendus</li>
+      <li>Kuni 32 akut paralleelis suurema süsteemi ehitamiseks</li>
+      <li>Seinale või põrandale paigaldatav lahendus</li>
+    </ul>
+
+    <p>Hea valik nii uue energiasalvestuse ehitamiseks kui olemasoleva süsteemi laiendamiseks.</p>
+  `
+  },
+  {
+    id: "deye-rw-f16",
+    slug: "deye-rw-f16",
+    nimi: "Deye RW-F16 16kWh LiFePO4 aku",
+    lyhikirjeldus: "Deye RW-F16 LiFePO4 aku 51.2V / 314Ah. 16kWh nominaalmahtuvus, kasutatav energia 14.4kWh (DoD 90%), kuni 160A pidev charge/discharge.",
+    kategooria: "akud",
+    hind: 2655,
+    hind_vana: null,
+    stripe_price_id: "LISA_SIIA",
+    pilt: "assets/pildid/deye-rw-f16.png",
+    pildid: [
+      "assets/pildid/deye-rw-f16.png",
+    ],
+    tooteleht_pdf: "assets/failid/deye-rw-f16-tooteleht.pdf",
+    ladu: true,
+    eelmyyk: false,
+    specs: {
+      "Tootja": "Deye",
+      "Mudel": "RW-F16",
+      "Keemia": "LiFePO4",
+      "Mahtuvus Ah": "314 Ah",
+      "Nominaalpinge": "51.2 V",
+      "Nominaalenergia": "16 kWh",
+      "Kasutatav energia": "14.4 kWh (DoD 90%)",
+      "Maks. pidev laadimis-/tühjendusvool": "160 A",
+      "Tippvool": "300 A (10 s)",
+      "Kaitseklass": "IP20",
+      "Paigaldus": "Seinale või põrandale",
+      "Töötemperatuur": "Laadimine 0°C kuni 55°C / tühjendamine -20°C kuni 55°C",
+      "Mõõdud": "480 × 830 × 235 mm",
+      "Kaal": "u 122 kg",
+      "Garantii": "5 aastat",
+      "Sertifikaadid": "UN38.3, MSDS",
+      "Tarne": "3–7 tööpäeva"
+    },
+    kirjeldus: `
+    <p>Deye RW-F16 on suure mahutavusega LiFePO4 aku kodustele ja väiksematele ärilistele energiasalvestuslahendustele. Aku nominaalmahtuvus on <strong>16 kWh</strong> ning kasutatav energia on <strong>14.4 kWh (DoD 90%)</strong>.</p>
+
+    <ul>
+      <li>314 Ah ja 51.2V LiFePO4 aku</li>
+      <li>14.4 kWh kasutatav energia (90% DoD)</li>
+      <li>Kuni 160A pidev laadimis- ja tühjendusvool</li>
+      <li>300A tippvool 10 sekundi jooksul</li>
+      <li>Seina- või põrandapaigaldus</li>
+      <li>Sobib hästi koduse päikeseenergia salvestuseks</li>
+    </ul>
+
+    <p>Kui soovid Deye inverteriga sobivat akulahendust, on RW-F16 üks väga tugev ja lihtsasti integreeritav variant.</p>
+  `
+  },
+
+  // ── 5. Dyness akud ────────────────────────────────────────
+  {
+    id: "dyness-powerbrick-pro-14kwh",
+    slug: "dyness-powerbrick-pro-14kwh",
+    nimi: "Dyness PowerBrick Pro 14.336kWh LiFePO4 aku (IP65)",
+    lyhikirjeldus: "IP65 kaitsega Dyness PowerBrick Pro 14.336kWh — sobib sise- ja välitingimustesse. BMS sisseehitatud, 10a garantii.",
+    kategooria: "akud",
+    hind: 2540,
+    hind_vana: 2700,
+    stripe_price_id: "LISA_SIIA",
+    pilt: "assets/pildid/dynesspro.png",
+    pildid: [
+      "assets/pildid/dynesspro.png",
+      "assets/pildid/dynesspro2.png",
+      "assets/pildid/dynesspro3.png",
+    ],
+    tooteleht_pdf: "assets/failid/dyness-tootelehtpro.pdf",
+    ladu: true,
+    eelmyyk: false,
+    specs: {
+      "Tootja": "Dyness",
+      "Mudel": "PowerBrick Pro",
+      "Mahtuvus": "14.336 kWh",
+      "Pinge": "51.2 V (16S LiFePO4)",
+      "Mahtuvus Ah": "280 Ah",
+      "Maks. laadimisvool": "100 A",
+      "Eluiga": "6000+ tsüklit",
+      "Suhtlusprotokoll": "CAN / RS485",
+      "Kaitseklass": "IP65",
+      "Garantii": "10 aastat",
+      "Tarne": "3–7 tööpäeva"
+    },
+    kirjeldus: `
+      <p>Dyness PowerBrick Pro on täielikult integreeritud 14.336kWh LiFePO4 akusüsteem IP65 kaitseklassiga — sobib keldri, garaaži ja välitingimustes kasutamiseks.</p>
+      <ul>
+        <li>IP65 — tolmu- ja veekindel, sobib ka välitingimustesse paigaldamiseks</li>
+        <li>Sisseehitatud professionaalne BMS aktiivse balanseerimise ja kaitsefunktsioonidega</li>
+        <li>CAN/RS485 — otsene suhtlus inverteriga (Deye, Goodwe, Huawei jt)</li>
+        <li>6000+ tsüklit eluiga — ~16 aasta kasutus igapäevasel laadimisel</li>
+        <li>Paralleelühendus kuni 16 akuga süsteemi laiendamiseks</li>
+        <li>10 aasta garantii</li>
+      </ul>
+    `
+  },
+  {
+    id: "dyness-powerbrick-14kwh",
+    slug: "dyness-powerbrick-14kwh",
+    nimi: "Dyness PowerBrick 14.336kWh LiFePO4 aku (51.2V / 280Ah)",
+    lyhikirjeldus: "Dyness PowerBrick 14.336kWh LiFePO4 — sisseehitatud BMS, lai inverterite ühilduvus, 10a garantii.",
+    kategooria: "akud",
+    hind: 2435,
+    hind_vana: 2500,
+    stripe_price_id: "LISA_SIIA",
+    pilt: "assets/pildid/dyness.png",
+    pildid: [
+      "assets/pildid/dyness.png",
+      "assets/pildid/dyness2.png",
+      "assets/pildid/dyness3.png",
+    ],
+    tooteleht_pdf: "assets/failid/dyness-tooteleht1.pdf",
+    ladu: true,
+    eelmyyk: false,
+    specs: {
+      "Tootja": "Dyness",
+      "Mudel": "PowerBrick",
+      "Mahtuvus": "14.336 kWh",
+      "Pinge": "51.2 V (16S LiFePO4)",
+      "Mahtuvus Ah": "280 Ah",
+      "Maks. laadimisvool": "100 A",
+      "Eluiga": "6000+ tsüklit",
+      "Suhtlusprotokoll": "CAN / RS485",
+      "Garantii": "10 aastat",
+      "Tarne": "3–7 tööpäeva"
+    },
+    kirjeldus: `
+      <p>Dyness PowerBrick on populaarne valik koduse päikeseenergia salvestamiseks — kõik ühes pakis, lihtne paigaldus ja lai ühilduvus inverteritega.</p>
+      <ul>
+        <li>Sisseehitatud BMS aktiivse balanseerimise ja kaitsefunktsioonidega</li>
+        <li>CAN/RS485 suhtlus inverteriga — Deye, Goodwe, Huawei, Growatt jt</li>
+        <li>6000+ tsüklit eluiga</li>
+        <li>Paralleelühendus mitme akuga süsteemi laiendamiseks</li>
+        <li>10 aasta garantii · Laos Eestis</li>
+      </ul>
+    `
+  },
+
+  // ── 6. Basen Green ────────────────────────────────────────
+  {
+    id: "basen-green-16kwh",
+    slug: "basen-green-16kwh",
+    nimi: "Basen Green BR-OW-LV16KWH — 51.2V 320Ah 16kWh akukomplekt",
+    lyhikirjeldus: "Basen Green 16kWh LiFePO4 akukomplekt sisseehitatud BMS-iga. Suur mahtuvus, CAN/RS485, 10a garantii.",
+    kategooria: "akud",
+    hind: 2049,
+    hind_vana: 2399,
+    stripe_price_id: "LISA_SIIA",
+    pilt: "assets/pildid/basen.jpg",
+    pildid: [
+      "assets/pildid/basen.jpg",
+      "assets/pildid/basen2.jpg",
+    ],
+    ladu: true,
+    eelmyyk: false,
+    specs: {
+      "Tootja": "Basen",
+      "Mudel": "BR-OW-LV16KWH",
+      "Mahtuvus": "16 kWh",
+      "Pinge": "51.2 V (16S LiFePO4)",
+      "Mahtuvus Ah": "320 Ah",
+      "Maks. laadimisvool": "100 A",
+      "Eluiga": "6000+ tsüklit",
+      "Suhtlusprotokoll": "CAN / RS485",
+      "Garantii": "10 aastat",
+      "Tarne": "3–7 tööpäeva"
+    },
+    kirjeldus: `
+      <p>Basen Green BR-OW-LV16KWH on 16kWh mahtuvusega LiFePO4 akukomplekt — elemendid, BMS ja korpus ühes pakis. 320Ah mahtuvus tagab parema puhvri suuremate majapidamiste päevasteks vajadusteks.</p>
+      <ul>
+        <li>16kWh — üks suurimaid standardpakke turul, vähendab vajadust paralleelühenduse järele</li>
+        <li>Sisseehitatud professionaalne BMS aktiivse balanseerimise ja kaitsefunktsioonidega</li>
+        <li>CAN/RS485 — otsene suhtlus inverteriga (Deye, Goodwe, SolarEdge jt)</li>
+        <li>6000+ tsüklit eluiga</li>
+        <li>10 aasta garantii · Laos Eestis</li>
+      </ul>
+    `
+  },
+
+  // ── 7. Huawei ─────────────────────────────────────────────
+  {
+    id: "huawei-sun2000-4-6ktl",
+    slug: "huawei-sun2000-4-6ktl",
+    nimi: "Huawei SUN2000-4.6KTL-L1 hübriidinverter",
+    lyhikirjeldus: "Huawei 4.6kW 1-faasiline hübriidinverter. Ühilduv Luna2000 akusüsteemiga. FusionSolar monitooring, IP65.",
+    kategooria: "inverterid",
+    hind: 860,
+    hind_vana: null,
+    stripe_price_id: "LISA_SIIA",
+    pilt: "assets/pildid/huawei.png",
+    pildid: [
+      "assets/pildid/huawei.png",
+    ],
+    ladu: true,
+    eelmyyk: false,
+    specs: {
+      "Tootja": "Huawei",
+      "Mudel": "SUN2000-4.6KTL-L1",
+      "Võimsus": "4.6 kW",
+      "Faasid": "1-faasiline",
+      "MPPT": "2× MPPT",
+      "Maks. PV pinge": "600 V",
+      "Aku liides": "Huawei Luna2000 (CAN)",
+      "Efektiivsus": "kuni 97.5%",
+      "Kaitseklass": "IP65",
+      "Garantii": "5 aastat",
+      "Tarne": "3–7 tööpäeva"
+    },
+    kirjeldus: `
+      <p>Huawei SUN2000-4.6KTL-L1 on usaldusväärne 1-faasiline hübriidinverter, mis integreerub sujuvalt Huawei Luna2000 akusüsteemiga ja on optimeeritud Huawei energiahalduse ökosüsteemile.</p>
+      <ul>
+        <li>2× MPPT — saab ühendada erineva suunaga paneeliridu</li>
+        <li>Madal käivituspinge — töötab ka pilvistel päevadel</li>
+        <li>Huawei Luna2000 akud: lihtne laiendamine moodulite lisamisega</li>
+        <li>FusionSolar äpp — monitooring ja juhtimine nutitelefonist</li>
+        <li>IP65 kaitseklass · 5 aasta garantii</li>
+      </ul>
+    `
+  },
+
+  // ── 8. BMS ────────────────────────────────────────────────
   {
     id: "jk-bms-150a-1a",
     slug: "jk-bms-150a-1a",
@@ -73,11 +412,7 @@ const TOOTED = [
     hind: 130,
     hind_vana: null,
     stripe_price_id: "LISA_SIIA",
-    pilt: "assets/pildid/jk.png",
-    pildid: [
-      "assets/pildid/jk.png",
-      "assets/pildid/jk3.png",
-    ],
+    pilt: "assets/pildid/jk-bms.jpg",
     ladu: true,
     eelmyyk: false,
     specs: {
@@ -138,291 +473,8 @@ const TOOTED = [
       </ul>
     `
   },
-  {
-    id: "huawei-sun2000-4-6ktl",
-    slug: "huawei-sun2000-4-6ktl",
-    nimi: "Huawei SUN2000-4.6KTL-L1 hübriidinverter",
-    lyhikirjeldus: "Huawei 4.6kW 1-faasiline hübriidinverter. Ühilduv Luna2000 akusüsteemiga. FusionSolar monitooring, IP65.",
-    kategooria: "inverterid",
-    hind: 860,
-    hind_vana: null,
-    stripe_price_id: "LISA_SIIA",
-    pilt: "assets/pildid/huawei.png",
-    pildid: [
-      "assets/pildid/huawei.png",
-    ],
-    ladu: true,
-    eelmyyk: false,
-    specs: {
-      "Tootja": "Huawei",
-      "Mudel": "SUN2000-4.6KTL-L1",
-      "Võimsus": "4.6 kW",
-      "Faasid": "1-faasiline",
-      "MPPT": "2× MPPT",
-      "Maks. PV pinge": "600 V",
-      "Aku liides": "Huawei Luna2000 (CAN)",
-      "Efektiivsus": "kuni 97.5%",
-      "Kaitseklass": "IP65",
-      "Garantii": "5 aastat",
-      "Tarne": "3–7 tööpäeva"
-    },
-    kirjeldus: `
-      <p>Huawei SUN2000-4.6KTL-L1 on usaldusväärne 1-faasiline hübriidinverter, mis integreerub sujuvalt Huawei Luna2000 akusüsteemiga ja on optimeeritud Huawei energiahalduse ökosüsteemile.</p>
-      <ul>
-        <li>2× MPPT — saab ühendada erineva suunaga paneeliridu</li>
-        <li>Madal käivituspinge — töötab ka pilvistel päevadel</li>
-        <li>Huawei Luna2000 akud: lihtne laiendamine moodulite lisamisega</li>
-        <li>FusionSolar äpp — monitooring ja juhtimine nutitelefonist</li>
-        <li>IP65 kaitseklass · 5 aasta garantii</li>
-      </ul>
-    `
-  },
-  {
-  id: "deye-se-f16-c-version",
-  slug: "deye-se-f16-c-version",
-  nimi: "Deye SE-F16 C version 16kWh LiFePO4 aku",
-  lyhikirjeldus: "Deye seinale või põrandale paigaldatav 16kWh LiFePO4 aku. 314Ah, 51.2V, CAN/RS485/Bluetooth, kuni 32 tk paralleelis.",
-  kategooria: "akud",
-  hind: 2770,
-  hind_vana: null,
-  stripe_price_id: "LISA_SIIA",
-  pilt: "assets/pildid/deye-se-f16-c.png",
-  pildid: [
-    "assets/pildid/deye-se-f16-c.png",
-  ],
-  tooteleht_pdf: "assets/failid/deye-se-f16-tooteleht.pdf",
-  ladu: true,
-  eelmyyk: false,
-  specs: {
-    "Tootja": "Deye",
-    "Mudel": "SE-F16 C version",
-    "Keemia": "LiFePO4",
-    "Mahtuvus Ah": "314 Ah",
-    "Nominaalpinge": "51.2 V",
-    "Tööpinge": "44.8–57.6 V",
-    "Nominaalenergia": "16 kWh",
-    "Maks. pidev laadimisvool": "160 A",
-    "Maks. pidev tühjendusvool": "230 A",
-    "Tippvool": "280 A (10 s)",
-    "Soovituslik DoD": "90%",
-    "Eluiga": "6000+ tsüklit",
-    "Suhtlusprotokoll": "CAN2.0 / RS485 / Bluetooth + APP",
-    "Kaitseklass": "IP21",
-    "Paralleelühendus": "kuni 32 tk",
-    "Mõõdud": "400 × 708 × 233 mm",
-    "Kaal": "u 109 kg",
-    "Garantii": "5 aastat",
-    "Tarne": "3–7 tööpäeva"
-  },
-  kirjeldus: `
-    <p>Deye SE-F16 C version on 16kWh LiFePO4 akusüsteem koduse päikeseenergia salvestamiseks. Tegemist on kompaktse madalpinge akuga, mis sobib hästi Deye ja teiste ühilduvate inverteritega.</p>
 
-    <ul>
-      <li>16 kWh nominaalenergia ja 314 Ah mahtuvus</li>
-      <li>51.2V süsteem — sobib madalpinge hübriidinverteritele</li>
-      <li>CAN / RS485 / Bluetooth — lihtne monitooring ja inverteriga side</li>
-      <li>Kuni 160A pidev laadimine ja kuni 230A pidev tühjendus</li>
-      <li>Kuni 32 akut paralleelis suurema süsteemi ehitamiseks</li>
-      <li>Seinale või põrandale paigaldatav lahendus</li>
-    </ul>
-
-    <p>Hea valik nii uue energiasalvestuse ehitamiseks kui olemasoleva süsteemi laiendamiseks.</p>
-  `
-},
-{
-  id: "deye-rw-f16",
-  slug: "deye-rw-f16",
-  nimi: "Deye RW-F16 16kWh LiFePO4 aku",
-  lyhikirjeldus: "Deye RW-F16 LiFePO4 aku 51.2V / 314Ah. 16kWh nominaalmahtuvus, kasutatav energia 14.4kWh (DoD 90%), kuni 160A pidev charge/discharge.",
-  kategooria: "akud",
-  hind: 2655,
-  hind_vana: null,
-  stripe_price_id: "LISA_SIIA",
-  pilt: "assets/pildid/deye-rw-f16.png",
-  pildid: [
-    "assets/pildid/deye-rw-f16.png",
-  ],
-  tooteleht_pdf: "assets/failid/deye-rw-f16-tooteleht.pdf",
-  ladu: true,
-  eelmyyk: false,
-  specs: {
-    "Tootja": "Deye",
-    "Mudel": "RW-F16",
-    "Keemia": "LiFePO4",
-    "Mahtuvus Ah": "314 Ah",
-    "Nominaalpinge": "51.2 V",
-    "Nominaalenergia": "16 kWh",
-    "Kasutatav energia": "14.4 kWh (DoD 90%)",
-    "Maks. pidev laadimis-/tühjendusvool": "160 A",
-    "Tippvool": "300 A (10 s)",
-    "Kaitseklass": "IP20",
-    "Paigaldus": "Seinale või põrandale",
-    "Töötemperatuur": "Laadimine 0°C kuni 55°C / tühjendamine -20°C kuni 55°C",
-    "Mõõdud": "480 × 830 × 235 mm",
-    "Kaal": "u 122 kg",
-    "Garantii": "5 aastat",
-    "Sertifikaadid": "UN38.3, MSDS",
-    "Tarne": "3–7 tööpäeva"
-  },
-  kirjeldus: `
-    <p>Deye RW-F16 on suure mahutavusega LiFePO4 aku kodustele ja väiksematele ärilistele energiasalvestuslahendustele. Aku nominaalmahtuvus on <strong>16 kWh</strong> ning kasutatav energia on <strong>14.4 kWh (DoD 90%)</strong>.</p>
-
-    <ul>
-      <li>314 Ah ja 51.2V LiFePO4 aku</li>
-      <li>14.4 kWh kasutatav energia (90% DoD)</li>
-      <li>Kuni 160A pidev laadimis- ja tühjendusvool</li>
-      <li>300A tippvool 10 sekundi jooksul</li>
-      <li>Seina- või põrandapaigaldus</li>
-      <li>Sobib hästi koduse päikeseenergia salvestuseks</li>
-    </ul>
-
-    <p>Kui soovid Deye inverteriga sobivat akulahendust, on RW-F16 üks väga tugev ja lihtsasti integreeritav variant.</p>
-  `
-},
-  {
-    id: "dyness-powerbrick-pro-14kwh",
-    slug: "dyness-powerbrick-pro-14kwh",
-    nimi: "Dyness PowerBrick Pro 14.336kWh LiFePO4 aku (IP65)",
-    lyhikirjeldus: "IP65 kaitsega Dyness PowerBrick Pro 14.336kWh — sobib sise- ja välitingimustesse. BMS sisseehitatud, 10a garantii.",
-    kategooria: "akud",
-    hind: 2540,
-    hind_vana: 2700,
-    stripe_price_id: "LISA_SIIA",
-    pilt: "assets/pildid/dynesspro.png",
-    pildid: [
-      "assets/pildid/dynesspro.png",
-      "assets/pildid/dynesspro2.png",
-      "assets/pildid/dynesspro3.png",
-    ],
-  tooteleht_pdf: "assets/failid/dyness-tootelehtpro.pdf",
-    ladu: true,
-    eelmyyk: false,
-    specs: {
-      "Tootja": "Dyness",
-      "Mudel": "PowerBrick Pro",
-      "Mahtuvus": "14.336 kWh",
-      "Pinge": "51.2 V (16S LiFePO4)",
-      "Mahtuvus Ah": "280 Ah",
-      "Maks. laadimisvool": "100 A",
-      "Eluiga": "6000+ tsüklit",
-      "Suhtlusprotokoll": "CAN / RS485",
-      "Kaitseklass": "IP65",
-      "Garantii": "10 aastat",
-      "Tarne": "3–7 tööpäeva"
-    },
-    kirjeldus: `
-      <p>Dyness PowerBrick Pro on täielikult integreeritud 14.336kWh LiFePO4 akusüsteem IP65 kaitseklassiga — sobib keldri, garaaži ja välitingimustes kasutamiseks.</p>
-      <ul>
-        <li>IP65 — tolmu- ja veekindel, sobib ka välitingimustesse paigaldamiseks</li>
-        <li>Sisseehitatud professionaalne BMS aktiivse balanseerimise ja kaitsefunktsioonidega</li>
-        <li>CAN/RS485 — otsene suhtlus inverteriga (Deye, Goodwe, Huawei jt)</li>
-        <li>6000+ tsüklit eluiga — ~16 aasta kasutus igapäevasel laadimisel</li>
-        <li>Paralleelühendus kuni 16 akuga süsteemi laiendamiseks</li>
-        <li>10 aasta garantii</li>
-      </ul>
-    `
-  },
-  {
-    id: "dyness-powerbrick-14kwh",
-    slug: "dyness-powerbrick-14kwh",
-    nimi: "Dyness PowerBrick 14.336kWh LiFePO4 aku (51.2V / 280Ah)",
-    lyhikirjeldus: "Dyness PowerBrick 14.336kWh LiFePO4 — sisseehitatud BMS, lai inverterite ühilduvus, 10a garantii.",
-    kategooria: "akud",
-    hind: 2435,
-    hind_vana: 2500,
-    stripe_price_id: "LISA_SIIA",
-    pilt: "assets/pildid/dyness.png",
-    pildid: [
-      "assets/pildid/dyness.png",
-      "assets/pildid/dyness2.png",
-      "assets/pildid/dyness3.png",
-    ],
-  tooteleht_pdf: "assets/failid/dyness-tooteleht1.pdf",
-    ladu: true,
-    eelmyyk: false,
-    specs: {
-      "Tootja": "Dyness",
-      "Mudel": "PowerBrick",
-      "Mahtuvus": "14.336 kWh",
-      "Pinge": "51.2 V (16S LiFePO4)",
-      "Mahtuvus Ah": "280 Ah",
-      "Maks. laadimisvool": "100 A",
-      "Eluiga": "6000+ tsüklit",
-      "Suhtlusprotokoll": "CAN / RS485",
-      "Garantii": "10 aastat",
-      "Tarne": "3–7 tööpäeva"
-    },
-    kirjeldus: `
-      <p>Dyness PowerBrick on populaarne valik koduse päikeseenergia salvestamiseks — kõik ühes pakis, lihtne paigaldus ja lai ühilduvus inverteritega.</p>
-      <ul>
-        <li>Sisseehitatud BMS aktiivse balanseerimise ja kaitsefunktsioonidega</li>
-        <li>CAN/RS485 suhtlus inverteriga — Deye, Goodwe, Huawei, Growatt jt</li>
-        <li>6000+ tsüklit eluiga</li>
-        <li>Paralleelühendus mitme akuga süsteemi laiendamiseks</li>
-        <li>10 aasta garantii · Laos Eestis</li>
-      </ul>
-    `
-  },
-  {
-    id: "deye-6-12kw",
-    slug: "deye-6-12kw",
-    nimi: "Deye SG05LP3 6–12kW 3-faasiline hübriidinverter",
-    lyhikirjeldus: "Deye kolmefaasiline hübriidinverter 48V akusüsteemiga — 4 võimsust: 6kW, 8kW, 10kW, 12kW. Zero export, AC-coupling, IP65, Wi-Fi.",
-    kategooria: "inverterid",
-    hind: 2090,
-    hind_vana: null,
-    hind_prefix: "alates",
-    href: "deye-6-12kw.html",
-    stripe_price_id: null,
-    pilt: "assets/pildid/deye.png",
-    pildid: [
-      "assets/pildid/deye.png",
-      "assets/pildid/deye2.jpg",
-    ],
-    tooteleht_pdf: "assets/failid/deye-tooteleht1.pdf",
-    ladu: true,
-    eelmyyk: false,
-    specs: {
-      "Tootja": "Deye",
-      "Mudelid": "6kW, 8kW, 10kW, 12kW",
-      "Faasid": "3-faasiline",
-      "Akupinge": "48V madalpinge (40–60V)",
-      "Kaitseklass": "IP65",
-      "Garantii": "5 aastat",
-      "Tarne": "3–7 tööpäeva"
-    },
-    kirjeldus: ``
-  },
-  {
-    id: "deye-15-20kw",
-    slug: "deye-15-20kw",
-    nimi: "Deye SG05LP3 15–20kW 3-faasiline hübriidinverter",
-    lyhikirjeldus: "Deye kolmefaasiline hübriidinverter 48V akusüsteemiga — 2 võimsust: 15kW ja 20kW. Kuni 350A aku vool, zero export, IP65, Wi-Fi.",
-    kategooria: "inverterid",
-    hind: 2450,
-    hind_vana: null,
-    hind_prefix: "alates",
-    href: "deye-15-20kw.html",
-    stripe_price_id: null,
-    pilt: "assets/pildid/deye3.webp",
-    pildid: [
-      "assets/pildid/deye3.webp",
-      "assets/pildid/deye32.jpg",
-    ],
-    tooteleht_pdf: "assets/failid/deye-tooteleht2.pdf",
-    ladu: true,
-    eelmyyk: false,
-    specs: {
-      "Tootja": "Deye",
-      "Mudelid": "15kW, 20kW",
-      "Faasid": "3-faasiline",
-      "Akupinge": "48V madalpinge (40–60V)",
-      "Kaitseklass": "IP65",
-      "Garantii": "5 aastat",
-      "Tarne": "3–7 tööpäeva"
-    },
-    kirjeldus: ``
-  },
+  // ── Peidetud üksikud Deye inverterid (kasutatakse toode.html-s) ──
   {
     id: "deye-sun-6k",
     slug: "deye-sun-6k",
@@ -474,7 +526,7 @@ const TOOTED = [
     nimi: "Deye SUN-8K-SG05LP3-EU-SM2 — 8kW 3-faasiline hübriidinverter",
     lyhikirjeldus: "Deye 8kW kolmefaasiline hübriidinverter 48V akusüsteemiga. Zero export, AC-coupling, smart load, IP65, Wi-Fi.",
     kategooria: "inverterid",
-    hind: 2130, // <- UUENDA HIND
+    hind: 2130,
     hind_vana: 2230,
     stripe_price_id: "LISA_SIIA",
     pilt: "assets/pildid/deye-8k.jpg",
@@ -685,45 +737,6 @@ const TOOTED = [
         <li>Wi-Fi komplektis — Deye SolarMAN äpp + Deye AI juhtimine (hind, tarbimine, tootlus)</li>
       </ul>
       <p>Hind sisaldab käibemaksu. Aitame leida sobiva lahenduse — <a href="kontakt.html" style="color:var(--accent)">küsi nõu</a>.</p>
-    `
-  },
-  {
-    id: "basen-green-16kwh",
-    slug: "basen-green-16kwh",
-    nimi: "Basen Green BR-OW-LV16KWH — 51.2V 320Ah 16kWh akukomplekt",
-    lyhikirjeldus: "Basen Green 16kWh LiFePO4 akukomplekt sisseehitatud BMS-iga. Suur mahtuvus, CAN/RS485, 10a garantii.",
-    kategooria: "akud",
-    hind: 2049,
-    hind_vana: 2399,
-    stripe_price_id: "LISA_SIIA",
-    pilt: "assets/pildid/basen.jpg",
-    pildid: [
-      "assets/pildid/basen.jpg",
-      "assets/pildid/basen2.jpg",
-    ],
-    ladu: true,
-    eelmyyk: false,
-    specs: {
-      "Tootja": "Basen",
-      "Mudel": "BR-OW-LV16KWH",
-      "Mahtuvus": "16 kWh",
-      "Pinge": "51.2 V (16S LiFePO4)",
-      "Mahtuvus Ah": "320 Ah",
-      "Maks. laadimisvool": "100 A",
-      "Eluiga": "6000+ tsüklit",
-      "Suhtlusprotokoll": "CAN / RS485",
-      "Garantii": "10 aastat",
-      "Tarne": "3–7 tööpäeva"
-    },
-    kirjeldus: `
-      <p>Basen Green BR-OW-LV16KWH on 16kWh mahtuvusega LiFePO4 akukomplekt — elemendid, BMS ja korpus ühes pakis. 320Ah mahtuvus tagab parema puhvri suuremate majapidamiste päevasteks vajadusteks.</p>
-      <ul>
-        <li>16kWh — üks suurimaid standardpakke turul, vähendab vajadust paralleelühenduse järele</li>
-        <li>Sisseehitatud professionaalne BMS aktiivse balanseerimise ja kaitsefunktsioonidega</li>
-        <li>CAN/RS485 — otsene suhtlus inverteriga (Deye, Goodwe, SolarEdge jt)</li>
-        <li>6000+ tsüklit eluiga</li>
-        <li>10 aasta garantii · Laos Eestis</li>
-      </ul>
     `
   }
 ];

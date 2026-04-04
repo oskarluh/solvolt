@@ -52,12 +52,16 @@
       <div style="grid-column:1/-1; text-align:center; padding:80px; color:var(--text-3)">Laeb...</div>
     </div>
 
-    <div style="padding:60px 0 80px">
+    <div style="padding:60px 0 80px" id="related-section">
       <div class="section-header">
         <div class="eyebrow">Seotud tooted</div>
         <h2>Võib huvi pakkuda</h2>
       </div>
       <div class="products-grid" id="related-grid"></div>
+      <div style="text-align:center;margin-top:40px">
+        <p style="color:var(--text-2);margin-bottom:16px">Täieliku tootevaliku leidmiseks külasta meie hinnakiri lehte.</p>
+        <a href="hinnakiri.html" class="btn btn-outline">Vaata kõiki tooteid ja hinnakirja →</a>
+      </div>
     </div>
 
   </div>
@@ -374,9 +378,11 @@
       if (e.key === 'ArrowRight') showNextImage();
     });
 
-    const related = TOOTED
-      .filter(t => t.kategooria === toode.kategooria && t.id !== toode.id)
-      .slice(0, 3);
+    const visiblePool = TOOTED.filter(t => !t.catalog_hidden && t.id !== toode.id);
+    // Shuffle and take 3: prefer same category first, then fill from rest
+    const sameKat = visiblePool.filter(t => t.kategooria === toode.kategooria).sort(() => Math.random() - 0.5);
+    const otherKat = visiblePool.filter(t => t.kategooria !== toode.kategooria).sort(() => Math.random() - 0.5);
+    const related = [...sameKat, ...otherKat].slice(0, 3);
 
     if (related.length) {
       document.getElementById('related-grid').innerHTML = related.map(t => {
@@ -384,9 +390,11 @@
         const sTag = t.hind_vana ? `<span class="badge badge-sale">Soodustus</span>` : '';
         const eTag = t.eelmyyk ? `<span class="badge badge-eelmyyk">Eelmüük</span>` : '';
         const op = t.hind_vana ? `<span class="price-old">${formatPrice(t.hind_vana)}</span>` : '';
+        const pPrefix = t.hind_prefix ? `<span style="font-size:.8em;font-weight:400;opacity:.7">${t.hind_prefix} </span>` : '';
+        const cardHref = t.href || `toode.html?id=${t.id}`;
 
         return `
-          <a href="toode.html?id=${t.id}" class="product-card">
+          <a href="${cardHref}" class="product-card">
             <div class="product-card-img">
               <img src="${t.pilt}" alt="${t.nimi}" onerror="this.src='assets/pildid/placeholder.svg'" loading="lazy">
               <div class="product-card-badges">${sTag}${eTag}</div>
@@ -395,17 +403,13 @@
               <div class="product-card-cat">${KATEGOORIAD[t.kategooria] || t.kategooria}</div>
               <div class="product-card-title">${t.nimi}</div>
               <div class="product-card-price">
-                <span class="price-current">${formatPrice(t.hind)}</span>${op}
+                <span class="price-current">${pPrefix}${formatPrice(t.hind)}</span>${op}
               </div>
-              <button class="btn btn-outline btn-sm btn-full" onclick="event.preventDefault(); Cart.add(${tJson})">
-                + Ostukorvi
-              </button>
+              ${!t.href ? `<button class="btn btn-outline btn-sm btn-full" onclick="event.preventDefault(); Cart.add(${tJson})">+ Ostukorvi</button>` : `<span class="btn btn-outline btn-sm btn-full" style="text-align:center">Vaata mudeleid →</span>`}
             </div>
           </a>
         `;
       }).join('');
-    } else {
-      document.getElementById('related-grid').closest('div').style.display = 'none';
     }
   }
 </script>
