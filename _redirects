@@ -1,0 +1,89 @@
+# ============================================================
+# Solvolt — URL redirects (vana Shopify sait → uus sait)
+# Cloudflare Pages _redirects formaat
+# ============================================================
+
+# ── EVE MB31 elemendid ──────────────────────────────────────
+/products/eve-mb31-3-2v-314ah-lifepo4-elemendid-16tk  /toode.html?id=eve-mb31-314ah  301
+/products/eve-mb31*  /toode.html?id=eve-mb31-314ah  301
+/products/eve*       /toode.html?id=eve-mb31-314ah  301
+
+# ── EEL Battery V6 Pro ─────────────────────────────────────
+/products/eel-battery-v6-pro*  /eel-v6-pro.html  301
+/products/eel*                 /eel-v6-pro.html  301
+
+# ── Deye inverterid 6–12 kW ────────────────────────────────
+/products/deye-sun-6k*   /deye-6-12kw.html  301
+/products/deye-sun-8k*   /deye-6-12kw.html  301
+/products/deye-sun-10k*  /deye-6-12kw.html  301
+/products/deye-sun-12k*  /deye-6-12kw.html  301
+
+# ── Deye inverterid 15–20 kW ───────────────────────────────
+/products/deye-sun-15k*  /deye-15-20kw.html  301
+/products/deye-sun-20k*  /deye-15-20kw.html  301
+
+# ── Deye akud ──────────────────────────────────────────────
+/products/deye-se-f16*   /toode.html?id=deye-se-f16-c-version  301
+/products/deye-rw-f16*   /toode.html?id=deye-rw-f16            301
+/products/deye*          /tooted.html?kat=inverterid            301
+
+# ── Dyness akud ────────────────────────────────────────────
+/products/dyness-powerbrick-pro*  /toode.html?id=dyness-powerbrick-pro-14kwh  301
+/products/dyness-powerbrick*      /toode.html?id=dyness-powerbrick-14kwh      301
+/products/dyness*                 /tooted.html?kat=akud                        301
+
+# ── Basen akud ─────────────────────────────────────────────
+/products/basen-green*  /toode.html?id=basen-green-16kwh  301
+/products/basen*        /tooted.html?kat=akud              301
+
+# ── JK BMS ─────────────────────────────────────────────────
+/products/jk-jikong-bms*  /tooted.html?kat=bms  301
+/products/jk*             /tooted.html?kat=bms  301
+
+# ── Huawei ─────────────────────────────────────────────────
+/products/huawei*  /toode.html?id=huawei-sun2000-4-6ktl  301
+
+# ── Komplekt ───────────────────────────────────────────────
+/products/taislik-energiasalvestuse-komplekt*  /komplekt.html  301
+/products/energiasalvestuse-komplekt*          /komplekt.html  301
+
+# ── Catch-all kõik ülejäänud /products/* ───────────────────
+/products/*  /tooted.html  301
+
+# ── Shopify kollektsioonid ──────────────────────────────────
+/collections/hubriid-inverterid    /tooted.html?kat=inverterid  301
+/collections/hubriidinverterid     /tooted.html?kat=inverterid  301
+/collections/inverterid            /tooted.html?kat=inverterid  301
+/collections/lifepo4-elemendid     /tooted.html?kat=lifepo4     301
+/collections/lifepo4               /tooted.html?kat=lifepo4     301
+/collections/akud                  /tooted.html?kat=akud        301
+/collections/patareid              /tooted.html?kat=akud        301
+/collections/bms                   /tooted.html?kat=bms         301
+/collections/komplektid            /komplekt.html               301
+/collections/all                   /tooted.html                 301
+/collections/*                     /tooted.html                 301
+
+# ── Shopify leheküljed ──────────────────────────────────────
+/pages/meist                   /meist.html                301
+/pages/about                   /meist.html                301
+/pages/kontakt                 /kontakt.html              301
+/pages/contact                 /kontakt.html              301
+/pages/privaatsuspoliitika     /privaatsuspoliitika.html  301
+/pages/privacy-policy          /privaatsuspoliitika.html  301
+/pages/tagastamine             /tagastamine.html          301
+/pages/returns                 /tagastamine.html          301
+/pages/tingimused              /tingimused.html           301
+/pages/terms                   /tingimused.html           301
+/pages/hinnakiri               /hinnakiri.html            301
+/pages/*                       /                          301
+
+# ── Shopify ostukorv ───────────────────────────────────────
+/cart     /ostukorv.html  301
+/cart/*   /ostukorv.html  301
+
+# ── Shopify konto ──────────────────────────────────────────
+/account*  /  301
+
+# ── Shopify blogi ──────────────────────────────────────────
+/blogs/*  /  301
+/blog/*   /  301

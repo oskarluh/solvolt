@@ -1,4 +1,4 @@
-# Cloudflare Pages — HTTP headers
+# Cloudflare Pages — HTTP headers (solvolt.ee)
 # Security + performance headers applied to all pages
 
 /*
@@ -7,7 +7,16 @@
   Referrer-Policy: strict-origin-when-cross-origin
   Permissions-Policy: camera=(), microphone=(), geolocation=()
 
-/assets/*
+/assets/css/*
+  Cache-Control: public, max-age=3600
+
+/assets/js/*
+  Cache-Control: public, max-age=3600
+
+/assets/pildid/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/assets/failid/*
   Cache-Control: public, max-age=31536000, immutable
 
 /*.html
