@@ -84,6 +84,13 @@
 # ── Shopify konto ──────────────────────────────────────────
 /account*  /  301
 
-# ── Shopify blogi ──────────────────────────────────────────
-/blogs/*  /  301
-/blog/*   /  301
+# ── Shopify blogi → uus blogi ──────────────────────────────
+/blogs/news/mis-on-lifepo4*          /blogi/lifepo4-akuelemendid.html  301
+/blogs/news/paikeseenergia-eelised*  /blogi/paikeseenergia-eelised.html  301
+/blogs/news/kuidas-ehitada*          /blogi/akupank-lifepo4.html  301
+/blogs/news/miks-on-bms*             /blogi/bms-oluline-lifepo4.html  301
+/blogs/news/kuidas-valida*           /blogi/oige-inverter-valimine.html  301
+/blogs/news/eve-mb31*                /blogi/eve-mb31-48v-aku.html  301
+/blogs/news/a-grade*                 /blogi/a-grade-vs-b-grade-lifepo4.html  301
+/blogs/*                             /blogi.html  301
+/blog/*                              /blogi.html  301

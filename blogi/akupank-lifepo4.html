@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kuidas ehitada oma akupanka LiFePO4 elementidest? — Solvolt</title>
+  <meta name="description" content="Samm-sammuline juhend LiFePO4 akupanga ehitamiseks: elementide valik, BMS, ühendamine, ohutus ja lõpptulemus. Praktiline DIY juhend eesti keeles." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://solvolt.ee/blogi/akupank-lifepo4.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://solvolt.ee/blogi/akupank-lifepo4.html" />
+  <meta property="og:title" content="Kuidas ehitada oma akupanka LiFePO4 elementidest?" />
+  <meta property="og:description" content="Samm-sammuline juhend LiFePO4 akupanga ehitamiseks: elementide valik, BMS, ühendamine ja ohutus." />
+  <meta property="og:locale" content="et_EE" />
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <style>
+    .article-body h2{font-size:clamp(1.2rem,2.5vw,1.55rem);margin:36px 0 12px;color:var(--text-1)}
+    .article-body h3{font-size:clamp(1rem,2vw,1.15rem);margin:24px 0 8px;color:var(--text-1);font-family:var(--ff-display)}
+    .article-body p{margin-bottom:18px;color:var(--text-2);line-height:1.8}
+    .article-body ul,.article-body ol{padding-left:22px;margin-bottom:18px}
+    .article-body li{color:var(--text-2);line-height:1.75;margin-bottom:6px}
+    .article-body strong{color:var(--text-1)}
+    .article-body .info-box{background:var(--bg-1);border:1px solid var(--border);border-left:3px solid var(--accent);border-radius:var(--r);padding:16px 20px;margin:28px 0}
+    .article-body .info-box p{margin-bottom:0}
+    .article-meta{font-family:var(--ff-mono);font-size:.78rem;color:var(--text-3);margin-bottom:28px;display:flex;gap:20px;flex-wrap:wrap}
+    .step-num{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;background:var(--accent);color:#000;border-radius:50%;font-family:var(--ff-mono);font-weight:700;font-size:.85rem;margin-right:10px;flex-shrink:0}
+    .step{display:flex;align-items:flex-start;gap:0;margin-bottom:8px}
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Kuidas ehitada oma isiklikku akupanka LiFePO4 elementidest?",
+    "datePublished": "2025-08-10",
+    "dateModified": "2025-08-10",
+    "author": {"@type": "Organization", "name": "Solvolt OÜ"},
+    "publisher": {"@type": "Organization", "name": "Solvolt OÜ", "url": "https://solvolt.ee"},
+    "url": "https://solvolt.ee/blogi/akupank-lifepo4.html"
+  }
+  </script>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src='https://www.googletagmanager.com/gtag/js?id=G-WVW6KCJ7TV'></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-WVW6KCJ7TV');
+  </script>
+</head>
+<body>
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-logo">Sol<span>volt</span></a>
+    <div class="nav-links" id="nav-links">
+      <a href="../index.html">Avaleht</a>
+      <a href="../tooted.html">Tooted</a>
+      <a href="../eel-v6-pro.html">EEL V6 Pro</a>
+      <a href="../hinnakiri.html">Hinnakiri</a>
+      <a href="../meist.html">Meist</a>
+      <a href="../blogi.html" class="active">Blogi</a>
+      <a href="../kontakt.html">Kontakt</a>
+    </div>
+    <div style="display:flex;align-items:center;gap:12px">
+      <a href="../ostukorv.html" class="nav-cart">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+        Ostukorv
+        <span class="nav-cart-count" id="cart-count" style="display:none">0</span>
+      </a>
+      <button class="nav-mobile-toggle" id="nav-toggle" aria-label="Menüü">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<main class="main-content">
+  <div class="container" style="padding:48px 24px 80px; max-width:780px">
+    <div class="breadcrumb">
+      <a href="../index.html">Avaleht</a>
+      <span class="breadcrumb-sep">›</span>
+      <a href="../blogi.html">Blogi</a>
+      <span class="breadcrumb-sep">›</span>
+      <span style="color:var(--text-2)">DIY akupank LiFePO4</span>
+    </div>
+
+    <div style="font-family:var(--ff-mono);font-size:.75rem;color:var(--accent);letter-spacing:.08em;text-transform:uppercase;margin-bottom:12px">DIY juhend</div>
+    <h1 style="font-size:clamp(1.6rem,4vw,2.4rem);margin-bottom:16px;line-height:1.2">Kuidas ehitada oma isiklikku akupanka LiFePO4 elementidest?</h1>
+    <div class="article-meta">
+      <span>10. august 2025</span>
+      <span>Solvolt OÜ</span>
+    </div>
+
+    <div class="article-body">
+      <p>Oma LiFePO4 akupanga ehitamine on üha populaarsem valik nii koduenergeetika huvilistele, karavaanide ehitajatele kui ka off-grid elustiili harrastajatele. Valmistooted on kallid — ise ehitades säästab oluliselt ja saab täpselt vajaliku mahutavusega akupanga. Selles juhendis käime läbi kõik olulised sammud.</p>
+
+      <h2>Mida vajad?</h2>
+      <ul>
+        <li><strong>LiFePO4 elemendid</strong> — soovitame A-grade prismaatilisi elemente (nt EVE MB31 314 Ah)</li>
+        <li><strong>BMS (Battery Management System)</strong> — kaitseelektroonika, mis on hädavajalik</li>
+        <li><strong>Bussbaarid</strong> — elementide ühendamiseks</li>
+        <li><strong>Kaablid ja klemmid</strong> — sobiva ristlõikega, vastavalt plaanitud voolule</li>
+        <li><strong>Karp/korpus</strong> — akupanga kaitseks ja korrashoiuks</li>
+        <li><strong>Multimeeter</strong> — pingemõõtmiseks</li>
+        <li><strong>Poldivõtmed ja muud tööriistad</strong></li>
+      </ul>
+
+      <h2>Samm-sammuline protsess</h2>
+
+      <h3>Samm 1: Süsteemipinge ja mahtuvuse määramine</h3>
+      <p>Otsusta, millist pingeastet vajad: <strong>12 V</strong> (4S ehk 4 elementi järjestikku), <strong>24 V</strong> (8S) või <strong>48 V</strong> (16S). Enamik koduenergia ja suurema võimsuse lahendusi kasutab 48 V süsteemi — madalam vool sama võimsuse juures tähendab vähem kaotuseid ja ohutust.</p>
+      <p>Mahtuvuse arvutus on lihtne: <em>kWh = Ah × V / 1000</em>. Näiteks 16 × EVE MB31 (314 Ah) 48 V süsteemis: 314 Ah × 51,2 V / 1000 ≈ <strong>16 kWh</strong>.</p>
+
+      <h3>Samm 2: Elementide ostmine ja kontrollimine</h3>
+      <p>Osta elemendid usaldusväärselt tarnijalt. Enne kasutamist mõõda iga elemendi pinget multimeetriga — uued elemendid peaksid olema laetud ~3,25–3,3 V-ni. Kontrolli, et kõik elemendid on sama tootepartii ja sarnase algpingega.</p>
+
+      <div class="info-box">
+        <p><strong>Oluline:</strong> Ära ühendu BMS-iga enne, kui kõik elemendid on top-balanseeritud (kõik ~3,65 V). Top-balanss tagab pika eluea ja ühtlase töö. Kasuta balanseerimiseks aeglast laadijat.</p>
+      </div>
+
+      <h3>Samm 3: BMS valimine</h3>
+      <p>BMS peab vastama sinu süsteemi pingele (12/24/48 V) ja maksimaalsele laadimis-/tühjenemisvoolu vajadusele. Kui sinu inverter vajab 100 A tühjenemist, vali BMS, mis talub vähemalt 120–150 A. Lisaks tasub valida BMS, millel on Bluetooth-monioring (nt JK BMS) — nii näed kogu aeg elementide seisu mobiiltelefonis.</p>
+
+      <h3>Samm 4: Elementide ühendamine</h3>
+      <p>Prismaatilised elemendid paigutata külg-külje kõrvale ja kinnita kahe plaadi vahele, et vältida paisumist. Ühenda elemendid bussbaaridega järjestikku (S-konfiguratsioon). Pinguta polte soovitusliku jõumomendiga (~4 Nm) — liiga kõva tõmbab keerme katki, liiga lahtine põhjustab soojenemise.</p>
+
+      <h3>Samm 5: BMS ühendamine</h3>
+      <p>Ühenda BMS balanseerimiskaablid igale elemendile (tavaliselt 16+1 juhet 16S süsteemile). Ühenda BMS peaplus ja -miinus akupanga klemmidele. Kontrolli enne lülitit, et polariteet on õige.</p>
+
+      <h3>Samm 6: Korpus ja ohutus</h3>
+      <p>Paiguta akupank kindlasse, mittetuleohtlikku korpusesse. Ühenda kindlasti ka <strong>sulavkaitse</strong> (fuse) akupanga ja inverteri vahele — see kaitseb lühise korral. Ventilatsiooniava poleks paha, kuigi LiFePO4 ei eralda gaase normaalsel töörežiimil.</p>
+
+      <h2>Ohutus</h2>
+      <ul>
+        <li>Ära kunagi ühendu ilma BMS-ita — ülelaadimine või lühis võib elemendi jäädavalt kahjustada</li>
+        <li>Hoia metallesemed eemal lahtistest klemmidest — lühis suure aku juures tekitab ränga löögi ja võib põhjustada tulekahju</li>
+        <li>Kasuta isoleeritud tööriistu</li>
+        <li>Tööta kuivas ja ventileeritud ruumis</li>
+        <li>Lisa alati sulavkaitse süsteemi</li>
+      </ul>
+
+      <h2>Tulemus</h2>
+      <p>Ise ehitatud LiFePO4 akupank tuleb märksa odavam kui valmislahendus, mahutavus on täpselt vajalik ja mõistad süsteemi toimimist läbi ja lõhki. Eluiga — kuni 5000+ tsüklit ehk 15–20 aastat normaalse kasutuse korral.</p>
+
+      <div style="margin-top:40px;padding:28px;background:var(--bg-1);border:1px solid var(--border);border-radius:var(--r-lg)">
+        <div style="font-family:var(--ff-mono);font-size:.75rem;color:var(--accent);margin-bottom:10px">KOMPONENDID SOLVOLT LAOST</div>
+        <p style="margin-bottom:16px;color:var(--text-1);font-weight:500">EVE MB31 LiFePO4 elemendid ja JK BMS süsteemid — Eesti laost, kiire tarne, tehniline tugi.</p>
+        <a href="../tooted.html" class="btn btn-primary">Vaata komponente →</a>
+      </div>
+    </div>
+
+    <div style="margin-top:48px;padding-top:24px;border-top:1px solid var(--border)">
+      <a href="../blogi.html" style="color:var(--accent);font-family:var(--ff-mono);font-size:.85rem">← Tagasi blogi</a>
+    </div>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">Sol<span>volt</span></div>
+        <p class="footer-desc">Kvaliteetsed LiFePO4 akuelemendid, BMS süsteemid ja päikeseenergia lahendused Eesti turule.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Tooted</h4>
+        <ul>
+          <li><a href="../tooted.html?kat=lifepo4">LiFePO4 elemendid</a></li>
+          <li><a href="../tooted.html?kat=inverterid">Hübriidinverterid</a></li>
+          <li><a href="../tooted.html?kat=akud">Akud</a></li>
+          <li><a href="../tooted.html?kat=bms">BMS</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Ettevõte</h4>
+        <ul>
+          <li><a href="../meist.html">Meist</a></li>
+          <li><a href="../blogi.html">Blogi</a></li>
+          <li><a href="../kontakt.html">Kontakt</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Kontakt</h4>
+        <ul>
+          <li><a href="mailto:solvolt.info@gmail.com">solvolt.info@gmail.com</a></li>
+          <li><a href="tel:+37253928910">+372 5392 8910</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Solvolt OÜ · Reg 17283350</span>
+      <div style="display:flex;gap:20px;flex-wrap:wrap">
+        <a href="../privaatsuspoliitika.html" style="color:var(--text-3)">Privaatsuspoliitika</a>
+        <a href="../tagastamine.html" style="color:var(--text-3)">Tagastamine</a>
+        <a href="../tingimused.html" style="color:var(--text-3)">Tingimused</a>
+      </div>
+      <span>Maksed: Visa · Mastercard · Stripe</span>
+    </div>
+  </div>
+</footer>
+
+<script src="../assets/js/main.js"></script>
+</body>
+</html>

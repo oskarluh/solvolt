@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EVE MB31 16S 48V aku: kWh arvutus, võimsus ja kasutusnäited — Solvolt</title>
+  <meta name="description" content="EVE MB31 314Ah LiFePO4 elementi 16S konfiguratsioonis: kuidas arvutada akupanga kWh mahtuvust, millist võimsust see pakub ja milliseks rakendusteks sobib." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://solvolt.ee/blogi/eve-mb31-48v-aku.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://solvolt.ee/blogi/eve-mb31-48v-aku.html" />
+  <meta property="og:title" content="EVE MB31 16S 48V aku: kWh arvutus, võimsus ja kasutusnäited" />
+  <meta property="og:description" content="EVE MB31 314Ah 16S 48V akupanga kWh arvutus, võimsus ja kasutusalad. Praktiline juhend eesti keeles." />
+  <meta property="og:locale" content="et_EE" />
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <style>
+    .article-body h2{font-size:clamp(1.2rem,2.5vw,1.55rem);margin:36px 0 12px;color:var(--text-1)}
+    .article-body h3{font-size:clamp(1rem,2vw,1.15rem);margin:24px 0 8px;color:var(--text-1);font-family:var(--ff-display)}
+    .article-body p{margin-bottom:18px;color:var(--text-2);line-height:1.8}
+    .article-body ul,.article-body ol{padding-left:22px;margin-bottom:18px}
+    .article-body li{color:var(--text-2);line-height:1.75;margin-bottom:6px}
+    .article-body strong{color:var(--text-1)}
+    .article-body .info-box{background:var(--bg-1);border:1px solid var(--border);border-left:3px solid var(--accent);border-radius:var(--r);padding:16px 20px;margin:28px 0}
+    .article-body .info-box p{margin-bottom:0}
+    .article-meta{font-family:var(--ff-mono);font-size:.78rem;color:var(--text-3);margin-bottom:28px;display:flex;gap:20px;flex-wrap:wrap}
+    .spec-table{width:100%;border-collapse:collapse;margin:20px 0;font-size:.9rem}
+    .spec-table td{padding:10px 14px;border-bottom:1px solid var(--border);color:var(--text-2)}
+    .spec-table td:first-child{color:var(--text-3);font-family:var(--ff-mono);font-size:.8rem;white-space:nowrap;width:40%}
+    .spec-table tr:last-child td{border-bottom:none}
+    .spec-table td strong{color:var(--text-1)}
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "EVE MB31 16S \"48V\" aku: kWh arvutus, võimsus ja kasutusnäited",
+    "datePublished": "2026-02-20",
+    "dateModified": "2026-02-20",
+    "author": {"@type": "Organization", "name": "Solvolt OÜ"},
+    "publisher": {"@type": "Organization", "name": "Solvolt OÜ", "url": "https://solvolt.ee"},
+    "url": "https://solvolt.ee/blogi/eve-mb31-48v-aku.html"
+  }
+  </script>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src='https://www.googletagmanager.com/gtag/js?id=G-WVW6KCJ7TV'></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-WVW6KCJ7TV');
+  </script>
+</head>
+<body>
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-logo">Sol<span>volt</span></a>
+    <div class="nav-links" id="nav-links">
+      <a href="../index.html">Avaleht</a>
+      <a href="../tooted.html">Tooted</a>
+      <a href="../eel-v6-pro.html">EEL V6 Pro</a>
+      <a href="../hinnakiri.html">Hinnakiri</a>
+      <a href="../meist.html">Meist</a>
+      <a href="../blogi.html" class="active">Blogi</a>
+      <a href="../kontakt.html">Kontakt</a>
+    </div>
+    <div style="display:flex;align-items:center;gap:12px">
+      <a href="../ostukorv.html" class="nav-cart">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+        Ostukorv
+        <span class="nav-cart-count" id="cart-count" style="display:none">0</span>
+      </a>
+      <button class="nav-mobile-toggle" id="nav-toggle" aria-label="Menüü">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<main class="main-content">
+  <div class="container" style="padding:48px 24px 80px; max-width:780px">
+    <div class="breadcrumb">
+      <a href="../index.html">Avaleht</a>
+      <span class="breadcrumb-sep">›</span>
+      <a href="../blogi.html">Blogi</a>
+      <span class="breadcrumb-sep">›</span>
+      <span style="color:var(--text-2)">EVE MB31 48V aku</span>
+    </div>
+
+    <div style="font-family:var(--ff-mono);font-size:.75rem;color:var(--accent);letter-spacing:.08em;text-transform:uppercase;margin-bottom:12px">Akud</div>
+    <h1 style="font-size:clamp(1.6rem,4vw,2.4rem);margin-bottom:16px;line-height:1.2">EVE MB31 16S "48V" aku: kWh arvutus, võimsus ja kasutusnäited</h1>
+    <div class="article-meta">
+      <span>20. veebruar 2026</span>
+      <span>Solvolt OÜ</span>
+    </div>
+
+    <div class="article-body">
+      <p>EVE MB31 314 Ah on üks populaarsemaid LiFePO4 prismaatilisi elemente maailmas ja ka Solvolt laos. 16 elementi järjestikku (16S) ühendatuna moodustub selle mudeli pealt ~16 kWh akupakett, mis sobib suurepäraselt nii kodu energiasalvestuseks kui ka ärirakenduste jaoks. Selles artiklis selgitame, kuidas kWh arvutus käib, millist võimsust see akupakett pakub ja milliseks rakendusteks sobib.</p>
+
+      <h2>EVE MB31 elemendi põhinäitajad</h2>
+
+      <table class="spec-table">
+        <tr><td>Tüüp</td><td><strong>LiFePO4 prismaatiline</strong></td></tr>
+        <tr><td>Nimipinge</td><td><strong>3,2 V</strong></td></tr>
+        <tr><td>Mahtuvus</td><td><strong>314 Ah</strong></td></tr>
+        <tr><td>Laadimispinge (max)</td><td><strong>3,65 V</strong></td></tr>
+        <tr><td>Tühjenemispinge (min)</td><td><strong>2,5 V</strong></td></tr>
+        <tr><td>Maksimaalne pidev laadimis-/tühjenemisvoolu</td><td><strong>1C (314 A)</strong></td></tr>
+        <tr><td>Tsüklid (kuni 80% DoD)</td><td><strong>≥ 4000</strong></td></tr>
+        <tr><td>Kaal</td><td><strong>~5,7 kg / element</strong></td></tr>
+        <tr><td>Mõõdud</td><td><strong>174 × 71 × 207 mm</strong></td></tr>
+      </table>
+
+      <h2>16S konfiguratsiooni kWh arvutus</h2>
+      <p>16 elementi järjestikku (16S) annab:</p>
+      <ul>
+        <li><strong>Süsteemipinge:</strong> 16 × 3,2 V = 51,2 V (nn "48V" süsteem)</li>
+        <li><strong>Mahtuvus:</strong> 314 Ah (paralleelühendus suurendaks Ah-d, järjestikku jääb samaks)</li>
+        <li><strong>Teoreetiline energia:</strong> 314 Ah × 51,2 V = 16 077 Wh ≈ <strong>16,1 kWh</strong></li>
+        <li><strong>Kasutuslik energia (80% DoD):</strong> ~12,9 kWh</li>
+        <li><strong>Kasutuslik energia (90% DoD):</strong> ~14,5 kWh</li>
+      </ul>
+
+      <div class="info-box">
+        <p><strong>Praktiline nõuanne:</strong> Ära arvuta kogu 16 kWh-d kasutatavaks — jäta alati 10–20% puhver, et element töötaks oma optimaalses vahemikus. See pikendab oluliselt eluiga.</p>
+      </div>
+
+      <h2>Milliseid voole ja võimsust see aku suudab?</h2>
+      <p>EVE MB31 elementi maksimaalvool on 1C ehk 314 A. 16S konfiguratsioonis tähendab see:</p>
+      <ul>
+        <li><strong>Maksimaalne pidev võimsus:</strong> 314 A × 51,2 V = ~16 kW</li>
+        <li><strong>Tüüpiline inverteri laadimisvool:</strong> 50–100 A = 2,5–5,1 kW</li>
+        <li><strong>Tüüpiline maja tühjenemiskoorem:</strong> 2–6 kW</li>
+      </ul>
+      <p>Praktikas piirdub kodu kasutus harva 10 kW-st kõrgema hetkekoormusega, seega on 16S EVE MB31 pakett enamiku kodude jaoks piisava vooluvõimekusega ka kõige nõudlikumate koormuste jaoks.</p>
+
+      <h2>Kasutusnäited</h2>
+
+      <h3>Koduenergia salvestus päikesega</h3>
+      <p>16 kWh akupakett koos 8–10 kW Deye hübriid-inverteri ja 8–10 kW päikesepaneelidega moodustab täisväärtusliku koduenergiasüsteemi. Päeval genereeritud energia, mida kohe ei tarbita, läheb akusse — ja seda tarbitakse õhtul ning öösel. Keskmise maja ~15–18 kWh ööpäevatarbimisest saab katta suurema osa aastas päikesest.</p>
+
+      <h3>Off-grid suvila või talu</h3>
+      <p>Ilma võrguühenduseta objektil annab 16 kWh aku 1–2 päeva autonoomsuse mõõduka tarbimise korral (3–5 kWh/päev). Piisava panealivälja korral laetakse aku päevasel ajal täis ja see katab öise tarbimisvajaduse.</p>
+
+      <h3>Karavan, matkabuss (Campervan)</h3>
+      <p>2 × EVE MB31 (628 Ah, ~6,4 kWh 24 V süsteemis või ~12,8 kWh 48 V süsteemis) annab pikaajalise autonoomsuse matkabussis — LED-valgustus, külmik, sülearvuti, laadijad — kõik saavad päevade kaupa ilma välisühenduseta töötada.</p>
+
+      <h2>Mida lisaks vaja?</h2>
+      <ul>
+        <li><strong>BMS 16S:</strong> JK BMS 200 A Bluetooth-mooduliga — jälgid kõiki elemente nutitelefonist</li>
+        <li><strong>Hübriid-inverter:</strong> Deye SUN-G04 6–12 kW (vastavalt vajadusele)</li>
+        <li><strong>Bussbaarid:</strong> M6 klemmidega element-komplektis kaasas</li>
+        <li><strong>Sulavkaitse:</strong> 300–400 A ANL sulavkaitse aku ja inverteri vahele</li>
+      </ul>
+
+      <div style="margin-top:40px;padding:28px;background:var(--bg-1);border:1px solid var(--border);border-radius:var(--r-lg)">
+        <div style="font-family:var(--ff-mono);font-size:.75rem;color:var(--accent);margin-bottom:10px">EVE MB31 SOLVOLT LAOST</div>
+        <p style="margin-bottom:16px;color:var(--text-1);font-weight:500">A-grade EVE MB31 314 Ah LiFePO4 elemendid — 16 tk komplektis, kiire tarne Eestist.</p>
+        <a href="../toode.html?id=eve-mb31-314ah" class="btn btn-primary">Vaata EVE MB31 →</a>
+      </div>
+    </div>
+
+    <div style="margin-top:48px;padding-top:24px;border-top:1px solid var(--border)">
+      <a href="../blogi.html" style="color:var(--accent);font-family:var(--ff-mono);font-size:.85rem">← Tagasi blogi</a>
+    </div>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">Sol<span>volt</span></div>
+        <p class="footer-desc">Kvaliteetsed LiFePO4 akuelemendid, BMS süsteemid ja päikeseenergia lahendused Eesti turule.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Tooted</h4>
+        <ul>
+          <li><a href="../tooted.html?kat=lifepo4">LiFePO4 elemendid</a></li>
+          <li><a href="../tooted.html?kat=inverterid">Hübriidinverterid</a></li>
+          <li><a href="../tooted.html?kat=akud">Akud</a></li>
+          <li><a href="../tooted.html?kat=bms">BMS</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Ettevõte</h4>
+        <ul>
+          <li><a href="../meist.html">Meist</a></li>
+          <li><a href="../blogi.html">Blogi</a></li>
+          <li><a href="../kontakt.html">Kontakt</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Kontakt</h4>
+        <ul>
+          <li><a href="mailto:solvolt.info@gmail.com">solvolt.info@gmail.com</a></li>
+          <li><a href="tel:+37253928910">+372 5392 8910</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Solvolt OÜ · Reg 17283350</span>
+      <div style="display:flex;gap:20px;flex-wrap:wrap">
+        <a href="../privaatsuspoliitika.html" style="color:var(--text-3)">Privaatsuspoliitika</a>
+        <a href="../tagastamine.html" style="color:var(--text-3)">Tagastamine</a>
+        <a href="../tingimused.html" style="color:var(--text-3)">Tingimused</a>
+      </div>
+      <span>Maksed: Visa · Mastercard · Stripe</span>
+    </div>
+  </div>
+</footer>
+
+<script src="../assets/js/main.js"></script>
+</body>
+</html>

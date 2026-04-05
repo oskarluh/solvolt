@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blogi — LiFePO4, inverterid ja päikeseenergia | Solvolt</title>
+  <meta name="description" content="Solvolt blogi: LiFePO4 akude, hübriidinverterite, BMS-ide ja päikeseenergia salvestuse praktilised juhendid ja nõuanded eesti keeles." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://solvolt.ee/blogi.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://solvolt.ee/blogi.html" />
+  <meta property="og:title" content="Blogi — LiFePO4, inverterid ja päikeseenergia | Solvolt" />
+  <meta property="og:description" content="Praktilised juhendid ja nõuanded LiFePO4 akude, hübriidinverterite ja päikeseenergia lahenduste kohta." />
+  <meta property="og:locale" content="et_EE" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <style>
+    .blog-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:24px}
+    .blog-card{background:var(--bg-1);border:1px solid var(--border);border-radius:var(--r-lg);padding:28px;transition:border-color var(--trans);display:flex;flex-direction:column;text-decoration:none;color:inherit}
+    .blog-card:hover{border-color:var(--accent)}
+    .blog-card-tag{font-family:var(--ff-mono);font-size:.72rem;color:var(--accent);letter-spacing:.08em;text-transform:uppercase;margin-bottom:10px}
+    .blog-card-title{font-family:var(--ff-display);font-size:1.1rem;font-weight:700;color:var(--text-1);margin-bottom:10px;line-height:1.35}
+    .blog-card-excerpt{color:var(--text-2);font-size:.9rem;line-height:1.65;flex:1;margin-bottom:20px}
+    .blog-card-meta{display:flex;align-items:center;justify-content:space-between;font-family:var(--ff-mono);font-size:.75rem;color:var(--text-3)}
+    .blog-card-link{color:var(--accent)}
+  </style>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src='https://www.googletagmanager.com/gtag/js?id=G-WVW6KCJ7TV'></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-WVW6KCJ7TV');
+  </script>
+</head>
+<body>
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">Sol<span>volt</span></a>
+    <div class="nav-links" id="nav-links">
+      <a href="index.html">Avaleht</a>
+      <a href="tooted.html">Tooted</a>
+      <a href="eel-v6-pro.html">EEL V6 Pro</a>
+      <a href="hinnakiri.html">Hinnakiri</a>
+      <a href="meist.html">Meist</a>
+      <a href="blogi.html" class="active">Blogi</a>
+      <a href="kontakt.html">Kontakt</a>
+    </div>
+    <div style="display:flex;align-items:center;gap:12px">
+      <a href="ostukorv.html" class="nav-cart">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+        Ostukorv
+        <span class="nav-cart-count" id="cart-count" style="display:none">0</span>
+      </a>
+      <button class="nav-mobile-toggle" id="nav-toggle" aria-label="Menüü">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<main class="main-content">
+  <div class="container" style="padding:48px 24px 80px">
+    <div class="breadcrumb">
+      <a href="index.html">Avaleht</a>
+      <span class="breadcrumb-sep">›</span>
+      <span style="color:var(--text-2)">Blogi</span>
+    </div>
+
+    <div style="margin-bottom:40px">
+      <h1 style="font-size:clamp(1.8rem,4vw,2.6rem);margin-bottom:8px">Blogi</h1>
+      <p>Praktilised juhendid ja nõuanded LiFePO4 akude, hübriidinverterite ja päikeseenergia lahenduste kohta.</p>
+    </div>
+
+    <div class="blog-grid">
+
+      <a href="blogi/eve-mb31-48v-aku.html" class="blog-card">
+        <div class="blog-card-tag">Akud</div>
+        <div class="blog-card-title">EVE MB31 16S "48V" aku: kWh arvutus, võimsus ja kasutusnäited</div>
+        <div class="blog-card-excerpt">Kuidas arvutada EVE MB31 16S akupanga tegelikku mahtuvust kWh-des, millist võimsust see pakub ja milliseks rakendusteks see sobib.</div>
+        <div class="blog-card-meta"><span>20. veebruar 2026</span><span class="blog-card-link">Loe edasi →</span></div>
+      </a>
+
+      <a href="blogi/a-grade-vs-b-grade-lifepo4.html" class="blog-card">
+        <div class="blog-card-tag">LiFePO4 elemendid</div>
+        <div class="blog-card-title">A-grade vs B-grade LiFePO4 elemendid: kuidas vahet teha ja mida müüjalt küsida</div>
+        <div class="blog-card-excerpt">Mida tähendavad A-grade ja B-grade tähistused LiFePO4 elementidel, millised on erinevused praktikas ja mida peaksid kindlasti enne ostmist müüjalt küsima.</div>
+        <div class="blog-card-meta"><span>20. veebruar 2026</span><span class="blog-card-link">Loe edasi →</span></div>
+      </a>
+
+      <a href="blogi/oige-inverter-valimine.html" class="blog-card">
+        <div class="blog-card-tag">Inverterid</div>
+        <div class="blog-card-title">Kuidas valida õige inverter päikeseenergia süsteemile?</div>
+        <div class="blog-card-excerpt">Hübriid-, string- ja off-grid inverterite erinevused, olulised parameetrid ja praktilised nõuanded õige mudeli valimisel.</div>
+        <div class="blog-card-meta"><span>10. august 2025</span><span class="blog-card-link">Loe edasi →</span></div>
+      </a>
+
+      <a href="blogi/bms-oluline-lifepo4.html" class="blog-card">
+        <div class="blog-card-tag">BMS</div>
+        <div class="blog-card-title">Miks on BMS oluline iga LiFePO4 akusüsteemi juures?</div>
+        <div class="blog-card-excerpt">Battery Management System ehk BMS on LiFePO4 akupanga südamik. Selgitame, mida see teeb, miks ilma selleta ei saa ja kuidas valida sobivat BMS-i.</div>
+        <div class="blog-card-meta"><span>10. august 2025</span><span class="blog-card-link">Loe edasi →</span></div>
+      </a>
+
+      <a href="blogi/akupank-lifepo4.html" class="blog-card">
+        <div class="blog-card-tag">DIY juhend</div>
+        <div class="blog-card-title">Kuidas ehitada oma isiklikku akupanka LiFePO4 elementidest?</div>
+        <div class="blog-card-excerpt">Samm-sammuline juhend oma LiFePO4 akupanga ehitamiseks: elementide valik, BMS, ühendamine, ohutus ja lõpptulemus.</div>
+        <div class="blog-card-meta"><span>10. august 2025</span><span class="blog-card-link">Loe edasi →</span></div>
+      </a>
+
+      <a href="blogi/paikeseenergia-eelised.html" class="blog-card">
+        <div class="blog-card-tag">Päikeseenergia</div>
+        <div class="blog-card-title">Päikeseenergia eelised kodudes ja ettevõtetes</div>
+        <div class="blog-card-excerpt">Milliseid eeliseid toob päikeseenergia kodu- või äritarbijale Eestis — elektriarvete kokkuhoid, energiasõltumatus ja rohepööre.</div>
+        <div class="blog-card-meta"><span>10. august 2025</span><span class="blog-card-link">Loe edasi →</span></div>
+      </a>
+
+      <a href="blogi/lifepo4-akuelemendid.html" class="blog-card">
+        <div class="blog-card-tag">LiFePO4 elemendid</div>
+        <div class="blog-card-title">Mis on LiFePO4 akuelemendid ja miks need on parim valik päikeseenergia süsteemidele?</div>
+        <div class="blog-card-excerpt">LiFePO4 keemia eelised võrreldes plii- ja teiste liitiumakudega, ohutus, eluiga ja praktiline kasutus energiasalvestuses.</div>
+        <div class="blog-card-meta"><span>10. august 2025</span><span class="blog-card-link">Loe edasi →</span></div>
+      </a>
+
+    </div>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">Sol<span>volt</span></div>
+        <p class="footer-desc">Kvaliteetsed LiFePO4 akuelemendid, BMS süsteemid ja päikeseenergia lahendused Eesti turule.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Tooted</h4>
+        <ul>
+          <li><a href="tooted.html?kat=lifepo4">LiFePO4 elemendid</a></li>
+          <li><a href="tooted.html?kat=inverterid">Hübriidinverterid</a></li>
+          <li><a href="tooted.html?kat=akud">Akud</a></li>
+          <li><a href="tooted.html?kat=bms">BMS</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Ettevõte</h4>
+        <ul>
+          <li><a href="meist.html">Meist</a></li>
+          <li><a href="blogi.html">Blogi</a></li>
+          <li><a href="kontakt.html">Kontakt</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Kontakt</h4>
+        <ul>
+          <li><a href="mailto:solvolt.info@gmail.com">solvolt.info@gmail.com</a></li>
+          <li><a href="tel:+37253928910">+372 5392 8910</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Solvolt OÜ · Reg 17283350</span>
+      <div style="display:flex;gap:20px;flex-wrap:wrap">
+        <a href="privaatsuspoliitika.html" style="color:var(--text-3)">Privaatsuspoliitika</a>
+        <a href="tagastamine.html" style="color:var(--text-3)">Tagastamine</a>
+        <a href="tingimused.html" style="color:var(--text-3)">Tingimused</a>
+      </div>
+      <span>Maksed: Visa · Mastercard · Stripe</span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>

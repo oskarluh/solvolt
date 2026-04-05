@@ -56,6 +56,54 @@
   </url>
 
   <url>
+    <loc>https://solvolt.ee/blogi.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://solvolt.ee/blogi/lifepo4-akuelemendid.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://solvolt.ee/blogi/paikeseenergia-eelised.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://solvolt.ee/blogi/akupank-lifepo4.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://solvolt.ee/blogi/bms-oluline-lifepo4.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://solvolt.ee/blogi/oige-inverter-valimine.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://solvolt.ee/blogi/eve-mb31-48v-aku.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://solvolt.ee/blogi/a-grade-vs-b-grade-lifepo4.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
     <loc>https://solvolt.ee/privaatsuspoliitika.html</loc>
     <changefreq>yearly</changefreq>
     <priority>0.2</priority>
