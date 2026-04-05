@@ -31,6 +31,16 @@
   <!-- <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-XXXXXXX');</script> -->
 
   <link rel="stylesheet" href="assets/css/style.css" />
+  <style>
+    .brand-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+    .brand-card{background:var(--bg-2);border:1px solid var(--border);border-radius:var(--r-lg);padding:28px 20px;text-align:center;position:relative;overflow:hidden;transition:border-color .18s ease,transform .18s ease}
+    .brand-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:var(--accent);opacity:.35;transition:opacity .18s ease}
+    .brand-card:hover{border-color:var(--border-2);transform:translateY(-2px)}
+    .brand-card:hover::after{opacity:.8}
+    .brand-card-name{font-family:var(--ff-display);font-size:clamp(1.5rem,3.5vw,2.2rem);font-weight:800;color:var(--accent);line-height:1.1}
+    .brand-card-label{font-size:.82rem;color:var(--text-3);margin-top:6px;font-family:var(--ff-mono);letter-spacing:.06em;text-transform:uppercase}
+    @media(max-width:640px){.brand-card{padding:16px 10px}}
+  </style>
 
   <!-- Schema.org: Organization + WebSite -->
   <script type="application/ld+json">
