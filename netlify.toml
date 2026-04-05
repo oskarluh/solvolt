@@ -3,3 +3,162 @@
 
 [functions]
   node_bundler = "esbuild"
+
+# ── 301 redirects: vana sait → uus sait ─────────────────────────
+# EVE MB31 elemendid
+[[redirects]]
+  from = "/products/eve-mb31-3-2v-314ah-lifepo4-elemendid-16tk"
+  to = "/toode.html?id=eve-mb31-314ah"
+  status = 301
+
+[[redirects]]
+  from = "/products/eve-mb31*"
+  to = "/toode.html?id=eve-mb31-314ah"
+  status = 301
+
+# EEL Battery V6 Pro
+[[redirects]]
+  from = "/products/eel-battery-v6-pro*"
+  to = "/eel-v6-pro.html"
+  status = 301
+
+[[redirects]]
+  from = "/products/eel*"
+  to = "/eel-v6-pro.html"
+  status = 301
+
+# Deye inverterid 6–12kW
+[[redirects]]
+  from = "/products/deye-sun-6k*"
+  to = "/deye-6-12kw.html"
+  status = 301
+
+[[redirects]]
+  from = "/products/deye-sun-8k*"
+  to = "/deye-6-12kw.html"
+  status = 301
+
+[[redirects]]
+  from = "/products/deye-sun-10k*"
+  to = "/deye-6-12kw.html"
+  status = 301
+
+[[redirects]]
+  from = "/products/deye-sun-12k*"
+  to = "/deye-6-12kw.html"
+  status = 301
+
+# Deye inverterid 15–20kW
+[[redirects]]
+  from = "/products/deye-sun-15k*"
+  to = "/deye-15-20kw.html"
+  status = 301
+
+[[redirects]]
+  from = "/products/deye-sun-20k*"
+  to = "/deye-15-20kw.html"
+  status = 301
+
+# Deye akud
+[[redirects]]
+  from = "/products/deye-se-f16*"
+  to = "/toode.html?id=deye-se-f16-c-version"
+  status = 301
+
+[[redirects]]
+  from = "/products/deye-rw-f16*"
+  to = "/toode.html?id=deye-rw-f16"
+  status = 301
+
+# Dyness akud
+[[redirects]]
+  from = "/products/dyness-powerbrick-pro*"
+  to = "/toode.html?id=dyness-powerbrick-pro-14kwh"
+  status = 301
+
+[[redirects]]
+  from = "/products/dyness-powerbrick*"
+  to = "/toode.html?id=dyness-powerbrick-14kwh"
+  status = 301
+
+[[redirects]]
+  from = "/products/dyness*"
+  to = "/tooted.html?kat=akud"
+  status = 301
+
+# Basen akud
+[[redirects]]
+  from = "/products/basen-green*"
+  to = "/toode.html?id=basen-green-16kwh"
+  status = 301
+
+[[redirects]]
+  from = "/products/basen*"
+  to = "/tooted.html?kat=akud"
+  status = 301
+
+# JK BMS
+[[redirects]]
+  from = "/products/jk*"
+  to = "/tooted.html?kat=bms"
+  status = 301
+
+# Huawei
+[[redirects]]
+  from = "/products/huawei*"
+  to = "/toode.html?id=huawei-sun2000-4-6ktl"
+  status = 301
+
+# Energiasalvestuse komplekt
+[[redirects]]
+  from = "/products/taislik-energiasalvestuse-komplekt*"
+  to = "/komplekt.html"
+  status = 301
+
+# Shopify kollektsioonid
+[[redirects]]
+  from = "/collections/inverterid"
+  to = "/tooted.html?kat=inverterid"
+  status = 301
+
+[[redirects]]
+  from = "/collections/akud"
+  to = "/tooted.html?kat=akud"
+  status = 301
+
+[[redirects]]
+  from = "/collections/lifepo4"
+  to = "/tooted.html?kat=lifepo4"
+  status = 301
+
+[[redirects]]
+  from = "/collections/bms"
+  to = "/tooted.html?kat=bms"
+  status = 301
+
+[[redirects]]
+  from = "/collections/*"
+  to = "/tooted.html"
+  status = 301
+
+# Shopify leheküljed
+[[redirects]]
+  from = "/pages/meist"
+  to = "/meist.html"
+  status = 301
+
+[[redirects]]
+  from = "/pages/kontakt"
+  to = "/kontakt.html"
+  status = 301
+
+[[redirects]]
+  from = "/pages/*"
+  to = "/"
+  status = 301
+
+# Catch-all kõik ülejäänud /products/* → tooted
+[[redirects]]
+  from = "/products/*"
+  to = "/tooted.html"
+  status = 301

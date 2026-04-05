@@ -852,6 +852,32 @@ p  { color: var(--text-2); line-height: 1.7; }
   gap: 64px;
   align-items: center;
 }
+
+/* ── Brand grid (homepage "Meist" section) ───────────────────── */
+.brand-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+.brand-card {
+  background: var(--bg-2);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  padding: 28px;
+  text-align: center;
+}
+.brand-card-name {
+  font-family: var(--ff-display);
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: var(--accent);
+  line-height: 1.1;
+}
+.brand-card-label {
+  font-size: .82rem;
+  color: var(--text-3);
+  margin-top: 4px;
+}
 .contact-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -886,6 +912,8 @@ p  { color: var(--text-2); line-height: 1.7; }
   .trust-grid { grid-template-columns: 1fr; }
   .cart-item { grid-template-columns: 64px 1fr auto; gap: 14px; }
   .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 32px; }
+  .brand-card { padding: 16px 12px; }
+  .brand-card-name { font-size: 1.4rem; }
   .product-thumbs { gap: 10px; }
   .product-thumb { width: 64px; height: 64px; }
 
