@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kui suur aku mu majale sobib? Energiasalvestuse mahutavuse arvutus — Solvolt</title>
+  <meta name="description" content="Samm-sammuline juhend: kuidas arvutada, kui suurt akut ja inverterit su maja päikeseenergiasüsteemi jaoks vajab. Valemid, näited ja soovitused Eesti kodudele." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://solvolt.ee/blogi/energiasalvestuse-mahutavus-arvutus.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://solvolt.ee/blogi/energiasalvestuse-mahutavus-arvutus.html" />
+  <meta property="og:title" content="Kui suur aku mu majale sobib? Energiasalvestuse mahutavuse arvutus" />
+  <meta property="og:description" content="Kuidas arvutada vajaliku akumahu suurust Eesti kodu päikeseenergiasüsteemile — valemid, näited ja soovitused." />
+  <meta property="og:locale" content="et_EE" />
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <style>
+    .article-body h2{font-size:clamp(1.2rem,2.5vw,1.55rem);margin:36px 0 12px;color:var(--text-1)}
+    .article-body h3{font-size:clamp(1rem,2vw,1.15rem);margin:24px 0 8px;color:var(--text-1);font-family:var(--ff-display)}
+    .article-body p{margin-bottom:18px;color:var(--text-2);line-height:1.8}
+    .article-body ul,.article-body ol{padding-left:22px;margin-bottom:18px}
+    .article-body li{color:var(--text-2);line-height:1.75;margin-bottom:6px}
+    .article-body strong{color:var(--text-1)}
+    .article-body .info-box{background:var(--bg-1);border:1px solid var(--border);border-left:3px solid var(--accent);border-radius:var(--r);padding:16px 20px;margin:28px 0}
+    .article-body .info-box p{margin-bottom:0}
+    .article-meta{font-family:var(--ff-mono);font-size:.78rem;color:var(--text-3);margin-bottom:28px;display:flex;gap:20px;flex-wrap:wrap}
+    .calc-box{background:var(--bg-2);border:1px solid var(--border-2);border-radius:var(--r-lg);padding:24px;margin:24px 0}
+    .calc-box .calc-title{font-family:var(--ff-mono);font-size:.75rem;color:var(--accent);letter-spacing:.08em;text-transform:uppercase;margin-bottom:14px}
+    .calc-formula{font-family:var(--ff-mono);font-size:.95rem;color:var(--text-1);background:var(--bg-3);padding:10px 16px;border-radius:var(--r);margin:10px 0}
+    .example-table{width:100%;border-collapse:collapse;margin:20px 0;font-size:.88rem}
+    .example-table th{background:var(--bg-2);color:var(--text-3);font-family:var(--ff-mono);font-size:.72rem;letter-spacing:.06em;padding:8px 12px;text-align:left;border-bottom:1px solid var(--border)}
+    .example-table td{padding:9px 12px;border-bottom:1px solid var(--border);color:var(--text-2)}
+    .example-table tr:last-child td{border-bottom:none}
+    .example-table td strong{color:var(--text-1)}
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Kui suur aku mu majale sobib? Energiasalvestuse mahutavuse arvutus",
+    "datePublished": "2026-04-05",
+    "dateModified": "2026-04-05",
+    "author": {"@type": "Organization", "name": "Solvolt OÜ"},
+    "publisher": {"@type": "Organization", "name": "Solvolt OÜ", "url": "https://solvolt.ee"},
+    "url": "https://solvolt.ee/blogi/energiasalvestuse-mahutavus-arvutus.html"
+  }
+  </script>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src='https://www.googletagmanager.com/gtag/js?id=G-WVW6KCJ7TV'></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-WVW6KCJ7TV');
+  </script>
+</head>
+<body>
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-logo">Sol<span>volt</span></a>
+    <div class="nav-links" id="nav-links">
+      <a href="../index.html">Avaleht</a>
+      <a href="../tooted.html">Tooted</a>
+      <a href="../eel-v6-pro.html">EEL V6 Pro</a>
+      <a href="../hinnakiri.html">Hinnakiri</a>
+      <a href="../meist.html">Meist</a>
+      <a href="../blogi.html" class="active">Blogi</a>
+      <a href="../kontakt.html">Kontakt</a>
+    </div>
+    <div style="display:flex;align-items:center;gap:12px">
+      <a href="../ostukorv.html" class="nav-cart">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+        Ostukorv
+        <span class="nav-cart-count" id="cart-count" style="display:none">0</span>
+      </a>
+      <button class="nav-mobile-toggle" id="nav-toggle" aria-label="Menüü">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<main class="main-content">
+  <div class="container" style="padding:48px 24px 80px; max-width:780px">
+    <div class="breadcrumb">
+      <a href="../index.html">Avaleht</a>
+      <span class="breadcrumb-sep">›</span>
+      <a href="../blogi.html">Blogi</a>
+      <span class="breadcrumb-sep">›</span>
+      <span style="color:var(--text-2)">Akumahu arvutus</span>
+    </div>
+
+    <div style="font-family:var(--ff-mono);font-size:.75rem;color:var(--accent);letter-spacing:.08em;text-transform:uppercase;margin-bottom:12px">Ostujuhend</div>
+    <h1 style="font-size:clamp(1.6rem,4vw,2.4rem);margin-bottom:16px;line-height:1.2">Kui suur aku mu majale sobib? Energiasalvestuse mahutavuse arvutus</h1>
+    <div class="article-meta">
+      <span>5. aprill 2026</span>
+      <span>Solvolt OÜ</span>
+    </div>
+
+    <div class="article-body">
+      <p>Üks esimesi küsimusi, mis päikeseenergiasüsteemi planeerides tekib, on: "Kui suurt akut ma tegelikult vajan?" Liiga väike aku tähendab, et päikeseenergia raisatakse võrku ja öösel ostetakse kallist elektrienergiat. Liiga suur aku tähendab asjatut investeeringut, mis kunagi täis ei saa. Selles juhendis anname sulle konkreetse arvutusmeetodi, mida saad oma maja andmete põhjal kasutada.</p>
+
+      <h2>Samm 1: Uuri oma elektritarbimist</h2>
+      <p>Alusta oma tegeliku elektritarbimise väljaselgitamisest. Parim allikas on <strong>Elering või Elektrum portaal</strong> — sealt näed tunnikaupa tarbimist vähemalt viimase 12 kuu kohta. Otsi:</p>
+      <ul>
+        <li><strong>Ööpäevane keskmine tarbimine (kWh/päev)</strong> — aastane tarbimine jagatud 365-ga</li>
+        <li><strong>Tüüpiline öine tarbimine</strong> — kui palju kulub kell 21–07 vahel (see on osa, mida aku peab katma)</li>
+        <li><strong>Suvine vs talvine tarbimismuster</strong> — enamikus kodudes on talvine tarbimine 2–3× suurem</li>
+      </ul>
+
+      <div class="info-box">
+        <p><strong>Tüüpilised näitajad Eestis:</strong> Väike maja (100–120 m²) ~4000–6000 kWh/a = 11–16 kWh/päev. Öine tarbimine umbes 30–40% kogu päevatarbimisest = 3,5–6 kWh ööpäevane akuvajadus.</p>
+      </div>
+
+      <h2>Samm 2: Arvuta vajalik akumaht</h2>
+      <p>Põhivalem vajaliku akumahu arvutamiseks:</p>
+
+      <div class="calc-box">
+        <div class="calc-title">Akumahu arvutus</div>
+        <div class="calc-formula">Vajalik kWh = Öine tarbimine ÷ DoD</div>
+        <p style="margin-top:10px;font-size:.88rem">Kus <strong>DoD</strong> = Depth of Discharge ehk tühjendussügavus. LiFePO4 puhul kasuta 0,8 (80%) ohutusmarginaali jaoks.</p>
+        <p style="font-size:.88rem;margin-bottom:0"><strong>Näide:</strong> Öine tarbimine 5 kWh ÷ 0,8 = 6,25 kWh → vali vähemalt <strong>7–8 kWh aku</strong>.</p>
+      </div>
+
+      <h3>Lisategurid mahu suurendamiseks</h3>
+      <ul>
+        <li><strong>Autonoomsuspäevad:</strong> Kui soovid 1–2 pilvist päeva katta ilma võrguta, korruta öise tarbimise valem autonoomsuspäevade arvuga</li>
+        <li><strong>Elektrisoojendus / soojuspump:</strong> Lisab talvel tarbimist oluliselt — soojuspumba hommikune käivitamine vajab hetkeliselt 2–5 kW</li>
+        <li><strong>Elektrisõiduki laadimine:</strong> 10–20 kWh öise laadimise lisavajadus</li>
+      </ul>
+
+      <h2>Samm 3: Arvuta vajalik inverteri võimsus</h2>
+      <p>Inverteri võimsus (kW) peab katma su <strong>maksimaalse hetkevõimsuse vajaduse</strong> — mitte keskmise, vaid suurima samaegselt töötavate seadmete summa.</p>
+
+      <div class="calc-box">
+        <div class="calc-title">Inverteri võimsuse arvutus</div>
+        <div class="calc-formula">Inverteri kW ≥ Suurim samaaegne koormus</div>
+        <p style="margin-top:10px;font-size:.88rem">Liida kokku suured tarbijad, mis võivad korraga töötada: elektrileht/pliit (2–7 kW) + soojuspump/konditsioneer (1–3 kW) + muud (1–2 kW). Tüüpiline tulemus on 4–9 kW.</p>
+      </div>
+
+      <h2>Näitetabelid: mis sobib millisele majale?</h2>
+
+      <table class="example-table">
+        <thead>
+          <tr><th>Maja tüüp</th><th>Tarbimine</th><th>Öine vajadus</th><th>Soovitav aku</th><th>Soovitav inverter</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Korter / väike maja</td><td>3000–4000 kWh/a</td><td>3–4 kWh</td><td><strong>5–6 kWh</strong></td><td><strong>5–6 kW</strong></td></tr>
+          <tr><td>Keskmise suurusega maja</td><td>5000–8000 kWh/a</td><td>4–7 kWh</td><td><strong>6–10 kWh</strong></td><td><strong>6–10 kW</strong></td></tr>
+          <tr><td>Suurmaja / soojuspump</td><td>8000–15000 kWh/a</td><td>7–14 kWh</td><td><strong>10–20 kWh</strong></td><td><strong>10–20 kW</strong></td></tr>
+          <tr><td>Väikeettevõte / farm</td><td>15000+ kWh/a</td><td>varieerub</td><td><strong>20+ kWh</strong></td><td><strong>15–20 kW</strong></td></tr>
+        </tbody>
+      </table>
+
+      <h2>Samm 4: Arvuta päikesevälja suurus</h2>
+      <p>Aku on vaid pool süsteemist — sa pead selle ka täis laadima. Eestis on aasta keskmine päikeseenergia tihedus ~950–1050 kWh/kWp (kilovatt-peak installeeritud võimsust kohta). Lihtne arvutus:</p>
+
+      <div class="calc-box">
+        <div class="calc-title">Paneelide kWp arvutus</div>
+        <div class="calc-formula">kWp = Aastane tarbimine ÷ 1000</div>
+        <p style="margin-top:10px;font-size:.88rem">Näide: 6000 kWh/a tarbimine → vaja ~6 kWp paneele (24 × 250 W paneeli või 15 × 400 W paneeli).</p>
+        <p style="font-size:.88rem;margin-bottom:0">Talvel toodab sama süsteem 3–5× vähem kui suvel — aku suurus kompenseerib osaliselt, aga talvel on võrk alati varuks hübriidlahenduses.</p>
+      </div>
+
+      <h2>Kokkuvõte: hea reegel</h2>
+      <ul>
+        <li>Tavaline Eesti peremaja: <strong>5–10 kW inverter + 10–16 kWh aku</strong> on hea lähtepunkt</li>
+        <li>Aku maht: vali pigem suurem — see kestab kauem (madalama DoD-ga) ja annab talvel rohkem paindlikkust</li>
+        <li>Inverteri võimsus: vali vastavalt maksimaalsele koormale, mitte keskmisele tarbimisele</li>
+      </ul>
+
+      <div style="margin-top:40px;padding:28px;background:var(--bg-1);border:1px solid var(--border);border-radius:var(--r-lg)">
+        <div style="font-family:var(--ff-mono);font-size:.75rem;color:var(--accent);margin-bottom:10px">KONFIGUREERIMISLEHEKÜLG</div>
+        <p style="margin-bottom:8px;color:var(--text-1);font-weight:500">Konfigureeri oma süsteem meie lehel — vali inverteri võimsus, aku maht ja saad kohe hinna.</p>
+        <p style="margin-bottom:16px;font-size:.88rem">Või kirjuta meile — aitame valida sinu maja andmete põhjal parima kombinatsiooni.</p>
+        <div style="display:flex;gap:12px;flex-wrap:wrap">
+          <a href="../komplekt.html" class="btn btn-primary">Konfigureeri komplekt →</a>
+          <a href="../kontakt.html" class="btn btn-outline">Küsi nõu</a>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top:48px;padding-top:24px;border-top:1px solid var(--border)">
+      <a href="../blogi.html" style="color:var(--accent);font-family:var(--ff-mono);font-size:.85rem">← Tagasi blogi</a>
+    </div>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">Sol<span>volt</span></div>
+        <p class="footer-desc">Kvaliteetsed LiFePO4 akuelemendid, BMS süsteemid ja päikeseenergia lahendused Eesti turule.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Tooted</h4>
+        <ul>
+          <li><a href="../tooted.html?kat=lifepo4">LiFePO4 elemendid</a></li>
+          <li><a href="../tooted.html?kat=inverterid">Hübriidinverterid</a></li>
+          <li><a href="../tooted.html?kat=akud">Akud</a></li>
+          <li><a href="../tooted.html?kat=bms">BMS</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Ettevõte</h4>
+        <ul>
+          <li><a href="../meist.html">Meist</a></li>
+          <li><a href="../blogi.html">Blogi</a></li>
+          <li><a href="../kontakt.html">Kontakt</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Kontakt</h4>
+        <ul>
+          <li><a href="mailto:solvolt.info@gmail.com">solvolt.info@gmail.com</a></li>
+          <li><a href="tel:+37253928910">+372 5392 8910</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Solvolt OÜ · Reg 17283350</span>
+      <div style="display:flex;gap:20px;flex-wrap:wrap">
+        <a href="../privaatsuspoliitika.html" style="color:var(--text-3)">Privaatsuspoliitika</a>
+        <a href="../tagastamine.html" style="color:var(--text-3)">Tagastamine</a>
+        <a href="../tingimused.html" style="color:var(--text-3)">Tingimused</a>
+      </div>
+      <span>Maksed: Visa · Mastercard · Stripe</span>
+    </div>
+  </div>
+</footer>
+
+<script src="../assets/js/main.js"></script>
+</body>
+</html>

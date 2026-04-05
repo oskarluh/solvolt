@@ -48,11 +48,35 @@
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "Organization",
+        "@type": ["Organization", "LocalBusiness"],
         "@id": "https://solvolt.ee/#organization",
         "name": "Solvolt OÜ",
         "url": "https://solvolt.ee/",
         "logo": "https://solvolt.ee/favicon.svg",
+        "description": "Eesti energiasalvestuse spetsialist. Müüme LiFePO4 akuelemendid, Deye hübriidinverterid, BMS süsteemid ja täielikud päikeseenergia salvestuslahendused. Kõik tooted laos Eestis, kiire tarne 1–3 tööpäeva.",
+        "legalName": "Solvolt OÜ",
+        "taxID": "17283350",
+        "areaServed": "EE",
+        "knowsAbout": [
+          "LiFePO4 akuelemendid",
+          "hübriidinverterid",
+          "päikeseenergia salvestus",
+          "BMS Battery Management System",
+          "EVE akuelemendid",
+          "Deye inverterid",
+          "energiasalvestuslahendused"
+        ],
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Solvolt toodete kataloog",
+          "url": "https://solvolt.ee/tooted.html",
+          "itemListElement": [
+            {"@type": "Offer", "itemOffered": {"@type": "Product", "name": "EVE MB31 314Ah LiFePO4 element (16 tk)", "url": "https://solvolt.ee/toode.html?id=eve-mb31-314ah"}},
+            {"@type": "Offer", "itemOffered": {"@type": "Product", "name": "Deye SUN-G04 6kW hübriid-inverter", "url": "https://solvolt.ee/deye-6-12kw.html"}},
+            {"@type": "Offer", "itemOffered": {"@type": "Product", "name": "EEL Battery V6 Pro 5.12kWh", "url": "https://solvolt.ee/eel-v6-pro.html"}},
+            {"@type": "Offer", "itemOffered": {"@type": "Product", "name": "Hübriidsüsteem komplekt", "url": "https://solvolt.ee/komplekt.html"}}
+          ]
+        },
         "contactPoint": {
           "@type": "ContactPoint",
           "telephone": "+372-5392-8910",

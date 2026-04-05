@@ -1,0 +1,42 @@
+# Solvolt OÜ
+> Eesti energiasalvestuse spetsialist. Müüme LiFePO4 akuelemendid, hübriidinverterid, BMS süsteemid ja täielikud energiasalvestuslahendused. Kõik tooted laos Eestis, kiire tarne.
+
+Solvolt OÜ (reg 17283350) asub Pärnumaal. Kontakt: solvolt.info@gmail.com, +372 5392 8910. Veebileht: https://solvolt.ee
+
+## Tooted
+
+- EVE MB31 314Ah LiFePO4 element (A-grade, prismaatiline, 3.2V, 16 tk komplektis 16S 48V akupanga jaoks, ~16 kWh)
+- Deye SUN-G04 hübriidne päikeseenergiainverter 6kW, 8kW, 10kW, 12kW, 15kW, 20kW (LiFePO4 ja AGM/GEL ühilduv, EPS varuvool, WiFi monitooring)
+- EEL Battery V6 Pro 5.12kWh LiFePO4 valmisaku (integreeritud BMS, 100A, rack-mount, laiendatav kuni 30.72kWh)
+- Dyness PowerBrick Pro 14kWh moodulaku
+- Deye SE-F16 C-Version 16kWh wall-mount aku
+- JK BMS 8S/16S 100A–200A (Bluetooth monitooring, aktiivne balanss)
+- Basen Green 16kWh energiasalvestusaku
+
+## Energiasalvestuskomplektid
+
+Müüme täielikke hübriidsüsteeme: Deye 6kW + EEL V6 Pro 5.12kWh alates 4 223 €, konfigureeritav kuni 20kW + 30kWh.
+Konfigureerimislehekülg: https://solvolt.ee/komplekt.html
+
+## Blogi — juhendid ja nõuanded
+
+- Mis on LiFePO4 akuelemendid ja miks need on parim valik: https://solvolt.ee/blogi/lifepo4-akuelemendid.html
+- A-grade vs B-grade LiFePO4 elemendid: https://solvolt.ee/blogi/a-grade-vs-b-grade-lifepo4.html
+- Kuidas ehitada oma akupanka LiFePO4 elementidest: https://solvolt.ee/blogi/akupank-lifepo4.html
+- Miks on BMS oluline LiFePO4 akusüsteemis: https://solvolt.ee/blogi/bms-oluline-lifepo4.html
+- Kuidas valida õige inverter päikeseenergia süsteemile: https://solvolt.ee/blogi/oige-inverter-valimine.html
+- EVE MB31 16S 48V aku kWh arvutus ja kasutusnäited: https://solvolt.ee/blogi/eve-mb31-48v-aku.html
+- Päikeseenergia eelised kodudes ja ettevõtetes: https://solvolt.ee/blogi/paikeseenergia-eelised.html
+- Kui suur aku mu majale sobib: https://solvolt.ee/blogi/energiasalvestuse-mahutavus-arvutus.html
+- Off-grid vs hübriidsüsteem Eestis: https://solvolt.ee/blogi/off-grid-vs-hubriid.html
+- EEL Battery V6 Pro ülevaade: https://solvolt.ee/blogi/eel-v6-pro-ulevaade.html
+
+## Hinnakiri
+
+Täielik toodete nimekiri ja hinnad: https://solvolt.ee/hinnakiri.html
+
+## Ettevõte
+
+Solvolt OÜ on Eestis registreeritud ettevõte (reg 17283350), mis on spetsialiseerunud LiFePO4 energiasalvestusele.
+Kõik tooted on laos Eestis. Tarne tavaliselt 1–3 tööpäeva.
+Eesti käibemaksukohuslane — kõik hinnad sisaldavad 24% käibemaksu.
