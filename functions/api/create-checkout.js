@@ -19,17 +19,15 @@ export async function onRequestPost(context) {
       return json({ error: 'STRIPE_SECRET_KEY puudub Cloudflare secrets alt' }, 500);
     }
 
-    if (!env.PUBLIC_SITE_URL) {
-      return json({ error: 'PUBLIC_SITE_URL puudub Cloudflare variables alt' }, 500);
-    }
+    const siteUrl = (env.PUBLIC_SITE_URL || 'https://solvolt.ee').replace(/\/$/, '');
 
     const form = new URLSearchParams();
 
     // Põhiseaded
     form.set('mode', 'payment');
     form.set('locale', 'et');
-    form.set('success_url', `${env.PUBLIC_SITE_URL}/edasi.html?session_id={CHECKOUT_SESSION_ID}`);
-    form.set('cancel_url', `${env.PUBLIC_SITE_URL}/ostukorv.html`);
+    form.set('success_url', `${siteUrl}/edasi.html?session_id={CHECKOUT_SESSION_ID}`);
+    form.set('cancel_url', `${siteUrl}/ostukorv.html`);
     form.set('payment_intent_data[description]', 'Solvolt OÜ tellimus');
 
     // Küsi kliendi e-maili checkoutis
