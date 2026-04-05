@@ -229,7 +229,7 @@
       window.location.href = data.url;
     } catch (error) {
       console.error('Checkout error:', error);
-      showToast('❌ Makse alustamine ebaõnnestus. Palun proovi uuesti.');
+      showToast('❌ ' + (error.message || 'Makse alustamine ebaõnnestus. Palun proovi uuesti.'));
       btn.disabled = false;
       btn.innerHTML = originalText;
     }
