@@ -2,7 +2,8 @@
   "permissions": {
     "allow": [
       "Bash(python3)",
-      "Bash(powershell.exe -NoProfile -ExecutionPolicy Bypass -File \"c:\\\\Users\\\\oss\\\\Documents\\\\solvolt\\\\solvolt\\\\add_blogi_nav.ps1\")"
+      "Bash(powershell.exe -NoProfile -ExecutionPolicy Bypass -File \"c:\\\\Users\\\\oss\\\\Documents\\\\solvolt\\\\solvolt\\\\add_blogi_nav.ps1\")",
+      "Bash(grep -rn \"canonical\" c:/Users/oskar/OneDrive/dokumendid/solvolt/solvolt/*.html)"
     ]
   }
 }

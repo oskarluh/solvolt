@@ -33,6 +33,7 @@
 /products/dyness*                 /tooted.html?kat=akud                        301
 
 # ── Basen akud ─────────────────────────────────────────────
+/products/basengreen-eve-mb31-314ah-lifepo4-elemendid-v3  /toode.html?id=eve-mb31-314ah  301
 /products/basen-green*  /toode.html?id=basen-green-16kwh  301
 /products/basen*        /tooted.html?kat=akud              301
 

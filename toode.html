@@ -6,6 +6,15 @@
   <title id="page-title">Toode — Solvolt</title>
   <meta name="description" id="page-desc" content="" />
   <meta name="robots" content="index, follow" />
+  <script>
+    (function() {
+      var id = new URLSearchParams(window.location.search).get('id');
+      var link = document.createElement('link');
+      link.rel = 'canonical';
+      link.href = 'https://solvolt.ee/toode' + (id ? '?id=' + id : '');
+      document.currentScript.parentNode.insertBefore(link, document.currentScript);
+    })();
+  </script>
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
   <link rel="stylesheet" href="assets/css/style.css" />
 
