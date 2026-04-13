@@ -23,14 +23,32 @@
     .info-box p { margin: 0; font-size: .88rem; }
   </style>
 
-  <!-- Google tag (gtag.js) -->
-  <script async src='https://www.googletagmanager.com/gtag/js?id=G-WVW6KCJ7TV'></script>
+  <!-- Google Consent Mode v2 — must come before gtag.js -->
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      ad_storage: 'denied', analytics_storage: 'denied',
+      ad_user_data: 'denied', ad_personalization: 'denied',
+      wait_for_update: 500
+    });
+    gtag('set', 'url_passthrough', true);
+    gtag('set', 'ads_data_redaction', true);
+    if (window.localStorage && localStorage.getItem('sv_consent') === 'granted') {
+      gtag('consent', 'update', {
+        ad_storage: 'granted', analytics_storage: 'granted',
+        ad_user_data: 'granted', ad_personalization: 'granted'
+      });
+    }
+  </script>
+  <!-- Google tag (gtag.js) -->
+  <script async src='https://www.googletagmanager.com/gtag/js?id=G-WVW6KCJ7TV'></script>
+  <script>
     gtag('js', new Date());
     gtag('config', 'G-WVW6KCJ7TV');
+    gtag('config', 'AW-17385949286');
   </script>
+  <script src="assets/js/consent-banner.js" defer></script>
 </head>
 <body>
 
@@ -92,7 +110,8 @@
         <tr><td>Arve esitamine ja raamatupidamine</td><td>Juriidiline kohustus (GDPR art 6(1)(c))</td></tr>
         <tr><td>Klienditugi ja garantiinõuded</td><td>Lepingu täitmine (GDPR art 6(1)(b))</td></tr>
         <tr><td>Turunduskirjad (ainult nõusolekul)</td><td>Nõusolek (GDPR art 6(1)(a))</td></tr>
-        <tr><td>Veebilehe toimivuse parandamine</td><td>Õigustatud huvi (GDPR art 6(1)(f))</td></tr>
+        <tr><td>Veebilehe toimivuse parandamine (Google Analytics)</td><td>Nõusolek (GDPR art 6(1)(a))</td></tr>
+        <tr><td>Reklaamimõõtmine ja konversioonijälgimine (Google Ads)</td><td>Nõusolek (GDPR art 6(1)(a))</td></tr>
       </table>
 
       <h2>3. Andmete jagamine kolmandate osapooltega</h2>
@@ -100,25 +119,33 @@
       <ul>
         <li><strong>Stripe Inc.</strong> (makseteenuse osutaja) — makseandmete töötlemine</li>
         <li><strong>Netlify Inc.</strong> (veebimajutus) — lehe hostimise teenus</li>
-        <li><strong>Google LLC</strong> (Google Fonts) — fontide laadimiseks tehniline päring</li>
+        <li><strong>Google LLC — Google Analytics</strong> — veebilehe kasutusstatistika (ainult Teie nõusolekul). Google töötleb andmeid oma serverites.</li>
+        <li><strong>Google LLC — Google Ads</strong> — reklaamimõõtmine, konversioonijälgimine ja sihtrühmad (ainult Teie nõusolekul). Kui annate nõusoleku, võib Teie veebilehe tegevus olla seotud Google'i sisselogitud kasutaja andmetega, et parandada reklaami täpsust. Seda andmete liiki saate vaadata ja kustutada aadressil <a href="https://myactivity.google.com" target="_blank" rel="noopener" style="color:var(--accent)">myactivity.google.com</a>.</li>
+        <li><strong>Google LLC — Google Fonts</strong> — fontide laadimiseks tehniline päring</li>
         <li><strong>Transpordifirmad</strong> — tarneaadress tarne korraldamiseks</li>
       </ul>
-      <p>Stripe ja Netlify on asutatud USAs ning kasutavad EL–USA andmeedastuse standardklausleid (SCC). Me ei müü ega rendi isikuandmeid kolmandatele osapooltele.</p>
+      <p>Stripe, Netlify ja Google on asutatud USAs ning kasutavad EL–USA andmeedastuse standardklausleid (SCC). Me ei müü ega rendi isikuandmeid kolmandatele osapooltele.</p>
 
       <h2>4. Andmete säilitamine</h2>
       <ul>
         <li><strong>Tellimusandmed:</strong> 7 aastat (raamatupidamisseadusest tulenev nõue)</li>
         <li><strong>Kontaktisõnumid:</strong> kuni 2 aastat pärast viimast suhtlust</li>
         <li><strong>Turunduse nõusolek:</strong> kuni nõusoleku tühistamiseni</li>
+        <li><strong>Google Analytics andmed:</strong> säilitatakse Google'i serverites vastavalt Google'i privaatsuspoliitikale (vaikimisi 14 kuud)</li>
       </ul>
 
-      <h2>5. Küpsised</h2>
-      <p>Kasutame minimaalselt küpsiseid:</p>
-      <ul>
-        <li><strong>Ostukorvi küpsis:</strong> tehniline küpsis, mis salvestab ostukorvi sisu sessiooni ajal</li>
-        <li><strong>Stripe küpsised:</strong> maksetehingute turvalisuse tagamiseks</li>
-      </ul>
-      <p>Analüütika- ega reklaamiküpsiseid praegu ei kasuta. Küpsiste haldamiseks saab kasutada brauseri seadeid.</p>
+      <h2>5. Küpsised ja nõusolek</h2>
+      <p>Kasutame järgmisi küpsiseid:</p>
+      <table>
+        <tr><th>Küpsis / salvestus</th><th>Eesmärk</th><th>Nõusolek</th><th>Säilitamine</th></tr>
+        <tr><td><strong>sv_consent</strong> (localStorage)</td><td>Salvestab Teie küpsiste nõusoleku valiku</td><td>Tehniline (vajalik küpsistebänneri toimimiseks)</td><td>Kuni brauseri salvestuse tühjendamiseni</td></tr>
+        <tr><td><strong>Ostukorvi andmed</strong> (localStorage)</td><td>Salvestab ostukorvi sisu lehe uuenduste vahel</td><td>Tehniline (vajalik poe toimimiseks)</td><td>Kuni brauseri salvestuse tühjendamiseni</td></tr>
+        <tr><td><strong>Stripe küpsised</strong></td><td>Maksetehingute turvalisus ja pettusetõrje</td><td>Lepinguline (vajalik makse sooritamiseks)</td><td>Vastavalt Stripe privaatsuspoliitikale</td></tr>
+        <tr><td><strong>Google Analytics (_ga, _gid jt)</strong></td><td>Veebilehe külastuste statistika, lehtede vaatamised</td><td>Ainult Teie nõusolekul</td><td>Kuni 2 aastat</td></tr>
+        <tr><td><strong>Google Ads küpsised</strong></td><td>Reklaamimõõtmine, konversioonid, sihtrühmad</td><td>Ainult Teie nõusolekul</td><td>Vastavalt Google'i seadetele</td></tr>
+      </table>
+      <p>Kasutame <strong>Google Consent Mode v2</strong>, mis tähendab, et analüütika- ja reklaamiküpsiseid ei laadita enne, kui olete andnud selleks nõusoleku. Kui keeldute, ei edastata ühtegi analüütika- ega reklaamiandmeid Google'ile.</p>
+      <p>Saate oma nõusoleku igal ajal muuta, klõpsates lehe allosas lingil <strong>„Küpsiste seaded"</strong>. Küpsiste haldamiseks saab kasutada ka brauseri seadeid.</p>
 
       <h2>6. Teie õigused</h2>
       <p>GDPR alusel on Teil õigus:</p>
@@ -181,6 +208,7 @@
         <a href="privaatsuspoliitika.html" style="color:var(--text-3)">Privaatsuspoliitika</a>
         <a href="tagastamine.html" style="color:var(--text-3)">Tagastamine</a>
         <a href="tingimused.html" style="color:var(--text-3)">Tingimused</a>
+        <button onclick="if(window.svOpenCookieSettings)svOpenCookieSettings()" style="background:none;border:none;color:var(--text-3);cursor:pointer;padding:0;font-size:inherit;font-family:inherit">Küpsiste seaded</button>
       </div>
       <span>Maksed: Visa · Mastercard · Stripe</span>
     </div>
