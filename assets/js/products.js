@@ -543,7 +543,7 @@ const TOOTED = [
     hind_prefix: "alates",
     href: "calb-lifepo4-16kwh.html",
     stripe_price_id: null,
-    pilt: "assets/pildid/calb-standing.png",
+    pilt: "assets/pildid/calb-horisontal.png",
     ladu: true,
     eelmyyk: true,
     specs: {
