@@ -614,7 +614,7 @@ const TOOTED = [
     hind: 1799,
     hind_vana: null,
     stripe_price_id: "price_1TMjr9PcV5reENb6gZsAwfwW",
-    pilt: "assets/pildid/calb-lying.png",
+    pilt: "assets/pildid/calb-horisontal.png",
     ladu: true,
     eelmyyk: true,
     specs: {
