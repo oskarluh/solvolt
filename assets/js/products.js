@@ -531,6 +531,125 @@ const TOOTED = [
     `
   },
 
+  // ── CALB LiFePO4 16kWh — JK BMS ─────────────────────────────
+  {
+    id: "calb-lifepo4-16kwh",
+    slug: "calb-lifepo4-16kwh",
+    nimi: "CALB LiFePO4 16kWh Akukomplekt — JK BMS",
+    lyhikirjeldus: "16kWh LiFePO4 akukomplekt CALB A-klassi 314Ah elementide ja JK BMS-iga. 51.2V / 320Ah. Vertikaalne või lamav korpus, 200A kaitse, tulekustutusaerosool.",
+    kategooria: "akud",
+    hind: 1799,
+    hind_vana: null,
+    hind_prefix: "alates",
+    href: "calb-lifepo4-16kwh.html",
+    stripe_price_id: null,
+    pilt: "assets/pildid/calb-standing.png",
+    ladu: true,
+    eelmyyk: true,
+    specs: {
+      "Elemendid": "16× CALB 314Ah LiFePO4 A-klass",
+      "BMS": "JK BMS (puuteekraan)",
+      "Pinge": "51.2 V",
+      "Mahtuvus": "320 Ah / 16 kWh",
+      "Paralleelühendus": "kuni 16 akut",
+      "Protokoll": "CAN / RS485 / RS232",
+      "Tarne": "Eelmüük — täpsustamisel"
+    },
+    kirjeldus: ``
+  },
+
+  // ── Peidetud CALB variandid (kasutatakse calb-lifepo4-16kwh.html-s) ──
+  {
+    id: "calb-16kwh-standing",
+    slug: "calb-16kwh-standing",
+    catalog_hidden: true,
+    nimi: "CALB 16kWh LiFePO4 — Vertikaalne (seisev)",
+    lyhikirjeldus: "16kWh LiFePO4 seisev vertikaalkorpus CALB A-klassi elementide ja JK BMS-iga. 200A kaitse, tulekustutusaerosool.",
+    kategooria: "akud",
+    hind: 1799,
+    hind_vana: null,
+    stripe_price_id: null,
+    pilt: "assets/pildid/calb-standing.png",
+    ladu: true,
+    eelmyyk: true,
+    specs: {
+      "Korpus": "Vertikaalne",
+      "Elemendid": "16× CALB 314Ah LiFePO4 A-klass",
+      "BMS": "JK BMS (puuteekraan)",
+      "Nominaalpinge": "51.2 V",
+      "Mahtuvus": "320 Ah",
+      "Energia": "16 kWh",
+      "Maks. laadimisvool": "0.5C (160 A)",
+      "Maks. tühjendusvool": "1C (320 A)",
+      "Kaitse": "200A õhukaitselüliti",
+      "Tulekustutus": "Temperatuuritundlik aerosool",
+      "Protokoll": "CAN / RS485 / RS232",
+      "Paralleelühendus": "kuni 16 akut",
+      "Mõõdud": "410 × 275 × 805 mm",
+      "Kaal": "u 119 kg",
+      "Inverteri tugi": "Deye, Growatt, Goodwe, Victron, Sofar, Solis, SRNE",
+      "Tarne": "Eelmüük — täpsustamisel"
+    },
+    kirjeldus: `
+      <p>CALB 16kWh seisev vertikaalkorpus on kompaktne ja elegantne lahendus kodustesse ruumidesse — sobib seina äärde või tehnoruumi, võtab vähe põrandapinda (275mm sügavus).</p>
+      <ul>
+        <li>CALB A-klassi 314Ah LiFePO4 elemendid — pikk eluiga ja kõrge töökindlus</li>
+        <li>JK BMS 4-tollise puuteekraaniga — reaalajas seire ja seadistamine</li>
+        <li>Sisseehitatud 200A õhukaitselüliti — täielik kaitse ülekoormuse eest</li>
+        <li>Temperatuuritundlik tulekustutusaerosool — automaatne turvafunktsioon</li>
+        <li>CAN / RS485 / RS232 — ühilduv Deye, Growatt, Goodwe, Victron jt inverteritega</li>
+        <li>Kuni 16 akut paralleelselt RS485 kaudu — laienda mahtuvust kuni 256kWh</li>
+        <li>Bluetooth + JK BMS äpp (iOS/Android) — mugav seire nutitelefonist</li>
+      </ul>
+      <p>Hind <strong>1 799 € + KM (kokku 2 230 €)</strong>. Tarneks registreeri eelmüüki — võtame ühendust, kui aku on saabumas.</p>
+    `
+  },
+  {
+    id: "calb-16kwh-lying",
+    slug: "calb-16kwh-lying",
+    catalog_hidden: true,
+    nimi: "CALB 16kWh LiFePO4 — Lamav (horisontaalne)",
+    lyhikirjeldus: "16kWh LiFePO4 lamav horisontaalkorpus CALB A-klassi elementide ja JK BMS-iga. Virnatav. 200A kaitse, tulekustutusaerosool.",
+    kategooria: "akud",
+    hind: 1799,
+    hind_vana: null,
+    stripe_price_id: null,
+    pilt: "assets/pildid/calb-lying.png",
+    ladu: true,
+    eelmyyk: true,
+    specs: {
+      "Korpus": "Lamav (virnatav)",
+      "Elemendid": "16× CALB 314Ah LiFePO4 A-klass",
+      "BMS": "JK BMS (puuteekraan)",
+      "Nominaalpinge": "51.2 V",
+      "Mahtuvus": "320 Ah",
+      "Energia": "16 kWh",
+      "Maks. laadimisvool": "0.5C (160 A)",
+      "Maks. tühjendusvool": "1C (320 A)",
+      "Kaitse": "200A õhukaitselüliti",
+      "Tulekustutus": "Temperatuuritundlik aerosool",
+      "Protokoll": "CAN / RS485 / RS232",
+      "Paralleelühendus": "kuni 16 akut",
+      "Mõõdud": "850 × 405 × 480 mm",
+      "Kaal": "u 138 kg",
+      "Inverteri tugi": "Deye, Growatt, Goodwe, Victron, Sofar, Solis, SRNE",
+      "Tarne": "Eelmüük — täpsustamisel"
+    },
+    kirjeldus: `
+      <p>CALB 16kWh lamav horisontaalkorpus on ideaalne lahendus, kui soovid akusid virnata — sobib garaažidesse, keldrisse või madalama laega ruumidesse. Madal profileeritud kuju paigutub mugavalt riiulitele.</p>
+      <ul>
+        <li>CALB A-klassi 314Ah LiFePO4 elemendid — tipptasemel töökindlus</li>
+        <li>Virnatav disain — mitu akut saab üksteise otsa paigutada</li>
+        <li>JK BMS 4-tollise puuteekraaniga — reaalajas seire ja seadistamine</li>
+        <li>Sisseehitatud 200A õhukaitselüliti — täielik kaitse ülekoormuse eest</li>
+        <li>Temperatuuritundlik tulekustutusaerosool — automaatne turvafunktsioon</li>
+        <li>CAN / RS485 / RS232 — ühilduv Deye, Growatt, Goodwe, Victron jt inverteritega</li>
+        <li>Kuni 16 akut paralleelselt RS485 kaudu — laienda mahtuvust kuni 256kWh</li>
+      </ul>
+      <p>Hind <strong>1 799 € + KM (kokku 2 230 €)</strong>. Tarneks registreeri eelmüüki — võtame ühendust, kui aku on saabumas.</p>
+    `
+  },
+
   // ── Peidetud üksikud Deye inverterid (kasutatakse toode.html-s) ──
   {
     id: "deye-sun-6k",
