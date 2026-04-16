@@ -38,6 +38,12 @@
   </url>
 
   <url>
+    <loc>https://solvolt.ee/calb-lifepo4-16kwh</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
     <loc>https://solvolt.ee/hinnakiri</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>

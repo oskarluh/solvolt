@@ -568,7 +568,7 @@ const TOOTED = [
     kategooria: "akud",
     hind: 1799,
     hind_vana: null,
-    stripe_price_id: null,
+    stripe_price_id: "price_1TMjqOPcV5reENb66qhNF5pT",
     pilt: "assets/pildid/calb-standing.png",
     ladu: true,
     eelmyyk: true,
@@ -581,7 +581,7 @@ const TOOTED = [
       "Energia": "16 kWh",
       "Maks. laadimisvool": "0.5C (160 A)",
       "Maks. tühjendusvool": "1C (320 A)",
-      "Kaitse": "200A õhukaitselüliti",
+      "Kaitse": "200A kaitselüliti",
       "Tulekustutus": "Temperatuuritundlik aerosool",
       "Protokoll": "CAN / RS485 / RS232",
       "Paralleelühendus": "kuni 16 akut",
@@ -591,15 +591,15 @@ const TOOTED = [
       "Tarne": "Eelmüük — täpsustamisel"
     },
     kirjeldus: `
-      <p>CALB 16kWh seisev vertikaalkorpus on kompaktne ja elegantne lahendus kodustesse ruumidesse — sobib seina äärde või tehnoruumi, võtab vähe põrandapinda (275mm sügavus).</p>
+      <p>CALB 16kWh vertikaalkorpus on kompaktne ja elegantne lahendus kodustesse ruumidesse — sobib seina äärde või tehnoruumi, võtab vähe põrandapinda (275mm sügavus).</p>
       <ul>
         <li>CALB A-klassi 314Ah LiFePO4 elemendid — pikk eluiga ja kõrge töökindlus</li>
         <li>JK BMS 4-tollise puuteekraaniga — reaalajas seire ja seadistamine</li>
-        <li>Sisseehitatud 200A õhukaitselüliti — täielik kaitse ülekoormuse eest</li>
+        <li>Sisseehitatud 200A kaitselüliti — täielik kaitse ülekoormuse eest</li>
         <li>Temperatuuritundlik tulekustutusaerosool — automaatne turvafunktsioon</li>
         <li>CAN / RS485 / RS232 — ühilduv Deye, Growatt, Goodwe, Victron jt inverteritega</li>
         <li>Kuni 16 akut paralleelselt RS485 kaudu — laienda mahtuvust kuni 256kWh</li>
-        <li>Bluetooth + JK BMS äpp (iOS/Android) — mugav seire nutitelefonist</li>
+        <li>Bluetoothi ühendus JK BMS mobiilirakendusega (iOS/Android) — mugav seire nutitelefonist</li>
       </ul>
       <p>Hind <strong>1 799 € + KM (kokku 2 230 €)</strong>. Tarneks registreeri eelmüüki — võtame ühendust, kui aku on saabumas.</p>
     `
@@ -609,11 +609,11 @@ const TOOTED = [
     slug: "calb-16kwh-lying",
     catalog_hidden: true,
     nimi: "CALB 16kWh LiFePO4 — Lamav (horisontaalne)",
-    lyhikirjeldus: "16kWh LiFePO4 lamav horisontaalkorpus CALB A-klassi elementide ja JK BMS-iga. Virnatav. 200A kaitse, tulekustutusaerosool.",
+    lyhikirjeldus: "16kWh LiFePO4 lamav korpus CALB A-klassi elementide ja JK BMS-iga. Virnatav. 200A kaitse, tulekustutusaerosool.",
     kategooria: "akud",
     hind: 1799,
     hind_vana: null,
-    stripe_price_id: null,
+    stripe_price_id: "price_1TMjr9PcV5reENb6gZsAwfwW",
     pilt: "assets/pildid/calb-lying.png",
     ladu: true,
     eelmyyk: true,
@@ -626,7 +626,7 @@ const TOOTED = [
       "Energia": "16 kWh",
       "Maks. laadimisvool": "0.5C (160 A)",
       "Maks. tühjendusvool": "1C (320 A)",
-      "Kaitse": "200A õhukaitselüliti",
+      "Kaitse": "200A kaitselüliti",
       "Tulekustutus": "Temperatuuritundlik aerosool",
       "Protokoll": "CAN / RS485 / RS232",
       "Paralleelühendus": "kuni 16 akut",
@@ -636,12 +636,12 @@ const TOOTED = [
       "Tarne": "Eelmüük — täpsustamisel"
     },
     kirjeldus: `
-      <p>CALB 16kWh lamav horisontaalkorpus on ideaalne lahendus, kui soovid akusid virnata — sobib garaažidesse, keldrisse või madalama laega ruumidesse. Madal profileeritud kuju paigutub mugavalt riiulitele.</p>
+      <p>CALB 16kWh lamav korpus on ideaalne lahendus, kui soovid akusid virnata — sobib garaažidesse, keldrisse või madalama laega ruumidesse. Madala profiiliga kuju paigutub mugavalt riiulitele.</p>
       <ul>
         <li>CALB A-klassi 314Ah LiFePO4 elemendid — tipptasemel töökindlus</li>
         <li>Virnatav disain — mitu akut saab üksteise otsa paigutada</li>
         <li>JK BMS 4-tollise puuteekraaniga — reaalajas seire ja seadistamine</li>
-        <li>Sisseehitatud 200A õhukaitselüliti — täielik kaitse ülekoormuse eest</li>
+        <li>Sisseehitatud 200A kaitselüliti — täielik kaitse ülekoormuse eest</li>
         <li>Temperatuuritundlik tulekustutusaerosool — automaatne turvafunktsioon</li>
         <li>CAN / RS485 / RS232 — ühilduv Deye, Growatt, Goodwe, Victron jt inverteritega</li>
         <li>Kuni 16 akut paralleelselt RS485 kaudu — laienda mahtuvust kuni 256kWh</li>
