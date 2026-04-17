@@ -289,6 +289,35 @@ const TOOTED = [
 
   // ── 5. Dyness akud ────────────────────────────────────────
   {
+    id: "dyness-stack100",
+    slug: "dyness-stack100",
+    nimi: "Dyness Stack100 LiFePO4 Akusüsteem",
+    lyhikirjeldus: "Modulaarne virntatav LiFePO4 akusüsteem. 51.2V/100Ah moodul (5.12kWh), 3–15 moodulit klastris, kuni 12 klastrit paralleelselt. 1C kiirus, aerosool tulekustutus, 10a garantii.",
+    kategooria: "akud",
+    hind: 860,
+    hind_vana: null,
+    hind_prefix: "alates",
+    href: "dyness-stack100.html",
+    stripe_price_id: null,
+    pilt: "assets/pildid/dyness-stack100.png",
+    tooteleht_pdf: "assets/failid/dyness-stack100-tooteleht.pdf",
+    ladu: true,
+    eelmyyk: false,
+    specs: {
+      "Tootja": "Dyness",
+      "Mudel": "Stack100",
+      "Mooduli mahtuvus": "5.12 kWh (51.2V / 100Ah)",
+      "Süsteemi energiavahemik": "15.36–76.8 kWh (1 klaster)",
+      "Maks. süsteem": "921 kWh (12 klastrit paralleelselt)",
+      "Laadimiskiirus": "1C (100A)",
+      "Eluiga": "Piiramatu tsüklit / 10 aastat",
+      "Garantii": "10 aastat",
+      "Tarne": "3–7 tööpäeva"
+    },
+    kirjeldus: ``
+  },
+
+  {
     id: "dyness-powerbrick-pro-14kwh",
     slug: "dyness-powerbrick-pro-14kwh",
     nimi: "Dyness PowerBrick Pro 14.336kWh LiFePO4 aku (IP65)",
