@@ -298,7 +298,7 @@ const TOOTED = [
     hind_vana: null,
     hind_prefix: "alates",
     href: "dyness-stack100.html",
-    stripe_price_id: price_1TN5YqPcV5reENb6ReR7U1sI,
+    stripe_price_id: "price_1TN5YqPcV5reENb6ReR7U1sI",
     pilt: "assets/pildid/dyness-stack100.png",
     tooteleht_pdf: "assets/failid/dyness-stack100-tooteleht.pdf",
     ladu: true,

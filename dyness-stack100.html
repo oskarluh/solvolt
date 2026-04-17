@@ -198,8 +198,16 @@
           </table>
         </div>
 
-        <div style="margin-bottom:20px">
-          <a href="kontakt.html" class="btn btn-primary btn-full">Küsi pakkumist</a>
+        <div class="qty-row">
+          <div class="qty-control">
+            <button class="qty-btn" id="qty-minus">−</button>
+            <span class="qty-num" id="qty-display">1</span>
+            <button class="qty-btn" id="qty-plus">+</button>
+          </div>
+          <button class="btn btn-primary" style="flex:1" id="add-btn">+ Lisa ostukorvi</button>
+        </div>
+        <div style="margin-bottom:16px">
+          <a href="ostukorv.html" class="btn btn-outline btn-full" id="buy-btn" style="display:none">→ Osta kohe</a>
         </div>
         <div style="margin-bottom:24px">
           <a href="assets/failid/dyness-stack100-tooteleht.pdf" class="btn btn-outline btn-full" target="_blank" rel="noopener">Laadi tooteleht (PDF)</a>
@@ -346,5 +354,22 @@
 
 <script src="assets/js/products.js"></script>
 <script src="assets/js/main.js"></script>
+<script>
+  const toode = TOOTED.find(p => p.id === 'dyness-stack100');
+  let qty = 1;
+
+  document.getElementById('qty-minus').addEventListener('click', () => {
+    if (qty > 1) { qty--; document.getElementById('qty-display').textContent = qty; }
+  });
+  document.getElementById('qty-plus').addEventListener('click', () => {
+    if (qty < 10) { qty++; document.getElementById('qty-display').textContent = qty; }
+  });
+  document.getElementById('add-btn').addEventListener('click', () => {
+    if (toode) {
+      Cart.add(toode, qty);
+      document.getElementById('buy-btn').style.display = 'flex';
+    }
+  });
+</script>
 </body>
 </html>
