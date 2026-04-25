@@ -985,7 +985,7 @@ const TOOTED = [
   {
     id: "jinong-pb2a16s",
     slug: "jinong-pb2a16s",
-    nimi: "Jinong BMS PB2A16S — 150A / 200A aktiivne balanss",
+    nimi: "Jinong BMS PB2A16S — 150A / 200A 2A aktiivse balaneerimisega",
     lyhikirjeldus: "Kodu-energiasalvestuse BMS 2A aktiivse balanseerimisega. Vali 150A või 200A versioon. RS485 + CAN + Bluetooth. Sobib 8S-16S LiFePO4 akupankadele.",
     kategooria: "bms",
     hind: 179,
@@ -1042,12 +1042,12 @@ const TOOTED = [
     kirjeldus: `
       <p>Jinong PB2A16S-15P on professionaalne 150A kodu-energiasalvestuse BMS aktiivse 2A balanseerimisega.</p>
       <ul>
-        <li>2A aktiivne balanseerimine — tagab rakkude ühtlase laetuse ja pikema eluea</li>
+        <li>2A aktiivne balanseerimine — tagab elemetide ühtlase laetuse ja pikema eluea</li>
         <li>150A pidev väljundvool, kuni 300A impulsvool — sobib suurematele koormustele</li>
         <li>RS485 + CAN — otsene liidestus inverteritega (Deye, Growatt jt)</li>
         <li>Bluetooth (Android, Apple, HarmonyOS) — mugav monitooring nutiseadmest</li>
         <li>4 välist + 1 sisemine temperatuuriandur — täielik termokontroll</li>
-        <li>Akukuumutuse tugi (valikuline) — sobib ka külmematele tingimustele</li>
+        <li>Akusoojenduse tugi (valikuline) — sobib ka külmematele tingimustele</li>
         <li>Coulomb-meeter, paralleel-laadimise voolupiirang ja häirisireen toetatud</li>
       </ul>
     `
@@ -1086,13 +1086,13 @@ const TOOTED = [
     kirjeldus: `
       <p>Jinong PB2A16S-20P on võimsaim mudel PB2A16S seeriast — 200A pideva vooluga ja madalaima sisetakistusega (0.35 mΩ). Ideaalne suurtele kodu- ja äri-energiasalvestussüsteemidele.</p>
       <ul>
-        <li>2A aktiivne balanseerimine — tagab rakkude ühtlase laetuse ja pikema eluea</li>
+        <li>2A aktiivne balanseerimine — tagab elemtide ühtlase laetuse ja pikema eluea</li>
         <li>200A pidev väljundvool, kuni 400A impulsvool — kõige võimsam valik</li>
         <li>0.35 mΩ sisetakistus — minimaalsed energiakaod ja soojenemine</li>
         <li>RS485 + CAN — otsene liidestus inverteritega (Deye, Growatt jt)</li>
         <li>Bluetooth (Android, Apple, HarmonyOS) — mugav monitooring nutiseadmest</li>
         <li>4 välist + 1 sisemine temperatuuriandur — täielik termokontroll</li>
-        <li>Akukuumutuse tugi (valikuline) — sobib ka külmematele tingimustele</li>
+        <li>Akusoojenduse tugi (valikuline) — sobib ka külmematele tingimustele</li>
         <li>Coulomb-meeter, paralleel-laadimise voolupiirang ja häirisireen toetatud</li>
       </ul>
     `
