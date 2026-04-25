@@ -983,12 +983,7 @@ const TOOTED = [
 
   // -- 10. Jinong BMS PB2A16S --------------------------------
   {
-    id: "jinong-pb2a16s",
-    slug: "jinong-pb2a16s",
-    nimi: "Jinong BMS PB2A16S — 150A / 200A 2A aktiivse balaneerimisega",
-    lyhikirjeldus: "Kodu-energiasalvestuse BMS 2A aktiivse balanseerimisega. Vali 150A või 200A versioon. RS485 + CAN + Bluetooth. Sobib 8S-16S LiFePO4 akupankadele.",
-    kategooria: "bms",
-    hind: 179,
+    $1145,
     hind_vana: null,
     hind_prefix: "alates",
     href: "jinong-pb2a16s.html",

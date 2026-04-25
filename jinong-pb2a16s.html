@@ -26,8 +26,8 @@
     "offers": {
       "@type": "AggregateOffer",
       "priceCurrency": "EUR",
-      "lowPrice": "159",
-      "highPrice": "189",
+      "lowPrice": "145",
+      "highPrice": "165",
       "availability": "https://schema.org/InStock",
       "seller": { "@type": "Organization", "name": "Solvolt OÜ" }
     }
@@ -113,6 +113,23 @@
       color: var(--text-2);
     }
     .acc-item strong { color: var(--text-1); display: block; margin-bottom: 2px; font-size: .85rem; }
+    .thumb-row {
+      display: flex;
+      gap: 8px;
+      margin-top: 10px;
+      flex-wrap: wrap;
+    }
+    .thumb-row img {
+      width: 64px;
+      height: 64px;
+      object-fit: cover;
+      border-radius: var(--r);
+      border: 2px solid var(--border);
+      cursor: pointer;
+      transition: border-color var(--trans);
+    }
+    .thumb-row img:hover,
+    .thumb-row img.active { border-color: var(--accent); }
     @media (max-width: 640px) {
       .variant-tab { min-width: 90px; padding: 12px 16px; }
       .variant-tab .tab-power { font-size: 1.1rem; }
@@ -182,6 +199,7 @@
     <div class="product-detail" id="product-detail">
       <div class="product-detail-img">
         <img id="variant-img" src="" alt="" onerror="this.src='assets/pildid/placeholder.svg'">
+        <div class="thumb-row" id="thumb-row"></div>
       </div>
       <div>
         <div class="product-detail-cat">BMS · aktiivne 2A balanseerimine · 8S–16S LiFePO4</div>
@@ -389,8 +407,25 @@
       tab.classList.toggle('active', tab.dataset.id === id);
     });
 
-    document.getElementById('variant-img').src = t.pilt;
-    document.getElementById('variant-img').alt = t.nimi;
+    const mainImg = document.getElementById('variant-img');
+    mainImg.src = t.pilt;
+    mainImg.alt = t.nimi;
+
+    const thumbRow = document.getElementById('thumb-row');
+    thumbRow.innerHTML = '';
+    (t.pildid || [t.pilt]).forEach(src => {
+      const img = document.createElement('img');
+      img.src = src;
+      img.alt = t.nimi;
+      if (src === t.pilt) img.classList.add('active');
+      img.onerror = () => img.style.display = 'none';
+      img.addEventListener('click', () => {
+        mainImg.src = src;
+        thumbRow.querySelectorAll('img').forEach(i => i.classList.remove('active'));
+        img.classList.add('active');
+      });
+      thumbRow.appendChild(img);
+    });
     document.getElementById('variant-name').textContent = t.nimi;
 
     const saleTag = t.hind_vana ? `<span class="badge badge-sale">Soodustus ${Math.round((1 - t.hind/t.hind_vana)*100)}%</span>` : '';
