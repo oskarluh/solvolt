@@ -1,8 +1,8 @@
 // ============================================================
-// SOLVOLT — TOODETE KATALOOG
+// SOLVOLT â€” TOODETE KATALOOG
 // ============================================================
 // KUIDAS LISADA UUS TOODE:
-//   1. Kopeeri üks olemasolev objekt
+//   1. Kopeeri Ã¼ks olemasolev objekt
 //   2. Muuda id, slug, nimi, hind, kirjeldus jne
 //   3. Lisa pilt kausta assets/pildid/
 //   4. Loo Stripe'is toode + hind ? kopeeri Price ID siia
@@ -15,7 +15,7 @@ const TOOTED = [
     id: "eve-mb31-314ah",
     slug: "eve-mb31-314ah",
     nimi: "EVE MB31 314Ah LiFePO4 elemendid (16tk)",
-    lyhikirjeldus: "A-klassi EVE MB31 elemendid — 3.2V / 314Ah (mõõdetud keskmine 332.8Ah). 16tk komplekt, kaasas EVE ametlik testiraport.",
+    lyhikirjeldus: "A-klassi EVE MB31 elemendid â€” 3.2V / 314Ah (mÃµÃµdetud keskmine 332.8Ah). 16tk komplekt, kaasas EVE ametlik testiraport.",
     kategooria: "lifepo4",
     hind: 1450,
     hind_vana: 1550,
@@ -31,38 +31,38 @@ const TOOTED = [
     specs: {
       "Keemia": "LiFePO4 prismaatiline",
       "Nimimahtuvus": "314 Ah",
-      "Mõõdetud keskmine": "332.8 Ah",
+      "MÃµÃµdetud keskmine": "332.8 Ah",
       "Nominaalpinge": "3.2 V",
-      "Sisetakistus": "0.18 mO ± 0.05 mO",
-      "Eluiga": "8000 tsüklit (70% SOH @ 25°C)",
+      "Sisetakistus": "0.18 mO Â± 0.05 mO",
+      "Eluiga": "8000 tsÃ¼klit (70% SOH @ 25Â°C)",
       "Komplektis": "16 tk",
       "Tootja": "EVE",
       "Klass": "A-klass",
       "Sertifikaadid": "CE, UL, RoHS, UN38.3",
-      "Tarne": "Eelmüük — täpsustamisel"
+      "Tarne": "EelmÃ¼Ã¼k â€” tÃ¤psustamisel"
     },
     kirjeldus: `
-      <p>Uued EVE MB31 LiFePO4 prismaatilised elemendid, tellitud otse EVE ametlikult edasimüüjalt. Iga partii on testitud — <strong>konkreetse partii mõõdetud keskmine mahutavus on 332.8 Ah</strong> (tehase nimiväärtus 314 Ah), kaasas on EVE ametlik testraport.</p>
+      <p>Uued EVE MB31 LiFePO4 prismaatilised elemendid, tellitud otse EVE ametlikult edasimÃ¼Ã¼jalt. Iga partii on testitud â€” <strong>konkreetse partii mÃµÃµdetud keskmine mahutavus on 332.8 Ah</strong> (tehase nimivÃ¤Ã¤rtus 314 Ah), kaasas on EVE ametlik testraport.</p>
 
-      <p><strong>16 elemendiga 48V süsteemi energiamahutavus:</strong></p>
+      <p><strong>16 elemendiga 48V sÃ¼steemi energiamahutavus:</strong></p>
       <ul>
-        <li>Nimiväärtuse järgi: ~16.1 kWh</li>
-        <li>Mõõdetud keskmise järgi: ~17.0 kWh</li>
+        <li>NimivÃ¤Ã¤rtuse jÃ¤rgi: ~16.1 kWh</li>
+        <li>MÃµÃµdetud keskmise jÃ¤rgi: ~17.0 kWh</li>
       </ul>
 
       <p><strong>Komplekti kuulub:</strong></p>
       <ul>
-        <li>16× EVE MB31 element</li>
-        <li>Ühendusplaadid (busbar), M6 poldid ja mutrid</li>
+        <li>16Ã— EVE MB31 element</li>
+        <li>Ãœhendusplaadid (busbar), M6 poldid ja mutrid</li>
         <li>EVE ametlik partii testiraport</li>
       </ul>
 
       <ul>
-        <li>Sobib: energiasalvestus, päikesepargid, UPS, elektrisõidukid</li>
-        <li>Suuremate koguste puhul küsi personaalset pakkumist</li>
+        <li>Sobib: energiasalvestus, pÃ¤ikesepargid, UPS, elektrisÃµidukid</li>
+        <li>Suuremate koguste puhul kÃ¼si personaalset pakkumist</li>
       </ul>
 
-      <p><strong>NB:</strong> Tegemist on eelmüügiga. Tarneaja täpsustamiseks võta meiega ühendust.</p>
+      <p><strong>NB:</strong> Tegemist on eelmÃ¼Ã¼giga. Tarneaja tÃ¤psustamiseks vÃµta meiega Ã¼hendust.</p>
     `
   },
 
@@ -70,8 +70,8 @@ const TOOTED = [
   {
     id: "eel-battery-v6-pro",
     slug: "eel-battery-v6-pro",
-    nimi: "EEL Battery V6 PRO — 17kWh LiFePO4 akusüsteem",
-    lyhikirjeldus: "Täielik 17kWh LiFePO4 akusüsteem EVE MB31 elementide, EEL V6 PRO kasti ja JK BMS V19-ga. Saadaval valmis komplektina või DIY kitina.",
+    nimi: "EEL Battery V6 PRO â€” 17kWh LiFePO4 akusÃ¼steem",
+    lyhikirjeldus: "TÃ¤ielik 17kWh LiFePO4 akusÃ¼steem EVE MB31 elementide, EEL V6 PRO kasti ja JK BMS V19-ga. Saadaval valmis komplektina vÃµi DIY kitina.",
     kategooria: "akud",
     hind: 1699,
     hind_vana: null,
@@ -83,22 +83,22 @@ const TOOTED = [
     eelmyyk: true,
     specs: {
       "Mahtuvus": "17 kWh (330+ Ah)",
-      "Elemendid": "16× EVE MB31 Grade A",
+      "Elemendid": "16Ã— EVE MB31 Grade A",
       "BMS": "JK BMS V19",
       "Pinge": "48V (51.2V nominaal)",
-      "Variandid": "Valmis komplekt 1 899€ · DIY kit 1 699€",
+      "Variandid": "Valmis komplekt 1 899â‚¬ Â· DIY kit 1 699â‚¬",
       "Garantii": "5 aastat",
-      "Tarne": "Eelmüük — kohe peale elementide saabumist"
+      "Tarne": "EelmÃ¼Ã¼k â€” kohe peale elementide saabumist"
     },
     kirjeldus: ``
   },
 
-  // -- 3. Täielik Energiasalvestuse Komplekt ----------------
+  // -- 3. TÃ¤ielik Energiasalvestuse Komplekt ----------------
   {
     id: "energiasalvestuse-komplekt",
     slug: "energiasalvestuse-komplekt",
-    nimi: "Täielik Energiasalvestuse Komplekt",
-    lyhikirjeldus: "Vali Deye inverter (6–20kW) + EEL V6 PRO aku (16–64kWh) + Qilowatt juhtimine. Komplekti soodustus -5%. Konfigureeritav.",
+    nimi: "TÃ¤ielik Energiasalvestuse Komplekt",
+    lyhikirjeldus: "Vali Deye inverter (6â€“20kW) + EEL V6 PRO aku (16â€“64kWh) + Qilowatt juhtimine. Komplekti soodustus -5%. Konfigureeritav.",
     kategooria: "komplekt",
     hind: 3790,
     hind_vana: 3989,
@@ -109,22 +109,22 @@ const TOOTED = [
     ladu: true,
     eelmyyk: false,
     specs: {
-      "Inverter": "Deye SG05LP3 — 6, 10, 12, 15 või 20 kW",
-      "Aku": "EEL V6 PRO — 16, 32, 48 või 64 kWh",
-      "Lisavalik": "Qilowatt juhtimismoodul +350 €",
+      "Inverter": "Deye SG05LP3 â€” 6, 10, 12, 15 vÃµi 20 kW",
+      "Aku": "EEL V6 PRO â€” 16, 32, 48 vÃµi 64 kWh",
+      "Lisavalik": "Qilowatt juhtimismoodul +350 â‚¬",
       "Soodustus": "5% komplekti hinnalt",
       "Garantii": "5 aastat",
-      "Tarne": "3–14 tööpäeva"
+      "Tarne": "3â€“14 tÃ¶Ã¶pÃ¤eva"
     },
     kirjeldus: ``
   },
 
-  // -- 4. Deye 6–12kW inverterid ----------------------------
+  // -- 4. Deye 6â€“12kW inverterid ----------------------------
   {
     id: "deye-6-12kw",
     slug: "deye-6-12kw",
-    nimi: "Deye SG05LP3 6–12kW 3-faasiline hübriidinverter",
-    lyhikirjeldus: "Deye kolmefaasiline hübriidinverter 48V akusüsteemiga — 4 võimsust: 6kW, 8kW, 10kW, 12kW. Zero export, AC-coupling, IP65, Wi-Fi.",
+    nimi: "Deye SG05LP3 6â€“12kW 3-faasiline hÃ¼briidinverter",
+    lyhikirjeldus: "Deye kolmefaasiline hÃ¼briidinverter 48V akusÃ¼steemiga â€” 4 vÃµimsust: 6kW, 8kW, 10kW, 12kW. Zero export, AC-coupling, IP65, Wi-Fi.",
     kategooria: "inverterid",
     hind: 2090,
     hind_vana: null,
@@ -143,20 +143,20 @@ const TOOTED = [
       "Tootja": "Deye",
       "Mudelid": "6kW, 8kW, 10kW, 12kW",
       "Faasid": "3-faasiline",
-      "Akupinge": "48V madalpinge (40–60V)",
+      "Akupinge": "48V madalpinge (40â€“60V)",
       "Kaitseklass": "IP65",
       "Garantii": "5 aastat",
-      "Tarne": "3–7 tööpäeva"
+      "Tarne": "3â€“7 tÃ¶Ã¶pÃ¤eva"
     },
     kirjeldus: ``
   },
 
-  // -- 3. Deye 15–20kW inverterid ---------------------------
+  // -- 3. Deye 15â€“20kW inverterid ---------------------------
   {
     id: "deye-15-20kw",
     slug: "deye-15-20kw",
-    nimi: "Deye SG05LP3 15–20kW 3-faasiline hübriidinverter",
-    lyhikirjeldus: "Deye kolmefaasiline hübriidinverter 48V akusüsteemiga — 2 võimsust: 15kW ja 20kW. Kuni 350A aku vool, zero export, IP65, Wi-Fi.",
+    nimi: "Deye SG05LP3 15â€“20kW 3-faasiline hÃ¼briidinverter",
+    lyhikirjeldus: "Deye kolmefaasiline hÃ¼briidinverter 48V akusÃ¼steemiga â€” 2 vÃµimsust: 15kW ja 20kW. Kuni 350A aku vool, zero export, IP65, Wi-Fi.",
     kategooria: "inverterid",
     hind: 2450,
     hind_vana: null,
@@ -175,10 +175,10 @@ const TOOTED = [
       "Tootja": "Deye",
       "Mudelid": "15kW, 20kW",
       "Faasid": "3-faasiline",
-      "Akupinge": "48V madalpinge (40–60V)",
+      "Akupinge": "48V madalpinge (40â€“60V)",
       "Kaitseklass": "IP65",
       "Garantii": "5 aastat",
-      "Tarne": "3–7 tööpäeva"
+      "Tarne": "3â€“7 tÃ¶Ã¶pÃ¤eva"
     },
     kirjeldus: ``
   },
@@ -188,7 +188,7 @@ const TOOTED = [
     id: "deye-se-f16-c-version",
     slug: "deye-se-f16-c-version",
     nimi: "Deye SE-F16 C version 16kWh LiFePO4 aku",
-    lyhikirjeldus: "Deye seinale või põrandale paigaldatav 16kWh LiFePO4 aku. 314Ah, 51.2V, CAN/RS485/Bluetooth, kuni 32 tk paralleelis.",
+    lyhikirjeldus: "Deye seinale vÃµi pÃµrandale paigaldatav 16kWh LiFePO4 aku. 314Ah, 51.2V, CAN/RS485/Bluetooth, kuni 32 tk paralleelis.",
     kategooria: "akud",
     hind: 2770,
     hind_vana: 2890,
@@ -206,34 +206,34 @@ const TOOTED = [
       "Keemia": "LiFePO4",
       "Mahtuvus Ah": "314 Ah",
       "Nominaalpinge": "51.2 V",
-      "Tööpinge": "44.8–57.6 V",
+      "TÃ¶Ã¶pinge": "44.8â€“57.6 V",
       "Nominaalenergia": "16 kWh",
       "Maks. pidev laadimisvool": "160 A",
-      "Maks. pidev tühjendusvool": "230 A",
+      "Maks. pidev tÃ¼hjendusvool": "230 A",
       "Tippvool": "280 A (10 s)",
       "Soovituslik DoD": "90%",
-      "Eluiga": "6000+ tsüklit",
+      "Eluiga": "6000+ tsÃ¼klit",
       "Suhtlusprotokoll": "CAN2.0 / RS485 / Bluetooth + APP",
       "Kaitseklass": "IP21",
-      "Paralleelühendus": "kuni 32 tk",
-      "Mõõdud": "400 × 708 × 233 mm",
+      "ParalleelÃ¼hendus": "kuni 32 tk",
+      "MÃµÃµdud": "400 Ã— 708 Ã— 233 mm",
       "Kaal": "u 109 kg",
       "Garantii": "5 aastat",
-      "Tarne": "3–7 tööpäeva"
+      "Tarne": "3â€“7 tÃ¶Ã¶pÃ¤eva"
     },
     kirjeldus: `
-    <p>Deye SE-F16 C version on 16kWh LiFePO4 akusüsteem koduse päikeseenergia salvestamiseks. Tegemist on kompaktse madalpinge akuga, mis sobib hästi Deye ja teiste ühilduvate inverteritega.</p>
+    <p>Deye SE-F16 C version on 16kWh LiFePO4 akusÃ¼steem koduse pÃ¤ikeseenergia salvestamiseks. Tegemist on kompaktse madalpinge akuga, mis sobib hÃ¤sti Deye ja teiste Ã¼hilduvate inverteritega.</p>
 
     <ul>
       <li>16 kWh nominaalenergia ja 314 Ah mahtuvus</li>
-      <li>51.2V süsteem — sobib madalpinge hübriidinverteritele</li>
-      <li>CAN / RS485 / Bluetooth — lihtne monitooring ja inverteriga side</li>
-      <li>Kuni 160A pidev laadimine ja kuni 230A pidev tühjendus</li>
-      <li>Kuni 32 akut paralleelis suurema süsteemi ehitamiseks</li>
-      <li>Seinale või põrandale paigaldatav lahendus</li>
+      <li>51.2V sÃ¼steem â€” sobib madalpinge hÃ¼briidinverteritele</li>
+      <li>CAN / RS485 / Bluetooth â€” lihtne monitooring ja inverteriga side</li>
+      <li>Kuni 160A pidev laadimine ja kuni 230A pidev tÃ¼hjendus</li>
+      <li>Kuni 32 akut paralleelis suurema sÃ¼steemi ehitamiseks</li>
+      <li>Seinale vÃµi pÃµrandale paigaldatav lahendus</li>
     </ul>
 
-    <p>Hea valik nii uue energiasalvestuse ehitamiseks kui olemasoleva süsteemi laiendamiseks.</p>
+    <p>Hea valik nii uue energiasalvestuse ehitamiseks kui olemasoleva sÃ¼steemi laiendamiseks.</p>
   `
   },
   {
@@ -260,30 +260,30 @@ const TOOTED = [
       "Nominaalpinge": "51.2 V",
       "Nominaalenergia": "16 kWh",
       "Kasutatav energia": "14.4 kWh (DoD 90%)",
-      "Maks. pidev laadimis-/tühjendusvool": "160 A",
+      "Maks. pidev laadimis-/tÃ¼hjendusvool": "160 A",
       "Tippvool": "300 A (10 s)",
       "Kaitseklass": "IP20",
-      "Paigaldus": "Seinale või põrandale",
-      "Töötemperatuur": "Laadimine 0°C kuni 55°C / tühjendamine -20°C kuni 55°C",
-      "Mõõdud": "480 × 830 × 235 mm",
+      "Paigaldus": "Seinale vÃµi pÃµrandale",
+      "TÃ¶Ã¶temperatuur": "Laadimine 0Â°C kuni 55Â°C / tÃ¼hjendamine -20Â°C kuni 55Â°C",
+      "MÃµÃµdud": "480 Ã— 830 Ã— 235 mm",
       "Kaal": "u 122 kg",
       "Garantii": "5 aastat",
       "Sertifikaadid": "UN38.3, MSDS",
-      "Tarne": "3–7 tööpäeva"
+      "Tarne": "3â€“7 tÃ¶Ã¶pÃ¤eva"
     },
     kirjeldus: `
-    <p>Deye RW-F16 on suure mahutavusega LiFePO4 aku kodustele ja väiksematele ärilistele energiasalvestuslahendustele. Aku nominaalmahtuvus on <strong>16 kWh</strong> ning kasutatav energia on <strong>14.4 kWh (DoD 90%)</strong>.</p>
+    <p>Deye RW-F16 on suure mahutavusega LiFePO4 aku kodustele ja vÃ¤iksematele Ã¤rilistele energiasalvestuslahendustele. Aku nominaalmahtuvus on <strong>16 kWh</strong> ning kasutatav energia on <strong>14.4 kWh (DoD 90%)</strong>.</p>
 
     <ul>
       <li>314 Ah ja 51.2V LiFePO4 aku</li>
       <li>14.4 kWh kasutatav energia (90% DoD)</li>
-      <li>Kuni 160A pidev laadimis- ja tühjendusvool</li>
+      <li>Kuni 160A pidev laadimis- ja tÃ¼hjendusvool</li>
       <li>300A tippvool 10 sekundi jooksul</li>
-      <li>Seina- või põrandapaigaldus</li>
-      <li>Sobib hästi koduse päikeseenergia salvestuseks</li>
+      <li>Seina- vÃµi pÃµrandapaigaldus</li>
+      <li>Sobib hÃ¤sti koduse pÃ¤ikeseenergia salvestuseks</li>
     </ul>
 
-    <p>Kui soovid Deye inverteriga sobivat akulahendust, on RW-F16 üks väga tugev ja lihtsasti integreeritav variant.</p>
+    <p>Kui soovid Deye inverteriga sobivat akulahendust, on RW-F16 Ã¼ks vÃ¤ga tugev ja lihtsasti integreeritav variant.</p>
   `
   },
 
@@ -291,8 +291,8 @@ const TOOTED = [
   {
     id: "dyness-stack100",
     slug: "dyness-stack100",
-    nimi: "Dyness Stack100 LiFePO4 Akusüsteem",
-    lyhikirjeldus: "Modulaarne virntatav LiFePO4 akusüsteem. 51.2V/100Ah moodul (5.12kWh), 3–15 moodulit klastris, kuni 12 klastrit paralleelselt. 1C kiirus, aerosool tulekustutus, 10a garantii.",
+    nimi: "Dyness Stack100 LiFePO4 AkusÃ¼steem",
+    lyhikirjeldus: "Modulaarne virntatav LiFePO4 akusÃ¼steem. 51.2V/100Ah moodul (5.12kWh), 3â€“15 moodulit klastris, kuni 12 klastrit paralleelselt. 1C kiirus, aerosool tulekustutus, 10a garantii.",
     kategooria: "akud",
     hind: 860,
     hind_vana: null,
@@ -307,12 +307,12 @@ const TOOTED = [
       "Tootja": "Dyness",
       "Mudel": "Stack100",
       "Mooduli mahtuvus": "5.12 kWh (51.2V / 100Ah)",
-      "Süsteemi energiavahemik": "15.36–76.8 kWh (1 klaster)",
-      "Maks. süsteem": "921 kWh (12 klastrit paralleelselt)",
+      "SÃ¼steemi energiavahemik": "15.36â€“76.8 kWh (1 klaster)",
+      "Maks. sÃ¼steem": "921 kWh (12 klastrit paralleelselt)",
       "Laadimiskiirus": "1C (100A)",
-      "Eluiga": "Piiramatu tsüklit / 10 aastat",
+      "Eluiga": "Piiramatu tsÃ¼klit / 10 aastat",
       "Garantii": "10 aastat",
-      "Tarne": "3–7 tööpäeva"
+      "Tarne": "3â€“7 tÃ¶Ã¶pÃ¤eva"
     },
     kirjeldus: ``
   },
@@ -321,7 +321,7 @@ const TOOTED = [
     id: "dyness-powerbrick-pro-14kwh",
     slug: "dyness-powerbrick-pro-14kwh",
     nimi: "Dyness PowerBrick Pro 14.336kWh LiFePO4 aku (IP65)",
-    lyhikirjeldus: "IP65 kaitsega Dyness PowerBrick Pro 14.336kWh — sobib sise- ja välitingimustesse. BMS sisseehitatud, 10a garantii.",
+    lyhikirjeldus: "IP65 kaitsega Dyness PowerBrick Pro 14.336kWh â€” sobib sise- ja vÃ¤litingimustesse. BMS sisseehitatud, 10a garantii.",
     kategooria: "akud",
     hind: 2540,
     hind_vana: 2700,
@@ -342,20 +342,20 @@ const TOOTED = [
       "Pinge": "51.2 V (16S LiFePO4)",
       "Mahtuvus Ah": "280 Ah",
       "Maks. laadimisvool": "200 A",
-      "Eluiga": "6000+ tsüklit",
+      "Eluiga": "6000+ tsÃ¼klit",
       "Suhtlusprotokoll": "CAN / RS485",
       "Kaitseklass": "IP65",
       "Garantii": "10 aastat",
-      "Tarne": "3–7 tööpäeva"
+      "Tarne": "3â€“7 tÃ¶Ã¶pÃ¤eva"
     },
     kirjeldus: `
-      <p>Dyness PowerBrick Pro on täielikult integreeritud 14.336kWh LiFePO4 akusüsteem IP65 kaitseklassiga — sobib keldri, garaaži ja välitingimustes kasutamiseks.</p>
+      <p>Dyness PowerBrick Pro on tÃ¤ielikult integreeritud 14.336kWh LiFePO4 akusÃ¼steem IP65 kaitseklassiga â€” sobib keldri, garaaÅ¾i ja vÃ¤litingimustes kasutamiseks.</p>
       <ul>
-        <li>IP65 — tolmu- ja veekindel, sobib ka välitingimustesse paigaldamiseks</li>
+        <li>IP65 â€” tolmu- ja veekindel, sobib ka vÃ¤litingimustesse paigaldamiseks</li>
         <li>Sisseehitatud professionaalne BMS aktiivse balanseerimise ja kaitsefunktsioonidega</li>
-        <li>CAN/RS485 — otsene suhtlus inverteriga (Deye, Goodwe, Huawei jt)</li>
-        <li>6000+ tsüklit eluiga — ~16 aasta kasutus igapäevasel laadimisel</li>
-        <li>Paralleelühendus kuni 16 akuga süsteemi laiendamiseks</li>
+        <li>CAN/RS485 â€” otsene suhtlus inverteriga (Deye, Goodwe, Huawei jt)</li>
+        <li>6000+ tsÃ¼klit eluiga â€” ~16 aasta kasutus igapÃ¤evasel laadimisel</li>
+        <li>ParalleelÃ¼hendus kuni 16 akuga sÃ¼steemi laiendamiseks</li>
         <li>10 aasta garantii</li>
       </ul>
     `
@@ -364,7 +364,7 @@ const TOOTED = [
     id: "dyness-powerbrick-14kwh",
     slug: "dyness-powerbrick-14kwh",
     nimi: "Dyness PowerBrick 14.336kWh LiFePO4 aku (51.2V / 280Ah)",
-    lyhikirjeldus: "Dyness PowerBrick 14.336kWh LiFePO4 — sisseehitatud BMS, lai inverterite ühilduvus, 10a garantii.",
+    lyhikirjeldus: "Dyness PowerBrick 14.336kWh LiFePO4 â€” sisseehitatud BMS, lai inverterite Ã¼hilduvus, 10a garantii.",
     kategooria: "akud",
     hind: 2435,
     hind_vana: 2500,
@@ -385,19 +385,19 @@ const TOOTED = [
       "Pinge": "51.2 V (16S LiFePO4)",
       "Mahtuvus Ah": "280 Ah",
       "Maks. laadimisvool": "200 A",
-      "Eluiga": "6000+ tsüklit",
+      "Eluiga": "6000+ tsÃ¼klit",
       "Suhtlusprotokoll": "CAN / RS485",
       "Garantii": "10 aastat",
-      "Tarne": "3–7 tööpäeva"
+      "Tarne": "3â€“7 tÃ¶Ã¶pÃ¤eva"
     },
     kirjeldus: `
-      <p>Dyness PowerBrick on populaarne valik koduse päikeseenergia salvestamiseks — kõik ühes pakis, lihtne paigaldus ja lai ühilduvus inverteritega.</p>
+      <p>Dyness PowerBrick on populaarne valik koduse pÃ¤ikeseenergia salvestamiseks â€” kÃµik Ã¼hes pakis, lihtne paigaldus ja lai Ã¼hilduvus inverteritega.</p>
       <ul>
         <li>Sisseehitatud BMS aktiivse balanseerimise ja kaitsefunktsioonidega</li>
-        <li>CAN/RS485 suhtlus inverteriga — Deye, Goodwe, Huawei, Growatt jt</li>
-        <li>6000+ tsüklit eluiga</li>
-        <li>Paralleelühendus mitme akuga süsteemi laiendamiseks</li>
-        <li>10 aasta garantii · Laos Eestis</li>
+        <li>CAN/RS485 suhtlus inverteriga â€” Deye, Goodwe, Huawei, Growatt jt</li>
+        <li>6000+ tsÃ¼klit eluiga</li>
+        <li>ParalleelÃ¼hendus mitme akuga sÃ¼steemi laiendamiseks</li>
+        <li>10 aasta garantii Â· Laos Eestis</li>
       </ul>
     `
   },
@@ -406,7 +406,7 @@ const TOOTED = [
   {
     id: "basen-green-16kwh",
     slug: "basen-green-16kwh",
-    nimi: "Basen Green BR-OW-LV16KWH — 51.2V 320Ah 16kWh akukomplekt",
+    nimi: "Basen Green BR-OW-LV16KWH â€” 51.2V 320Ah 16kWh akukomplekt",
     lyhikirjeldus: "Basen Green 16kWh LiFePO4 akukomplekt sisseehitatud BMS-iga. Suur mahtuvus, CAN/RS485, 10a garantii.",
     kategooria: "akud",
     hind: 2049,
@@ -426,19 +426,19 @@ const TOOTED = [
       "Pinge": "51.2 V (16S LiFePO4)",
       "Mahtuvus Ah": "320 Ah",
       "Maks. laadimisvool": "100 A",
-      "Eluiga": "6000+ tsüklit",
+      "Eluiga": "6000+ tsÃ¼klit",
       "Suhtlusprotokoll": "CAN / RS485",
       "Garantii": "10 aastat",
-      "Tarne": "3–7 tööpäeva"
+      "Tarne": "3â€“7 tÃ¶Ã¶pÃ¤eva"
     },
     kirjeldus: `
-      <p>Basen Green BR-OW-LV16KWH on 16kWh mahtuvusega LiFePO4 akukomplekt — elemendid, BMS ja korpus ühes pakis. 320Ah mahtuvus tagab parema puhvri suuremate majapidamiste päevasteks vajadusteks.</p>
+      <p>Basen Green BR-OW-LV16KWH on 16kWh mahtuvusega LiFePO4 akukomplekt â€” elemendid, BMS ja korpus Ã¼hes pakis. 320Ah mahtuvus tagab parema puhvri suuremate majapidamiste pÃ¤evasteks vajadusteks.</p>
       <ul>
-        <li>16kWh — üks suurimaid standardpakke turul, vähendab vajadust paralleelühenduse järele</li>
+        <li>16kWh â€” Ã¼ks suurimaid standardpakke turul, vÃ¤hendab vajadust paralleelÃ¼henduse jÃ¤rele</li>
         <li>Sisseehitatud professionaalne BMS aktiivse balanseerimise ja kaitsefunktsioonidega</li>
-        <li>CAN/RS485 — otsene suhtlus inverteriga (Deye, Goodwe, SolarEdge jt)</li>
-        <li>6000+ tsüklit eluiga</li>
-        <li>10 aasta garantii · Laos Eestis</li>
+        <li>CAN/RS485 â€” otsene suhtlus inverteriga (Deye, Goodwe, SolarEdge jt)</li>
+        <li>6000+ tsÃ¼klit eluiga</li>
+        <li>10 aasta garantii Â· Laos Eestis</li>
       </ul>
     `
   },
@@ -447,8 +447,8 @@ const TOOTED = [
   {
     id: "huawei-sun2000-4-6ktl",
     slug: "huawei-sun2000-4-6ktl",
-    nimi: "Huawei SUN2000-4.6KTL-L1 hübriidinverter",
-    lyhikirjeldus: "Huawei 4.6kW 1-faasiline hübriidinverter. Ühilduv Luna2000 akusüsteemiga. FusionSolar monitooring, IP65.",
+    nimi: "Huawei SUN2000-4.6KTL-L1 hÃ¼briidinverter",
+    lyhikirjeldus: "Huawei 4.6kW 1-faasiline hÃ¼briidinverter. Ãœhilduv Luna2000 akusÃ¼steemiga. FusionSolar monitooring, IP65.",
     kategooria: "inverterid",
     hind: 860,
     hind_vana: null,
@@ -462,24 +462,24 @@ const TOOTED = [
     specs: {
       "Tootja": "Huawei",
       "Mudel": "SUN2000-4.6KTL-L1",
-      "Võimsus": "4.6 kW",
+      "VÃµimsus": "4.6 kW",
       "Faasid": "1-faasiline",
-      "MPPT": "2× MPPT",
+      "MPPT": "2Ã— MPPT",
       "Maks. PV pinge": "600 V",
       "Aku liides": "Huawei Luna2000 (CAN)",
       "Efektiivsus": "kuni 97.5%",
       "Kaitseklass": "IP65",
       "Garantii": "5 aastat",
-      "Tarne": "3–7 tööpäeva"
+      "Tarne": "3â€“7 tÃ¶Ã¶pÃ¤eva"
     },
     kirjeldus: `
-      <p>Huawei SUN2000-4.6KTL-L1 on usaldusväärne 1-faasiline hübriidinverter, mis integreerub sujuvalt Huawei Luna2000 akusüsteemiga ja on optimeeritud Huawei energiahalduse ökosüsteemile.</p>
+      <p>Huawei SUN2000-4.6KTL-L1 on usaldusvÃ¤Ã¤rne 1-faasiline hÃ¼briidinverter, mis integreerub sujuvalt Huawei Luna2000 akusÃ¼steemiga ja on optimeeritud Huawei energiahalduse Ã¶kosÃ¼steemile.</p>
       <ul>
-        <li>2× MPPT — saab ühendada erineva suunaga paneeliridu</li>
-        <li>Madal käivituspinge — töötab ka pilvistel päevadel</li>
+        <li>2Ã— MPPT â€” saab Ã¼hendada erineva suunaga paneeliridu</li>
+        <li>Madal kÃ¤ivituspinge â€” tÃ¶Ã¶tab ka pilvistel pÃ¤evadel</li>
         <li>Huawei Luna2000 akud: lihtne laiendamine moodulite lisamisega</li>
-        <li>FusionSolar äpp — monitooring ja juhtimine nutitelefonist</li>
-        <li>IP65 kaitseklass · 5 aasta garantii</li>
+        <li>FusionSolar Ã¤pp â€” monitooring ja juhtimine nutitelefonist</li>
+        <li>IP65 kaitseklass Â· 5 aasta garantii</li>
       </ul>
     `
   },
@@ -488,8 +488,8 @@ const TOOTED = [
   {
     id: "jk-bms-150a-1a",
     slug: "jk-bms-150a-1a",
-    nimi: "JK (Jikong) BMS 8S–24S 150A — 1A aktiivne balanss",
-    lyhikirjeldus: "Professionaalne BMS 1A aktiivse induktsioonbalanseerimisega. Bluetooth 5.0 + RS485. Sobib 8S–24S LiFePO4 akupankadele.",
+    nimi: "JK (Jikong) BMS 8Sâ€“24S 150A â€” 1A aktiivne balanss",
+    lyhikirjeldus: "Professionaalne BMS 1A aktiivse induktsioonbalanseerimisega. Bluetooth 5.0 + RS485. Sobib 8Sâ€“24S LiFePO4 akupankadele.",
     kategooria: "bms",
     hind: 130,
     hind_vana: null,
@@ -504,20 +504,20 @@ const TOOTED = [
     specs: {
       "Tootja": "JK / Jikong",
       "Voolutugevus": "150 A pidev",
-      "Rakuvahemik": "8S – 24S (24–77V)",
+      "Rakuvahemik": "8S â€“ 24S (24â€“77V)",
       "Balanss": "Aktiivne 1A (induktsioon)",
-      "Kaitse": "Üle-/alalaeng, ülevool, lühis, temperatuur",
+      "Kaitse": "Ãœle-/alalaeng, Ã¼levool, lÃ¼his, temperatuur",
       "Liides": "Bluetooth 5.0 + RS485",
       "App": "iOS / Android (tasuta)",
-      "Tarne": "3–7 tööpäeva"
+      "Tarne": "3â€“7 tÃ¶Ã¶pÃ¤eva"
     },
     kirjeldus: `
-      <p>JK (Jikong) BMS on üks enimkasutatud ja usaldusväärsemaid BMS-e DIY energiasalvestusprojektides — tuntud täpse mõõtmise ja rikkaliku funktsionaalsuse poolest.</p>
+      <p>JK (Jikong) BMS on Ã¼ks enimkasutatud ja usaldusvÃ¤Ã¤rsemaid BMS-e DIY energiasalvestusprojektides â€” tuntud tÃ¤pse mÃµÃµtmise ja rikkaliku funktsionaalsuse poolest.</p>
       <ul>
-        <li>Aktiivne induktsioonbalanseerimine 1A — pikendab rakkude eluiga</li>
-        <li>Täielik kaitse: üle-/alalaeng, ülevool, lühis, üle-/alatemperatuur</li>
-        <li>Bluetooth 5.0 + RS485 — monitooring äpist või CAN/RS485 kaudu inverteriga</li>
-        <li>Toetab 8S–24S konfiguratsioone (24V kuni 77V)</li>
+        <li>Aktiivne induktsioonbalanseerimine 1A â€” pikendab rakkude eluiga</li>
+        <li>TÃ¤ielik kaitse: Ã¼le-/alalaeng, Ã¼levool, lÃ¼his, Ã¼le-/alatemperatuur</li>
+        <li>Bluetooth 5.0 + RS485 â€” monitooring Ã¤pist vÃµi CAN/RS485 kaudu inverteriga</li>
+        <li>Toetab 8Sâ€“24S konfiguratsioone (24V kuni 77V)</li>
         <li>Sobib: EVE, CATL, Basen jt LiFePO4 elementidega</li>
       </ul>
     `
@@ -525,8 +525,8 @@ const TOOTED = [
   {
     id: "jk-bms-150a-2a",
     slug: "jk-bms-150a-2a",
-    nimi: "JK (Jikong) BMS 8S–24S 150A — 2A aktiivne balanss",
-    lyhikirjeldus: "Võimsam JK BMS 2A aktiivse balanseerimisega — kiirem tasakaalustamine suurematele akupankadele. Bluetooth 5.0 + RS485.",
+    nimi: "JK (Jikong) BMS 8Sâ€“24S 150A â€” 2A aktiivne balanss",
+    lyhikirjeldus: "VÃµimsam JK BMS 2A aktiivse balanseerimisega â€” kiirem tasakaalustamine suurematele akupankadele. Bluetooth 5.0 + RS485.",
     kategooria: "bms",
     hind: 155,
     hind_vana: null,
@@ -541,31 +541,31 @@ const TOOTED = [
     specs: {
       "Tootja": "JK / Jikong",
       "Voolutugevus": "150 A pidev",
-      "Rakuvahemik": "8S – 24S (24–77V)",
+      "Rakuvahemik": "8S â€“ 24S (24â€“77V)",
       "Balanss": "Aktiivne 2A (induktsioon)",
-      "Kaitse": "Üle-/alalaeng, ülevool, lühis, temperatuur",
+      "Kaitse": "Ãœle-/alalaeng, Ã¼levool, lÃ¼his, temperatuur",
       "Liides": "Bluetooth 5.0 + RS485",
       "App": "iOS / Android (tasuta)",
-      "Tarne": "3–7 tööpäeva"
+      "Tarne": "3â€“7 tÃ¶Ã¶pÃ¤eva"
     },
     kirjeldus: `
-      <p>JK BMS 2A versioon — ideaalne suurematele akupankadele (=200Ah), kus kiirem balanseerimine tagab parema rakkudevahelise tasakaalu ja pikema eluea.</p>
+      <p>JK BMS 2A versioon â€” ideaalne suurematele akupankadele (=200Ah), kus kiirem balanseerimine tagab parema rakkudevahelise tasakaalu ja pikema eluea.</p>
       <ul>
-        <li>Aktiivne induktsioonbalanseerimine 2A — 2× kiirem kui 1A versioon</li>
-        <li>Täielik kaitse: üle-/alalaeng, ülevool, lühis, temperatuur</li>
-        <li>Bluetooth 5.0 + RS485 — monitooring äpist või inverteriga liidestus</li>
-        <li>Toetab 8S–24S konfiguratsioone</li>
+        <li>Aktiivne induktsioonbalanseerimine 2A â€” 2Ã— kiirem kui 1A versioon</li>
+        <li>TÃ¤ielik kaitse: Ã¼le-/alalaeng, Ã¼levool, lÃ¼his, temperatuur</li>
+        <li>Bluetooth 5.0 + RS485 â€” monitooring Ã¤pist vÃµi inverteriga liidestus</li>
+        <li>Toetab 8Sâ€“24S konfiguratsioone</li>
         <li>Sobib: EVE MB31, Basen jt suure mahutavusega elementidega</li>
       </ul>
     `
   },
 
-  // -- CALB LiFePO4 16kWh — JK BMS -----------------------------
+  // -- CALB LiFePO4 16kWh â€” JK BMS -----------------------------
   {
     id: "calb-lifepo4-16kwh",
     slug: "calb-lifepo4-16kwh",
-    nimi: "CALB LiFePO4 16kWh Akukomplekt — JK BMS",
-    lyhikirjeldus: "16kWh LiFePO4 akukomplekt CALB A-klassi 314Ah elementide ja JK BMS-iga. 51.2V / 320Ah. Vertikaalne või lamav korpus, 200A kaitse, tulekustutusaerosool.",
+    nimi: "CALB LiFePO4 16kWh Akukomplekt â€” JK BMS",
+    lyhikirjeldus: "16kWh LiFePO4 akukomplekt CALB A-klassi 314Ah elementide ja JK BMS-iga. 51.2V / 320Ah. Vertikaalne vÃµi lamav korpus, 200A kaitse, tulekustutusaerosool.",
     kategooria: "akud",
     hind: 1799,
     hind_vana: null,
@@ -576,13 +576,13 @@ const TOOTED = [
     ladu: true,
     eelmyyk: true,
     specs: {
-      "Elemendid": "16× CALB 314Ah LiFePO4 A-klass",
+      "Elemendid": "16Ã— CALB 314Ah LiFePO4 A-klass",
       "BMS": "JK BMS (puuteekraan)",
       "Pinge": "51.2 V",
       "Mahtuvus": "320 Ah / 16 kWh",
-      "Paralleelühendus": "kuni 16 akut",
+      "ParalleelÃ¼hendus": "kuni 16 akut",
       "Protokoll": "CAN / RS485 / RS232",
-      "Tarne": "Eelmüük — täpsustamisel"
+      "Tarne": "EelmÃ¼Ã¼k â€” tÃ¤psustamisel"
     },
     kirjeldus: ``
   },
@@ -592,7 +592,7 @@ const TOOTED = [
     id: "calb-16kwh-standing",
     slug: "calb-16kwh-standing",
     catalog_hidden: true,
-    nimi: "CALB 16kWh LiFePO4 — Vertikaalne (seisev)",
+    nimi: "CALB 16kWh LiFePO4 â€” Vertikaalne (seisev)",
     lyhikirjeldus: "16kWh LiFePO4 seisev vertikaalkorpus CALB A-klassi elementide ja JK BMS-iga. 200A kaitse, tulekustutusaerosool.",
     kategooria: "akud",
     hind: 1799,
@@ -606,41 +606,41 @@ const TOOTED = [
     eelmyyk: true,
     specs: {
       "Korpus": "Vertikaalne",
-      "Elemendid": "16× CALB 314Ah LiFePO4 A-klass",
+      "Elemendid": "16Ã— CALB 314Ah LiFePO4 A-klass",
       "BMS": "JK BMS (puuteekraan)",
       "Nominaalpinge": "51.2 V",
       "Mahtuvus": "320 Ah",
       "Energia": "16 kWh",
       "Maks. laadimisvool": "0.5C (200 A)",
-      "Maks. tühjendusvool": "1C (320 A)",
-      "Kaitse": "200A kaitselüliti",
+      "Maks. tÃ¼hjendusvool": "1C (320 A)",
+      "Kaitse": "200A kaitselÃ¼liti",
       "Tulekustutus": "Temperatuuritundlik aerosool",
       "Protokoll": "CAN / RS485 / RS232",
-      "Paralleelühendus": "kuni 16 akut",
-      "Mõõdud": "410 × 275 × 805 mm",
+      "ParalleelÃ¼hendus": "kuni 16 akut",
+      "MÃµÃµdud": "410 Ã— 275 Ã— 805 mm",
       "Kaal": "u 119 kg",
       "Inverteri tugi": "Deye, Growatt, Goodwe, Victron, Sofar, Solis, SRNE",
-      "Tarne": "Eelmüük — täpsustamisel"
+      "Tarne": "EelmÃ¼Ã¼k â€” tÃ¤psustamisel"
     },
     kirjeldus: `
-      <p>CALB 16kWh vertikaalkorpus on kompaktne ja elegantne lahendus kodustesse ruumidesse — sobib seina äärde või tehnoruumi, võtab vähe põrandapinda (275mm sügavus).</p>
+      <p>CALB 16kWh vertikaalkorpus on kompaktne ja elegantne lahendus kodustesse ruumidesse â€” sobib seina Ã¤Ã¤rde vÃµi tehnoruumi, vÃµtab vÃ¤he pÃµrandapinda (275mm sÃ¼gavus).</p>
       <ul>
-        <li>CALB A-klassi 314Ah LiFePO4 elemendid — pikk eluiga ja kõrge töökindlus</li>
-        <li>JK BMS 4-tollise puuteekraaniga — reaalajas seire ja seadistamine</li>
-        <li>Sisseehitatud 200A kaitselüliti — täielik kaitse ülekoormuse eest</li>
-        <li>Temperatuuritundlik tulekustutusaerosool — automaatne turvafunktsioon</li>
-        <li>CAN / RS485 / RS232 — ühilduv Deye, Growatt, Goodwe, Victron jt inverteritega</li>
-        <li>Kuni 16 akut paralleelselt RS485 kaudu — laienda mahtuvust kuni 256kWh</li>
-        <li>Bluetoothi ühendus JK BMS mobiilirakendusega (iOS/Android) — mugav seire nutitelefonist</li>
+        <li>CALB A-klassi 314Ah LiFePO4 elemendid â€” pikk eluiga ja kÃµrge tÃ¶Ã¶kindlus</li>
+        <li>JK BMS 4-tollise puuteekraaniga â€” reaalajas seire ja seadistamine</li>
+        <li>Sisseehitatud 200A kaitselÃ¼liti â€” tÃ¤ielik kaitse Ã¼lekoormuse eest</li>
+        <li>Temperatuuritundlik tulekustutusaerosool â€” automaatne turvafunktsioon</li>
+        <li>CAN / RS485 / RS232 â€” Ã¼hilduv Deye, Growatt, Goodwe, Victron jt inverteritega</li>
+        <li>Kuni 16 akut paralleelselt RS485 kaudu â€” laienda mahtuvust kuni 256kWh</li>
+        <li>Bluetoothi Ã¼hendus JK BMS mobiilirakendusega (iOS/Android) â€” mugav seire nutitelefonist</li>
       </ul>
-      <p>Hind <strong>1 799 € + KM (kokku 2 230 €)</strong>. Tarneks registreeri eelmüüki — võtame ühendust, kui aku on saabumas.</p>
+      <p>Hind <strong>1 799 â‚¬ + KM (kokku 2 230 â‚¬)</strong>. Tarneks registreeri eelmÃ¼Ã¼ki â€” vÃµtame Ã¼hendust, kui aku on saabumas.</p>
     `
   },
   {
     id: "calb-16kwh-lying",
     slug: "calb-16kwh-lying",
     catalog_hidden: true,
-    nimi: "CALB 16kWh LiFePO4 — Lamav (horisontaalne)",
+    nimi: "CALB 16kWh LiFePO4 â€” Lamav (horisontaalne)",
     lyhikirjeldus: "16kWh LiFePO4 lamav korpus CALB A-klassi elementide ja JK BMS-iga. Virnatav. 200A kaitse, tulekustutusaerosool.",
     kategooria: "akud",
     hind: 1799,
@@ -654,44 +654,44 @@ const TOOTED = [
     eelmyyk: true,
     specs: {
       "Korpus": "Lamav (virnatav)",
-      "Elemendid": "16× CALB 314Ah LiFePO4 A-klass",
+      "Elemendid": "16Ã— CALB 314Ah LiFePO4 A-klass",
       "BMS": "JK BMS (puuteekraan)",
       "Nominaalpinge": "51.2 V",
       "Mahtuvus": "320 Ah",
       "Energia": "16 kWh",
       "Maks. laadimisvool": "0.5C (200 A)",
-      "Maks. tühjendusvool": "1C (320 A)",
-      "Kaitse": "200A kaitselüliti",
+      "Maks. tÃ¼hjendusvool": "1C (320 A)",
+      "Kaitse": "200A kaitselÃ¼liti",
       "Tulekustutus": "Temperatuuritundlik aerosool",
       "Protokoll": "CAN / RS485 / RS232",
-      "Paralleelühendus": "kuni 16 akut",
-      "Mõõdud": "850 × 405 × 480 mm",
+      "ParalleelÃ¼hendus": "kuni 16 akut",
+      "MÃµÃµdud": "850 Ã— 405 Ã— 480 mm",
       "Kaal": "u 138 kg",
       "Inverteri tugi": "Deye, Growatt, Goodwe, Victron, Sofar, Solis, SRNE",
-      "Tarne": "Eelmüük — täpsustamisel"
+      "Tarne": "EelmÃ¼Ã¼k â€” tÃ¤psustamisel"
     },
     kirjeldus: `
-      <p>CALB 16kWh lamav korpus on ideaalne lahendus, kui soovid akusid virnata — sobib garaažidesse, keldrisse või madalama laega ruumidesse. Madala profiiliga kuju paigutub mugavalt riiulitele.</p>
+      <p>CALB 16kWh lamav korpus on ideaalne lahendus, kui soovid akusid virnata â€” sobib garaaÅ¾idesse, keldrisse vÃµi madalama laega ruumidesse. Madala profiiliga kuju paigutub mugavalt riiulitele.</p>
       <ul>
-        <li>CALB A-klassi 314Ah LiFePO4 elemendid — tipptasemel töökindlus</li>
-        <li>Virnatav disain — mitu akut saab üksteise otsa paigutada</li>
-        <li>JK BMS 4-tollise puuteekraaniga — reaalajas seire ja seadistamine</li>
-        <li>Sisseehitatud 200A kaitselüliti — täielik kaitse ülekoormuse eest</li>
-        <li>Temperatuuritundlik tulekustutusaerosool — automaatne turvafunktsioon</li>
-        <li>CAN / RS485 / RS232 — ühilduv Deye, Growatt, Goodwe, Victron jt inverteritega</li>
-        <li>Kuni 16 akut paralleelselt RS485 kaudu — laienda mahtuvust kuni 256kWh</li>
+        <li>CALB A-klassi 314Ah LiFePO4 elemendid â€” tipptasemel tÃ¶Ã¶kindlus</li>
+        <li>Virnatav disain â€” mitu akut saab Ã¼ksteise otsa paigutada</li>
+        <li>JK BMS 4-tollise puuteekraaniga â€” reaalajas seire ja seadistamine</li>
+        <li>Sisseehitatud 200A kaitselÃ¼liti â€” tÃ¤ielik kaitse Ã¼lekoormuse eest</li>
+        <li>Temperatuuritundlik tulekustutusaerosool â€” automaatne turvafunktsioon</li>
+        <li>CAN / RS485 / RS232 â€” Ã¼hilduv Deye, Growatt, Goodwe, Victron jt inverteritega</li>
+        <li>Kuni 16 akut paralleelselt RS485 kaudu â€” laienda mahtuvust kuni 256kWh</li>
       </ul>
-      <p>Hind <strong>1 799 € + KM (kokku 2 230 €)</strong>. Tarneks registreeri eelmüüki — võtame ühendust, kui aku on saabumas.</p>
+      <p>Hind <strong>1 799 â‚¬ + KM (kokku 2 230 â‚¬)</strong>. Tarneks registreeri eelmÃ¼Ã¼ki â€” vÃµtame Ã¼hendust, kui aku on saabumas.</p>
     `
   },
 
-  // -- Peidetud üksikud Deye inverterid (kasutatakse toode.html-s) --
+  // -- Peidetud Ã¼ksikud Deye inverterid (kasutatakse toode.html-s) --
   {
     id: "deye-sun-6k",
     slug: "deye-sun-6k",
     catalog_hidden: true,
-    nimi: "Deye SUN-6K-SG05LP3-EU-SM2 — 6kW 3-faasiline hübriidinverter",
-    lyhikirjeldus: "Deye 6kW kolmefaasiline hübriidinverter 48V akusüsteemiga. Zero export, AC-coupling, smart load, IP65, Wi-Fi.",
+    nimi: "Deye SUN-6K-SG05LP3-EU-SM2 â€” 6kW 3-faasiline hÃ¼briidinverter",
+    lyhikirjeldus: "Deye 6kW kolmefaasiline hÃ¼briidinverter 48V akusÃ¼steemiga. Zero export, AC-coupling, smart load, IP65, Wi-Fi.",
     kategooria: "inverterid",
     hind: 2090,
     hind_vana: 2320,
@@ -707,40 +707,40 @@ const TOOTED = [
     specs: {
       "Tootja": "Deye",
       "Mudel": "SUN-6K-SG05LP3-EU-SM2",
-      "Võimsus": "6 kW",
+      "VÃµimsus": "6 kW",
       "Faasid": "3-faasiline",
-      "Akupinge": "48V madalpinge (40–60V)",
+      "Akupinge": "48V madalpinge (40â€“60V)",
       "Maks. aku vool": "125 A",
       "Maks. PV sisend": "12 kW",
-      "MPPT": "2× (2+1 stringid), 160–650V",
+      "MPPT": "2Ã— (2+1 stringid), 160â€“650V",
       "Maks. PV pinge": "800 V",
       "Efektiivsus": "kuni 97.6%",
       "Kaitseklass": "IP65",
       "Garantii": "5 aastat",
-      "Tarne": "3–7 tööpäeva"
+      "Tarne": "3â€“7 tÃ¶Ã¶pÃ¤eva"
     },
     kirjeldus: `
-      <p>Deye SUN-6K-SG05LP3-EU-SM2 on kolmefaasiline 6kW hübriidinverter, mis töötab nii võrguühendusega kui off-grid režiimis. 48V madalpinge aku — ühilduv Dyness, Basen jt populaarsete akudega.</p>
+      <p>Deye SUN-6K-SG05LP3-EU-SM2 on kolmefaasiline 6kW hÃ¼briidinverter, mis tÃ¶Ã¶tab nii vÃµrguÃ¼hendusega kui off-grid reÅ¾iimis. 48V madalpinge aku â€” Ã¼hilduv Dyness, Basen jt populaarsete akudega.</p>
 
       <p><strong>Peamised omadused:</strong></p>
       <ul>
-        <li>Zero export / aku- ja päikeseenergia võrku müük vastavalt seadistusele</li>
-        <li>AC-coupling — sobib olemasoleva on-grid inverteri täiendamiseks</li>
-        <li>Smart load — boiler/küte aktiveerub automaatselt, kui akud täis või tootlus kõrge</li>
-        <li>Generaatori ühendamise võimalus, sh energia salvestamine generaatorist</li>
-        <li>Kuni 10 Deye inverteri paralleelühendus (on-grid ja off-grid)</li>
-        <li>Wi-Fi komplektis — monitooring ja juhtimine Deye SolarMAN äpist</li>
-        <li>Deye AI juhtimine — arvestab tarbimist, tootlust, akuolekut ja elektrihindu</li>
+        <li>Zero export / aku- ja pÃ¤ikeseenergia vÃµrku mÃ¼Ã¼k vastavalt seadistusele</li>
+        <li>AC-coupling â€” sobib olemasoleva on-grid inverteri tÃ¤iendamiseks</li>
+        <li>Smart load â€” boiler/kÃ¼te aktiveerub automaatselt, kui akud tÃ¤is vÃµi tootlus kÃµrge</li>
+        <li>Generaatori Ã¼hendamise vÃµimalus, sh energia salvestamine generaatorist</li>
+        <li>Kuni 10 Deye inverteri paralleelÃ¼hendus (on-grid ja off-grid)</li>
+        <li>Wi-Fi komplektis â€” monitooring ja juhtimine Deye SolarMAN Ã¤pist</li>
+        <li>Deye AI juhtimine â€” arvestab tarbimist, tootlust, akuolekut ja elektrihindu</li>
       </ul>
-      <p>Hind sisaldab käibemaksu. Aitame valida sobiva lahenduse — <a href="kontakt.html" style="color:var(--accent)">küsi nõu</a>.</p>
+      <p>Hind sisaldab kÃ¤ibemaksu. Aitame valida sobiva lahenduse â€” <a href="kontakt.html" style="color:var(--accent)">kÃ¼si nÃµu</a>.</p>
     `
   },
   {
     id: "deye-sun-8k",
     slug: "deye-sun-8k",
     catalog_hidden: true,
-    nimi: "Deye SUN-8K-SG05LP3-EU-SM2 — 8kW 3-faasiline hübriidinverter",
-    lyhikirjeldus: "Deye 8kW kolmefaasiline hübriidinverter 48V akusüsteemiga. Zero export, AC-coupling, smart load, IP65, Wi-Fi.",
+    nimi: "Deye SUN-8K-SG05LP3-EU-SM2 â€” 8kW 3-faasiline hÃ¼briidinverter",
+    lyhikirjeldus: "Deye 8kW kolmefaasiline hÃ¼briidinverter 48V akusÃ¼steemiga. Zero export, AC-coupling, smart load, IP65, Wi-Fi.",
     kategooria: "inverterid",
     hind: 2130,
     hind_vana: 2230,
@@ -756,40 +756,40 @@ const TOOTED = [
     specs: {
       "Tootja": "Deye",
       "Mudel": "SUN-8K-SG05LP3-EU-SM2",
-      "Võimsus": "8 kW",
+      "VÃµimsus": "8 kW",
       "Faasid": "3-faasiline",
-      "Akupinge": "48V madalpinge (40–60V)",
+      "Akupinge": "48V madalpinge (40â€“60V)",
       "Maks. aku vool": "165 A",
       "Maks. PV sisend": "16 kW",
-      "MPPT": "2× (2+1 stringid), 160–650V",
+      "MPPT": "2Ã— (2+1 stringid), 160â€“650V",
       "Maks. PV pinge": "800 V",
       "Efektiivsus": "kuni 97.6%",
       "Kaitseklass": "IP65",
       "Garantii": "5 aastat",
-      "Tarne": "3–7 tööpäeva"
+      "Tarne": "3â€“7 tÃ¶Ã¶pÃ¤eva"
     },
     kirjeldus: `
-      <p>Deye SUN-8K-SG05LP3-EU-SM2 on kolmefaasiline 8kW hübriidinverter, mis töötab nii võrguühendusega kui off-grid režiimis. 48V madalpinge aku — ühilduv Dyness, Basen jt populaarsete akudega.</p>
+      <p>Deye SUN-8K-SG05LP3-EU-SM2 on kolmefaasiline 8kW hÃ¼briidinverter, mis tÃ¶Ã¶tab nii vÃµrguÃ¼hendusega kui off-grid reÅ¾iimis. 48V madalpinge aku â€” Ã¼hilduv Dyness, Basen jt populaarsete akudega.</p>
 
       <p><strong>Peamised omadused:</strong></p>
       <ul>
-        <li>Zero export / aku- ja päikeseenergia võrku müük vastavalt seadistusele</li>
-        <li>AC-coupling — sobib olemasoleva on-grid inverteri täiendamiseks</li>
-        <li>Smart load — boiler/küte aktiveerub automaatselt, kui akud täis või tootlus kõrge</li>
-        <li>Generaatori ühendamise võimalus, sh energia salvestamine generaatorist</li>
-        <li>Kuni 10 Deye inverteri paralleelühendus (on-grid ja off-grid)</li>
-        <li>Wi-Fi komplektis — monitooring ja juhtimine Deye SolarMAN äpist</li>
-        <li>Deye AI juhtimine — arvestab tarbimist, tootlust, akuolekut ja elektrihindu</li>
+        <li>Zero export / aku- ja pÃ¤ikeseenergia vÃµrku mÃ¼Ã¼k vastavalt seadistusele</li>
+        <li>AC-coupling â€” sobib olemasoleva on-grid inverteri tÃ¤iendamiseks</li>
+        <li>Smart load â€” boiler/kÃ¼te aktiveerub automaatselt, kui akud tÃ¤is vÃµi tootlus kÃµrge</li>
+        <li>Generaatori Ã¼hendamise vÃµimalus, sh energia salvestamine generaatorist</li>
+        <li>Kuni 10 Deye inverteri paralleelÃ¼hendus (on-grid ja off-grid)</li>
+        <li>Wi-Fi komplektis â€” monitooring ja juhtimine Deye SolarMAN Ã¤pist</li>
+        <li>Deye AI juhtimine â€” arvestab tarbimist, tootlust, akuolekut ja elektrihindu</li>
       </ul>
-      <p>Hind sisaldab käibemaksu. Aitame valida sobiva lahenduse — <a href="kontakt.html" style="color:var(--accent)">küsi nõu</a>.</p>
+      <p>Hind sisaldab kÃ¤ibemaksu. Aitame valida sobiva lahenduse â€” <a href="kontakt.html" style="color:var(--accent)">kÃ¼si nÃµu</a>.</p>
     `
   },
   {
     id: "deye-sun-10k",
     slug: "deye-sun-10k",
     catalog_hidden: true,
-    nimi: "Deye SUN-10K-SG05LP3-EU-SM2 — 10kW 3-faasiline hübriidinverter",
-    lyhikirjeldus: "Deye 10kW kolmefaasiline hübriidinverter 48V akusüsteemiga. Kuni 210A aku vool, zero export, AC-coupling, IP65, Wi-Fi.",
+    nimi: "Deye SUN-10K-SG05LP3-EU-SM2 â€” 10kW 3-faasiline hÃ¼briidinverter",
+    lyhikirjeldus: "Deye 10kW kolmefaasiline hÃ¼briidinverter 48V akusÃ¼steemiga. Kuni 210A aku vool, zero export, AC-coupling, IP65, Wi-Fi.",
     kategooria: "inverterid",
     hind: 2150,
     hind_vana: 2500,
@@ -805,40 +805,40 @@ const TOOTED = [
     specs: {
       "Tootja": "Deye",
       "Mudel": "SUN-10K-SG05LP3-EU-SM2",
-      "Võimsus": "10 kW",
+      "VÃµimsus": "10 kW",
       "Faasid": "3-faasiline",
-      "Akupinge": "48V madalpinge (40–60V)",
+      "Akupinge": "48V madalpinge (40â€“60V)",
       "Maks. aku vool": "210 A",
       "Maks. PV sisend": "20 kW",
-      "MPPT": "2× (2+1 stringid), 160–650V",
+      "MPPT": "2Ã— (2+1 stringid), 160â€“650V",
       "Maks. PV pinge": "800 V",
       "Efektiivsus": "kuni 97.6%",
       "Kaitseklass": "IP65",
       "Garantii": "5 aastat",
-      "Tarne": "3–7 tööpäeva"
+      "Tarne": "3â€“7 tÃ¶Ã¶pÃ¤eva"
     },
     kirjeldus: `
-      <p>Deye SUN-10K-SG05LP3-EU-SM2 on võimas kolmefaasiline 10kW hübriidinverter nii kodu- kui äriklientidele. Töötab nii võrguühendusega kui off-grid režiimis, 48V madalpinge aku.</p>
+      <p>Deye SUN-10K-SG05LP3-EU-SM2 on vÃµimas kolmefaasiline 10kW hÃ¼briidinverter nii kodu- kui Ã¤riklientidele. TÃ¶Ã¶tab nii vÃµrguÃ¼hendusega kui off-grid reÅ¾iimis, 48V madalpinge aku.</p>
 
       <p><strong>Peamised omadused:</strong></p>
       <ul>
-        <li>Zero export / aku- ja päikeseenergia võrku müük vastavalt seadistusele</li>
-        <li>100% tasakaalustamata väljund — kuni 50% nimivõimsusest (5kW) faasi kohta</li>
-        <li>AC-coupling — sobib olemasoleva on-grid inverteri täiendamiseks</li>
-        <li>Smart load — boiler/küte aktiveerub automaatselt, kui akud täis või tootlus kõrge</li>
-        <li>Generaatori ühendamise võimalus, sh energia salvestamine generaatorist</li>
-        <li>Kuni 10 Deye inverteri paralleelühendus (on-grid ja off-grid)</li>
-        <li>Wi-Fi komplektis — Deye SolarMAN äpp + Deye AI juhtimine</li>
+        <li>Zero export / aku- ja pÃ¤ikeseenergia vÃµrku mÃ¼Ã¼k vastavalt seadistusele</li>
+        <li>100% tasakaalustamata vÃ¤ljund â€” kuni 50% nimivÃµimsusest (5kW) faasi kohta</li>
+        <li>AC-coupling â€” sobib olemasoleva on-grid inverteri tÃ¤iendamiseks</li>
+        <li>Smart load â€” boiler/kÃ¼te aktiveerub automaatselt, kui akud tÃ¤is vÃµi tootlus kÃµrge</li>
+        <li>Generaatori Ã¼hendamise vÃµimalus, sh energia salvestamine generaatorist</li>
+        <li>Kuni 10 Deye inverteri paralleelÃ¼hendus (on-grid ja off-grid)</li>
+        <li>Wi-Fi komplektis â€” Deye SolarMAN Ã¤pp + Deye AI juhtimine</li>
       </ul>
-      <p>Hind sisaldab käibemaksu. Aitame valida sobiva lahenduse — <a href="kontakt.html" style="color:var(--accent)">küsi nõu</a>.</p>
+      <p>Hind sisaldab kÃ¤ibemaksu. Aitame valida sobiva lahenduse â€” <a href="kontakt.html" style="color:var(--accent)">kÃ¼si nÃµu</a>.</p>
     `
   },
   {
     id: "deye-sun-12k",
     slug: "deye-sun-12k",
     catalog_hidden: true,
-    nimi: "Deye SUN-12K-SG05LP3-EU-SM2 — 12kW 3-faasiline hübriidinverter",
-    lyhikirjeldus: "Deye 12kW kolmefaasiline hübriidinverter 48V akusüsteemiga. Kuni 250A aku vool, zero export, AC-coupling, IP65, Wi-Fi.",
+    nimi: "Deye SUN-12K-SG05LP3-EU-SM2 â€” 12kW 3-faasiline hÃ¼briidinverter",
+    lyhikirjeldus: "Deye 12kW kolmefaasiline hÃ¼briidinverter 48V akusÃ¼steemiga. Kuni 250A aku vool, zero export, AC-coupling, IP65, Wi-Fi.",
     kategooria: "inverterid",
     hind: 2180,
     hind_vana: 2255,
@@ -854,40 +854,40 @@ const TOOTED = [
     specs: {
       "Tootja": "Deye",
       "Mudel": "SUN-12K-SG05LP3-EU-SM2",
-      "Võimsus": "12 kW",
+      "VÃµimsus": "12 kW",
       "Faasid": "3-faasiline",
-      "Akupinge": "48V madalpinge (40–60V)",
+      "Akupinge": "48V madalpinge (40â€“60V)",
       "Maks. aku vool": "250 A",
       "Maks. PV sisend": "24 kW",
-      "MPPT": "2× (2+1 stringid), 160–650V",
+      "MPPT": "2Ã— (2+1 stringid), 160â€“650V",
       "Maks. PV pinge": "800 V",
       "Efektiivsus": "kuni 97.6%",
       "Kaitseklass": "IP65",
       "Garantii": "5 aastat",
-      "Tarne": "3–7 tööpäeva"
+      "Tarne": "3â€“7 tÃ¶Ã¶pÃ¤eva"
     },
     kirjeldus: `
-      <p>Deye SUN-12K-SG05LP3-EU-SM2 on kolmefaasiline 12kW hübriidinverter suuremate majapidamiste ja väikeettevõtete tarvis. Töötab nii võrguühendusega kui off-grid režiimis.</p>
+      <p>Deye SUN-12K-SG05LP3-EU-SM2 on kolmefaasiline 12kW hÃ¼briidinverter suuremate majapidamiste ja vÃ¤ikeettevÃµtete tarvis. TÃ¶Ã¶tab nii vÃµrguÃ¼hendusega kui off-grid reÅ¾iimis.</p>
 
       <p><strong>Peamised omadused:</strong></p>
       <ul>
-        <li>Zero export / aku- ja päikeseenergia võrku müük vastavalt seadistusele</li>
-        <li>100% tasakaalustamata väljund — kuni 50% nimivõimsusest (6kW) faasi kohta</li>
-        <li>AC-coupling — sobib olemasoleva on-grid inverteri täiendamiseks</li>
-        <li>Smart load — boiler/küte aktiveerub automaatselt, kui akud täis või tootlus kõrge</li>
-        <li>Generaatori ühendamise võimalus, sh energia salvestamine generaatorist</li>
-        <li>Kuni 10 Deye inverteri paralleelühendus (on-grid ja off-grid)</li>
-        <li>Wi-Fi komplektis — Deye SolarMAN äpp + Deye AI juhtimine</li>
+        <li>Zero export / aku- ja pÃ¤ikeseenergia vÃµrku mÃ¼Ã¼k vastavalt seadistusele</li>
+        <li>100% tasakaalustamata vÃ¤ljund â€” kuni 50% nimivÃµimsusest (6kW) faasi kohta</li>
+        <li>AC-coupling â€” sobib olemasoleva on-grid inverteri tÃ¤iendamiseks</li>
+        <li>Smart load â€” boiler/kÃ¼te aktiveerub automaatselt, kui akud tÃ¤is vÃµi tootlus kÃµrge</li>
+        <li>Generaatori Ã¼hendamise vÃµimalus, sh energia salvestamine generaatorist</li>
+        <li>Kuni 10 Deye inverteri paralleelÃ¼hendus (on-grid ja off-grid)</li>
+        <li>Wi-Fi komplektis â€” Deye SolarMAN Ã¤pp + Deye AI juhtimine</li>
       </ul>
-      <p>Hind sisaldab käibemaksu. Aitame valida sobiva lahenduse — <a href="kontakt.html" style="color:var(--accent)">küsi nõu</a>.</p>
+      <p>Hind sisaldab kÃ¤ibemaksu. Aitame valida sobiva lahenduse â€” <a href="kontakt.html" style="color:var(--accent)">kÃ¼si nÃµu</a>.</p>
     `
   },
   {
     id: "deye-sun-15k",
     slug: "deye-sun-15k",
     catalog_hidden: true,
-    nimi: "Deye SUN-15K-SG05LP3-EU-SM2 — 15kW 3-faasiline hübriidinverter",
-    lyhikirjeldus: "Deye 15kW kolmefaasiline hübriidinverter. Kuni 310A aku vool, kuni 22.5kW PV, zero export, AC-coupling, IP65, Wi-Fi.",
+    nimi: "Deye SUN-15K-SG05LP3-EU-SM2 â€” 15kW 3-faasiline hÃ¼briidinverter",
+    lyhikirjeldus: "Deye 15kW kolmefaasiline hÃ¼briidinverter. Kuni 310A aku vool, kuni 22.5kW PV, zero export, AC-coupling, IP65, Wi-Fi.",
     kategooria: "inverterid",
     hind: 2450,
     hind_vana: 2540,
@@ -903,40 +903,40 @@ const TOOTED = [
     specs: {
       "Tootja": "Deye",
       "Mudel": "SUN-15K-SG05LP3-EU-SM2",
-      "Võimsus": "15 kW",
+      "VÃµimsus": "15 kW",
       "Faasid": "3-faasiline",
-      "Akupinge": "48V madalpinge (40–60V)",
+      "Akupinge": "48V madalpinge (40â€“60V)",
       "Maks. aku vool": "310 A",
       "Maks. PV sisend": "22.5 kW",
-      "MPPT": "2× (2+1 stringid), 160–650V",
+      "MPPT": "2Ã— (2+1 stringid), 160â€“650V",
       "Maks. PV pinge": "800 V",
       "Efektiivsus": "kuni 97.6%",
       "Kaitseklass": "IP65",
       "Garantii": "5 aastat",
-      "Tarne": "3–7 tööpäeva"
+      "Tarne": "3â€“7 tÃ¶Ã¶pÃ¤eva"
     },
     kirjeldus: `
-      <p>Deye SUN-15K-SG05LP3-EU-SM2 on võimas kolmefaasiline 15kW hübriidinverter suurematele majapidamistele ja äriklientidele — maksimaalse paindlikkusega energia tootmisel, salvestamisel ja juhtimisel.</p>
+      <p>Deye SUN-15K-SG05LP3-EU-SM2 on vÃµimas kolmefaasiline 15kW hÃ¼briidinverter suurematele majapidamistele ja Ã¤riklientidele â€” maksimaalse paindlikkusega energia tootmisel, salvestamisel ja juhtimisel.</p>
 
       <p><strong>Peamised omadused:</strong></p>
       <ul>
-        <li>Zero export / aku- ja päikeseenergia võrku müük vastavalt seadistusele</li>
-        <li>100% tasakaalustamata väljund — kuni 50% nimivõimsusest (7.5kW) faasi kohta</li>
-        <li>AC-coupling — sobib olemasoleva päikesesüsteemi täiendamiseks</li>
-        <li>Smart load — boiler/küte aktiveerub automaatselt, kui akud täis või tootlus kõrge</li>
-        <li>Generaatori ühendamise võimalus, sh energia salvestamine generaatorist</li>
-        <li>Kuni 10 Deye inverteri paralleelühendus (on-grid ja off-grid)</li>
-        <li>Wi-Fi komplektis — Deye SolarMAN äpp + Deye AI juhtimine (hind, tarbimine, tootlus)</li>
+        <li>Zero export / aku- ja pÃ¤ikeseenergia vÃµrku mÃ¼Ã¼k vastavalt seadistusele</li>
+        <li>100% tasakaalustamata vÃ¤ljund â€” kuni 50% nimivÃµimsusest (7.5kW) faasi kohta</li>
+        <li>AC-coupling â€” sobib olemasoleva pÃ¤ikesesÃ¼steemi tÃ¤iendamiseks</li>
+        <li>Smart load â€” boiler/kÃ¼te aktiveerub automaatselt, kui akud tÃ¤is vÃµi tootlus kÃµrge</li>
+        <li>Generaatori Ã¼hendamise vÃµimalus, sh energia salvestamine generaatorist</li>
+        <li>Kuni 10 Deye inverteri paralleelÃ¼hendus (on-grid ja off-grid)</li>
+        <li>Wi-Fi komplektis â€” Deye SolarMAN Ã¤pp + Deye AI juhtimine (hind, tarbimine, tootlus)</li>
       </ul>
-      <p>Hind sisaldab käibemaksu. Aitame leida sobiva lahenduse — <a href="kontakt.html" style="color:var(--accent)">küsi nõu</a>.</p>
+      <p>Hind sisaldab kÃ¤ibemaksu. Aitame leida sobiva lahenduse â€” <a href="kontakt.html" style="color:var(--accent)">kÃ¼si nÃµu</a>.</p>
     `
   },
   {
     id: "deye-sun-20k",
     slug: "deye-sun-20k",
     catalog_hidden: true,
-    nimi: "Deye SUN-20K-SG05LP3-EU-SM2 — 20kW 3-faasiline hübriidinverter",
-    lyhikirjeldus: "Deye 20kW kolmefaasiline hübriidinverter. Kuni 350A aku vool, kuni 30kW PV, zero export, AC-coupling, IP65, Wi-Fi.",
+    nimi: "Deye SUN-20K-SG05LP3-EU-SM2 â€” 20kW 3-faasiline hÃ¼briidinverter",
+    lyhikirjeldus: "Deye 20kW kolmefaasiline hÃ¼briidinverter. Kuni 350A aku vool, kuni 30kW PV, zero export, AC-coupling, IP65, Wi-Fi.",
     kategooria: "inverterid",
     hind: 3250,
     hind_vana: 3380,
@@ -952,32 +952,32 @@ const TOOTED = [
     specs: {
       "Tootja": "Deye",
       "Mudel": "SUN-20K-SG05LP3-EU-SM2",
-      "Võimsus": "20 kW",
+      "VÃµimsus": "20 kW",
       "Faasid": "3-faasiline",
-      "Akupinge": "48V madalpinge (40–60V)",
+      "Akupinge": "48V madalpinge (40â€“60V)",
       "Maks. aku vool": "350 A",
       "Maks. PV sisend": "30 kW",
-      "MPPT": "2× (2+1 stringid), 160–650V",
+      "MPPT": "2Ã— (2+1 stringid), 160â€“650V",
       "Maks. PV pinge": "800 V",
       "Efektiivsus": "kuni 97.6%",
       "Kaitseklass": "IP65",
       "Garantii": "5 aastat",
-      "Tarne": "3–7 tööpäeva"
+      "Tarne": "3â€“7 tÃ¶Ã¶pÃ¤eva"
     },
     kirjeldus: `
-      <p>Deye SUN-20K-SG05LP3-EU-SM2 on väga võimas kolmefaasiline 20kW hübriidinverter suurematele majapidamistele ja äriklientidele — maksimaalse paindlikkusega energia tootmisel, salvestamisel ja juhtimisel. Töötab nii võrguühendusega kui off-grid režiimis.</p>
+      <p>Deye SUN-20K-SG05LP3-EU-SM2 on vÃ¤ga vÃµimas kolmefaasiline 20kW hÃ¼briidinverter suurematele majapidamistele ja Ã¤riklientidele â€” maksimaalse paindlikkusega energia tootmisel, salvestamisel ja juhtimisel. TÃ¶Ã¶tab nii vÃµrguÃ¼hendusega kui off-grid reÅ¾iimis.</p>
 
       <p><strong>Peamised omadused:</strong></p>
       <ul>
-        <li>Zero export / aku- ja päikeseenergia võrku müük vastavalt seadistusele</li>
-        <li>100% tasakaalustamata väljund — kuni 50% nimivõimsusest (10kW) faasi kohta</li>
-        <li>AC-coupling — sobib olemasoleva päikesesüsteemi täiendamiseks</li>
-        <li>Smart load — boiler/küte aktiveerub automaatselt, kui akud täis või tootlus kõrge</li>
-        <li>Generaatori ühendamise võimalus, sh energia salvestamine generaatorist</li>
-        <li>Kuni 10 Deye inverteri paralleelühendus (on-grid ja off-grid)</li>
-        <li>Wi-Fi komplektis — Deye SolarMAN äpp + Deye AI juhtimine (hind, tarbimine, tootlus)</li>
+        <li>Zero export / aku- ja pÃ¤ikeseenergia vÃµrku mÃ¼Ã¼k vastavalt seadistusele</li>
+        <li>100% tasakaalustamata vÃ¤ljund â€” kuni 50% nimivÃµimsusest (10kW) faasi kohta</li>
+        <li>AC-coupling â€” sobib olemasoleva pÃ¤ikesesÃ¼steemi tÃ¤iendamiseks</li>
+        <li>Smart load â€” boiler/kÃ¼te aktiveerub automaatselt, kui akud tÃ¤is vÃµi tootlus kÃµrge</li>
+        <li>Generaatori Ã¼hendamise vÃµimalus, sh energia salvestamine generaatorist</li>
+        <li>Kuni 10 Deye inverteri paralleelÃ¼hendus (on-grid ja off-grid)</li>
+        <li>Wi-Fi komplektis â€” Deye SolarMAN Ã¤pp + Deye AI juhtimine (hind, tarbimine, tootlus)</li>
       </ul>
-      <p>Hind sisaldab käibemaksu. Aitame leida sobiva lahenduse — <a href="kontakt.html" style="color:var(--accent)">küsi nõu</a>.</p>
+      <p>Hind sisaldab kÃ¤ibemaksu. Aitame leida sobiva lahenduse â€” <a href="kontakt.html" style="color:var(--accent)">kÃ¼si nÃµu</a>.</p>
     `
   },
 
@@ -985,8 +985,8 @@ const TOOTED = [
   {
     id: "jinong-pb2a16s",
     slug: "jinong-pb2a16s",
-    nimi: "Jinong BMS PB2A16S — 150A / 200A aktiivne balanss",
-    lyhikirjeldus: "Kodu-energiasalvestuse BMS 2A aktiivse balanseerimisega. Vali 150A voi 200A versioon. RS485 + CAN + Bluetooth. Sobib 8S-16S LiFePO4 akupankadele.",
+    nimi: "Jinong BMS PB2A16S â€” 150A / 200A aktiivne balanss",
+    lyhikirjeldus: "Kodu-energiasalvestuse BMS 2A aktiivse balanseerimisega. Vali 150A vÃµi 200A versioon. RS485 + CAN + Bluetooth. Sobib 8S-16S LiFePO4 akupankadele.",
     kategooria: "bms",
     hind: 179,
     hind_vana: null,
@@ -999,10 +999,10 @@ const TOOTED = [
     specs: {
       "Tootja": "Jinong",
       "Mudelid": "PB2A16S-15P (150A) / PB2A16S-20P (200A)",
-      "Rakuvahemik": "8S - 16S (20-70V)",
+      "Rakuvahemik": "8Sâ€“16S (20â€“70V)",
       "Balanss": "Aktiivne 2A",
       "Liides": "RS485 + CAN + Bluetooth",
-      "Tarne": "3-7 toopaeva"
+      "Tarne": "3-7 tÃ¶Ã¶pÃ¤eva"
     },
     kirjeldus: ``
   },
@@ -1012,7 +1012,7 @@ const TOOTED = [
     id: "jinong-pb2a16s-150a",
     slug: "jinong-pb2a16s-150a",
     catalog_hidden: true,
-    nimi: "Jinong BMS PB2A16S-15P — 150A",
+    nimi: "Jinong BMS PB2A16S-15P â€” 150A",
     lyhikirjeldus: "Jinong 150A BMS 2A aktiivse balanseerimisega. RS485 + CAN + Bluetooth.",
     kategooria: "bms",
     hind: 179,
@@ -1027,28 +1027,28 @@ const TOOTED = [
       "Mudel": "PB2A16S-15P",
       "Pidev vool": "150 A",
       "Maks. impulsvool": "300 A",
-      "Sisetakistus": "1 mOhm",
+      "Sisetakistus": "1 mÎ©",
       "Balanss": "Aktiivne 2A",
-      "Rakuvahemik": "8S - 16S (20-70V)",
-      "Tooepinge": "20-70 V",
-      "Kaitsepiiri seade": "10-150 A",
-      "Kaitse": "Uelevool, ule-/alalaeng, temperatuur, luhis",
+      "Rakuvahemik": "8Sâ€“16S (20â€“70V)",
+      "TÃ¶Ã¶pinge": "20â€“70 V",
+      "Ãœlevoolakaitse seade": "10â€“150 A",
+      "Kaitse": "Ãœlevool, Ã¼le-/alalaeng, temperatuur, lÃ¼his",
       "Liides": "RS485 + CAN + Bluetooth",
       "Bluetooth": "Android, Apple, HarmonyOS",
-      "Temperatuuriandurid": "1 sisemine + 4 valist",
-      "Mootmed": "300 x 100 x 18 mm",
-      "Tarne": "3-7 toopaeva"
+      "Temperatuuriandurid": "1 sisemine + 4 vÃ¤list",
+      "MÃµÃµtmed": "300 Ã— 100 Ã— 18 mm",
+      "Tarne": "3-7 tÃ¶Ã¶pÃ¤eva"
     },
     kirjeldus: `
       <p>Jinong PB2A16S-15P on professionaalne 150A kodu-energiasalvestuse BMS aktiivse 2A balanseerimisega.</p>
       <ul>
-        <li>2A aktiivne balanseerimine — tagab rakkude uehtlase laetuse ja pikema eluea</li>
-        <li>150A pidev vaeljundvool, kuni 300A impulsvool — sobib suurematele koormustele</li>
-        <li>RS485 + CAN — otsene liidestus inverteritega (Deye, Growatt jt)</li>
-        <li>Bluetooth (Android, Apple, HarmonyOS) — mugav monitooring nutiseadmest</li>
-        <li>4 valist + 1 sisemine temperatuuriandur — taielik termokontroll</li>
-        <li>Akukuumutuse tugi (valikuline) — sobib ka kuelmematele tingimustele</li>
-        <li>Coulomb-meeter, paralleel-laadimise voolupiirang ja haerisireen toetatud</li>
+        <li>2A aktiivne balanseerimine â€” tagab rakkude Ã¼htlase laetuse ja pikema eluea</li>
+        <li>150A pidev vÃ¤ljundvool, kuni 300A impulsvool â€” sobib suurematele koormustele</li>
+        <li>RS485 + CAN â€” otsene liidestus inverteritega (Deye, Growatt jt)</li>
+        <li>Bluetooth (Android, Apple, HarmonyOS) â€” mugav monitooring nutiseadmest</li>
+        <li>4 vÃ¤list + 1 sisemine temperatuuriandur â€” tÃ¤ielik termokontroll</li>
+        <li>Akukuumutuse tugi (valikuline) â€” sobib ka kÃ¼lmematele tingimustele</li>
+        <li>Coulomb-meeter, paralleel-laadimise voolupiirang ja hÃ¤irisireen toetatud</li>
       </ul>
     `
   },
@@ -1056,7 +1056,7 @@ const TOOTED = [
     id: "jinong-pb2a16s-200a",
     slug: "jinong-pb2a16s-200a",
     catalog_hidden: true,
-    nimi: "Jinong BMS PB2A16S-20P — 200A",
+    nimi: "Jinong BMS PB2A16S-20P â€” 200A",
     lyhikirjeldus: "Jinong 200A BMS 2A aktiivse balanseerimisega. RS485 + CAN + Bluetooth.",
     kategooria: "bms",
     hind: 219,
@@ -1071,29 +1071,29 @@ const TOOTED = [
       "Mudel": "PB2A16S-20P",
       "Pidev vool": "200 A",
       "Maks. impulsvool": "400 A",
-      "Sisetakistus": "0.35 mOhm",
+      "Sisetakistus": "0.35 mÎ©",
       "Balanss": "Aktiivne 2A",
-      "Rakuvahemik": "8S - 16S (20-70V)",
-      "Tooepinge": "20-70 V",
-      "Kaitsepiiri seade": "10-200 A",
-      "Kaitse": "Uelevool, ule-/alalaeng, temperatuur, luhis",
+      "Rakuvahemik": "8Sâ€“16S (20â€“70V)",
+      "TÃ¶Ã¶pinge": "20â€“70 V",
+      "Ãœlevoolakaitse seade": "10â€“200 A",
+      "Kaitse": "Ãœlevool, Ã¼le-/alalaeng, temperatuur, lÃ¼his",
       "Liides": "RS485 + CAN + Bluetooth",
       "Bluetooth": "Android, Apple, HarmonyOS",
-      "Temperatuuriandurid": "1 sisemine + 4 valist",
-      "Mootmed": "300 x 100 x 18 mm",
-      "Tarne": "3-7 toopaeva"
+      "Temperatuuriandurid": "1 sisemine + 4 vÃ¤list",
+      "MÃµÃµtmed": "300 Ã— 100 Ã— 18 mm",
+      "Tarne": "3-7 tÃ¶Ã¶pÃ¤eva"
     },
     kirjeldus: `
-      <p>Jinong PB2A16S-20P on voeimsaim mudel PB2A16S seeriast — 200A pideva vooluga ja madalaima sisetakistusega (0.35 mOhm). Ideaalne suurtele kodu- ja aeri-energiasalvestussuesteemidele.</p>
+      <p>Jinong PB2A16S-20P on vÃµimsaim mudel PB2A16S seeriast â€” 200A pideva vooluga ja madalaima sisetakistusega (0.35 mÎ©). Ideaalne suurtele kodu- ja Ã¤ri-energiasalvestussÃ¼steemidele.</p>
       <ul>
-        <li>2A aktiivne balanseerimine — tagab rakkude uehtlase laetuse ja pikema eluea</li>
-        <li>200A pidev vaeljundvool, kuni 400A impulsvool — koige voeimsam valik</li>
-        <li>0.35 mOhm sisetakistus — minimaalsed energiakaod ja soojenemine</li>
-        <li>RS485 + CAN — otsene liidestus inverteritega (Deye, Growatt jt)</li>
-        <li>Bluetooth (Android, Apple, HarmonyOS) — mugav monitooring nutiseadmest</li>
-        <li>4 valist + 1 sisemine temperatuuriandur — taielik termokontroll</li>
-        <li>Akukuumutuse tugi (valikuline) — sobib ka kuelmematele tingimustele</li>
-        <li>Coulomb-meeter, paralleel-laadimise voolupiirang ja haerisireen toetatud</li>
+        <li>2A aktiivne balanseerimine â€” tagab rakkude Ã¼htlase laetuse ja pikema eluea</li>
+        <li>200A pidev vÃ¤ljundvool, kuni 400A impulsvool â€” kÃµige vÃµimsam valik</li>
+        <li>0.35 mÎ© sisetakistus â€” minimaalsed energiakaod ja soojenemine</li>
+        <li>RS485 + CAN â€” otsene liidestus inverteritega (Deye, Growatt jt)</li>
+        <li>Bluetooth (Android, Apple, HarmonyOS) â€” mugav monitooring nutiseadmest</li>
+        <li>4 vÃ¤list + 1 sisemine temperatuuriandur â€” tÃ¤ielik termokontroll</li>
+        <li>Akukuumutuse tugi (valikuline) â€” sobib ka kÃ¼lmematele tingimustele</li>
+        <li>Coulomb-meeter, paralleel-laadimise voolupiirang ja hÃ¤irisireen toetatud</li>
       </ul>
     `
   }
@@ -1103,7 +1103,7 @@ const TOOTED = [
 const KATEGOORIAD = {
   "komplekt": "Komplektid",
   "lifepo4": "LiFePO4 elemendid",
-  "inverterid": "Hübriidinverterid",
+  "inverterid": "HÃ¼briidinverterid",
   "akud": "Akud",
   "bms": "BMS"
 };

@@ -44,6 +44,12 @@
   </url>
 
   <url>
+    <loc>https://solvolt.ee/jinong-pb2a16s</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
     <loc>https://solvolt.ee/hinnakiri</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>

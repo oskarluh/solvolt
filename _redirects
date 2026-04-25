@@ -41,6 +41,10 @@
 /products/jk-jikong-bms*  /tooted.html?kat=bms  301
 /products/jk*             /tooted.html?kat=bms  301
 
+# ── Jinong BMS ──────────────────────────────────────────────
+/products/jinong*         /jinong-pb2a16s.html  301
+/jinong-pb2a16s           /jinong-pb2a16s.html  200
+
 # ── Huawei ─────────────────────────────────────────────────
 /products/huawei*  /toode.html?id=huawei-sun2000-4-6ktl  301
 
