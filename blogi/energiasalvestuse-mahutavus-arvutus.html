@@ -6,7 +6,7 @@
   <title>Kui suur aku mu majale sobib? Energiasalvestuse mahutavuse arvutus — Solvolt</title>
   <meta name="description" content="Samm-sammuline juhend: kuidas arvutada, kui suurt akut ja inverterit su maja päikeseenergiasüsteemi jaoks vajab. Valemid, näited ja soovitused Eesti kodudele." />
   <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://solvolt.ee/blogi/energiasalvestuse-mahutavus-arvutus.html" />
+  <link rel="canonical" href="https://solvolt.ee/blogi/energiasalvestuse-mahutavus-arvutus" />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://solvolt.ee/blogi/energiasalvestuse-mahutavus-arvutus.html" />
   <meta property="og:title" content="Kui suur aku mu majale sobib? Energiasalvestuse mahutavuse arvutus" />
@@ -46,14 +46,32 @@
   }
   </script>
 
-  <!-- Google tag (gtag.js) -->
-  <script async src='https://www.googletagmanager.com/gtag/js?id=G-WVW6KCJ7TV'></script>
+  <!-- Google Consent Mode v2 — must come before gtag.js -->
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      ad_storage: 'denied', analytics_storage: 'denied',
+      ad_user_data: 'denied', ad_personalization: 'denied',
+      wait_for_update: 500
+    });
+    gtag('set', 'url_passthrough', true);
+    gtag('set', 'ads_data_redaction', true);
+    if (window.localStorage && localStorage.getItem('sv_consent') === 'granted') {
+      gtag('consent', 'update', {
+        ad_storage: 'granted', analytics_storage: 'granted',
+        ad_user_data: 'granted', ad_personalization: 'granted'
+      });
+    }
+  </script>
+  <!-- Google tag (gtag.js) -->
+  <script async src='https://www.googletagmanager.com/gtag/js?id=G-WVW6KCJ7TV'></script>
+  <script>
     gtag('js', new Date());
     gtag('config', 'G-WVW6KCJ7TV');
+    gtag('config', 'AW-17385949286');
   </script>
+  <script src="../assets/js/consent-banner.js" defer></script>
 </head>
 <body>
 <nav class="nav">
@@ -102,7 +120,7 @@
       <p>Üks esimesi küsimusi, mis päikeseenergiasüsteemi planeerides tekib, on: "Kui suurt akut ma tegelikult vajan?" Liiga väike aku tähendab, et päikeseenergia raisatakse võrku ja öösel ostetakse kallist elektrienergiat. Liiga suur aku tähendab asjatut investeeringut, mis kunagi täis ei saa. Selles juhendis anname sulle konkreetse arvutusmeetodi, mida saad oma maja andmete põhjal kasutada.</p>
 
       <h2>Samm 1: Uuri oma elektritarbimist</h2>
-      <p>Alusta oma tegeliku elektritarbimise väljaselgitamisest. Parim allikas on <strong>Elering või Elektrum portaal</strong> — sealt näed tunnikaupa tarbimist vähemalt viimase 12 kuu kohta. Otsi:</p>
+      <p>Alusta oma tegeliku elektritarbimise väljaselgitamisest. Parim allikas on <strong>elektrilevi portaal</strong> — sealt näed tunnikaupa tarbimist vähemalt viimase 12 kuu kohta. Otsi:</p>
       <ul>
         <li><strong>Ööpäevane keskmine tarbimine (kWh/päev)</strong> — aastane tarbimine jagatud 365-ga</li>
         <li><strong>Tüüpiline öine tarbimine</strong> — kui palju kulub kell 21–07 vahel (see on osa, mida aku peab katma)</li>
@@ -225,6 +243,7 @@
         <a href="../privaatsuspoliitika.html" style="color:var(--text-3)">Privaatsuspoliitika</a>
         <a href="../tagastamine.html" style="color:var(--text-3)">Tagastamine</a>
         <a href="../tingimused.html" style="color:var(--text-3)">Tingimused</a>
+        <button onclick="if(window.svOpenCookieSettings)svOpenCookieSettings()" style="background:none;border:none;color:var(--text-3);cursor:pointer;padding:0;font-size:inherit;font-family:inherit">Küpsiste seaded</button>
       </div>
       <span>Maksed: Visa · Mastercard · Stripe</span>
     </div>

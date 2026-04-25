@@ -7,7 +7,7 @@
   <meta name="description" content="Täielik kodune energiasalvestuse komplekt: Deye hübriidinverter + EEL V6 PRO aku + Qilowatt juhtimine. Komplekti soodustus −5%. Hinnad KM-ga. Eesti laost." />
   <meta name="keywords" content="energiasalvestuse komplekt, päikeseenergia komplekt, Deye inverter aku, LiFePO4 akusüsteem, kodune energiasalvestus, EEL V6 PRO" />
   <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://solvolt.ee/komplekt.html" />
+  <link rel="canonical" href="https://solvolt.ee/komplekt" />
   <meta property="og:type" content="product" />
   <meta property="og:url" content="https://solvolt.ee/komplekt.html" />
   <meta property="og:title" content="Täielik Energiasalvestuse Komplekt — Solvolt" />
@@ -23,13 +23,14 @@
     "name": "Täielik Energiasalvestuse Komplekt",
     "description": "Deye hübriidinverter (6–20kW) + EEL V6 PRO aku (16–64kWh) + Qilowatt juhtimine. Komplekti soodustus 5%.",
     "brand": { "@type": "Brand", "name": "Solvolt" },
-    "url": "https://solvolt.ee/komplekt.html",
+    "url": "https://solvolt.ee/komplekt",
     "image": "https://solvolt.ee/assets/pildid/komplekt.png",
     "offers": {
       "@type": "AggregateOffer",
       "priceCurrency": "EUR",
       "lowPrice": "4223",
       "highPrice": "18000",
+      "offerCount": 20,
       "availability": "https://schema.org/InStock",
       "seller": { "@type": "Organization", "name": "Solvolt OÜ" }
     }
@@ -121,14 +122,32 @@
 
   </style>
 
-  <!-- Google tag (gtag.js) -->
-  <script async src='https://www.googletagmanager.com/gtag/js?id=G-WVW6KCJ7TV'></script>
+  <!-- Google Consent Mode v2 — must come before gtag.js -->
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      ad_storage: 'denied', analytics_storage: 'denied',
+      ad_user_data: 'denied', ad_personalization: 'denied',
+      wait_for_update: 500
+    });
+    gtag('set', 'url_passthrough', true);
+    gtag('set', 'ads_data_redaction', true);
+    if (window.localStorage && localStorage.getItem('sv_consent') === 'granted') {
+      gtag('consent', 'update', {
+        ad_storage: 'granted', analytics_storage: 'granted',
+        ad_user_data: 'granted', ad_personalization: 'granted'
+      });
+    }
+  </script>
+  <!-- Google tag (gtag.js) -->
+  <script async src='https://www.googletagmanager.com/gtag/js?id=G-WVW6KCJ7TV'></script>
+  <script>
     gtag('js', new Date());
     gtag('config', 'G-WVW6KCJ7TV');
+    gtag('config', 'AW-17385949286');
   </script>
+  <script src="assets/js/consent-banner.js" defer></script>
 </head>
 <body>
 
@@ -538,6 +557,7 @@
         <a href="privaatsuspoliitika.html" style="color:var(--text-3)">Privaatsuspoliitika</a>
         <a href="tagastamine.html" style="color:var(--text-3)">Tagastamine</a>
         <a href="tingimused.html" style="color:var(--text-3)">Tingimused</a>
+        <button onclick="if(window.svOpenCookieSettings)svOpenCookieSettings()" style="background:none;border:none;color:var(--text-3);cursor:pointer;padding:0;font-size:inherit;font-family:inherit">Küpsiste seaded</button>
       </div>
       <span>Maksed: Visa · Mastercard · Stripe</span>
     </div>

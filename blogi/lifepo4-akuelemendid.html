@@ -6,7 +6,7 @@
   <title>Mis on LiFePO4 akuelemendid ja miks need on parim valik päikeseenergia süsteemidele? — Solvolt</title>
   <meta name="description" content="LiFePO4 akuelementide selgitus: keemia eelised, ohutus, eluiga 4000+ tsüklit ja võrdlus teiste akutüüpidega. Parim valik päikeseenergia salvestuseks." />
   <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://solvolt.ee/blogi/lifepo4-akuelemendid.html" />
+  <link rel="canonical" href="https://solvolt.ee/blogi/lifepo4-akuelemendid" />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://solvolt.ee/blogi/lifepo4-akuelemendid.html" />
   <meta property="og:title" content="Mis on LiFePO4 akuelemendid ja miks need on parim valik päikeseenergia süsteemidele?" />
@@ -38,14 +38,32 @@
   }
   </script>
 
-  <!-- Google tag (gtag.js) -->
-  <script async src='https://www.googletagmanager.com/gtag/js?id=G-WVW6KCJ7TV'></script>
+  <!-- Google Consent Mode v2 — must come before gtag.js -->
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      ad_storage: 'denied', analytics_storage: 'denied',
+      ad_user_data: 'denied', ad_personalization: 'denied',
+      wait_for_update: 500
+    });
+    gtag('set', 'url_passthrough', true);
+    gtag('set', 'ads_data_redaction', true);
+    if (window.localStorage && localStorage.getItem('sv_consent') === 'granted') {
+      gtag('consent', 'update', {
+        ad_storage: 'granted', analytics_storage: 'granted',
+        ad_user_data: 'granted', ad_personalization: 'granted'
+      });
+    }
+  </script>
+  <!-- Google tag (gtag.js) -->
+  <script async src='https://www.googletagmanager.com/gtag/js?id=G-WVW6KCJ7TV'></script>
+  <script>
     gtag('js', new Date());
     gtag('config', 'G-WVW6KCJ7TV');
+    gtag('config', 'AW-17385949286');
   </script>
+  <script src="../assets/js/consent-banner.js" defer></script>
 </head>
 <body>
 <nav class="nav">
@@ -190,6 +208,7 @@
         <a href="../privaatsuspoliitika.html" style="color:var(--text-3)">Privaatsuspoliitika</a>
         <a href="../tagastamine.html" style="color:var(--text-3)">Tagastamine</a>
         <a href="../tingimused.html" style="color:var(--text-3)">Tingimused</a>
+        <button onclick="if(window.svOpenCookieSettings)svOpenCookieSettings()" style="background:none;border:none;color:var(--text-3);cursor:pointer;padding:0;font-size:inherit;font-family:inherit">Küpsiste seaded</button>
       </div>
       <span>Maksed: Visa · Mastercard · Stripe</span>
     </div>

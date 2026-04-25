@@ -7,7 +7,7 @@
   <meta name="description" content="Deye SG05LP3 3-faasiline hübriidinverter 48V — 15kW ja 20kW. Kuni 350A aku vool, zero export, IP65, Wi-Fi, 5a garantii. Osta Eestist." />
   <meta name="keywords" content="Deye 15kW inverter, Deye 20kW inverter, suure võimsusega inverter, kolmefaasiline hübriidinverter, päikeseinverter" />
   <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://solvolt.ee/deye-15-20kw.html" />
+  <link rel="canonical" href="https://solvolt.ee/deye-15-20kw" />
   <meta property="og:type" content="product" />
   <meta property="og:url" content="https://solvolt.ee/deye-15-20kw.html" />
   <meta property="og:title" content="Deye 15–20kW Hübriidinverter — Solvolt" />
@@ -22,12 +22,14 @@
     "name": "Deye SG05LP3 15–20kW Hübriidinverter",
     "description": "Deye kolmefaasiline hübriidinverter 48V akusüsteemiga — 15kW ja 20kW. Kuni 350A aku vool, zero export, AC-coupling, IP65, Wi-Fi.",
     "brand": { "@type": "Brand", "name": "Deye" },
-    "url": "https://solvolt.ee/deye-15-20kw.html",
+    "image": "https://solvolt.ee/assets/pildid/deye.png",
+    "url": "https://solvolt.ee/deye-15-20kw",
     "offers": {
       "@type": "AggregateOffer",
       "priceCurrency": "EUR",
       "lowPrice": "2450",
       "highPrice": "3200",
+      "offerCount": 2,
       "availability": "https://schema.org/InStock",
       "seller": { "@type": "Organization", "name": "Solvolt OÜ" }
     }
@@ -95,14 +97,32 @@
     }
   </style>
 
-  <!-- Google tag (gtag.js) -->
-  <script async src='https://www.googletagmanager.com/gtag/js?id=G-WVW6KCJ7TV'></script>
+  <!-- Google Consent Mode v2 — must come before gtag.js -->
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      ad_storage: 'denied', analytics_storage: 'denied',
+      ad_user_data: 'denied', ad_personalization: 'denied',
+      wait_for_update: 500
+    });
+    gtag('set', 'url_passthrough', true);
+    gtag('set', 'ads_data_redaction', true);
+    if (window.localStorage && localStorage.getItem('sv_consent') === 'granted') {
+      gtag('consent', 'update', {
+        ad_storage: 'granted', analytics_storage: 'granted',
+        ad_user_data: 'granted', ad_personalization: 'granted'
+      });
+    }
+  </script>
+  <!-- Google tag (gtag.js) -->
+  <script async src='https://www.googletagmanager.com/gtag/js?id=G-WVW6KCJ7TV'></script>
+  <script>
     gtag('js', new Date());
     gtag('config', 'G-WVW6KCJ7TV');
+    gtag('config', 'AW-17385949286');
   </script>
+  <script src="assets/js/consent-banner.js" defer></script>
 </head>
 <body>
 
@@ -287,6 +307,7 @@
         <a href="privaatsuspoliitika.html" style="color:var(--text-3)">Privaatsuspoliitika</a>
         <a href="tagastamine.html" style="color:var(--text-3)">Tagastamine</a>
         <a href="tingimused.html" style="color:var(--text-3)">Tingimused</a>
+        <button onclick="if(window.svOpenCookieSettings)svOpenCookieSettings()" style="background:none;border:none;color:var(--text-3);cursor:pointer;padding:0;font-size:inherit;font-family:inherit">Küpsiste seaded</button>
       </div>
       <span>Maksed: Visa · Mastercard · Stripe</span>
     </div>

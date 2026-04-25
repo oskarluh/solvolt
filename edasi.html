@@ -8,14 +8,32 @@
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
   <link rel="stylesheet" href="assets/css/style.css" />
 
-  <!-- Google tag (gtag.js) -->
-  <script async src='https://www.googletagmanager.com/gtag/js?id=G-WVW6KCJ7TV'></script>
+  <!-- Google Consent Mode v2 — must come before gtag.js -->
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      ad_storage: 'denied', analytics_storage: 'denied',
+      ad_user_data: 'denied', ad_personalization: 'denied',
+      wait_for_update: 500
+    });
+    gtag('set', 'url_passthrough', true);
+    gtag('set', 'ads_data_redaction', true);
+    if (window.localStorage && localStorage.getItem('sv_consent') === 'granted') {
+      gtag('consent', 'update', {
+        ad_storage: 'granted', analytics_storage: 'granted',
+        ad_user_data: 'granted', ad_personalization: 'granted'
+      });
+    }
+  </script>
+  <!-- Google tag (gtag.js) -->
+  <script async src='https://www.googletagmanager.com/gtag/js?id=G-WVW6KCJ7TV'></script>
+  <script>
     gtag('js', new Date());
     gtag('config', 'G-WVW6KCJ7TV');
+    gtag('config', 'AW-17385949286');
   </script>
+  <script src="assets/js/consent-banner.js" defer></script>
 </head>
 <body>
 <nav class="nav">
@@ -74,6 +92,7 @@
         <a href="privaatsuspoliitika.html" style="color:var(--text-3)">Privaatsuspoliitika</a>
         <a href="tagastamine.html" style="color:var(--text-3)">Tagastamine</a>
         <a href="tingimused.html" style="color:var(--text-3)">Tingimused</a>
+        <button onclick="if(window.svOpenCookieSettings)svOpenCookieSettings()" style="background:none;border:none;color:var(--text-3);cursor:pointer;padding:0;font-size:inherit;font-family:inherit">Küpsiste seaded</button>
       </div>
       <span>Maksed: Visa · Mastercard · Stripe</span>
     </div>
@@ -81,7 +100,27 @@
 </footer>
 <script src="assets/js/main.js"></script>
 <script>
-  // Tühjenda ostukorv pärast edukat makset
+  // Fire Google Ads purchase conversion — only once per session (prevents duplicate on page refresh)
+  if (!sessionStorage.getItem('sv_conv_fired')) {
+    sessionStorage.setItem('sv_conv_fired', '1');
+
+    // Read cart total before clearing
+    var _cartItems = [];
+    try { _cartItems = JSON.parse(localStorage.getItem('solvolt_cart')) || []; } catch(e) {}
+    var _orderValue = _cartItems.reduce(function(s, i) { return s + (i.hind * i.kogus); }, 0);
+
+    // Stripe passes session_id in the URL — use as transaction_id to prevent duplicate conversions
+    var _txId = new URLSearchParams(window.location.search).get('session_id') || '';
+
+    gtag('event', 'conversion', {
+      send_to: 'AW-17385949286/LdSdCOHfrfYaEOaQouJA',
+      value: _orderValue > 0 ? _orderValue : 1.0,
+      currency: 'EUR',
+      transaction_id: _txId
+    });
+  }
+
+  // Clear cart after conversion fires
   localStorage.removeItem('solvolt_cart');
 </script>
 </body>

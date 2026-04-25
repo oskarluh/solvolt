@@ -6,7 +6,7 @@
   <title>Blogi — LiFePO4, inverterid ja päikeseenergia | Solvolt</title>
   <meta name="description" content="Solvolt blogi: LiFePO4 akude, hübriidinverterite, BMS-ide ja päikeseenergia salvestuse praktilised juhendid ja nõuanded eesti keeles." />
   <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://solvolt.ee/blogi.html" />
+  <link rel="canonical" href="https://solvolt.ee/blogi" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://solvolt.ee/blogi.html" />
   <meta property="og:title" content="Blogi — LiFePO4, inverterid ja päikeseenergia | Solvolt" />
@@ -25,14 +25,32 @@
     .blog-card-link{color:var(--accent)}
   </style>
 
-  <!-- Google tag (gtag.js) -->
-  <script async src='https://www.googletagmanager.com/gtag/js?id=G-WVW6KCJ7TV'></script>
+  <!-- Google Consent Mode v2 — must come before gtag.js -->
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      ad_storage: 'denied', analytics_storage: 'denied',
+      ad_user_data: 'denied', ad_personalization: 'denied',
+      wait_for_update: 500
+    });
+    gtag('set', 'url_passthrough', true);
+    gtag('set', 'ads_data_redaction', true);
+    if (window.localStorage && localStorage.getItem('sv_consent') === 'granted') {
+      gtag('consent', 'update', {
+        ad_storage: 'granted', analytics_storage: 'granted',
+        ad_user_data: 'granted', ad_personalization: 'granted'
+      });
+    }
+  </script>
+  <!-- Google tag (gtag.js) -->
+  <script async src='https://www.googletagmanager.com/gtag/js?id=G-WVW6KCJ7TV'></script>
+  <script>
     gtag('js', new Date());
     gtag('config', 'G-WVW6KCJ7TV');
+    gtag('config', 'AW-17385949286');
   </script>
+  <script src="assets/js/consent-banner.js" defer></script>
 </head>
 <body>
 <nav class="nav">
@@ -91,7 +109,7 @@
 
       <a href="blogi/eel-v6-pro-ulevaade.html" class="blog-card">
         <div class="blog-card-tag">Toote ülevaade</div>
-        <div class="blog-card-title">EEL Battery V6 Pro ülevaade: 5.12 kWh valmisaku koduenergiasüsteemile</div>
+        <div class="blog-card-title">EEL Battery V6 Pro ülevaade: 17 kWh LiFePO4 akusüsteem koduenergiasüsteemile</div>
         <div class="blog-card-excerpt">Spetsifikatsioonid, paigaldus, ühilduvus Deye inverteritega ja võrdlus DIY-lahendusega. Kellele V6 Pro sobib?</div>
         <div class="blog-card-meta"><span>5. aprill 2026</span><span class="blog-card-link">Loe edasi →</span></div>
       </a>
@@ -187,6 +205,7 @@
         <a href="privaatsuspoliitika.html" style="color:var(--text-3)">Privaatsuspoliitika</a>
         <a href="tagastamine.html" style="color:var(--text-3)">Tagastamine</a>
         <a href="tingimused.html" style="color:var(--text-3)">Tingimused</a>
+        <button onclick="if(window.svOpenCookieSettings)svOpenCookieSettings()" style="background:none;border:none;color:var(--text-3);cursor:pointer;padding:0;font-size:inherit;font-family:inherit">Küpsiste seaded</button>
       </div>
       <span>Maksed: Visa · Mastercard · Stripe</span>
     </div>

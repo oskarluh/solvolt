@@ -6,7 +6,7 @@
   <title>EVE MB31 16S 48V aku: kWh arvutus, võimsus ja kasutusnäited — Solvolt</title>
   <meta name="description" content="EVE MB31 314Ah LiFePO4 elementi 16S konfiguratsioonis: kuidas arvutada akupanga kWh mahtuvust, millist võimsust see pakub ja milliseks rakendusteks sobib." />
   <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://solvolt.ee/blogi/eve-mb31-48v-aku.html" />
+  <link rel="canonical" href="https://solvolt.ee/blogi/eve-mb31-48v-aku" />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://solvolt.ee/blogi/eve-mb31-48v-aku.html" />
   <meta property="og:title" content="EVE MB31 16S 48V aku: kWh arvutus, võimsus ja kasutusnäited" />
@@ -43,14 +43,32 @@
   }
   </script>
 
-  <!-- Google tag (gtag.js) -->
-  <script async src='https://www.googletagmanager.com/gtag/js?id=G-WVW6KCJ7TV'></script>
+  <!-- Google Consent Mode v2 — must come before gtag.js -->
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      ad_storage: 'denied', analytics_storage: 'denied',
+      ad_user_data: 'denied', ad_personalization: 'denied',
+      wait_for_update: 500
+    });
+    gtag('set', 'url_passthrough', true);
+    gtag('set', 'ads_data_redaction', true);
+    if (window.localStorage && localStorage.getItem('sv_consent') === 'granted') {
+      gtag('consent', 'update', {
+        ad_storage: 'granted', analytics_storage: 'granted',
+        ad_user_data: 'granted', ad_personalization: 'granted'
+      });
+    }
+  </script>
+  <!-- Google tag (gtag.js) -->
+  <script async src='https://www.googletagmanager.com/gtag/js?id=G-WVW6KCJ7TV'></script>
+  <script>
     gtag('js', new Date());
     gtag('config', 'G-WVW6KCJ7TV');
+    gtag('config', 'AW-17385949286');
   </script>
+  <script src="../assets/js/consent-banner.js" defer></script>
 </head>
 <body>
 <nav class="nav">
@@ -107,7 +125,7 @@
         <tr><td>Laadimispinge (max)</td><td><strong>3,65 V</strong></td></tr>
         <tr><td>Tühjenemispinge (min)</td><td><strong>2,5 V</strong></td></tr>
         <tr><td>Maksimaalne pidev laadimis-/tühjenemisvoolu</td><td><strong>1C (314 A)</strong></td></tr>
-        <tr><td>Tsüklid (kuni 80% DoD)</td><td><strong>≥ 4000</strong></td></tr>
+        <tr><td>Tsüklid (kuni 70% mahtuvuseni)</td><td><strong>≥ 8000</strong></td></tr>
         <tr><td>Kaal</td><td><strong>~5,7 kg / element</strong></td></tr>
         <tr><td>Mõõdud</td><td><strong>174 × 71 × 207 mm</strong></td></tr>
       </table>
@@ -151,7 +169,7 @@
         <li><strong>BMS 16S:</strong> JK BMS 200 A Bluetooth-mooduliga — jälgid kõiki elemente nutitelefonist</li>
         <li><strong>Hübriid-inverter:</strong> Deye SUN-G04 6–12 kW (vastavalt vajadusele)</li>
         <li><strong>Bussbaarid:</strong> M6 klemmidega element-komplektis kaasas</li>
-        <li><strong>Sulavkaitse:</strong> 300–400 A ANL sulavkaitse aku ja inverteri vahele</li>
+        <li><strong>Sulavkaitse:</strong> 150–200 A ANL sulavkaitse aku ja inverteri vahele</li>
       </ul>
 
       <div style="margin-top:40px;padding:28px;background:var(--bg-1);border:1px solid var(--border);border-radius:var(--r-lg)">
@@ -205,6 +223,7 @@
         <a href="../privaatsuspoliitika.html" style="color:var(--text-3)">Privaatsuspoliitika</a>
         <a href="../tagastamine.html" style="color:var(--text-3)">Tagastamine</a>
         <a href="../tingimused.html" style="color:var(--text-3)">Tingimused</a>
+        <button onclick="if(window.svOpenCookieSettings)svOpenCookieSettings()" style="background:none;border:none;color:var(--text-3);cursor:pointer;padding:0;font-size:inherit;font-family:inherit">Küpsiste seaded</button>
       </div>
       <span>Maksed: Visa · Mastercard · Stripe</span>
     </div>

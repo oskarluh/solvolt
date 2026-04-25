@@ -7,7 +7,7 @@
 <meta name="description" content="Solvolt OÜ täielik hinnakiri 2026: LiFePO4 akuelemendid, hübriidinverterid, akupakid, BMS süsteemid. Hinnad km-ta." />
 <meta name="keywords" content="LiFePO4 hinnakiri, inverter hind, aku hind Eesti, EVE MB31 hind, Deye inverter hind" />
 <meta name="robots" content="index, follow" />
-<link rel="canonical" href="https://solvolt.ee/hinnakiri.html" />
+<link rel="canonical" href="https://solvolt.ee/hinnakiri" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://solvolt.ee/hinnakiri.html" />
 <meta property="og:title" content="Hinnakiri 2026 — Solvolt" />
@@ -133,14 +133,32 @@ section.cat-section.fully-hidden{display:none}
 }
 </style>
 
-  <!-- Google tag (gtag.js) -->
-  <script async src='https://www.googletagmanager.com/gtag/js?id=G-WVW6KCJ7TV'></script>
+  <!-- Google Consent Mode v2 — must come before gtag.js -->
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      ad_storage: 'denied', analytics_storage: 'denied',
+      ad_user_data: 'denied', ad_personalization: 'denied',
+      wait_for_update: 500
+    });
+    gtag('set', 'url_passthrough', true);
+    gtag('set', 'ads_data_redaction', true);
+    if (window.localStorage && localStorage.getItem('sv_consent') === 'granted') {
+      gtag('consent', 'update', {
+        ad_storage: 'granted', analytics_storage: 'granted',
+        ad_user_data: 'granted', ad_personalization: 'granted'
+      });
+    }
+  </script>
+  <!-- Google tag (gtag.js) -->
+  <script async src='https://www.googletagmanager.com/gtag/js?id=G-WVW6KCJ7TV'></script>
+  <script>
     gtag('js', new Date());
     gtag('config', 'G-WVW6KCJ7TV');
+    gtag('config', 'AW-17385949286');
   </script>
+  <script src="assets/js/consent-banner.js" defer></script>
 </head>
 <body>
 

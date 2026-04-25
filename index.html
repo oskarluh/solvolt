@@ -69,12 +69,12 @@
         "hasOfferCatalog": {
           "@type": "OfferCatalog",
           "name": "Solvolt toodete kataloog",
-          "url": "https://solvolt.ee/tooted.html",
+          "url": "https://solvolt.ee/tooted",
           "itemListElement": [
-            {"@type": "Offer", "itemOffered": {"@type": "Product", "name": "EVE MB31 314Ah LiFePO4 element (16 tk)", "url": "https://solvolt.ee/toode.html?id=eve-mb31-314ah"}},
-            {"@type": "Offer", "itemOffered": {"@type": "Product", "name": "Deye SUN-G04 6kW hübriid-inverter", "url": "https://solvolt.ee/deye-6-12kw.html"}},
-            {"@type": "Offer", "itemOffered": {"@type": "Product", "name": "EEL Battery V6 Pro 5.12kWh", "url": "https://solvolt.ee/eel-v6-pro.html"}},
-            {"@type": "Offer", "itemOffered": {"@type": "Product", "name": "Hübriidsüsteem komplekt", "url": "https://solvolt.ee/komplekt.html"}}
+            {"@type": "Offer", "price": "1450", "priceCurrency": "EUR", "availability": "https://schema.org/InStock", "itemOffered": {"@type": "Product", "name": "EVE MB31 314Ah LiFePO4 element (16 tk)", "image": "https://solvolt.ee/assets/pildid/eve-mb31.png", "url": "https://solvolt.ee/toode?id=eve-mb31-314ah", "offers": {"@type": "Offer", "price": "1450", "priceCurrency": "EUR", "availability": "https://schema.org/InStock"}}},
+            {"@type": "Offer", "price": "2090", "priceCurrency": "EUR", "availability": "https://schema.org/InStock", "itemOffered": {"@type": "Product", "name": "Deye SUN-G04 6kW hübriid-inverter", "image": "https://solvolt.ee/assets/pildid/deye.png", "url": "https://solvolt.ee/deye-6-12kw", "offers": {"@type": "Offer", "price": "2090", "priceCurrency": "EUR", "availability": "https://schema.org/InStock"}}},
+            {"@type": "Offer", "price": "1699", "priceCurrency": "EUR", "availability": "https://schema.org/PreOrder", "itemOffered": {"@type": "Product", "name": "EEL Battery V6 Pro 17kWh", "image": "https://solvolt.ee/eel-battery-v6-pro.png", "url": "https://solvolt.ee/eel-v6-pro", "offers": {"@type": "Offer", "price": "1699", "priceCurrency": "EUR", "availability": "https://schema.org/PreOrder"}}},
+            {"@type": "Offer", "price": "4223", "priceCurrency": "EUR", "availability": "https://schema.org/InStock", "itemOffered": {"@type": "Product", "name": "Hübriidsüsteem komplekt", "image": "https://solvolt.ee/assets/pildid/komplekt.png", "url": "https://solvolt.ee/komplekt", "offers": {"@type": "Offer", "price": "4223", "priceCurrency": "EUR", "availability": "https://schema.org/InStock"}}}
           ]
         },
         "contactPoint": {
@@ -110,14 +110,32 @@
   }
   </script>
 
-  <!-- Google tag (gtag.js) -->
-  <script async src='https://www.googletagmanager.com/gtag/js?id=G-WVW6KCJ7TV'></script>
+  <!-- Google Consent Mode v2 — must come before gtag.js -->
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      ad_storage: 'denied', analytics_storage: 'denied',
+      ad_user_data: 'denied', ad_personalization: 'denied',
+      wait_for_update: 500
+    });
+    gtag('set', 'url_passthrough', true);
+    gtag('set', 'ads_data_redaction', true);
+    if (window.localStorage && localStorage.getItem('sv_consent') === 'granted') {
+      gtag('consent', 'update', {
+        ad_storage: 'granted', analytics_storage: 'granted',
+        ad_user_data: 'granted', ad_personalization: 'granted'
+      });
+    }
+  </script>
+  <!-- Google tag (gtag.js) -->
+  <script async src='https://www.googletagmanager.com/gtag/js?id=G-WVW6KCJ7TV'></script>
+  <script>
     gtag('js', new Date());
     gtag('config', 'G-WVW6KCJ7TV');
+    gtag('config', 'AW-17385949286');
   </script>
+  <script src="assets/js/consent-banner.js" defer></script>
 </head>
 <body>
 
@@ -320,6 +338,7 @@
         <a href="privaatsuspoliitika.html" style="color:var(--text-3)">Privaatsuspoliitika</a>
         <a href="tagastamine.html" style="color:var(--text-3)">Tagastamine</a>
         <a href="tingimused.html" style="color:var(--text-3)">Tingimused</a>
+        <button onclick="if(window.svOpenCookieSettings)svOpenCookieSettings()" style="background:none;border:none;color:var(--text-3);cursor:pointer;padding:0;font-size:inherit;font-family:inherit">Küpsiste seaded</button>
       </div>
       <span>Maksed: Visa · Mastercard · Stripe</span>
     </div>

@@ -7,7 +7,7 @@
 <meta name="description" content="EEL Battery V6 PRO — 17kWh LiFePO4 akusüsteem EVE MB31 elementidega, JK BMS V19, valmis korpus. Saadaval valmis komplektina (1 899€) või DIY kitina (1 699€). Eelmüük." />
 <meta name="keywords" content="EEL Battery V6 PRO, LiFePO4 aku, 17kWh aku, EVE MB31, akusüsteem, päikeseenergia aku Eesti" />
 <meta name="robots" content="index, follow" />
-<link rel="canonical" href="https://solvolt.ee/eel-v6-pro.html" />
+<link rel="canonical" href="https://solvolt.ee/eel-v6-pro" />
 <meta property="og:type" content="product" />
 <meta property="og:url" content="https://solvolt.ee/eel-v6-pro.html" />
 <meta property="og:title" content="EEL Battery V6 PRO — 17kWh LiFePO4 | Solvolt" />
@@ -21,12 +21,14 @@
   "name": "EEL Battery V6 PRO",
   "description": "17kWh LiFePO4 akusüsteem EVE MB31 elementide, EEL V6 PRO kasti ja JK BMS V19-ga. Saadaval valmis komplektina või DIY kitina.",
   "brand": { "@type": "Brand", "name": "EEL Battery" },
-  "url": "https://solvolt.ee/eel-v6-pro.html",
+  "image": "https://solvolt.ee/eel-battery-v6-pro.png",
+  "url": "https://solvolt.ee/eel-v6-pro",
   "offers": {
     "@type": "AggregateOffer",
     "priceCurrency": "EUR",
     "lowPrice": "1699",
     "highPrice": "1899",
+    "offerCount": 2,
     "availability": "https://schema.org/PreOrder",
     "seller": { "@type": "Organization", "name": "Solvolt OÜ" }
   }
@@ -250,21 +252,39 @@ footer{padding:52px 48px;border-top:1px solid var(--border);display:flex;justify
 }
 </style>
 
-  <!-- Google tag (gtag.js) -->
-  <script async src='https://www.googletagmanager.com/gtag/js?id=G-WVW6KCJ7TV'></script>
+  <!-- Google Consent Mode v2 — must come before gtag.js -->
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      ad_storage: 'denied', analytics_storage: 'denied',
+      ad_user_data: 'denied', ad_personalization: 'denied',
+      wait_for_update: 500
+    });
+    gtag('set', 'url_passthrough', true);
+    gtag('set', 'ads_data_redaction', true);
+    if (window.localStorage && localStorage.getItem('sv_consent') === 'granted') {
+      gtag('consent', 'update', {
+        ad_storage: 'granted', analytics_storage: 'granted',
+        ad_user_data: 'granted', ad_personalization: 'granted'
+      });
+    }
+  </script>
+  <!-- Google tag (gtag.js) -->
+  <script async src='https://www.googletagmanager.com/gtag/js?id=G-WVW6KCJ7TV'></script>
+  <script>
     gtag('js', new Date());
     gtag('config', 'G-WVW6KCJ7TV');
+    gtag('config', 'AW-17385949286');
   </script>
+  <script src="assets/js/consent-banner.js" defer></script>
 </head>
 <body>
 
 <!-- BANNER -->
 <div class="banner">
   <div class="banner-dot"></div>
-  EEL-MÜÜK AVATUD &nbsp;·&nbsp; EVE MB31 ELEMENDID SAABUVAD MAIS 2025 &nbsp;·&nbsp; BRONEERI NÜÜD, KINDLUSTA OMA KOHT
+  EEL-MÜÜK AVATUD &nbsp;·&nbsp; EVE MB31 ELEMENDID SAABUVAD MAIS 2026 &nbsp;·&nbsp; BRONEERI NÜÜD, KINDLUSTA OMA KOHT
   <div class="banner-dot"></div>
 </div>
 
@@ -301,7 +321,7 @@ footer{padding:52px 48px;border-top:1px solid var(--border);display:flex;justify
   <div class="hero-left">
     <div class="hero-badge">
       <div class="badge-dot"></div>
-      EEL-MÜÜK · Tarnimine mais 2025
+      EEL-MÜÜK · Tarnimine mais 2026
     </div>
     <h1>EEL BATTERY<br><span>V6 PRO</span></h1>
     <div class="hero-sub">48V LiFePO₄ Energiasalvestus</div>
@@ -402,7 +422,7 @@ footer{padding:52px 48px;border-top:1px solid var(--border);display:flex;justify
       <div class="eve-stats">
         <div class="eve-stat-box">
           <div class="eve-stat-val">330+</div>
-          <div class="eve-stat-lbl">Ah nominaalmahtuvus</div>
+          <div class="eve-stat-lbl">Ah mõõdetud mahtuvus</div>
         </div>
         <div class="eve-stat-box">
           <div class="eve-stat-val">17</div>
@@ -465,7 +485,7 @@ footer{padding:52px 48px;border-top:1px solid var(--border);display:flex;justify
         <div class="spec-row"><span class="spec-key">Kasti mõõtmed</span><span class="spec-val">698 × 410 × 250 mm</span></div>
         <div class="spec-row"><span class="spec-key">Paigutus</span><span class="spec-val">Horisontaalne</span></div>
         <div class="spec-row"><span class="spec-key">Virnastatavus</span><span class="spec-val">Kuni 4 ühikut</span></div>
-        <div class="spec-row"><span class="spec-key">Max paralleelühendus</span><span class="spec-val hi">16 ühikut (~230 kWh)</span></div>
+        <div class="spec-row"><span class="spec-key">Max paralleelühendus</span><span class="spec-val hi">16 ühikut (~272 kWh)</span></div>
       </div>
       <div>
         <div class="spec-group-title">// BMS (JK V19)</div>
@@ -549,18 +569,18 @@ footer{padding:52px 48px;border-top:1px solid var(--border);display:flex;justify
 
     <div class="preorder-box">
       <div class="preorder-title">⚡ EEL-MÜÜGI INFO</div>
-      <p class="preorder-text">EVE MB31 elemendid saabuvad <strong>mais 2025</strong>. Broneering kindlustab sulle eelmüügihinna ja eelisjärjekorra tarnimiseks. DIY kit'i puhul saame kasti tarnida juba varem — elemendid lisanduvad mais.</p>
+      <p class="preorder-text">EVE MB31 elemendid saabuvad <strong>mais 2026</strong>. Broneering kindlustab sulle eelmüügihinna ja eelisjärjekorra tarnimiseks. DIY kit'i puhul saame kasti tarnida juba varem — elemendid lisanduvad mais.</p>
       <div class="preorder-timeline">
         <div class="timeline-step">
           <div class="timeline-date">KOHE</div>
           <div class="timeline-desc">Broneeri eel-müügi hinnaga</div>
         </div>
         <div class="timeline-step">
-          <div class="timeline-date">APRILL</div>
+          <div class="timeline-date">APRILL–MAI</div>
           <div class="timeline-desc">DIY — kast tarnitakse</div>
         </div>
         <div class="timeline-step">
-          <div class="timeline-date">MAI 2025</div>
+          <div class="timeline-date">MAI 2026</div>
           <div class="timeline-desc">EVE elemendid saabuvad · Komplektid tarnitakse</div>
         </div>
       </div>
@@ -609,6 +629,8 @@ footer{padding:52px 48px;border-top:1px solid var(--border);display:flex;justify
       <a href="tagastamine.html" style="color:var(--text-3);text-decoration:underline">Tagastamine</a>
       &nbsp;·&nbsp;
       <a href="tingimused.html" style="color:var(--text-3);text-decoration:underline">Tingimused</a>
+      &nbsp;·&nbsp;
+      <button onclick="if(window.svOpenCookieSettings)svOpenCookieSettings()" style="background:none;border:none;color:var(--text-3);cursor:pointer;padding:0;font-size:inherit;font-family:inherit;text-decoration:underline">Küpsiste seaded</button>
     </span>
   </div>
 </footer>
