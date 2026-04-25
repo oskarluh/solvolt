@@ -999,10 +999,10 @@ const TOOTED = [
     specs: {
       "Tootja": "Jinong",
       "Mudelid": "PB2A16S-15P (150A) / PB2A16S-20P (200A)",
-      "Rakuvahemik": "8S–16S (20–70V)",
-      "Balanss": "Aktiivne 2A",
-      "Liides": "RS485 + CAN + Bluetooth",
-      "Tarne": "3-7 tööpäeva"
+      "Elementide arv": "8S–16S (20–70 V)",
+      "Balanseerimine": "aktiivne, 2A",
+      "Liidesed": "RS485, CAN, Bluetooth",
+      "Tarneaeg": "3–7 tööpäeva"
     },
     kirjeldus: ``
   },
@@ -1026,29 +1026,29 @@ const TOOTED = [
       "Tootja": "Jinong",
       "Mudel": "PB2A16S-15P",
       "Pidev vool": "150 A",
-      "Maks. impulsvool": "300 A",
+      "Maksimaalne impulsvool": "300 A",
       "Sisetakistus": "1 mΩ",
-      "Balanss": "Aktiivne 2A",
-      "Rakuvahemik": "8S–16S (20–70V)",
+      "Balanseerimine": "aktiivne, 2A",
+      "Elementide arv": "8S–16S (20–70 V)",
       "Tööpinge": "20–70 V",
-      "Ülevoolakaitse seade": "10–150 A",
-      "Kaitse": "Ülevool, üle-/alalaeng, temperatuur, lühis",
-      "Liides": "RS485 + CAN + Bluetooth",
-      "Bluetooth": "Android, Apple, HarmonyOS",
+      "Ülevoolukaitse seadistus": "10–150 A",
+      "Kaitsed": "ülevool, üle- ja alalaadimine, temperatuur, lühis",
+      "Liidesed": "RS485, CAN, Bluetooth",
+      "Bluetooth tugi": "Android, iOS, HarmonyOS",
       "Temperatuuriandurid": "1 sisemine + 4 välist",
       "Mõõtmed": "300 × 100 × 18 mm",
-      "Tarne": "3-7 tööpäeva"
+      "Tarneaeg": "3–7 tööpäeva"
     },
     kirjeldus: `
-      <p>Jinong PB2A16S-15P on professionaalne 150A kodu-energiasalvestuse BMS aktiivse 2A balanseerimisega.</p>
+      <p>Jinong PB2A16S-15P on professionaalne 150A BMS koduse energiasalvestuse jaoks, millel on 2A aktiivne balanseerimine.</p>
       <ul>
         <li>2A aktiivne balanseerimine — tagab elemetide ühtlase laetuse ja pikema eluea</li>
-        <li>150A pidev väljundvool, kuni 300A impulsvool — sobib suurematele koormustele</li>
-        <li>RS485 + CAN — otsene liidestus inverteritega (Deye, Growatt jt)</li>
-        <li>Bluetooth (Android, Apple, HarmonyOS) — mugav monitooring nutiseadmest</li>
-        <li>4 välist + 1 sisemine temperatuuriandur — täielik termokontroll</li>
+        <li>150A pidev vool, kuni 300A impulsvool — sobib ka suurematele koormustele</li>
+        <li>RS485 ja CAN liides — otsene liidestus inverteritega (nt Deye, Growatt)</li>
+        <li>Bluetooth (Android, iOS, HarmonyOS) — mugav jälgimine nutiseadmest</li>
+        <li>5 temperatuuriandurit — 4 välist + 1 sisemine täielikuks termokontrolliks</li>
         <li>Akusoojenduse tugi (valikuline) — sobib ka külmematele tingimustele</li>
-        <li>Coulomb-meeter, paralleel-laadimise voolupiirang ja häirisireen toetatud</li>
+        <li>Coulomb-meeter, paralleellaadimise voolupiirang ja häiresireen — kõik vajalikud funktsioonid olemas</li>
       </ul>
     `
   },
@@ -1070,30 +1070,30 @@ const TOOTED = [
       "Tootja": "Jinong",
       "Mudel": "PB2A16S-20P",
       "Pidev vool": "200 A",
-      "Maks. impulsvool": "400 A",
+      "Maksimaalne impulsvool": "400 A",
       "Sisetakistus": "0.35 mΩ",
-      "Balanss": "Aktiivne 2A",
-      "Rakuvahemik": "8S–16S (20–70V)",
+      "Balanseerimine": "aktiivne, 2A",
+      "Elementide arv": "8S–16S (20–70 V)",
       "Tööpinge": "20–70 V",
-      "Ülevoolakaitse seade": "10–200 A",
-      "Kaitse": "Ülevool, üle-/alalaeng, temperatuur, lühis",
-      "Liides": "RS485 + CAN + Bluetooth",
-      "Bluetooth": "Android, Apple, HarmonyOS",
+      "Ülevoolukaitse seadistus": "10–200 A",
+      "Kaitsed": "ülevool, üle- ja alalaadimine, temperatuur, lühis",
+      "Liidesed": "RS485, CAN, Bluetooth",
+      "Bluetooth tugi": "Android, iOS, HarmonyOS",
       "Temperatuuriandurid": "1 sisemine + 4 välist",
       "Mõõtmed": "300 × 100 × 18 mm",
-      "Tarne": "3-7 tööpäeva"
+      "Tarneaeg": "3–7 tööpäeva"
     },
     kirjeldus: `
-      <p>Jinong PB2A16S-20P on võimsaim mudel PB2A16S seeriast — 200A pideva vooluga ja madalaima sisetakistusega (0.35 mΩ). Ideaalne suurtele kodu- ja äri-energiasalvestussüsteemidele.</p>
+      <p>Jinong PB2A16S-20P on võimsaim mudel PB2A16S seeriast — 200A pideva voolu ja madalaima sisetakistusega (0.35 mΩ). Ideaalne suurematele kodu- ja ärisüsteemidele.</p>
       <ul>
         <li>2A aktiivne balanseerimine — tagab elemtide ühtlase laetuse ja pikema eluea</li>
-        <li>200A pidev väljundvool, kuni 400A impulsvool — kõige võimsam valik</li>
+        <li>200A pidev vool, kuni 400A impulsvool — kõige võimsam valik</li>
         <li>0.35 mΩ sisetakistus — minimaalsed energiakaod ja soojenemine</li>
-        <li>RS485 + CAN — otsene liidestus inverteritega (Deye, Growatt jt)</li>
-        <li>Bluetooth (Android, Apple, HarmonyOS) — mugav monitooring nutiseadmest</li>
-        <li>4 välist + 1 sisemine temperatuuriandur — täielik termokontroll</li>
+        <li>RS485 ja CAN liides — otsene liidestus inverteritega (nt Deye, Growatt)</li>
+        <li>Bluetooth (Android, iOS, HarmonyOS) — mugav jälgimine nutiseadmest</li>
+        <li>5 temperatuuriandurit — 4 välist + 1 sisemine täielikuks termokontrolliks</li>
         <li>Akusoojenduse tugi (valikuline) — sobib ka külmematele tingimustele</li>
-        <li>Coulomb-meeter, paralleel-laadimise voolupiirang ja häirisireen toetatud</li>
+        <li>Coulomb-meeter, paralleellaadimise voolupiirang ja häiresireen — kõik vajalikud funktsioonid olemas</li>
       </ul>
     `
   }
