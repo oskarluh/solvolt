@@ -995,6 +995,7 @@ const TOOTED = [
     pilt: "assets/pildid/BMS1.png",
     pildid: [
       "assets/pildid/BMS1.png",
+      "assets/pildid/BMS-1.png",
       "assets/pildid/lisad-1.png",
     ],
     ladu: true,
@@ -1024,6 +1025,7 @@ const TOOTED = [
     pilt: "assets/pildid/BMS1.png",
     pildid: [
       "assets/pildid/BMS1.png",
+      "assets/pildid/BMS-1.png",
       "assets/pildid/lisad-1.png",
     ],
     ladu: true,
@@ -1071,6 +1073,7 @@ const TOOTED = [
     pilt: "assets/pildid/BMS1.png",
     pildid: [
       "assets/pildid/BMS1.png",
+      "assets/pildid/BMS-1.png",
       "assets/pildid/lisad-1.png",
     ],
     ladu: true,
