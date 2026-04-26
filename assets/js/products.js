@@ -983,7 +983,12 @@ const TOOTED = [
 
   // -- 10. Jinong BMS PB2A16S --------------------------------
   {
-    $1145,
+    id: "jinong-pb2a16s",
+    slug: "jinong-pb2a16s",
+    nimi: "Jinong BMS PB2A16S — aktiivse balanseerimisega BMS (2A)",
+    lyhikirjeldus: "Jinong PB2A16S seeria BMS 2A aktiivse balanseerimisega. RS485 + CAN + Bluetooth. Saadaval 150A ja 200A.",
+    kategooria: "bms",
+    hind: 145,
     hind_vana: null,
     hind_prefix: "alates",
     href: "jinong-pb2a16s.html",
