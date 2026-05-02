@@ -981,6 +981,36 @@ const TOOTED = [
     `
   },
 
+  // -- 12. Leapton EL-A16 16kWh aku --------------------------
+  {
+    id: "leapton-el-a16",
+    slug: "leapton-el-a16",
+    nimi: "Leapton EL-A16 16kWh LiFePO4 aku",
+    lyhikirjeldus: "Täielik 16kWh LiFePO4 akusüsteem sisseehitatud BMS-iga. 51.2V / 320Ah, CAN/RS485, IP55, kuni 16 akut paralleelselt. 10 aasta garantii.",
+    kategooria: "akud",
+    hind: 2715,
+    hind_vana: null,
+    href: "leapton-el-a16.html",
+    stripe_price_id: null,
+    pilt: "assets/pildid/leapton-el-a16.png",
+    ladu: true,
+    eelmyyk: false,
+    specs: {
+      "Tootja": "Leapton",
+      "Mudel": "EL-A16",
+      "Keemia": "LiFePO4",
+      "Nominaalenergia": "16 kWh",
+      "Nominaalpinge": "51.2 V",
+      "Mahtuvus": "320 Ah",
+      "Protokoll": "CAN / RS485",
+      "Kaitseklass": "IP55",
+      "Paralleelühendus": "kuni 16 akut",
+      "Garantii": "10 aastat",
+      "Tarne": "3–7 tööpäeva"
+    },
+    kirjeldus: ``
+  },
+
   // -- 11. Leapton EL-A05 akumoodul --------------------------
   {
     id: "leapton-el-a05",

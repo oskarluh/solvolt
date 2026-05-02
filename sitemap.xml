@@ -50,6 +50,12 @@
   </url>
 
   <url>
+    <loc>https://solvolt.ee/leapton-el-a16</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
     <loc>https://solvolt.ee/leapton-el-a05</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
