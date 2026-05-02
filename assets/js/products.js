@@ -993,6 +993,7 @@ const TOOTED = [
     href: "leapton-el-a16.html",
     stripe_price_id: "price_1TSiGaPcV5reENb6ih6HxEK6",
     pilt: "assets/pildid/leapton-el-a16.png",
+    tooteleht_pdf: "assets/failid/ELA16data.pdf",
     ladu: true,
     eelmyyk: false,
     specs: {
@@ -1024,6 +1025,7 @@ const TOOTED = [
     href: "leapton-el-a05.html",
     stripe_price_id: "price_1TSiHAPcV5reENb65xhgI5oG",
     pilt: "assets/pildid/leapton-el-a05.png",
+    tooteleht_pdf: "assets/failid/EHA05data.pdf",
     ladu: true,
     eelmyyk: false,
     specs: {
