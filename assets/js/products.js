@@ -988,7 +988,7 @@ const TOOTED = [
     nimi: "Leapton EL-A05 LiFePO4 akumoodul",
     lyhikirjeldus: "Modulaarne Leapton LiFePO4 akumoodul. 5.12 kWh moodul, valikuks EH-A05 PCU + Base juhtimismoodul. Skaleeritav 1–15 moodulist.",
     kategooria: "akud",
-    hind: 890,
+    hind: 975,
     hind_vana: null,
     hind_prefix: "alates",
     href: "leapton-el-a05.html",

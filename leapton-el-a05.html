@@ -36,10 +36,13 @@
   </script>
   <style>
     .addon-card {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      cursor: pointer;
       border: 1.5px solid var(--border);
       border-radius: var(--r);
       padding: 14px 16px;
-      cursor: pointer;
       transition: border-color .15s, background .15s;
       margin-bottom: 16px;
     }
@@ -47,15 +50,14 @@
       border-color: var(--accent);
       background: color-mix(in srgb, var(--accent) 6%, transparent);
     }
-    .addon-card label {
-      display: flex;
-      gap: 14px;
-      align-items: flex-start;
-      cursor: pointer;
-    }
     .addon-card input[type="checkbox"] {
-      appearance: none;
-      -webkit-appearance: none;
+      position: absolute;
+      opacity: 0;
+      width: 0;
+      height: 0;
+      pointer-events: none;
+    }
+    .addon-check-box {
       flex-shrink: 0;
       width: 20px;
       height: 20px;
@@ -63,21 +65,20 @@
       border-radius: 5px;
       background: var(--bg-0);
       margin-top: 2px;
-      cursor: pointer;
       transition: border-color .15s, background .15s;
       position: relative;
     }
-    .addon-card input[type="checkbox"]:checked {
+    .addon-card.checked .addon-check-box {
       background: var(--accent);
       border-color: var(--accent);
     }
-    .addon-card input[type="checkbox"]:checked::after {
+    .addon-card.checked .addon-check-box::after {
       content: "";
       position: absolute;
       left: 5px;
       top: 1px;
-      width: 6px;
-      height: 11px;
+      width: 5px;
+      height: 10px;
       border: 2px solid #fff;
       border-top: none;
       border-left: none;
@@ -260,6 +261,7 @@
         <div style="font-family:var(--ff-mono);font-size:.75rem;font-weight:500;color:var(--text-3);letter-spacing:.08em;text-transform:uppercase;margin-bottom:10px">Lisavarustus</div>
         <label class="addon-card" id="pcu-card" for="pcu-check">
           <input type="checkbox" id="pcu-check">
+          <span class="addon-check-box"></span>
           <div>
             <div class="addon-name">Leapton HV EH-A05 PCU + Base</div>
             <div class="addon-desc">BMS juhtimismoodul + alustaraam — täieliku süsteemi jaoks vajalik komponent. Ühendab moodulid inverteriga (CAN/RS485).</div>
@@ -415,7 +417,7 @@
   </div>
 </footer>
 
-<script src="assets/js/products.js?v=3"></script>
+<script src="assets/js/products.js?v=4"></script>
 <script src="assets/js/main.js"></script>
 <script>
   // ── Hinnad (uuenda siit) ────────────────────────────────────
