@@ -244,6 +244,8 @@
         throw new Error('Stripe checkout URL puudub');
       }
 
+      gtag('event', 'conversion', { send_to: 'AW-17385949286/5KO7CNuWx6YcEOaQouJA', value: 1.0, currency: 'EUR' });
+
       window.location.href = data.url;
     } catch (error) {
       console.error('Checkout error:', error);

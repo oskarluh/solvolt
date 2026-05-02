@@ -124,4 +124,14 @@ document.addEventListener('DOMContentLoaded', () => {
   Cart._updateBadge();
   setActiveNav();
   initMobileNav();
+
+  // Telefonilingi klikk-konversioon
+  document.querySelectorAll('a[href^="tel:"]').forEach(function(link) {
+    link.addEventListener('click', function() {
+      if (typeof gtag === 'function') gtag('event', 'conversion', { send_to: 'AW-17385949286/WONqCLXYr6YcEOaQouJA', value: 3.0, currency: 'EUR' });
+    });
+  });
+
+  // Lehevaatamise konversioon
+  if (typeof gtag === 'function') gtag('event', 'conversion', { send_to: 'AW-17385949286/WBpmCL3gr6YcEOaQouJA' });
 });

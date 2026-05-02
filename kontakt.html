@@ -209,6 +209,7 @@
       });
       const json = await res.json();
       if (json.success) {
+        gtag('event', 'conversion', { send_to: 'AW-17385949286/gmwSCKe7xaYcEOaQouJA' });
         document.getElementById('form-success').style.display = 'block';
         this.reset();
         btn.textContent = 'Saadetud ✓';
