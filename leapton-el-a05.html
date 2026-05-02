@@ -27,8 +27,8 @@
     "offers": {
       "@type": "AggregateOffer",
       "priceCurrency": "EUR",
-      "lowPrice": "771",
-      "highPrice": "1361",
+      "lowPrice": "975",
+      "highPrice": "1560",
       "availability": "https://schema.org/InStock",
       "seller": { "@type": "Organization", "name": "Solvolt OÜ" }
     }
@@ -197,10 +197,10 @@
         </div>
 
         <div class="product-detail-price" id="price-block">
-          <span class="price-current" id="price-display">771 €</span>
-          <span style="font-size:.8rem;color:var(--text-3);font-family:var(--ff-mono)" id="price-vat-note">+ KM</span>
+          <span class="price-current" id="price-display">975 €</span>
+          <span style="font-size:.8rem;color:var(--text-3);font-family:var(--ff-mono)" id="price-vat-note">KM hinna sees</span>
         </div>
-        <p style="font-size:.82rem;color:var(--text-3);margin-top:4px;margin-bottom:20px" id="price-sub">Hind mooduli kohta. Vali moodulite arv ja soovi korral PCU + Base komplekt.</p>
+        <p style="font-size:.82rem;color:var(--text-3);margin-top:4px;margin-bottom:20px" id="price-sub">Hind mooduli kohta, KM hinna sees. Vali moodulite arv ja soovi korral PCU + Base komplekt.</p>
 
         <div style="margin-bottom:28px">
           <div style="font-family:var(--ff-mono);font-size:.75rem;font-weight:500;color:var(--text-3);letter-spacing:.08em;text-transform:uppercase;margin-bottom:12px">Spetsifikatsioonid</div>
@@ -235,24 +235,22 @@
 
         <!-- PCU + Base add-on -->
         <div style="font-family:var(--ff-mono);font-size:.75rem;font-weight:500;color:var(--text-3);letter-spacing:.08em;text-transform:uppercase;margin-bottom:10px">Lisavarustus</div>
-        <div class="addon-card" id="pcu-card">
-          <label>
-            <input type="checkbox" id="pcu-check">
-            <div>
-              <div class="addon-name">Leapton HV EH-A05 PCU + Base</div>
-              <div class="addon-desc">BMS juhtimismoodul + alustaraam — täieliku süsteemi jaoks vajalik komponent. Ühendab moodulid inverteriga (CAN/RS485).</div>
-              <div class="addon-price" id="pcu-price-label">+590 € + KM</div>
-            </div>
-          </label>
-        </div>
+        <label class="addon-card" id="pcu-card" for="pcu-check">
+          <input type="checkbox" id="pcu-check">
+          <div>
+            <div class="addon-name">Leapton HV EH-A05 PCU + Base</div>
+            <div class="addon-desc">BMS juhtimismoodul + alustaraam — täieliku süsteemi jaoks vajalik komponent. Ühendab moodulid inverteriga (CAN/RS485).</div>
+            <div class="addon-price" id="pcu-price-label">+585 € KM hinna sees</div>
+          </div>
+        </label>
 
         <!-- Total price -->
         <div style="background:var(--bg-1);border:1px solid var(--border);border-radius:var(--r);padding:14px 16px;margin-bottom:20px">
           <div style="display:flex;justify-content:space-between;align-items:baseline">
             <span style="font-size:.85rem;color:var(--text-2)">Kokku</span>
             <div>
-              <span style="font-family:var(--ff-display);font-size:1.35rem;font-weight:700;color:var(--text-1)" id="total-price">771 €</span>
-              <span style="font-size:.8rem;color:var(--text-3);font-family:var(--ff-mono);margin-left:6px">+ KM</span>
+              <span style="font-family:var(--ff-display);font-size:1.35rem;font-weight:700;color:var(--text-1)" id="total-price">975 €</span>
+              <span style="font-size:.8rem;color:var(--text-3);font-family:var(--ff-mono);margin-left:6px">KM hinna sees</span>
             </div>
           </div>
           <div style="font-size:.78rem;color:var(--text-3);margin-top:4px" id="total-breakdown">1 × EL-A05 moodul</div>
@@ -296,18 +294,18 @@
             <tr>
               <th>Mooduleid</th>
               <th>Energia (kWh)</th>
-              <th>Moodulite hind (+ KM)</th>
+              <th>Moodulite hind (KM hinna sees)</th>
             </tr>
           </thead>
           <tbody>
-            <tr><td>1 moodul</td><td>5.12 kWh</td><td>771 €</td></tr>
-            <tr><td>3 moodulit</td><td>15.36 kWh</td><td>2 313 €</td></tr>
-            <tr><td>5 moodulit</td><td>25.6 kWh</td><td>3 855 €</td></tr>
-            <tr><td>8 moodulit</td><td>40.96 kWh</td><td>6 168 €</td></tr>
-            <tr><td>10 moodulit</td><td>51.2 kWh</td><td>7 710 €</td></tr>
+            <tr><td>1 moodul</td><td>5.12 kWh</td><td>975 €</td></tr>
+            <tr><td>3 moodulit</td><td>15.36 kWh</td><td>2 925 €</td></tr>
+            <tr><td>5 moodulit</td><td>25.6 kWh</td><td>4 875 €</td></tr>
+            <tr><td>8 moodulit</td><td>40.96 kWh</td><td>7 800 €</td></tr>
+            <tr><td>10 moodulit</td><td>51.2 kWh</td><td>9 750 €</td></tr>
           </tbody>
         </table>
-        <p style="font-size:.82rem;color:var(--text-3);margin-top:8px">* Hinnad + KM. EH-A05 PCU + Base lisandub 590 € + KM (üks kord kogu süsteemile). Suurema koguse puhul küsi personaalset pakkumist.</p>
+        <p style="font-size:.82rem;color:var(--text-3);margin-top:8px">* Hinnad KM hinna sees (24% KM). EH-A05 PCU + Base lisandub 585 € KM hinna sees (üks kord kogu süsteemile). Suurema koguse puhul küsi personaalset pakkumist.</p>
       </div>
     </div>
 
@@ -327,7 +325,7 @@
         </div>
         <div class="feature-card">
           <div class="feature-title">LiFePO4 keemia</div>
-          <div class="feature-desc">6000+ tsüklit eluiga, stabiilne keemia ilma termilise kärgumise riskita — ohutu ka sisekasutuses.</div>
+          <div class="feature-desc">6000+ tsüklit eluiga, stabiilne ja ohutu keemia — sobib ka sisekasutusesse.</div>
         </div>
         <div class="feature-card">
           <div class="feature-title">Lai inverterite ühilduvus</div>
@@ -335,7 +333,7 @@
         </div>
         <div class="feature-card">
           <div class="feature-title">10 aastat garantii</div>
-          <div class="feature-desc">LiFePO4 rakkude pikk eluiga ja Leaptoni tugev garantii — investeering, mis tasub ennast ära.</div>
+          <div class="feature-desc">LiFePO4 elementide pikk eluiga ja Leaptoni tugev garantii — investeering, mis tasub ennast ära.</div>
         </div>
         <div class="feature-card">
           <div class="feature-title">Laos Eestis</div>
@@ -398,8 +396,8 @@
 <script src="assets/js/main.js"></script>
 <script>
   // ── Hinnad (uuenda siit) ────────────────────────────────────
-  const MODULE_PRICE = 771;   // EL-A05 mooduli hind (+ KM)
-  const PCU_PRICE    = 590;   // EH-A05 PCU + Base hind (+ KM) — uuenda kui hind teada
+  const MODULE_PRICE = 975;   // EL-A05 mooduli hind (KM hinna sees)
+  const PCU_PRICE    = 585;   // EH-A05 PCU + Base hind (KM hinna sees)
   const MODULE_KWH   = 5.12;  // kWh mooduli kohta
   const QTY_MAX      = 15;
   // ────────────────────────────────────────────────────────────
@@ -439,14 +437,6 @@
   document.getElementById('pcu-check').addEventListener('change', e => {
     addPCU = e.target.checked;
     updateUI();
-  });
-  document.getElementById('pcu-card').addEventListener('click', e => {
-    if (e.target.tagName !== 'INPUT') {
-      const cb = document.getElementById('pcu-check');
-      cb.checked = !cb.checked;
-      addPCU = cb.checked;
-      updateUI();
-    }
   });
 
   document.getElementById('add-btn').addEventListener('click', () => {
