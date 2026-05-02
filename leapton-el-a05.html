@@ -324,13 +324,12 @@
           </thead>
           <tbody>
             <tr><td>1 moodul</td><td>5.12 kWh</td><td>975 €</td></tr>
+            <tr><td>2 moodulit</td><td>10.24 kWh</td><td>1 950 €</td></tr>
             <tr><td>3 moodulit</td><td>15.36 kWh</td><td>2 925 €</td></tr>
-            <tr><td>5 moodulit</td><td>25.6 kWh</td><td>4 875 €</td></tr>
-            <tr><td>8 moodulit</td><td>40.96 kWh</td><td>7 800 €</td></tr>
-            <tr><td>10 moodulit</td><td>51.2 kWh</td><td>9 750 €</td></tr>
+            <tr><td>4 moodulit</td><td>20.48 kWh</td><td>3 900 €</td></tr>
           </tbody>
         </table>
-        <p style="font-size:.82rem;color:var(--text-3);margin-top:8px">* Hinnad KM hinna sees (24% KM). EH-A05 PCU + Base lisandub 585 € KM hinna sees (üks kord kogu süsteemile). Suurema koguse puhul küsi personaalset pakkumist.</p>
+        <p style="font-size:.82rem;color:var(--text-3);margin-top:8px">* Hinnad KM hinna sees (24% KM). Tootja soovitab 1–4 moodulit. EH-A05 PCU + Base lisandub 585 € KM hinna sees (üks kord kogu süsteemile).</p>
       </div>
     </div>
 
@@ -424,7 +423,7 @@
   const MODULE_PRICE = 975;   // EL-A05 mooduli hind (KM hinna sees)
   const PCU_PRICE    = 585;   // EH-A05 PCU + Base hind (KM hinna sees)
   const MODULE_KWH   = 5.12;  // kWh mooduli kohta
-  const QTY_MAX      = 15;
+  const QTY_MAX      = 4;
   // ────────────────────────────────────────────────────────────
 
   const toodeModul = TOOTED.find(p => p.id === 'leapton-el-a05');
