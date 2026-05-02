@@ -293,7 +293,7 @@
     </item>
 
     <!-- ===== Jinong BMS PB2A16S ===== -->
-    <!-- Price is ex-VAT on site: 145 * 1.22 = 176.90 EUR incl. VAT -->
+    <!-- Price is VAT-inclusive: 180.00 EUR -->
     <item>
       <g:id>jinong-pb2a16s</g:id>
       <g:title>Jinong BMS PB2A16S — 2A aktiivse balanseerimisega BMS (150A / 200A)</g:title>
@@ -302,7 +302,7 @@
       <g:image_link>https://solvolt.ee/assets/pildid/BMS1.png</g:image_link>
       <g:condition>new</g:condition>
       <g:availability>in_stock</g:availability>
-      <g:price>176.90 EUR</g:price>
+      <g:price>180.00 EUR</g:price>
       <g:brand>Jinong</g:brand>
       <g:mpn>PB2A16S-15P</g:mpn>
       <g:google_product_category>Electronics &gt; Power Accessories &gt; Battery Packs</g:google_product_category>
