@@ -981,6 +981,59 @@ const TOOTED = [
     `
   },
 
+  // -- 11. Leapton EL-A05 akumoodul --------------------------
+  {
+    id: "leapton-el-a05",
+    slug: "leapton-el-a05",
+    nimi: "Leapton EL-A05 LiFePO4 akumoodul",
+    lyhikirjeldus: "Modulaarne Leapton LiFePO4 akumoodul. 5.12 kWh moodul, valikuks EH-A05 PCU + Base juhtimismoodul. Skaleeritav 1–15 moodulist.",
+    kategooria: "akud",
+    hind: 890,
+    hind_vana: null,
+    hind_prefix: "alates",
+    href: "leapton-el-a05.html",
+    stripe_price_id: null,
+    pilt: "assets/pildid/leapton-el-a05.png",
+    ladu: true,
+    eelmyyk: false,
+    specs: {
+      "Tootja": "Leapton",
+      "Mudel": "EL-A05",
+      "Keemia": "LiFePO4",
+      "Mooduli energia": "5.12 kWh",
+      "Mooduli pinge": "51.2 V",
+      "Mooduli mahtuvus": "100 Ah",
+      "Juhtimismoodul": "EH-A05 PCU + Base (lisavarustus)",
+      "Protokoll": "CAN / RS485",
+      "Eluiga": "6000+ tsüklit",
+      "Garantii": "10 aastat",
+      "Tarne": "3–7 tööpäeva"
+    },
+    kirjeldus: ``
+  },
+  {
+    id: "leapton-eh-a05-pcu",
+    slug: "leapton-eh-a05-pcu",
+    catalog_hidden: true,
+    nimi: "Leapton HV EH-A05 PCU + Base",
+    lyhikirjeldus: "Leapton EL-A05 süsteemi BMS juhtimismoodul ja alustaraam. Vajalik täieliku akusüsteemi ehitamiseks.",
+    kategooria: "akud",
+    hind: 690,
+    hind_vana: null,
+    stripe_price_id: null,
+    pilt: "assets/pildid/leapton-el-a05.png",
+    ladu: true,
+    eelmyyk: false,
+    specs: {
+      "Tootja": "Leapton",
+      "Mudel": "EH-A05 PCU + Base",
+      "Funktsioon": "BMS juhtimismoodul + alustaraam",
+      "Protokoll": "CAN / RS485",
+      "Ühilduvus": "Leapton EL-A05 moodulitega"
+    },
+    kirjeldus: ``
+  },
+
   // -- 10. Jinong BMS PB2A16S --------------------------------
   {
     id: "jinong-pb2a16s",
