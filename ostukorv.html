@@ -244,9 +244,19 @@
         throw new Error('Stripe checkout URL puudub');
       }
 
-      gtag('event', 'conversion', { send_to: 'AW-17385949286/5KO7CNuWx6YcEOaQouJA', value: 1.0, currency: 'EUR' });
-
-      window.location.href = data.url;
+      // Oota kuni gtag kinnitab evento saatmise, seejärel suuna edasi
+      var _stripeUrl = data.url;
+      var _navigated = false;
+      function _doNavigate() {
+        if (!_navigated) { _navigated = true; window.location.href = _stripeUrl; }
+      }
+      gtag('event', 'conversion', {
+        send_to: 'AW-17385949286/5KO7CNuWx6YcEOaQouJA',
+        value: 1.0,
+        currency: 'EUR',
+        event_callback: _doNavigate
+      });
+      setTimeout(_doNavigate, 1000); // tagavaravalik kui gtag ei vasta
     } catch (error) {
       console.error('Checkout error:', error);
       showToast('❌ ' + (error.message || 'Makse alustamine ebaõnnestus. Palun proovi uuesti.'));
