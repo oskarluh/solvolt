@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:g="http://base.google.com/ns/1.0">
+  <channel>
+    <title>Solvolt</title>
+    <link>https://solvolt.ee</link>
+    <description>Energiasalvestus- ja päikeseenergia tooted — Solvolt</description>
+
+    <!-- ===== EVE MB31 314Ah LiFePO4 elemendid ===== -->
+    <item>
+      <g:id>eve-mb31-314ah</g:id>
+      <g:title>EVE MB31 314Ah LiFePO4 elemendid (16tk)</g:title>
+      <g:description><![CDATA[A-klassi EVE MB31 elemendid — 3.2V / 314Ah (mõõdetud keskmine 332.8Ah). 16tk komplekt, kaasas EVE ametlik testiraport. Sobib energiasalvestuse, päikeseparkide ja UPS-süsteemide ehitamiseks.]]></g:description>
+      <g:link>https://solvolt.ee/toode?id=eve-mb31-314ah</g:link>
+      <g:image_link>https://solvolt.ee/assets/pildid/eve-mb31.png</g:image_link>
+      <g:condition>new</g:condition>
+      <g:availability>preorder</g:availability>
+      <g:price>1450.00 EUR</g:price>
+      <g:brand>EVE</g:brand>
+      <g:mpn>MB31-314Ah-16S</g:mpn>
+      <g:google_product_category>Electronics &gt; Power Accessories &gt; Battery Packs</g:google_product_category>
+      <g:shipping>
+        <g:country>EE</g:country>
+        <g:price>0.00 EUR</g:price>
+      </g:shipping>
+    </item>
+
+    <!-- ===== EEL Battery V6 PRO ===== -->
+    <!-- Price is ex-VAT on site: 1699 * 1.22 = 2073.00 EUR incl. VAT -->
+    <item>
+      <g:id>eel-battery-v6-pro</g:id>
+      <g:title>EEL Battery V6 PRO — 17kWh LiFePO4 akusüsteem</g:title>
+      <g:description><![CDATA[Täielik 17kWh LiFePO4 akusüsteem EVE MB31 elementide, EEL V6 PRO kasti ja JK BMS V19-ga. Saadaval valmis komplektina (1899€+KM) või DIY kitina (1699€+KM). 5 aasta garantii.]]></g:description>
+      <g:link>https://solvolt.ee/eel-v6-pro</g:link>
+      <g:image_link>https://solvolt.ee/eel-battery-v6-pro.png</g:image_link>
+      <g:condition>new</g:condition>
+      <g:availability>preorder</g:availability>
+      <g:price>2073.00 EUR</g:price>
+      <g:brand>EEL Battery</g:brand>
+      <g:mpn>V6-PRO-17KWH</g:mpn>
+      <g:google_product_category>Electronics &gt; Power Accessories &gt; Battery Packs</g:google_product_category>
+      <g:shipping>
+        <g:country>EE</g:country>
+        <g:price>0.00 EUR</g:price>
+      </g:shipping>
+    </item>
+
+    <!-- ===== Täielik Energiasalvestuse Komplekt ===== -->
+    <item>
+      <g:id>energiasalvestuse-komplekt</g:id>
+      <g:title>Täielik Energiasalvestuse Komplekt — Deye + EEL V6 PRO</g:title>
+      <g:description><![CDATA[Konfigureeritav energiasalvestuse komplekt: Deye hübriidinverter (6–20kW) + EEL V6 PRO aku (16–64kWh) + Qilowatt juhtimine. Komplekti soodustus -5%. Garantii 5 aastat.]]></g:description>
+      <g:link>https://solvolt.ee/komplekt</g:link>
+      <g:image_link>https://solvolt.ee/assets/pildid/komplekt.png</g:image_link>
+      <g:condition>new</g:condition>
+      <g:availability>in_stock</g:availability>
+      <g:price>3790.00 EUR</g:price>
+      <g:brand>Solvolt</g:brand>
+      <g:mpn>KOMPLEKT-DEYE-EEL</g:mpn>
+      <g:google_product_category>Electronics &gt; Power Accessories &gt; Battery Packs</g:google_product_category>
+      <g:shipping>
+        <g:country>EE</g:country>
+        <g:price>0.00 EUR</g:price>
+      </g:shipping>
+    </item>
+
+    <!-- ===== Deye SG05LP3 6–12kW ===== -->
+    <item>
+      <g:id>deye-6-12kw</g:id>
+      <g:title>Deye SG05LP3 6–12kW 3-faasiline hübriidinverter</g:title>
+      <g:description><![CDATA[Deye kolmefaasiline hübriidinverter 48V akusüsteemiga — 4 võimsust: 6kW, 8kW, 10kW, 12kW. Zero export, AC-coupling, IP65, Wi-Fi. 5 aasta garantii. Laos Eestis.]]></g:description>
+      <g:link>https://solvolt.ee/deye-6-12kw</g:link>
+      <g:image_link>https://solvolt.ee/assets/pildid/deye.png</g:image_link>
+      <g:condition>new</g:condition>
+      <g:availability>in_stock</g:availability>
+      <g:price>2090.00 EUR</g:price>
+      <g:brand>Deye</g:brand>
+      <g:mpn>SG05LP3-EU-6-12K</g:mpn>
+      <g:google_product_category>Electronics &gt; Power Accessories &gt; Power Inverters</g:google_product_category>
+      <g:shipping>
+        <g:country>EE</g:country>
+        <g:price>0.00 EUR</g:price>
+      </g:shipping>
+    </item>
+
+    <!-- ===== Deye SG05LP3 15–20kW ===== -->
+    <item>
+      <g:id>deye-15-20kw</g:id>
+      <g:title>Deye SG05LP3 15–20kW 3-faasiline hübriidinverter</g:title>
+      <g:description><![CDATA[Deye kolmefaasiline hübriidinverter 48V akusüsteemiga — 2 võimsust: 15kW ja 20kW. Kuni 350A aku vool, zero export, IP65, Wi-Fi. 5 aasta garantii. Laos Eestis.]]></g:description>
+      <g:link>https://solvolt.ee/deye-15-20kw</g:link>
+      <g:image_link>https://solvolt.ee/assets/pildid/deye3.webp</g:image_link>
+      <g:condition>new</g:condition>
+      <g:availability>in_stock</g:availability>
+      <g:price>2450.00 EUR</g:price>
+      <g:brand>Deye</g:brand>
+      <g:mpn>SG05LP3-EU-15-20K</g:mpn>
+      <g:google_product_category>Electronics &gt; Power Accessories &gt; Power Inverters</g:google_product_category>
+      <g:shipping>
+        <g:country>EE</g:country>
+        <g:price>0.00 EUR</g:price>
+      </g:shipping>
+    </item>
+
+    <!-- ===== Deye SE-F16 C version ===== -->
+    <item>
+      <g:id>deye-se-f16-c-version</g:id>
+      <g:title>Deye SE-F16 C version 16kWh LiFePO4 aku</g:title>
+      <g:description><![CDATA[Deye seinale või põrandale paigaldatav 16kWh LiFePO4 aku. 314Ah, 51.2V, CAN/RS485/Bluetooth, kuni 32 tk paralleelis. 5 aasta garantii. Laos Eestis.]]></g:description>
+      <g:link>https://solvolt.ee/toode?id=deye-se-f16-c-version</g:link>
+      <g:image_link>https://solvolt.ee/assets/pildid/deye-se-f16-c.png</g:image_link>
+      <g:condition>new</g:condition>
+      <g:availability>in_stock</g:availability>
+      <g:price>2770.00 EUR</g:price>
+      <g:brand>Deye</g:brand>
+      <g:mpn>SE-F16-C</g:mpn>
+      <g:google_product_category>Electronics &gt; Power Accessories &gt; Battery Packs</g:google_product_category>
+      <g:shipping>
+        <g:country>EE</g:country>
+        <g:price>0.00 EUR</g:price>
+      </g:shipping>
+    </item>
+
+    <!-- ===== Deye RW-F16 ===== -->
+    <item>
+      <g:id>deye-rw-f16</g:id>
+      <g:title>Deye RW-F16 16kWh LiFePO4 aku (51.2V / 314Ah)</g:title>
+      <g:description><![CDATA[Deye RW-F16 LiFePO4 aku 51.2V / 314Ah. 16kWh nominaalmahtuvus, kasutatav energia 14.4kWh (DoD 90%), kuni 160A pidev laadimis-/tühjendusvool. 5 aasta garantii. Laos Eestis.]]></g:description>
+      <g:link>https://solvolt.ee/toode?id=deye-rw-f16</g:link>
+      <g:image_link>https://solvolt.ee/assets/pildid/deye-rw-f16.png</g:image_link>
+      <g:condition>new</g:condition>
+      <g:availability>in_stock</g:availability>
+      <g:price>2655.00 EUR</g:price>
+      <g:brand>Deye</g:brand>
+      <g:mpn>RW-F16</g:mpn>
+      <g:google_product_category>Electronics &gt; Power Accessories &gt; Battery Packs</g:google_product_category>
+      <g:shipping>
+        <g:country>EE</g:country>
+        <g:price>0.00 EUR</g:price>
+      </g:shipping>
+    </item>
+
+    <!-- ===== Dyness Stack100 ===== -->
+    <item>
+      <g:id>dyness-stack100</g:id>
+      <g:title>Dyness Stack100 — modulaarne LiFePO4 akusüsteem</g:title>
+      <g:description><![CDATA[Modulaarne virnatav LiFePO4 akusüsteem. 51.2V/100Ah moodul (5.12kWh), 3–15 moodulit klastris, kuni 12 klastrit paralleelselt (kuni 921kWh). 1C laadimiskiirus, aerosool tulekustutus. 10 aasta garantii.]]></g:description>
+      <g:link>https://solvolt.ee/dyness-stack100</g:link>
+      <g:image_link>https://solvolt.ee/assets/pildid/dyness-stack100.png</g:image_link>
+      <g:condition>new</g:condition>
+      <g:availability>in_stock</g:availability>
+      <g:price>860.00 EUR</g:price>
+      <g:brand>Dyness</g:brand>
+      <g:mpn>Stack100</g:mpn>
+      <g:google_product_category>Electronics &gt; Power Accessories &gt; Battery Packs</g:google_product_category>
+      <g:shipping>
+        <g:country>EE</g:country>
+        <g:price>0.00 EUR</g:price>
+      </g:shipping>
+    </item>
+
+    <!-- ===== Dyness PowerBrick Pro ===== -->
+    <item>
+      <g:id>dyness-powerbrick-pro-14kwh</g:id>
+      <g:title>Dyness PowerBrick Pro 14.336kWh LiFePO4 aku (IP65)</g:title>
+      <g:description><![CDATA[IP65 kaitsega Dyness PowerBrick Pro 14.336kWh LiFePO4 — sobib sise- ja välitingimustesse. Sisseehitatud BMS, CAN/RS485, kuni 16 akut paralleelselt. 10 aasta garantii. Laos Eestis.]]></g:description>
+      <g:link>https://solvolt.ee/toode?id=dyness-powerbrick-pro-14kwh</g:link>
+      <g:image_link>https://solvolt.ee/assets/pildid/dynesspro.png</g:image_link>
+      <g:condition>new</g:condition>
+      <g:availability>in_stock</g:availability>
+      <g:price>2540.00 EUR</g:price>
+      <g:brand>Dyness</g:brand>
+      <g:mpn>PowerBrick-Pro-14kWh</g:mpn>
+      <g:google_product_category>Electronics &gt; Power Accessories &gt; Battery Packs</g:google_product_category>
+      <g:shipping>
+        <g:country>EE</g:country>
+        <g:price>0.00 EUR</g:price>
+      </g:shipping>
+    </item>
+
+    <!-- ===== Dyness PowerBrick ===== -->
+    <item>
+      <g:id>dyness-powerbrick-14kwh</g:id>
+      <g:title>Dyness PowerBrick 14.336kWh LiFePO4 aku (51.2V / 280Ah)</g:title>
+      <g:description><![CDATA[Dyness PowerBrick 14.336kWh LiFePO4 akusüsteem sisseehitatud BMS-iga. CAN/RS485, lai inverterite ühilduvus (Deye, Goodwe, Huawei, Growatt). 6000+ tsüklit, 10 aasta garantii. Laos Eestis.]]></g:description>
+      <g:link>https://solvolt.ee/toode?id=dyness-powerbrick-14kwh</g:link>
+      <g:image_link>https://solvolt.ee/assets/pildid/dyness.png</g:image_link>
+      <g:condition>new</g:condition>
+      <g:availability>in_stock</g:availability>
+      <g:price>2435.00 EUR</g:price>
+      <g:brand>Dyness</g:brand>
+      <g:mpn>PowerBrick-14kWh</g:mpn>
+      <g:google_product_category>Electronics &gt; Power Accessories &gt; Battery Packs</g:google_product_category>
+      <g:shipping>
+        <g:country>EE</g:country>
+        <g:price>0.00 EUR</g:price>
+      </g:shipping>
+    </item>
+
+    <!-- ===== Basen Green 16kWh ===== -->
+    <item>
+      <g:id>basen-green-16kwh</g:id>
+      <g:title>Basen Green 16kWh LiFePO4 akukomplekt (51.2V / 320Ah)</g:title>
+      <g:description><![CDATA[Basen Green BR-OW-LV16KWH 16kWh LiFePO4 akukomplekt sisseehitatud BMS-iga. 320Ah, CAN/RS485, kuni 16 akut paralleelselt. 6000+ tsüklit, 10 aasta garantii. Laos Eestis.]]></g:description>
+      <g:link>https://solvolt.ee/toode?id=basen-green-16kwh</g:link>
+      <g:image_link>https://solvolt.ee/assets/pildid/basen.jpg</g:image_link>
+      <g:condition>new</g:condition>
+      <g:availability>in_stock</g:availability>
+      <g:price>2049.00 EUR</g:price>
+      <g:brand>Basen</g:brand>
+      <g:mpn>BR-OW-LV16KWH</g:mpn>
+      <g:google_product_category>Electronics &gt; Power Accessories &gt; Battery Packs</g:google_product_category>
+      <g:shipping>
+        <g:country>EE</g:country>
+        <g:price>0.00 EUR</g:price>
+      </g:shipping>
+    </item>
+
+    <!-- ===== Huawei SUN2000-4.6KTL-L1 ===== -->
+    <item>
+      <g:id>huawei-sun2000-4-6ktl</g:id>
+      <g:title>Huawei SUN2000-4.6KTL-L1 hübriidinverter</g:title>
+      <g:description><![CDATA[Huawei 4.6kW 1-faasiline hübriidinverter. Ühilduv Luna2000 akusüsteemiga. 2x MPPT, FusionSolar monitooring, IP65. 5 aasta garantii. Laos Eestis.]]></g:description>
+      <g:link>https://solvolt.ee/toode?id=huawei-sun2000-4-6ktl</g:link>
+      <g:image_link>https://solvolt.ee/assets/pildid/huawei.png</g:image_link>
+      <g:condition>new</g:condition>
+      <g:availability>in_stock</g:availability>
+      <g:price>860.00 EUR</g:price>
+      <g:brand>Huawei</g:brand>
+      <g:mpn>SUN2000-4.6KTL-L1</g:mpn>
+      <g:google_product_category>Electronics &gt; Power Accessories &gt; Power Inverters</g:google_product_category>
+      <g:shipping>
+        <g:country>EE</g:country>
+        <g:price>0.00 EUR</g:price>
+      </g:shipping>
+    </item>
+
+    <!-- ===== JK BMS 150A 1A ===== -->
+    <item>
+      <g:id>jk-bms-150a-1a</g:id>
+      <g:title>JK (Jikong) BMS 8S-24S 150A — 1A aktiivne balanseerimine</g:title>
+      <g:description><![CDATA[Professionaalne BMS 1A aktiivse induktsioonbalanseerimisega. Bluetooth 5.0 + RS485. Sobib 8S-24S LiFePO4 akupankadele (24-77V). Täielik kaitse üle-/alalaaengu, ülevoogu, lühise ja temperatuuri vastu.]]></g:description>
+      <g:link>https://solvolt.ee/toode?id=jk-bms-150a-1a</g:link>
+      <g:image_link>https://solvolt.ee/assets/pildid/jk.png</g:image_link>
+      <g:condition>new</g:condition>
+      <g:availability>in_stock</g:availability>
+      <g:price>130.00 EUR</g:price>
+      <g:brand>JK (Jikong)</g:brand>
+      <g:mpn>JK-BMS-150A-1A</g:mpn>
+      <g:google_product_category>Electronics &gt; Power Accessories &gt; Battery Packs</g:google_product_category>
+      <g:shipping>
+        <g:country>EE</g:country>
+        <g:price>0.00 EUR</g:price>
+      </g:shipping>
+    </item>
+
+    <!-- ===== JK BMS 150A 2A ===== -->
+    <item>
+      <g:id>jk-bms-150a-2a</g:id>
+      <g:title>JK (Jikong) BMS 8S-24S 150A — 2A aktiivne balanseerimine</g:title>
+      <g:description><![CDATA[JK BMS 2A versioon — kiirem balanseerimine suurematele akupankadele (200Ah+). Bluetooth 5.0 + RS485. Sobib 8S-24S LiFePO4 akupankadele. Sobib EVE MB31, Basen jt elementidega.]]></g:description>
+      <g:link>https://solvolt.ee/toode?id=jk-bms-150a-2a</g:link>
+      <g:image_link>https://solvolt.ee/assets/pildid/jk.png</g:image_link>
+      <g:condition>new</g:condition>
+      <g:availability>in_stock</g:availability>
+      <g:price>155.00 EUR</g:price>
+      <g:brand>JK (Jikong)</g:brand>
+      <g:mpn>JK-BMS-150A-2A</g:mpn>
+      <g:google_product_category>Electronics &gt; Power Accessories &gt; Battery Packs</g:google_product_category>
+      <g:shipping>
+        <g:country>EE</g:country>
+        <g:price>0.00 EUR</g:price>
+      </g:shipping>
+    </item>
+
+    <!-- ===== CALB LiFePO4 16kWh ===== -->
+    <!-- Price is ex-VAT on site: 1799 * 1.22 = 2194.78 EUR incl. VAT -->
+    <item>
+      <g:id>calb-lifepo4-16kwh</g:id>
+      <g:title>CALB LiFePO4 16kWh Akukomplekt — JK BMS</g:title>
+      <g:description><![CDATA[16kWh LiFePO4 akukomplekt CALB A-klassi 314Ah elementide ja JK BMS-iga. 51.2V / 320Ah. Vertikaalne või lamav korpus, 200A kaitselüliti, tulekustutusaerosool. CAN/RS485/RS232.]]></g:description>
+      <g:link>https://solvolt.ee/calb-lifepo4-16kwh</g:link>
+      <g:image_link>https://solvolt.ee/assets/pildid/calb-horisontal.png</g:image_link>
+      <g:condition>new</g:condition>
+      <g:availability>preorder</g:availability>
+      <g:price>2195.00 EUR</g:price>
+      <g:brand>CALB</g:brand>
+      <g:mpn>CALB-314Ah-16kWh</g:mpn>
+      <g:google_product_category>Electronics &gt; Power Accessories &gt; Battery Packs</g:google_product_category>
+      <g:shipping>
+        <g:country>EE</g:country>
+        <g:price>0.00 EUR</g:price>
+      </g:shipping>
+    </item>
+
+    <!-- ===== Jinong BMS PB2A16S ===== -->
+    <!-- Price is ex-VAT on site: 145 * 1.22 = 176.90 EUR incl. VAT -->
+    <item>
+      <g:id>jinong-pb2a16s</g:id>
+      <g:title>Jinong BMS PB2A16S — 2A aktiivse balanseerimisega BMS (150A / 200A)</g:title>
+      <g:description><![CDATA[Jinong PB2A16S seeria BMS 2A aktiivse balanseerimisega. RS485 + CAN + Bluetooth (Android, iOS, HarmonyOS). 8S-16S (20-70V). Saadaval 150A (PB2A16S-15P) ja 200A (PB2A16S-20P) versioonides.]]></g:description>
+      <g:link>https://solvolt.ee/jinong-pb2a16s</g:link>
+      <g:image_link>https://solvolt.ee/assets/pildid/BMS1.png</g:image_link>
+      <g:condition>new</g:condition>
+      <g:availability>in_stock</g:availability>
+      <g:price>176.90 EUR</g:price>
+      <g:brand>Jinong</g:brand>
+      <g:mpn>PB2A16S-15P</g:mpn>
+      <g:google_product_category>Electronics &gt; Power Accessories &gt; Battery Packs</g:google_product_category>
+      <g:shipping>
+        <g:country>EE</g:country>
+        <g:price>0.00 EUR</g:price>
+      </g:shipping>
+    </item>
+
+  </channel>
+</rss>
