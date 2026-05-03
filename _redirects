@@ -98,3 +98,40 @@
 /blogs/news/a-grade*                 /blogi/a-grade-vs-b-grade-lifepo4.html  301
 /blogs/*                             /blogi.html  301
 /blog/*                              /blogi.html  301
+
+# ── Shopify frontpage ──────────────────────────────────────
+/collections/frontpage  /  301
+
+# ── .html duplikaadid → ilma .html (duplicate content fix) ─
+# Google indekseerib mõlemat (nt /hinnakiri JA /hinnakiri.html)
+/index.html                                          /                                          301
+/tooted.html                                         /tooted                                    301
+/hinnakiri.html                                      /hinnakiri                                 301
+/komplekt.html                                       /komplekt                                  301
+/kontakt.html                                        /kontakt                                   301
+/blogi.html                                          /blogi                                     301
+/meist.html                                          /meist                                     301
+/deye-6-12kw.html                                    /deye-6-12kw                               301
+/deye-15-20kw.html                                   /deye-15-20kw                              301
+/dyness-stack100.html                                /dyness-stack100                           301
+/eel-v6-pro.html                                     /eel-v6-pro                                301
+/calb-lifepo4-16kwh.html                             /calb-lifepo4-16kwh                        301
+/jinong-pb2a16s.html                                 /jinong-pb2a16s                            301
+/leapton-el-a16.html                                 /leapton-el-a16                            301
+/leapton-el-a05.html                                 /leapton-el-a05                            301
+/privaatsuspoliitika.html                            /privaatsuspoliitika                       301
+/tagastamine.html                                    /tagastamine                               301
+/tingimused.html                                     /tingimused                                301
+/toode.html                                          /toode                                     301
+/ostukorv.html                                       /ostukorv                                  301
+/edasi.html                                          /edasi                                     301
+/blogi/a-grade-vs-b-grade-lifepo4.html               /blogi/a-grade-vs-b-grade-lifepo4          301
+/blogi/akupank-lifepo4.html                          /blogi/akupank-lifepo4                     301
+/blogi/bms-oluline-lifepo4.html                      /blogi/bms-oluline-lifepo4                 301
+/blogi/eel-v6-pro-ulevaade.html                      /blogi/eel-v6-pro-ulevaade                 301
+/blogi/energiasalvestuse-mahutavus-arvutus.html      /blogi/energiasalvestuse-mahutavus-arvutus 301
+/blogi/eve-mb31-48v-aku.html                         /blogi/eve-mb31-48v-aku                    301
+/blogi/lifepo4-akuelemendid.html                     /blogi/lifepo4-akuelemendid                301
+/blogi/off-grid-vs-hubriid.html                      /blogi/off-grid-vs-hubriid                 301
+/blogi/oige-inverter-valimine.html                   /blogi/oige-inverter-valimine              301
+/blogi/paikeseenergia-eelised.html                   /blogi/paikeseenergia-eelised              301
