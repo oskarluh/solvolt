@@ -95,10 +95,14 @@
         <h1 style="font-size:clamp(1.8rem,4vw,2.4rem);margin-bottom:16px">Võta ühendust</h1>
         <p style="margin-bottom:32px">Küsimusi toote valiku, tehniliste spetsifikatsioonide või tarne kohta? Kirjuta meile — vastame esimesel võimalusel.</p>
         <div style="display:flex;flex-direction:column;gap:20px">
-          <a href="mailto:solvolt.info@gmail.com" style="display:flex;align-items:center;gap:14px;padding:16px;background:var(--bg-1);border:1px solid var(--border);border-radius:var(--r);transition:border-color var(--trans)" onmouseover="this.style.borderColor='var(--accent)'" onmouseout="this.style.borderColor='var(--border)'">
+          <div style="display:flex;align-items:center;gap:14px;padding:16px;background:var(--bg-1);border:1px solid var(--border);border-radius:var(--r);transition:border-color var(--trans)" onmouseover="this.style.borderColor='var(--accent)'" onmouseout="this.style.borderColor='var(--border)'">
             <span style="font-size:1.2rem">✉️</span>
-            <div><div style="font-size:.82rem;color:var(--text-3);font-family:var(--ff-mono)">E-POST</div><div style="color:var(--accent);font-weight:500">solvolt.info@gmail.com</div></div>
-          </a>
+            <div style="flex:1">
+              <div style="font-size:.82rem;color:var(--text-3);font-family:var(--ff-mono)">E-POST</div>
+              <a href="mailto:solvolt.info@gmail.com" style="color:var(--accent);font-weight:500;text-decoration:none">solvolt.info@gmail.com</a>
+            </div>
+            <button id="copy-email-btn" onclick="navigator.clipboard.writeText('solvolt.info@gmail.com').then(()=>{const b=document.getElementById('copy-email-btn');b.textContent='Kopeeritud!';b.style.color='var(--accent)';setTimeout(()=>{b.textContent='Kopeeri';b.style.color=''},2000)})" style="background:none;border:1px solid var(--border);border-radius:6px;padding:5px 10px;font-size:.78rem;color:var(--text-3);cursor:pointer;font-family:var(--ff-mono);transition:border-color .15s,color .15s;white-space:nowrap" onmouseover="this.style.borderColor='var(--accent)';this.style.color='var(--text-1)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--text-3)'">Kopeeri</button>
+          </div>
           <a href="tel:+37253928910" style="display:flex;align-items:center;gap:14px;padding:16px;background:var(--bg-1);border:1px solid var(--border);border-radius:var(--r);transition:border-color var(--trans)" onmouseover="this.style.borderColor='var(--accent)'" onmouseout="this.style.borderColor='var(--border)'">
             <span style="font-size:1.2rem">📞</span>
             <div><div style="font-size:.82rem;color:var(--text-3);font-family:var(--ff-mono)">TELEFON</div><div style="color:var(--accent);font-weight:500">+372 5392 8910</div></div>
