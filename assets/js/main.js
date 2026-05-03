@@ -136,6 +136,9 @@ document.addEventListener('DOMContentLoaded', () => {
     btn.style.cssText = 'position:fixed;bottom:24px;right:24px;z-index:9999;width:52px;height:52px;border-radius:50%;background:#25D366;color:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(0,0,0,.35);transition:transform .2s,box-shadow .2s;text-decoration:none;';
     btn.addEventListener('mouseenter', function() { this.style.transform='scale(1.1)'; this.style.boxShadow='0 6px 22px rgba(0,0,0,.45)'; });
     btn.addEventListener('mouseleave', function() { this.style.transform='scale(1)'; this.style.boxShadow='0 4px 16px rgba(0,0,0,.35)'; });
+    btn.addEventListener('click', function() {
+      if (typeof gtag === 'function') gtag('event', 'conversion', { send_to: 'AW-17385949286/3MCCCJ-p6KYcEOaQouJA', value: 5.0, currency: 'EUR' });
+    });
     document.body.appendChild(btn);
   })();
 
