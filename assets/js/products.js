@@ -19,7 +19,7 @@ const TOOTED = [
     kategooria: "lifepo4",
     hind: 1450,
     hind_vana: 1550,
-    stripe_price_id: "price_1TSvnDPcV5reENb6waX54KZg",
+    stripe_price_id: "price_1TIXrMPcV5reENb6WOJFaOhT",
     pilt: "assets/pildid/eve-mb31.png",
     pildid: [
       "assets/pildid/eve-mb31.png",
